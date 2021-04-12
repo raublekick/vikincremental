@@ -1,18 +1,54 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <section>
+    <div class="columns">
+      <div class="column">
+        <vikings />
+      </div>
+
+      <div class="column">
+        <inventory />
+        <gear />
+      </div>
+
+      <div class="column">
+        <craftables />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mapState, mapActions } from "vuex";
+import Vikings from "@/components/Vikings";
+import Inventory from "@/components/Inventory";
+import Craftables from "@/components/Craftables";
+import Gear from "@/components/Gear";
 
 export default {
   name: "Home",
+  data() {
+    return {};
+  },
+
   components: {
-    HelloWorld,
+    Vikings,
+    Inventory,
+    Craftables,
+    Gear,
+  },
+
+  computed: {
+    ...mapState(["vikings", "tasks", "inventory", "maxVikings", "craftables"]),
+  },
+
+  methods: {
+    ...mapActions(["tick"]),
+  },
+
+  created() {
+    setInterval(() => {
+      this.tick();
+    }, 1000);
   },
 };
 </script>
