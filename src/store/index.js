@@ -103,19 +103,6 @@ export default new Vuex.Store({
         commit("addViking", newViking);
       }
     },
-    async assignTask({ state, commit }, payload) {
-      let viking = _.find(state.vikings, (viking) => {
-        return viking.name === payload.vikingName;
-      });
-
-      let hasTask = _.find(viking.tasks, (task) => {
-        return task.name === payload.task.name;
-      });
-
-      if (!hasTask) {
-        commit("addTaskToViking", payload);
-      }
-    },
   },
   modules: {},
 });

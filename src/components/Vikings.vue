@@ -1,17 +1,29 @@
 <template>
   <section>
-    <div>Vikings</div>
-    <div v-for="(viking, index) in vikings" :key="index">
-      <viking :item="viking" />
-    </div>
-    <b-button :disabled="vikings.length === maxVikings" @click="createViking()">
-      +1 Viking
-    </b-button>
+    <panel heading="Vikings">
+      <template slot="content">
+        <div
+          class="panel-block"
+          v-for="(viking, index) in vikings"
+          :key="index"
+        >
+          <viking :item="viking" />
+        </div>
+        <b-button
+          class="panel-block"
+          :disabled="vikings.length === maxVikings"
+          @click="createViking()"
+        >
+          +1 Viking
+        </b-button>
+      </template>
+    </panel>
   </section>
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
 import Viking from "@/components/Viking";
+import Panel from "@/components/Panel";
 export default {
   name: "Vikings",
   data() {
@@ -20,6 +32,7 @@ export default {
 
   components: {
     Viking,
+    Panel,
   },
 
   computed: {

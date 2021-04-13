@@ -1,11 +1,10 @@
 <template>
-  <div class="card">
-    <header class="card-header">
-      <p class="card-header-title">{{ item.name }}</p>
+  <div>
+    <header>
+      <p>{{ item.name }}</p>
     </header>
-    <div class="card-content">
-      <div class="content">
-        <div class="title">Tasks</div>
+    <div>
+      <div>
         <div v-for="task in usableTasks" :key="task.name">
           <b-field>
             <b-checkbox v-model="item.tasks" :native-value="task"

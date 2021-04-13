@@ -7,6 +7,9 @@
 
       <div class="column">
         <inventory />
+      </div>
+
+      <div class="column">
         <gear />
       </div>
 

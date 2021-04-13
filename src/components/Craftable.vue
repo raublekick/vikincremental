@@ -1,17 +1,12 @@
 <template>
-  <div class="card">
-    <header class="card-header">
-      <p class="card-header-title">{{ item.name }}</p>
-    </header>
-    <div class="card-content">
-      <div class="content">
-        <div class="title">Components</div>
-        <div v-for="component in item.components" :key="component.name">
-          {{ component.name }}: {{ component.amount }}
-        </div>
-        <b-button :disabled="!canCraft" @click="craft()">Craft</b-button>
-      </div>
-    </div>
+  <div style="width: 100%" class="has-text-left">
+    {{ item.name }}<br />
+    <span v-for="component in item.components" :key="component.name">
+      {{ component.name }}: {{ component.amount }}
+    </span>
+    <b-button class="is-pulled-right" :disabled="!canCraft" @click="craft()"
+      >Craft</b-button
+    >
   </div>
 </template>
 <script>
