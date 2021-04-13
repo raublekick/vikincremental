@@ -30,7 +30,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["inventory", "gear"]),
+    ...mapState(["inventory", "gear", "house"]),
     canCraft() {
       var componentsMet =
         _.filter(this.item.components, (component) => {
@@ -45,7 +45,9 @@ export default {
         );
       });
 
-      return componentsMet && requirementsMet;
+      return (
+        componentsMet && requirementsMet && this.house.beds < this.item.beds
+      );
     },
   },
 
