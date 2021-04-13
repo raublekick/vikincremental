@@ -2,6 +2,9 @@
   <section>
     <div class="columns">
       <div class="column">
+        <houses />
+      </div>
+      <div class="column">
         <vikings />
       </div>
 
@@ -25,6 +28,7 @@ import { mapState, mapActions } from "vuex";
 import Vikings from "@/components/Vikings";
 import Inventory from "@/components/Inventory";
 import Craftables from "@/components/Craftables";
+import Houses from "@/components/Houses";
 import Gear from "@/components/Gear";
 
 export default {
@@ -38,6 +42,7 @@ export default {
     Inventory,
     Craftables,
     Gear,
+    Houses,
   },
 
   computed: {

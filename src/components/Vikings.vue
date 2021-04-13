@@ -7,11 +7,11 @@
           v-for="(viking, index) in vikings"
           :key="index"
         >
-          <viking :item="viking" />
+          <viking :item="viking" :index="index" />
         </div>
         <b-button
           class="panel-block"
-          :disabled="vikings.length === maxVikings"
+          :disabled="!canCreateViking"
           @click="createViking()"
         >
           +1 Viking
@@ -36,7 +36,18 @@ export default {
   },
 
   computed: {
-    ...mapState(["vikings", "maxVikings"]),
+    ...mapState(["vikings", "maxVikings", "house"]),
+    canCreateViking() {
+      if (this.vikings.length >= this.maxVikings) {
+        return false;
+      }
+
+      if (this.vikings.length >= this.house.beds && this.vikings.length >= 1) {
+        return false;
+      }
+
+      return true;
+    },
   },
 
   methods: {

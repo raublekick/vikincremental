@@ -2,11 +2,7 @@
   <section>
     <panel heading="Craftables">
       <template slot="content">
-        <div
-          class="panel-block"
-          v-for="(item, index) in craftables"
-          :key="index"
-        >
+        <div v-for="(item, index) in craftables" :key="index">
           <craftable :item="item" />
         </div>
       </template>
