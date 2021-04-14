@@ -4,6 +4,9 @@
       <p>{{ item.name }}</p>
     </header>
     <div>
+      <div>
+        <b-progress :max="item.maxStamina" :value="item.stamina" show-value />
+      </div>
       <div v-for="task in usableTasks" :key="task.name">
         <b-field>
           <b-checkbox v-model="item.tasks" :native-value="task"

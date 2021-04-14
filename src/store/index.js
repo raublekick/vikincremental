@@ -6,6 +6,12 @@ Vue.use(Vuex);
 
 let defaultViking = {
   name: "Viking 1",
+  stamina: 25,
+  health: 25,
+  maxStamina: 25,
+  maxHealth: 25,
+  staminaRegen: 1,
+  healthRegen: 0,
   gear: [],
   tasks: [],
 };
@@ -83,6 +89,7 @@ let inventory = {
 let tasks = [
   {
     name: "Gather",
+    staminaCost: 1,
     requirements: [],
     items: [
       {
@@ -101,6 +108,7 @@ let tasks = [
   },
   {
     name: "Chop Wood",
+    staminaCost: 3,
     requirements: ["Stone Axe", "Flint Axe"],
     items: [{ name: "Wood", perSecond: 2 }],
   },
@@ -126,6 +134,15 @@ export default new Vuex.Store({
     addViking(state, payload) {
       state.vikings.push(payload);
     },
+    addStamina(state, payload) {
+      var stamina = (state.vikings[payload.vikingIndex].stamina +=
+        payload.staminaCost);
+      var maxStamina = state.vikings[payload.vikingIndex].maxStamina;
+      if (stamina > maxStamina) {
+        stamina = maxStamina;
+      }
+      state.vikings[payload.vikingIndex].stamina = stamina;
+    },
     decrementInventory(state, payload) {
       state.inventory[payload.key] -= payload.amount;
     },
@@ -139,6 +156,9 @@ export default new Vuex.Store({
       var gear = state.gear[payload.gearIndex];
       state.gear.splice(payload.gearIndex, 1);
       state.vikings[payload.vikingIndex].gear.push(gear);
+    },
+    resetTasks(state, payload) {
+      state.vikings[payload.vikingIndex].tasks = [];
     },
     removeTask(state, payload) {
       var taskIndex = _.findIndex(
@@ -157,19 +177,53 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async tick({ state }) {
-      _.forEach(state.vikings, (viking) => {
+    async tick({ state, commit }) {
+      // check the day cycle
+
+      // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
+
+      // fill inventory from task items
+      _.forEach(state.vikings, (viking, i) => {
         //console.log("Incrementing " + viking.name);
+        var totalStaminaCost = 0,
+          totalStaminaDrain = 0;
+
+        if (!viking.tasks.length) {
+          totalStaminaDrain = viking.staminaRegen;
+          commit("addStamina", {
+            vikingIndex: i,
+            staminaCost: totalStaminaDrain,
+          });
+        }
         _.forEach(viking.tasks, (task) => {
           //console.log("Incrementing task: " + task.name);
-          _.forEach(task.items, (item) => {
-            //console.log("Incrementing item: " + item.name);
-            if (!state.inventory[item.name]) {
-              state.inventory[item.name] = 0;
-            }
-            state.inventory[item.name] += item.perSecond;
-          });
+
+          // get items first if stamina is positive
+          if (viking.stamina > 0) {
+            _.forEach(task.items, (item) => {
+              //console.log("Incrementing item: " + item.name);
+              if (!state.inventory[item.name]) {
+                state.inventory[item.name] = 0;
+              }
+              state.inventory[item.name] += item.perSecond;
+            });
+          }
+
+          // calculate stamina costs for this task
+          totalStaminaCost += task.staminaCost;
+          totalStaminaDrain = viking.staminaRegen - totalStaminaCost;
         });
+        commit("addStamina", {
+          vikingIndex: i,
+          staminaCost: totalStaminaDrain,
+        });
+
+        // remove jobs if remaining stamina < staminaCost
+        if (viking.stamina < 0) {
+          commit("resetTasks", {
+            vikingIndex: i,
+          });
+        }
       });
     },
     async createViking({ state, commit }) {
