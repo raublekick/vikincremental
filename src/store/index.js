@@ -118,7 +118,7 @@ let tasks = [
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: 24,
+      dayLength: 5,
       dayTicks: 0,
       totalDays: 0,
     },
@@ -189,6 +189,14 @@ export default new Vuex.Store({
   },
   actions: {
     async tick({ state, commit, getters }) {
+      // check the day cycle
+      var newDay = false;
+      if (state.day.dayTicks === state.day.dayLength) {
+        state.day.dayTicks = 0;
+        state.day.totalDays += 1;
+        newDay = true;
+      }
+      state.day.dayTicks++;
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
         var totalStaminaCost = 0,
@@ -225,14 +233,6 @@ export default new Vuex.Store({
           staminaCost: totalStaminaDrain,
         });
 
-        // check the day cycle
-        var newDay = false;
-        if (state.day.dayTicks === state.day.dayLength) {
-          state.day.dayTicks = 0;
-          state.day.totalDays += 1;
-          newDay = true;
-        }
-        state.day.dayTicks++;
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (newDay && getters.canRest === true) {
           viking.stamina = viking.maxStamina;
