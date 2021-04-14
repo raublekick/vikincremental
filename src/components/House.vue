@@ -5,19 +5,25 @@
     <span v-for="component in item.components" :key="component.name">
       {{ component.name }}: {{ component.amount }}
     </span>
-    <b-button class="is-pulled-right" :disabled="!canCraft" @click="craft()"
+    <b-button
+      class="is-pulled-right"
+      :disabled="!canCraft"
+      @click="updateHouse(item)"
       >Craft House</b-button
     >
   </div>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 import * as _ from "lodash";
+import mixin from "@/store/mixin";
 export default {
   name: "House",
   data() {
     return {};
   },
+
+  mixins: [mixin],
 
   props: {
     item: {
@@ -34,7 +40,8 @@ export default {
     canCraft() {
       var componentsMet =
         _.filter(this.item.components, (component) => {
-          return this.inventory[component.name] >= component.amount;
+          var inventoryItem = this.findItem(this.inventory, component.name);
+          return inventoryItem && inventoryItem.amount >= component.amount;
         }).length === this.item.components.length;
 
       var requirementsMet = _.filter(this.item.requirements, (requirement) => {
@@ -52,21 +59,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["decrementInventory", "setHouse"]),
-    craft() {
-      // create a new piece of gear to add
-      let newHouse = Object.assign({}, this.item);
-
-      // decrement components from inventory
-      _.forEach(this.item.components, (component) => {
-        this.decrementInventory({
-          key: component.name,
-          amount: component.amount,
-        });
-      });
-      // add new gear to gear store
-      this.setHouse(newHouse);
-    },
+    ...mapActions(["updateHouse"]),
   },
 };
 </script>

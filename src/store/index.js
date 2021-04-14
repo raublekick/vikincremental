@@ -1,119 +1,20 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import mixin from "@/store/mixin";
 import * as _ from "lodash";
+import vikingData from "./viking.json";
+import craftingData from "./craftables.json";
+import houseData from "./houses.json";
+import taskData from "./tasks.json";
 
 Vue.use(Vuex);
 
-let defaultViking = {
-  name: "Viking 1",
-  stamina: 25,
-  health: 25,
-  maxStamina: 25,
-  maxHealth: 25,
-  staminaRegen: 1,
-  healthRegen: 0,
-  gear: [],
-  tasks: [],
-};
+let defaultViking = vikingData;
+let craftables = craftingData;
 
-let craftables = [
-  {
-    name: "Hammer",
-    components: [
-      {
-        name: "Wood",
-        amount: 8,
-      },
-    ],
-  },
-  {
-    name: "Stone Axe",
-    components: [
-      {
-        name: "Wood",
-        amount: 8,
-      },
-      {
-        name: "Stone",
-        amount: 2,
-      },
-    ],
-  },
-];
+var houses = houseData;
 
-var houses = [
-  {
-    name: "Hut",
-    beds: 1,
-    components: [{ name: "Wood", amount: 100 }],
-    requirements: ["Hammer"],
-  },
-  {
-    name: "Small House",
-    beds: 2,
-    components: [{ name: "Wood", amount: 200 }],
-    requirements: ["Hammer"],
-  },
-  {
-    name: "Longhouse",
-    beds: 4,
-    components: [{ name: "Wood", amount: 400 }],
-    requirements: ["Hammer"],
-  },
-  {
-    name: "Grand Hall",
-    beds: 6,
-    components: [
-      { name: "Wood", amount: 500 },
-      { name: "Stone", amount: 500 },
-    ],
-    requirements: ["Hammer"],
-  },
-  {
-    name: "Fortress",
-    beds: 10,
-    components: [
-      { name: "Wood", amount: 1000 },
-      { name: "Stone", amount: 1000 },
-    ],
-    requirements: ["Hammer"],
-  },
-];
-
-let inventory = {
-  Stone: 0,
-  Wood: 0,
-};
-
-let tasks = [
-  {
-    name: "Gather",
-    staminaCost: 1,
-    requirements: [],
-    food: [
-      {
-        name: "Berries",
-        perSecond: 1,
-      },
-    ],
-    items: [
-      {
-        name: "Stone",
-        perSecond: 1,
-      },
-      {
-        name: "Wood",
-        perSecond: 1,
-      },
-    ],
-  },
-  {
-    name: "Chop Wood",
-    staminaCost: 3,
-    requirements: ["Stone Axe", "Flint Axe"],
-    items: [{ name: "Wood", perSecond: 2 }],
-  },
-];
+let tasks = taskData;
 
 export default new Vuex.Store({
   state: {
@@ -125,7 +26,7 @@ export default new Vuex.Store({
     maxVikings: 10,
     vikings: [],
     tasks: tasks,
-    inventory: inventory,
+    inventory: [],
     gear: [],
     food: [],
     craftables: craftables,
@@ -133,9 +34,6 @@ export default new Vuex.Store({
     houses: houses,
   },
   getters: {
-    inventoryKeys: (state) => {
-      return _.keys(state.inventory);
-    },
     canRest: (state) => {
       // if has a fire
       return state.vikings.length > 0;
@@ -154,8 +52,28 @@ export default new Vuex.Store({
       }
       state.vikings[payload.vikingIndex].stamina = stamina;
     },
-    decrementInventory(state, payload) {
-      state.inventory[payload.key] -= payload.amount;
+    incrementObject(state, payload) {
+      var index = mixin.methods.findIndex(
+        state[payload.objectKey],
+        payload.key
+      );
+      if (index >= 0) {
+        state[payload.objectKey][index].amount += payload.amount;
+      } else {
+        state[payload.objectKey].push({
+          name: payload.key,
+          amount: payload.amount,
+        });
+      }
+    },
+    decrementObject(state, payload) {
+      var index = mixin.methods.findIndex(
+        state[payload.objectKey],
+        payload.key
+      );
+      if (index >= 0) {
+        state[payload.objectKey][index].amount -= payload.amount;
+      }
     },
     addGear(state, gear) {
       state.gear.push(gear);
@@ -168,8 +86,10 @@ export default new Vuex.Store({
       state.gear.splice(payload.gearIndex, 1);
       state.vikings[payload.vikingIndex].gear.push(gear);
     },
-    resetTasks(state, payload) {
-      state.vikings[payload.vikingIndex].tasks = [];
+    removeGear(state, payload) {
+      var gear = state.vikings[payload.vikingIndex].gear[payload.gearIndex];
+      state.vikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
+      state.gear.push(gear);
     },
     removeTask(state, payload) {
       var taskIndex = _.findIndex(
@@ -180,11 +100,6 @@ export default new Vuex.Store({
       );
 
       state.vikings[payload.vikingIndex].tasks.splice(taskIndex, 1);
-    },
-    removeGear(state, payload) {
-      var gear = state.vikings[payload.vikingIndex].gear[payload.gearIndex];
-      state.vikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
-      state.gear.push(gear);
     },
   },
   actions: {
@@ -206,22 +121,19 @@ export default new Vuex.Store({
           // get items first if stamina is positive
           if (viking.stamina > 0) {
             _.forEach(task.items, (item) => {
-              if (!state.inventory[item.name]) {
-                state.inventory[item.name] = 0;
-              }
-              state.inventory[item.name] += item.perSecond;
+              commit("incrementObject", {
+                objectKey: "inventory",
+                key: item.name,
+                amount: item.perSecond,
+              });
             });
 
             _.forEach(task.food, (item) => {
-              //console.log("Incrementing item: " + item.name);
-              var food = _.findIndex(state.food, (food) => {
-                return food.name === item.name;
+              commit("incrementObject", {
+                objectKey: "food",
+                key: item.name,
+                amount: item.perSecond,
               });
-              if (food < 0) {
-                state.food.push({ name: item.name, amount: item.perSecond });
-              } else {
-                state.food[food].amount += item.perSecond;
-              }
             });
             // calculate stamina costs for this task
             totalStaminaCost += task.staminaCost;
@@ -271,6 +183,37 @@ export default new Vuex.Store({
           task: task,
         });
       });
+    },
+    async craftGear({ commit }, payload) {
+      let newGear = {
+        name: payload.name,
+      };
+
+      // decrement components from inventory
+      _.forEach(payload.components, (component) => {
+        commit("decrementObject", {
+          objectKey: "inventory",
+          key: component.name,
+          amount: component.amount,
+        });
+      });
+      // add new gear to gear store
+      commit("addGear", newGear);
+    },
+    async updateHouse({ commit }, payload) {
+      // create a new piece of gear to add
+      let newHouse = Object.assign({}, payload);
+
+      // decrement components from inventory
+      _.forEach(payload.components, (component) => {
+        commit("decrementObject", {
+          objectKey: "inventory",
+          key: component.name,
+          amount: component.amount,
+        });
+      });
+      // add new gear to gear store
+      commit("setHouse", newHouse);
     },
   },
   modules: {},

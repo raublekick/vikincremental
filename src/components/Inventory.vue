@@ -2,8 +2,12 @@
   <section>
     <panel heading="Inventory">
       <template slot="content">
-        <div class="panel-block" v-for="(item, index) in items" :key="index">
-          {{ item }}: {{ inventory[item] }}
+        <div
+          class="panel-block"
+          v-for="(item, index) in inventory"
+          :key="index"
+        >
+          {{ item.name }}: {{ item.amount }}
         </div>
         <div
           class="panel-block"
@@ -18,7 +22,6 @@
 </template>
 <script>
 import { mapState } from "vuex";
-import * as _ from "lodash";
 import Panel from "@/components/Panel";
 export default {
   name: "Inventory",
@@ -30,9 +33,6 @@ export default {
 
   computed: {
     ...mapState(["inventory", "food"]),
-    items() {
-      return _.keys(this.inventory);
-    },
   },
 };
 </script>

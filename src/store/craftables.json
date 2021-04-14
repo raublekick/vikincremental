@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Hammer",
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "name": "Stone Axe",
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      },
+      {
+        "name": "Stone",
+        "amount": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Gather",
+    "staminaCost": 1,
+    "requirements": [],
+    "food": [
+      {
+        "name": "Berries",
+        "perSecond": 1
+      }
+    ],
+    "items": [
+      {
+        "name": "Stone",
+        "perSecond": 1
+      },
+      {
+        "name": "Wood",
+        "perSecond": 1
+      }
+    ]
+  },
+  {
+    "name": "Chop Wood",
+    "staminaCost": 3,
+    "requirements": ["Stone Axe", "Flint Axe"],
+    "items": [{ "name": "Wood", "perSecond": 2 }]
+  }
+]

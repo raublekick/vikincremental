@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Hut",
+    "beds": 1,
+    "components": [{ "name": "Wood", "amount": 100 }],
+    "requirements": ["Hammer"]
+  },
+  {
+    "name": "Small House",
+    "beds": 2,
+    "components": [{ "name": "Wood", "amount": 200 }],
+    "requirements": ["Hammer"]
+  },
+  {
+    "name": "Longhouse",
+    "beds": 4,
+    "components": [{ "name": "Wood", "amount": 400 }],
+    "requirements": ["Hammer"]
+  },
+  {
+    "name": "Grand Hall",
+    "beds": 6,
+    "components": [
+      { "name": "Wood", "amount": 500 },
+      { "name": "Stone", "amount": 500 }
+    ],
+    "requirements": ["Hammer"]
+  },
+  {
+    "name": "Fortress",
+    "beds": 10,
+    "components": [
+      { "name": "Wood", "amount": 1000 },
+      { "name": "Stone", "amount": 1000 }
+    ],
+    "requirements": ["Hammer"]
+  }
+]
