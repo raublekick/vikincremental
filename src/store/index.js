@@ -83,7 +83,6 @@ var houses = [
 let inventory = {
   Stone: 0,
   Wood: 0,
-  Berries: 0,
 };
 
 let tasks = [
@@ -91,6 +90,12 @@ let tasks = [
     name: "Gather",
     staminaCost: 1,
     requirements: [],
+    food: [
+      {
+        name: "Berries",
+        perSecond: 1,
+      },
+    ],
     items: [
       {
         name: "Stone",
@@ -98,10 +103,6 @@ let tasks = [
       },
       {
         name: "Wood",
-        perSecond: 1,
-      },
-      {
-        name: "Berries",
         perSecond: 1,
       },
     ],
@@ -116,11 +117,17 @@ let tasks = [
 
 export default new Vuex.Store({
   state: {
+    day: {
+      dayLength: 24,
+      dayTicks: 0,
+      totalDays: 0,
+    },
     maxVikings: 10,
     vikings: [],
     tasks: tasks,
     inventory: inventory,
     gear: [],
+    food: [],
     craftables: craftables,
     house: { name: "None", beds: 0 },
     houses: houses,
@@ -128,6 +135,10 @@ export default new Vuex.Store({
   getters: {
     inventoryKeys: (state) => {
       return _.keys(state.inventory);
+    },
+    canRest: (state) => {
+      // if has a fire
+      return state.vikings.length > 0;
     },
   },
   mutations: {
@@ -177,52 +188,54 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async tick({ state, commit }) {
-      // check the day cycle
-
-      // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
-
+    async tick({ state, commit, getters }) {
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
-        //console.log("Incrementing " + viking.name);
         var totalStaminaCost = 0,
-          totalStaminaDrain = 0;
-
-        if (!viking.tasks.length) {
           totalStaminaDrain = viking.staminaRegen;
-          commit("addStamina", {
-            vikingIndex: i,
-            staminaCost: totalStaminaDrain,
-          });
-        }
-        _.forEach(viking.tasks, (task) => {
-          //console.log("Incrementing task: " + task.name);
 
+        _.forEach(viking.tasks, (task) => {
           // get items first if stamina is positive
           if (viking.stamina > 0) {
             _.forEach(task.items, (item) => {
-              //console.log("Incrementing item: " + item.name);
               if (!state.inventory[item.name]) {
                 state.inventory[item.name] = 0;
               }
               state.inventory[item.name] += item.perSecond;
             });
-          }
 
-          // calculate stamina costs for this task
-          totalStaminaCost += task.staminaCost;
-          totalStaminaDrain = viking.staminaRegen - totalStaminaCost;
+            _.forEach(task.food, (item) => {
+              //console.log("Incrementing item: " + item.name);
+              var food = _.findIndex(state.food, (food) => {
+                return food.name === item.name;
+              });
+              if (food < 0) {
+                state.food.push({ name: item.name, amount: item.perSecond });
+              } else {
+                state.food[food].amount += item.perSecond;
+              }
+            });
+            // calculate stamina costs for this task
+            totalStaminaCost += task.staminaCost;
+          }
         });
+        totalStaminaDrain -= totalStaminaCost;
         commit("addStamina", {
           vikingIndex: i,
           staminaCost: totalStaminaDrain,
         });
 
-        // remove jobs if remaining stamina < staminaCost
-        if (viking.stamina < 0) {
-          commit("resetTasks", {
-            vikingIndex: i,
-          });
+        // check the day cycle
+        var newDay = false;
+        if (state.day.dayTicks === state.day.dayLength) {
+          state.day.dayTicks = 0;
+          state.day.totalDays += 1;
+          newDay = true;
+        }
+        state.day.dayTicks++;
+        // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
+        if (newDay && getters.canRest === true) {
+          viking.stamina = viking.maxStamina;
         }
       });
     },

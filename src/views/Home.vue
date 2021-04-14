@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div>
+      Day: {{ day.totalDays }} ( {{ day.dayTicks }} / {{ day.dayLength }})
+    </div>
     <div class="columns">
       <div class="column">
         <houses />
@@ -46,7 +49,14 @@ export default {
   },
 
   computed: {
-    ...mapState(["vikings", "tasks", "inventory", "maxVikings", "craftables"]),
+    ...mapState([
+      "vikings",
+      "tasks",
+      "inventory",
+      "maxVikings",
+      "craftables",
+      "day",
+    ]),
   },
 
   methods: {
