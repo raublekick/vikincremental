@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Berries",
+    "stamina": 5,
+    "amount": 0
+  },
+  {
+    "name": "Mushrooms",
+    "stamina": 10,
+    "amount": 0
+  }
+]

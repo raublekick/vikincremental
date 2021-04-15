@@ -6,15 +6,11 @@ import vikingData from "./viking.json";
 import craftingData from "./craftables.json";
 import houseData from "./houses.json";
 import taskData from "./tasks.json";
+import foodData from "./food.json";
 
 Vue.use(Vuex);
 
 let defaultViking = vikingData;
-let craftables = craftingData;
-
-var houses = houseData;
-
-let tasks = taskData;
 
 export default new Vuex.Store({
   state: {
@@ -24,19 +20,34 @@ export default new Vuex.Store({
       totalDays: 0,
     },
     maxVikings: 10,
+    maxFood: 3,
+    defaultStamina: 25,
+    defaultHealth: 25,
     vikings: [],
-    tasks: tasks,
+    tasks: taskData,
     inventory: [],
     gear: [],
-    food: [],
-    craftables: craftables,
+    food: foodData,
+    craftables: craftingData,
     house: { name: "None", beds: 0 },
-    houses: houses,
+    houses: houseData,
   },
   getters: {
     canRest: (state) => {
       // if has a fire
       return state.vikings.length > 0;
+    },
+    foodBestToWorst: (state) => {
+      var edibleFood = _.filter(state.food, (food) => {
+        return food.amount >= 1;
+      });
+      return _.orderBy(edibleFood, ["stamina"], ["desc"]);
+    },
+    foodWorstToBest: (state) => {
+      var edibleFood = _.filter(state.food, (food) => {
+        return food.amount >= 1;
+      });
+      return _.orderBy(edibleFood, ["stamina"], ["asc"]);
     },
   },
   mutations: {
@@ -147,7 +158,28 @@ export default new Vuex.Store({
 
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (newDay && getters.canRest === true) {
-          viking.stamina = viking.maxStamina;
+          // reset to default. If there is no edible food or not enough to eat, will not gain benefit from prior day
+          viking.stamina = state.defaultStamina;
+          viking.maxStamina = state.defaultStamina;
+
+          let stamina = 0;
+          let foodEaten = 0;
+          if (viking.foodPreference === "best") {
+            _.forEach(getters.foodBestToWorst, (food) => {
+              if (foodEaten >= state.maxFood) {
+                return;
+              }
+              stamina += food.stamina;
+              commit("decrementObject", {
+                objectKey: "food",
+                key: food.name,
+                amount: 1,
+              });
+              foodEaten++;
+            });
+          }
+          viking.maxStamina += stamina;
+          viking.stamina += stamina;
         }
       });
     },

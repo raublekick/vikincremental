@@ -6,7 +6,11 @@
     "food": [
       {
         "name": "Berries",
-        "perSecond": 1
+        "perSecond": 0.2
+      },
+      {
+        "name": "Mushrooms",
+        "perSecond": 0.1
       }
     ],
     "items": [

@@ -7,5 +7,6 @@
   "staminaRegen": 1,
   "healthRegen": 0,
   "gear": [],
-  "tasks": []
+  "tasks": [],
+  "foodPreference": "best"
 }
