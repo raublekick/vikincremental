@@ -7,6 +7,7 @@ import craftingData from "./craftables.json";
 import houseData from "./houses.json";
 import taskData from "./tasks.json";
 import foodData from "./food.json";
+import houseAddOnData from "./house-add-ons.json";
 
 Vue.use(Vuex);
 
@@ -31,6 +32,7 @@ export default new Vuex.Store({
     craftables: craftingData,
     house: { name: "None", beds: 0 },
     houses: houseData,
+    houseAddOns: houseAddOnData,
   },
   getters: {
     canRest: (state) => {
@@ -112,6 +114,15 @@ export default new Vuex.Store({
 
       state.vikings[payload.vikingIndex].tasks.splice(taskIndex, 1);
     },
+    setAddOnBuildState(state, payload) {
+      var index = mixin.methods.findIndex(
+        state[payload.objectKey],
+        payload.key
+      );
+      if (index >= 0) {
+        state[payload.objectKey][index].built = payload.state;
+      }
+    },
   },
   actions: {
     async tick({ state, commit, getters }) {
@@ -182,6 +193,9 @@ export default new Vuex.Store({
           viking.stamina += stamina;
         }
       });
+
+      // process enabled house add-ons
+      // if enough input exists in inventory, remove it and add output to inventory
     },
     async createViking({ state, commit }) {
       if (state.vikings.length < state.maxVikings) {

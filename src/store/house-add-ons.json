@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Workbench",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [
+      "Hammer"
+    ],
+    "addOnRequirements": [],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Kiln",
+    "gearRequirements": ["Hammer"],
+    "addOnRequirements": ["Workbench"],
+    "enabled": false,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 50
+      }
+    ],
+    "processing": [{
+      "input": [
+        { "name": "Wood", "amount": 1}
+      ],
+      "output": { "name": "Coal", "amount": 1 }
+    }]
+  },
+  {
+    "name": "Smelter",
+    "gearRequirements": ["Hammer"],
+    "addOnRequirements": ["Workbench"],
+    "enabled": false,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 50
+      }
+    ],
+    "processing": [{
+      "input": [
+        { "name": "Coal", "amount": 2}, 
+        { "name": "Copper Ore", "amount": 1}
+      ],
+      "output": { "name": "Copper Bar", "amount": 1 }
+    }]
+  }
+]

@@ -1,6 +1,5 @@
 <template>
-  <div v-if="canCraft">
-    <hr />
+  <div v-if="canCraft" class="item">
     <div class="columns">
       <div class="column">
         <div class="is-size-5">{{ item.name }}</div>
@@ -43,18 +42,21 @@ export default {
     ...mapState(["inventory", "gear", "house"]),
     canCraft() {
       var componentsMet =
+        this.item.components.length === 0 ||
         _.filter(this.item.components, (component) => {
           var inventoryItem = this.findItem(this.inventory, component.name);
           return inventoryItem && inventoryItem.amount >= component.amount;
         }).length === this.item.components.length;
 
-      var requirementsMet = _.filter(this.item.requirements, (requirement) => {
-        return (
-          _.filter(this.gear, (gear) => {
-            return gear.name === requirement.name;
-          }).length > 0
-        );
-      });
+      var requirementsMet =
+        this.item.gearRequirements.length === 0 ||
+        _.filter(this.item.gearRequirements, (requirement) => {
+          return (
+            _.filter(this.gear, (gear) => {
+              return gear.name === requirement;
+            }).length > 0
+          );
+        }).length > 0;
 
       return (
         componentsMet && requirementsMet && this.house.beds < this.item.beds

@@ -3,7 +3,7 @@
     <panel heading="Craftables">
       <template slot="content">
         <div v-for="(item, index) in craftables" :key="index" class="item">
-          <craftable :item="item" />
+          <craftable :item="item" class="item" />
         </div>
       </template>
     </panel>

@@ -15,6 +15,8 @@
         <hr />
         <houses />
         <hr />
+        <house-add-ons />
+        <hr />
         <div class="subtitle">Lore:</div>
       </div>
       <div class="column">
@@ -47,6 +49,7 @@ import Vikings from "@/components/Vikings";
 import Inventory from "@/components/Inventory";
 import Craftables from "@/components/Craftables";
 import Houses from "@/components/Houses";
+import HouseAddOns from "@/components/HouseAddOns";
 import Gear from "@/components/Gear";
 
 export default {
@@ -63,6 +66,7 @@ export default {
     Craftables,
     Gear,
     Houses,
+    HouseAddOns,
   },
 
   computed: {
