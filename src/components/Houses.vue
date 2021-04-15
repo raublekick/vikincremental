@@ -1,22 +1,19 @@
 <template>
   <section>
-    <panel heading="Housing">
-      <template slot="content">
-        <div class="panel-block">
-          {{ house.name }}<br />
-          Beds: {{ house.beds }}
-        </div>
-        <div v-for="(item, index) in houses" :key="index">
-          <house :item="item" />
-        </div>
-      </template>
-    </panel>
+    <div class="subtitle">Housing</div>
+    <div>
+      {{ house.name }}
+    </div>
+    <div>Beds: {{ house.beds }}</div>
+    <div v-for="(item, index) in houses" :key="index">
+      <house :item="item" />
+    </div>
   </section>
 </template>
 <script>
 import { mapState } from "vuex";
 import House from "@/components/House";
-import Panel from "@/components/Panel";
+
 export default {
   name: "Houses",
   data() {
@@ -25,7 +22,6 @@ export default {
 
   components: {
     House,
-    Panel,
   },
 
   computed: {

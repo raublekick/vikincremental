@@ -1,15 +1,18 @@
 <template>
-  <div style="width: 100%" class="has-text-left panel-block" v-if="canCraft">
-    {{ item.name }}<br />
-    <span v-for="component in item.components" :key="component.name">
-      {{ component.name }}: {{ component.amount }}
-    </span>
-    <b-button
-      class="is-pulled-right"
-      :disabled="!canCraft"
-      @click="craftGear(item)"
-      >Craft</b-button
-    >
+  <div class="columns" v-if="canCraft">
+    <div class="column">
+      <div>{{ item.name }}</div>
+    </div>
+    <div class="column">
+      <div v-for="component in item.components" :key="component.name">
+        {{ component.name }}: {{ component.amount }}
+      </div>
+    </div>
+    <div class="column has-text-right">
+      <b-button size="is-small" :disabled="!canCraft" @click="craftGear(item)"
+        >Craft</b-button
+      >
+    </div>
   </div>
 </template>
 <script>

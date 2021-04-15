@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <header>
-      <p>{{ item.name }}</p>
-    </header>
-    <div>
+  <div class="columns">
+    <div class="column">
+      <div>{{ item.name }}</div>
       <div>
         <b-progress :max="item.maxStamina" :value="item.stamina" show-value />
       </div>
+    </div>
+    <div class="column">
       <div v-for="task in usableTasks" :key="task.name">
         <b-field>
           <b-checkbox v-model="item.tasks" :native-value="task"
@@ -14,7 +14,8 @@
           </b-checkbox>
         </b-field>
       </div>
-
+    </div>
+    <div class="column">
       <div v-for="(gear, index) in item.gear" :key="index">
         <b-field>
           {{ gear.name }} (

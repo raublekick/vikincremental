@@ -1,8 +1,13 @@
 <template>
-  <article class="panel">
-    <p v-if="heading" class="panel-heading">{{ heading }}</p>
+  <section class="box">
+    <div class="columns">
+      <div v-if="heading" class="subtitle column">
+        {{ heading }}
+      </div>
+      <slot name="buttons" class="column"></slot>
+    </div>
     <slot name="content"></slot>
-  </article>
+  </section>
 </template>
 <script>
 export default {

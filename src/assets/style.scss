@@ -1,0 +1,10 @@
+@import "bulma/sass/utilities/_all";
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+.item:not(:last-child) {
+  border-bottom: 1px solid $grey-lighter;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+

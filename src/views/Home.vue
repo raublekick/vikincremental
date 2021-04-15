@@ -1,26 +1,41 @@
 <template>
-  <section>
-    <div>
-      Day: {{ day.totalDays }} ( {{ day.dayTicks }} / {{ day.dayLength }})
+  <section class="container">
+    <div class="content">
+      <h1 class="title">Vikincrement</h1>
     </div>
     <div class="columns">
-      <div class="column">
+      <div class="column is-3 box mr-4">
+        <div class="subtitle">
+          Day: {{ day.totalDays }} ( {{ day.dayTicks }} / {{ day.dayLength }})
+        </div>
+        <hr />
+        <div class="subtitle">
+          Vikings: {{ vikings.length }} / {{ house.beds || 1 }}
+        </div>
+        <hr />
         <houses />
+        <hr />
+        <div class="subtitle">Lore:</div>
       </div>
       <div class="column">
-        <vikings />
-      </div>
+        <b-tabs v-model="activeTab">
+          <b-tab-item label="Vikings"> <vikings /> </b-tab-item>
 
-      <div class="column">
-        <inventory />
-      </div>
+          <b-tab-item label="Inventory">
+            <div class="columns">
+              <div class="column">
+                <inventory />
+              </div>
+              <div class="column">
+                <gear />
+              </div>
 
-      <div class="column">
-        <gear />
-      </div>
-
-      <div class="column">
-        <craftables />
+              <div class="column">
+                <craftables />
+              </div>
+            </div>
+          </b-tab-item>
+        </b-tabs>
       </div>
     </div>
   </section>
@@ -37,7 +52,9 @@ import Gear from "@/components/Gear";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      activeTab: 0,
+    };
   },
 
   components: {
@@ -56,6 +73,7 @@ export default {
       "maxVikings",
       "craftables",
       "day",
+      "house",
     ]),
   },
 

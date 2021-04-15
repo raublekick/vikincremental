@@ -1,16 +1,20 @@
 <template>
-  <div style="width: 100%" class="has-text-left panel-block" v-if="canCraft">
-    {{ item.name }}<br />
-    Beds: {{ item.beds }}<br />
-    <span v-for="component in item.components" :key="component.name">
-      {{ component.name }}: {{ component.amount }}
-    </span>
-    <b-button
-      class="is-pulled-right"
-      :disabled="!canCraft"
-      @click="updateHouse(item)"
-      >Craft House</b-button
-    >
+  <div v-if="canCraft">
+    <hr />
+    <div class="columns">
+      <div class="column">
+        <div class="is-size-5">{{ item.name }}</div>
+        <div v-for="component in item.components" :key="component.name">
+          {{ component.name }}: {{ component.amount }}
+        </div>
+      </div>
+      <div class="column has-text-right">
+        Beds: {{ item.beds }}
+        <b-button :disabled="!canCraft" @click="updateHouse(item)"
+          >Craft House</b-button
+        >
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -63,3 +67,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.house {
+  border-top: 1px solid black;
+}
+</style>
