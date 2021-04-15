@@ -14,15 +14,16 @@
   {
     "name": "Longhouse",
     "beds": 4,
-    "components": [{ "name": "Wood", "amount": 400 }],
+    "components": [{ "name": "Wood", "amount": 800 }],
     "requirements": ["Hammer"]
   },
   {
     "name": "Grand Hall",
     "beds": 6,
     "components": [
-      { "name": "Wood", "amount": 500 },
-      { "name": "Stone", "amount": 500 }
+      { "name": "Wood", "amount": 1000 },
+      { "name": "Stone", "amount": 500 },
+      { "name": "Copper bar", "amount": 100 }
     ],
     "requirements": ["Hammer"]
   },
@@ -30,8 +31,9 @@
     "name": "Fortress",
     "beds": 10,
     "components": [
-      { "name": "Wood", "amount": 1000 },
-      { "name": "Stone", "amount": 1000 }
+      { "name": "Wood", "amount": 5000 },
+      { "name": "Stone", "amount": 3000 },
+      { "name": "Iron bar", "amount": 100 }
     ],
     "requirements": ["Hammer"]
   }

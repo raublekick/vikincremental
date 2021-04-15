@@ -15,7 +15,7 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: 5,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 5,
       dayTicks: 0,
       totalDays: 0,
     },
