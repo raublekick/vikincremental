@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/vikincremental/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vikincremental/" : "/",
 };
