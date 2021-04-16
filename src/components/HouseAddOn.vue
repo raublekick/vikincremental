@@ -103,10 +103,18 @@ export default {
           );
         }).length > 0;
 
+      var bedsMet = this.item.bedRequirement
+        ? this.item.bedRequirement >= this.house.beds
+        : false;
+
       // check if inventory contains at least one of the inputs (i.e. player cannot unlock smelter until an ore has been mined)
 
       return (
-        componentsMet && requirementsMet && addOnsMet && this.house.beds > 0
+        componentsMet &&
+        requirementsMet &&
+        addOnsMet &&
+        bedsMet &&
+        this.house.beds > 0
       );
     },
   },

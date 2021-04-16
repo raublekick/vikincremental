@@ -3,8 +3,11 @@
     <div class="column">
       <div>{{ item.name }}</div>
       <div>
-        <b-progress :max="item.maxStamina" :value="item.stamina" show-value />
+        <b-progress :max="item.maxStamina" :value="item.stamina" show-value
+          >{{ item.stamina }} / {{ item.maxStamina }}</b-progress
+        >
       </div>
+      <div>Stamina Regen: {{ item.staminaRegen }}</div>
     </div>
     <div class="column">
       <div v-for="task in usableTasks" :key="task.name">

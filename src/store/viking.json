@@ -5,7 +5,9 @@
   "maxStamina": 25,
   "maxHealth": 25,
   "staminaRegen": 1,
+  "baseStaminaRegen": 1,
   "healthRegen": 0,
+  "baseHealthRegen": 0,
   "gear": [],
   "tasks": [],
   "foodPreference": "best"

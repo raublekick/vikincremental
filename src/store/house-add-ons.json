@@ -1,21 +1,5 @@
 [
   {
-    "name": "Workbench",
-    "built": false,
-    "enabled": false,
-    "gearRequirements": [
-      "Hammer"
-    ],
-    "addOnRequirements": [],
-    "components": [
-      {
-        "name": "Wood",
-        "amount": 10
-      }
-    ],
-    "processing": []
-  },
-  {
     "name": "Kiln",
     "gearRequirements": ["Hammer"],
     "addOnRequirements": ["Workbench"],
@@ -51,5 +35,41 @@
       ],
       "output": { "name": "Copper Bar", "amount": 1 }
     }]
+  },
+  {
+    "name": "Workbench",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [
+      "Hammer"
+    ],
+    "addOnRequirements": [],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Campfire",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": [],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Stone",
+        "amount": 5
+      }
+    ],
+    "processing": []
   }
 ]

@@ -5,6 +5,7 @@
       {{ house.name }}
     </div>
     <div>Beds: {{ house.beds }}</div>
+    <div>Comfort: {{ comfort }}</div>
     <div v-for="(item, index) in houses" :key="index">
       <house :item="item" />
     </div>
@@ -25,7 +26,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["houses", "house"]),
+    ...mapState(["houses", "house", "comfort"]),
   },
 };
 </script>

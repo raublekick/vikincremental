@@ -24,6 +24,8 @@ export default new Vuex.Store({
     maxFood: 3,
     defaultStamina: 25,
     defaultHealth: 25,
+    comfort: 1,
+    baseComfort: 1,
     vikings: [],
     tasks: taskData,
     inventory: [],
@@ -189,6 +191,17 @@ export default new Vuex.Store({
               foodEaten++;
             });
           }
+          state.comfort =
+            state.baseComfort +
+            _.sumBy(
+              _.filter(state.houseAddOns, (addOn) => {
+                return addOn.built === true && addOn.enabled === true;
+              }),
+              (addOn) => {
+                return addOn.comfort ? addOn.comfort : 0;
+              }
+            );
+          viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
           viking.maxStamina += stamina;
           viking.stamina += stamina;
         }
