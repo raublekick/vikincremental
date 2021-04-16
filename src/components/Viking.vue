@@ -29,6 +29,16 @@
         </b-field>
       </div>
     </div>
+    <div class="column">
+      <b-field label="Food preference">
+        <div class="control">
+          <b-select size="is-small" v-model="preference">
+            <option value="best">Best</option>
+            <option value="worst">Worst</option>
+          </b-select>
+        </div>
+      </b-field>
+    </div>
   </div>
 </template>
 <script>
@@ -59,6 +69,14 @@ export default {
 
   computed: {
     ...mapState(["tasks"]),
+    preference: {
+      get() {
+        return this.item.foodPreference;
+      },
+      set(value) {
+        this.item.foodPreference = value;
+      },
+    },
     usableTasks() {
       var tasks = _.filter(this.tasks, (task) => {
         if (!task.requirements || !task.requirements.length) {
