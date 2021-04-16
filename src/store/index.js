@@ -195,7 +195,38 @@ export default new Vuex.Store({
       });
 
       // process enabled house add-ons
-      // if enough input exists in inventory, remove it and add output to inventory
+      _.forEach(state.houseAddOns, (addOn) => {
+        if (addOn.enabled) {
+          // if enough input exists in inventory, remove it and add output to inventory
+          _.forEach(addOn.processing, (process) => {
+            // check that every input is available
+            var tmpItems = [];
+            _.forEach(process.input, (item) => {
+              if (
+                mixin.methods.findItem(state.inventory, item.name).amount >=
+                item.amount
+              ) {
+                tmpItems.push(item);
+              }
+            });
+            // if all input items are available
+            if (tmpItems.length === process.input.length) {
+              _.forEach(tmpItems, (item) => {
+                commit("decrementObject", {
+                  objectKey: "inventory",
+                  key: item.name,
+                  amount: item.amount,
+                });
+              });
+              commit("incrementObject", {
+                objectKey: "inventory",
+                key: process.output.name,
+                amount: process.output.amount,
+              });
+            }
+          });
+        }
+      });
     },
     async createViking({ state, commit }) {
       if (state.vikings.length < state.maxVikings) {
