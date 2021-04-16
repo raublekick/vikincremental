@@ -1,7 +1,7 @@
 [
   {
     "name": "Gather",
-    "staminaCost": 1,
+    "staminaCost": 2,
     "requirements": [],
     "food": [
       {
@@ -16,7 +16,7 @@
     "items": [
       {
         "name": "Stone",
-        "perSecond": 1
+        "perSecond": 0.25
       },
       {
         "name": "Wood",
@@ -26,8 +26,19 @@
   },
   {
     "name": "Chop Wood",
-    "staminaCost": 3,
+    "staminaCost": 5,
     "requirements": ["Stone Axe", "Flint Axe"],
-    "items": [{ "name": "Wood", "perSecond": 2 }]
+    "items": [{ "name": "Wood", "perSecond": 3 }]
+  },
+  {
+    "name": "Small Game Hunting",
+    "staminaCost": 5,
+    "requirements": ["Crude Bow", "Short Bow"],
+    "items": [
+      { "name": "Leather Hide", "perSecond": 0.1 },
+      { "name": "Leather Scraps", "perSecond": 0.2 },
+      { "name": "Deer Head", "perSecond": 0.075 },
+      { "name": "Raw Meat", "perSecond": 0.2 }
+    ]
   }
 ]

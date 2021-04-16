@@ -33,13 +33,14 @@
         { "name": "Coal", "amount": 2}, 
         { "name": "Copper Ore", "amount": 1}
       ],
-      "output": { "name": "Copper Bar", "amount": 1 }
+      "output": { "name": "Copper Bar", "amount": 1, "type": "inventory" }
     }]
   },
   {
     "name": "Workbench",
     "built": false,
     "enabled": false,
+    "bedRequirement": 1,
     "gearRequirements": [
       "Hammer"
     ],
@@ -71,5 +72,27 @@
       }
     ],
     "processing": []
+  },
+  {
+    "name": "Cooking Station",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Campfire"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 5
+      }
+    ],
+    "processing": [{
+      "input": [
+        { "name": "Wood", "amount": 1}, 
+        { "name": "Raw Meat", "amount": 1}
+      ],
+      "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+    }]
   }
 ]

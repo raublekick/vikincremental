@@ -16,7 +16,7 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 5,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
       dayTicks: 0,
       totalDays: 0,
     },
@@ -232,7 +232,7 @@ export default new Vuex.Store({
                 });
               });
               commit("incrementObject", {
-                objectKey: "inventory",
+                objectKey: process.output.type,
                 key: process.output.name,
                 amount: process.output.amount,
               });

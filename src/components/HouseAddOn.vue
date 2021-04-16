@@ -31,6 +31,7 @@
           </div>
         </div>
         <div v-else-if="item.built && item.enabled">
+          <div v-if="item.comfort">Comfort: {{ item.comfort }}</div>
           <div
             v-for="(process, index) in item.processing"
             :key="'process' + index"
@@ -51,7 +52,6 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import * as _ from "lodash";
 import mixin from "@/store/mixin";
 export default {
   name: "HouseAddOn",
@@ -75,47 +75,7 @@ export default {
     ...mapState(["inventory", "gear", "house", "houseAddOns"]),
     canCraft() {
       // must have all components
-      var componentsMet =
-        this.item.components.length === 0 ||
-        _.filter(this.item.components, (component) => {
-          var inventoryItem = this.findItem(this.inventory, component.name);
-          return inventoryItem && inventoryItem.amount >= component.amount;
-        }).length === this.item.components.length;
-
-      // must have one requirement
-      var requirementsMet =
-        this.item.gearRequirements.length === 0 ||
-        _.filter(this.item.gearRequirements, (requirement) => {
-          return (
-            _.filter(this.gear, (gear) => {
-              return gear.name === requirement;
-            }).length > 0
-          );
-        }).length > 0;
-
-      var addOnsMet =
-        this.item.addOnRequirements.length === 0 ||
-        _.filter(this.item.addOnRequirements, (requirement) => {
-          return (
-            _.filter(this.houseAddOns, (addOn) => {
-              return addOn.name === requirement && addOn.built === true;
-            }).length > 0
-          );
-        }).length > 0;
-
-      var bedsMet = this.item.bedRequirement
-        ? this.item.bedRequirement >= this.house.beds
-        : false;
-
-      // check if inventory contains at least one of the inputs (i.e. player cannot unlock smelter until an ore has been mined)
-
-      return (
-        componentsMet &&
-        requirementsMet &&
-        addOnsMet &&
-        bedsMet &&
-        this.house.beds > 0
-      );
+      return this.craftable(this.item, this.house, this.houseAddOns);
     },
   },
 

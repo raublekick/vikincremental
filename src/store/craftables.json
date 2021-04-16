@@ -20,5 +20,15 @@
         "amount": 2
       }
     ]
+  },
+  {
+    "name": "Crude Bow",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ]
   }
 ]

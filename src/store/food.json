@@ -8,5 +8,10 @@
     "name": "Mushrooms",
     "stamina": 10,
     "amount": 0
+  },
+  {
+    "name": "Cooked Meat",
+    "stamina": 10,
+    "amount": 0
   }
 ]

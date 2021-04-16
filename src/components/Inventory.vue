@@ -2,9 +2,11 @@
   <section>
     <panel heading="Inventory">
       <template slot="content">
-        <div class="item" v-for="(item, index) in inventory" :key="index">
-          {{ item.name }}: {{ item.amount }}
-        </div>
+        <template v-for="(item, index) in inventory">
+          <div class="item" :key="index" v-if="Math.floor(item.amount) >= 1">
+            {{ item.name }}: {{ Math.floor(item.amount) }}
+          </div>
+        </template>
         <template v-for="(item, index) in food">
           <div
             :key="'food' + index"

@@ -17,7 +17,6 @@
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import * as _ from "lodash";
 import mixin from "@/store/mixin";
 export default {
   name: "Craftable",
@@ -38,15 +37,10 @@ export default {
   },
 
   computed: {
-    ...mapState(["inventory"]),
+    ...mapState(["inventory", "house", "houseAddOns"]),
 
     canCraft() {
-      return (
-        _.filter(this.item.components, (component) => {
-          var inventoryItem = this.findItem(this.inventory, component.name);
-          return inventoryItem && inventoryItem.amount >= component.amount;
-        }).length === this.item.components.length
-      );
+      return this.craftable(this.item, this.house, this.houseAddOns);
     },
   },
 
