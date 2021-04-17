@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <pre>{{ battleLog }}</pre>
+    <pre ref="log">{{ battleLog }}</pre>
     <div v-if="combat">
       <div class="columns">
         <div class="column">
@@ -34,5 +34,23 @@ export default {
   computed: {
     ...mapState(["combat", "vikings", "enemies", "battleLog"]),
   },
+  watch: {
+    battleLog() {
+      console.log("log changed");
+      this.$nextTick(() => {
+        this.$refs.log.scrollTop = this.$refs.log.scrollHeight;
+      });
+    },
+  },
 };
 </script>
+<style scoped>
+pre {
+  height: auto;
+  max-height: 200px;
+  overflow: auto;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+}
+</style>

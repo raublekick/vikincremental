@@ -2,6 +2,8 @@
   "name": "Viking 1",
   "stamina": 25,
   "health": 25,
+  "baseStamina": 25,
+  "baseHealth": 25,
   "maxStamina": 25,
   "maxHealth": 25,
   "staminaRegen": 1,

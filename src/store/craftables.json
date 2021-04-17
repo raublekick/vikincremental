@@ -14,7 +14,7 @@
     "combat": {
       "damage": 15,
       "stamina": 10,
-      "accuracy": 0.85
+      "accuracy": 0.75
     }
   },
   {
@@ -25,6 +25,11 @@
         "name": "Wood",
         "amount": 8
       }
-    ]
+    ],
+    "combat": {
+      "damage": 15,
+      "stamina": 5,
+      "accuracy": 0.65
+    }
   }
 ]

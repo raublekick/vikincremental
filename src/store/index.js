@@ -16,7 +16,7 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 6,
       dayTicks: 0,
       totalDays: 0,
     },
@@ -27,12 +27,10 @@ export default new Vuex.Store({
     activeTab: "vikings",
     combat: false,
     battleLog: "",
-    attackTicks: 4,
-    baseEncounterChance: 0.25,
+    attackTicks: 6,
+    baseEncounterChance: 1,
     maxVikings: 10,
     maxFood: 3,
-    defaultStamina: 25,
-    defaultHealth: 25,
     comfort: 0,
     baseComfort: 0,
     vikings: [],
@@ -145,6 +143,9 @@ export default new Vuex.Store({
       );
 
       state.vikings[payload.vikingIndex].tasks.splice(taskIndex, 1);
+    },
+    removeObject(state, payload) {
+      state[payload.objectKey].splice(payload.index, 1);
     },
     setAddOnBuildState(state, payload) {
       var index = mixin.methods.findIndex(
@@ -282,7 +283,8 @@ export default new Vuex.Store({
                 " has defeated " +
                 state.enemies[targetIndex].name +
                 "!\n";
-              state.enemies.splice(targetIndex, 1);
+              //state.enemies.splice(targetIndex, 1);
+              commit("removeObject", { objectKey: "enemies", index: i });
             }
             // subtract stamina from viking
             totalStaminaCost += staminaCost;
@@ -318,11 +320,12 @@ export default new Vuex.Store({
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (newDay && getters.canRest === true) {
           // reset to default. If there is no edible food or not enough to eat, will not gain benefit from prior day
-          viking.stamina = state.defaultStamina;
-          viking.maxStamina = state.defaultStamina;
+          viking.stamina = viking.baseStamina;
+          viking.maxStamina = viking.baseStamina;
+          viking.maxHealth = viking.baseHealth;
 
           let stamina = 0;
-          let healthRegen = 0;
+          let health = 0;
           let foodEaten = 0;
           if (viking.foodPreference === "best") {
             _.forEach(getters.foodBestToWorst, (food) => {
@@ -330,7 +333,7 @@ export default new Vuex.Store({
                 return;
               }
               stamina += food.stamina;
-              healthRegen += food.healthRegen;
+              health += food.health;
               commit("decrementObject", {
                 objectKey: "food",
                 key: food.name,
@@ -341,9 +344,11 @@ export default new Vuex.Store({
           }
 
           viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
-          viking.healthRegen = viking.baseHealthRegen + healthRegen;
+          viking.healthRegen = viking.baseHealthRegen + state.comfort;
           viking.maxStamina += stamina;
           viking.stamina += stamina;
+          viking.maxHealth += health;
+          commit("addHealth", { vikingIndex: i, value: health / 2 });
         }
       });
 
@@ -400,19 +405,20 @@ export default new Vuex.Store({
             }
             // subtract stamina from viking
             totalStaminaCost += staminaCost;
-
-            // reset combat if all enemies are defeated
-            if (!state.vikings.length) {
-              state.combat = false;
-              state.enemies = [];
-              battleLog += "Your party has been eliminated...\n";
-            }
           }
           totalStaminaDrain -= totalStaminaCost;
-          commit("addEnemyStamina", {
-            enemyIndex: i,
-            staminaCost: totalStaminaDrain,
-          });
+
+          if (state.vikings.length) {
+            commit("addEnemyStamina", {
+              enemyIndex: i,
+              staminaCost: totalStaminaDrain,
+            });
+          } else {
+            // reset combat if all enemies are defeated
+            state.combat = false;
+            battleLog += "Your party has been eliminated...\n";
+            state.enemies = [];
+          }
         });
       }
 

@@ -2,19 +2,19 @@
   {
     "name": "Berries",
     "stamina": 5,
-    "healthRegen": 1,
+    "health": 5,
     "amount": 0
   },
   {
     "name": "Mushrooms",
     "stamina": 10,
-    "healthRegen": 1,
+    "health": 5,
     "amount": 0
   },
   {
     "name": "Cooked Meat",
     "stamina": 10,
-    "healthRegen": 1,
+    "health": 5,
     "amount": 0
   }
 ]
