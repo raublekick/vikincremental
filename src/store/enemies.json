@@ -1,0 +1,22 @@
+[
+  
+  {
+    "name": "Goblin Youngling",
+    "worldTier": 1,
+    "stamina": 15,
+    "health": 15,
+    "maxStamina": 15,
+    "maxHealth": 15,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "tier": 1,
+    "attacks": [
+      { "name": "Swipe", "damage": 10, "stamina": 10, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  }
+]

@@ -8,6 +8,7 @@ import houseData from "./houses.json";
 import taskData from "./tasks.json";
 import foodData from "./food.json";
 import houseAddOnData from "./house-add-ons.json";
+import enemyData from "./enemies.json";
 
 Vue.use(Vuex);
 
@@ -26,6 +27,7 @@ export default new Vuex.Store({
     worldTier: 1,
     activeTab: "vikings",
     combat: false,
+    newDay: false,
     battleLog: "",
     attackTicks: 6,
     baseEncounterChance: 0.25,
@@ -43,6 +45,7 @@ export default new Vuex.Store({
     houses: houseData,
     houseAddOns: houseAddOnData,
     enemies: [],
+    enemyList: enemyData,
   },
   getters: {
     canRest: (state) => {
@@ -158,26 +161,15 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async tick({ state, commit, getters }) {
-      // check the day cycle
-      var battleLog = state.battleLog;
-      var newDay = false;
-      if (state.day.dayTicks === state.day.dayLength) {
-        state.day.dayTicks = 0;
-        state.day.totalDays += 1;
-        newDay = true;
-      }
-      state.day.dayTicks++;
-
-      // should we enter combat?
-      if (newDay && state.vikings.length) {
+    async initializeCombat({ state }) {
+      if (state.newDay && state.vikings.length) {
         var chance = Math.random();
         if (state.enemies.length) {
           state.combat = true;
         } else if (chance < state.baseEncounterChance) {
           state.combat = true;
           state.flags.combatUnlocked = true;
-          battleLog =
+          state.battleLog =
             "Starting day " + state.day.totalDays + " on the battlefield...\n";
 
           // get how many enemies to add
@@ -186,30 +178,26 @@ export default new Vuex.Store({
             state.vikings.length
           );
 
+          var tierEnemies = _.filter(state.enemyList, (enemy) => {
+            return enemy.worldTier === state.worldTier;
+          });
+
           for (var i = 1; i <= numberOfEnemies; i++) {
-            state.enemies.push({
-              name: "Test Baddie",
-              stamina: 15,
-              health: 15,
-              maxStamina: 15,
-              maxHealth: 15,
-              staminaRegen: 1,
-              baseStaminaRegen: 1,
-              healthRegen: 0,
-              baseHealthRegen: 0,
-              tier: 1,
-              attacks: [
-                { name: "Swipe", damage: "10", stamina: 10, accuracy: 0.45 },
-              ],
-            });
-            battleLog += "A Test Baddie has entered the battlefield!\n";
+            var selectedEnemy =
+              tierEnemies[
+                mixin.methods.randomIntFromInterval(0, tierEnemies.length - 1)
+              ];
+            state.enemies.push(selectedEnemy);
+            state.battleLog +=
+              "A " + selectedEnemy.name + " has entered the battlefield!\n";
           }
         } else {
           state.enemies = [];
           state.combat = false;
         }
       }
-
+    },
+    async vikingTick({ state, commit, getters }) {
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
         var totalStaminaCost = 0,
@@ -246,7 +234,7 @@ export default new Vuex.Store({
               0 &&
             viking.stamina > 0 &&
             state.enemies.length &&
-            !newDay
+            !state.newDay
           ) {
             // get target
             var targetIndex = mixin.methods.randomIntFromInterval(
@@ -259,7 +247,7 @@ export default new Vuex.Store({
             var damage = hit ? weapon.combat.damage : 0;
             var staminaCost = weapon.combat.stamina;
             if (hit) {
-              battleLog +=
+              state.battleLog +=
                 viking.name +
                 " hits " +
                 state.enemies[targetIndex].name +
@@ -269,7 +257,7 @@ export default new Vuex.Store({
                 staminaCost +
                 " stamina!\n";
             } else {
-              battleLog +=
+              state.battleLog +=
                 viking.name +
                 " misses and uses " +
                 staminaCost +
@@ -278,12 +266,26 @@ export default new Vuex.Store({
             // subtract damage from enemy health
             state.enemies[targetIndex].health -= damage;
             if (state.enemies[targetIndex].health <= 0) {
-              battleLog +=
+              state.battleLog +=
                 viking.name +
                 " has defeated " +
                 state.enemies[targetIndex].name +
                 "!\n";
-              //state.enemies.splice(targetIndex, 1);
+              // get enemy drops
+              _.forEach(state.enemies[targetIndex].drops, (drop) => {
+                commit("incrementObject", {
+                  objectKey: "inventory",
+                  key: drop.name,
+                  amount: drop.amount,
+                });
+                state.battleLog +=
+                  state.enemies[targetIndex].name +
+                  " drops " +
+                  drop.amount +
+                  " " +
+                  drop.name +
+                  "!\n";
+              });
               commit("removeObject", { objectKey: "enemies", index: i });
             }
             // subtract stamina from viking
@@ -292,7 +294,7 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
-              battleLog += "You are victorious on this day!\n";
+              state.battleLog += "You are victorious on this day!\n";
             }
           }
         }
@@ -318,7 +320,7 @@ export default new Vuex.Store({
             }
           );
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
-        if (newDay && getters.canRest === true) {
+        if (state.newDay && getters.canRest === true) {
           // reset to default. If there is no edible food or not enough to eat, will not gain benefit from prior day
           viking.stamina = viking.baseStamina;
           viking.maxStamina = viking.baseStamina;
@@ -351,9 +353,9 @@ export default new Vuex.Store({
           commit("addHealth", { vikingIndex: i, value: health / 2 });
         }
       });
-
-      // enemy battle
-      if (state.combat && state.enemies.length && !newDay) {
+    },
+    async enemyTick({ state, commit }) {
+      if (state.combat && state.enemies.length && !state.newDay) {
         _.forEach(state.enemies, (enemy, i) => {
           var totalStaminaCost = 0,
             totalStaminaDrain = enemy.staminaRegen;
@@ -377,7 +379,7 @@ export default new Vuex.Store({
             var damage = hit ? weapon.damage : 0;
             var staminaCost = weapon.stamina;
             if (hit) {
-              battleLog +=
+              state.battleLog +=
                 enemy.name +
                 " hits " +
                 state.vikings[targetIndex].name +
@@ -387,7 +389,7 @@ export default new Vuex.Store({
                 staminaCost +
                 " stamina!\n";
             } else {
-              battleLog +=
+              state.battleLog +=
                 enemy.name +
                 " misses and uses " +
                 staminaCost +
@@ -396,7 +398,7 @@ export default new Vuex.Store({
             // subtract damage from enemy health
             state.vikings[targetIndex].health -= damage;
             if (state.vikings[targetIndex].health <= 0) {
-              battleLog +=
+              state.battleLog +=
                 state.vikings[targetIndex].name +
                 " has been defeated by " +
                 enemy.name +
@@ -416,13 +418,13 @@ export default new Vuex.Store({
           } else {
             // reset combat if all enemies are defeated
             state.combat = false;
-            battleLog += "Your party has been eliminated...\n";
+            state.battleLog += "Your party has been eliminated...\n";
             state.enemies = [];
           }
         });
       }
-
-      // process enabled house add-ons
+    },
+    async processingTick({ state, commit }) {
       _.forEach(state.houseAddOns, (addOn) => {
         if (addOn.enabled) {
           // if enough input exists in inventory, remove it and add output to inventory
@@ -453,8 +455,28 @@ export default new Vuex.Store({
           });
         }
       });
+    },
+    async tick({ state, dispatch }) {
+      // check the day cycle
+      state.newDay = false;
+      if (state.day.dayTicks === state.day.dayLength) {
+        state.day.dayTicks = 0;
+        state.day.totalDays += 1;
+        state.newDay = true;
+      }
+      state.day.dayTicks++;
 
-      state.battleLog = battleLog;
+      // should we enter combat?
+      await dispatch("initializeCombat");
+
+      // viking tick
+      await dispatch("vikingTick");
+
+      // enemy battle
+      await dispatch("enemyTick");
+
+      // process enabled house add-ons
+      await dispatch("processingTick");
     },
     async createViking({ state, commit }) {
       if (state.vikings.length < state.maxVikings) {
