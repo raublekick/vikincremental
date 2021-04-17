@@ -16,7 +16,7 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 4,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
       dayTicks: 0,
       totalDays: 0,
     },
@@ -33,8 +33,8 @@ export default new Vuex.Store({
     maxFood: 3,
     defaultStamina: 25,
     defaultHealth: 25,
-    comfort: 1,
-    baseComfort: 1,
+    comfort: 0,
+    baseComfort: 0,
     vikings: [],
     tasks: taskData,
     inventory: [],
@@ -49,7 +49,7 @@ export default new Vuex.Store({
   getters: {
     canRest: (state) => {
       // if has a fire
-      return state.vikings.length > 0;
+      return state.comfort > 0;
     },
     foodBestToWorst: (state) => {
       var edibleFood = _.filter(state.food, (food) => {
@@ -295,6 +295,17 @@ export default new Vuex.Store({
           value: viking.healthRegen,
         });
 
+        // need to calculate comfort outside of new day so it is ready
+        state.comfort =
+          state.baseComfort +
+          _.sumBy(
+            _.filter(state.houseAddOns, (addOn) => {
+              return addOn.built === true && addOn.enabled === true;
+            }),
+            (addOn) => {
+              return addOn.comfort ? addOn.comfort : 0;
+            }
+          );
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (newDay && getters.canRest === true) {
           // reset to default. If there is no edible food or not enough to eat, will not gain benefit from prior day
@@ -319,16 +330,7 @@ export default new Vuex.Store({
               foodEaten++;
             });
           }
-          state.comfort =
-            state.baseComfort +
-            _.sumBy(
-              _.filter(state.houseAddOns, (addOn) => {
-                return addOn.built === true && addOn.enabled === true;
-              }),
-              (addOn) => {
-                return addOn.comfort ? addOn.comfort : 0;
-              }
-            );
+
           viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
           viking.healthRegen = viking.baseHealthRegen + healthRegen;
           viking.maxStamina += stamina;
