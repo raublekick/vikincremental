@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import * as _ from "lodash";
 export default {
   name: "Viking",
@@ -79,7 +79,5 @@ export default {
       return tasks;
     },
   },
-
-  methods: { ...mapActions(["unequipGear"]) },
 };
 </script>

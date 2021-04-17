@@ -80,6 +80,15 @@ export default new Vuex.Store({
       }
       state.vikings[payload.vikingIndex].stamina = stamina;
     },
+    addEnemyStamina(state, payload) {
+      var stamina = (state.enemies[payload.enemyIndex].stamina +=
+        payload.staminaCost);
+      var maxStamina = state.enemies[payload.enemyIndex].maxStamina;
+      if (stamina > maxStamina) {
+        stamina = maxStamina;
+      }
+      state.enemies[payload.enemyIndex].stamina = stamina;
+    },
     addHealth(state, payload) {
       var health = (state.vikings[payload.vikingIndex].health += payload.value);
       var maxHealth = state.vikings[payload.vikingIndex].maxHealth;
@@ -340,7 +349,7 @@ export default new Vuex.Store({
 
       // enemy battle
       if (state.combat && state.enemies.length && !newDay) {
-        _.forEach(state.enemies, (enemy) => {
+        _.forEach(state.enemies, (enemy, i) => {
           var totalStaminaCost = 0,
             totalStaminaDrain = enemy.staminaRegen;
           if (
@@ -400,7 +409,10 @@ export default new Vuex.Store({
             }
           }
           totalStaminaDrain -= totalStaminaCost;
-          enemy.stamina -= totalStaminaDrain;
+          commit("addEnemyStamina", {
+            enemyIndex: i,
+            staminaCost: totalStaminaDrain,
+          });
         });
       }
 
@@ -472,10 +484,7 @@ export default new Vuex.Store({
       });
     },
     async craftGear({ commit }, payload) {
-      let newGear = {
-        name: payload.name,
-        combat: payload.combat,
-      };
+      let newGear = _.clone(payload);
 
       // decrement components from inventory
       _.forEach(payload.components, (component) => {

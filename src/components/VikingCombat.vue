@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import mixin from "@/store/mixin";
 export default {
   name: "Viking",
@@ -57,7 +57,5 @@ export default {
       return this.getWeapon(this.item.gear);
     },
   },
-
-  methods: { ...mapActions(["unequipGear"]) },
 };
 </script>

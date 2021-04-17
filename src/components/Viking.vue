@@ -25,12 +25,12 @@
       </div>
     </div>
     <div class="column">
-      <div v-for="(gear, index) in item.gear" :key="index">
+      <div v-for="(gear, gIndex) in item.gear" :key="gIndex">
         <b-field>
           {{ gear.name }} (
           <a
             @click.prevent="
-              unequipGear({ gearIndex: index, vikingIndex: index })
+              unequipGear({ gearIndex: gIndex, vikingIndex: index })
             "
             >Remove</a
           >
