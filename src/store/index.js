@@ -16,10 +16,19 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 4,
       dayTicks: 0,
       totalDays: 0,
     },
+    flags: {
+      combatUnlocked: false,
+    },
+    worldTier: 1,
+    activeTab: "vikings",
+    combat: false,
+    battleLog: "",
+    attackTicks: 4,
+    baseEncounterChance: 0.25,
     maxVikings: 10,
     maxFood: 3,
     defaultStamina: 25,
@@ -35,6 +44,7 @@ export default new Vuex.Store({
     house: { name: "None", beds: 0 },
     houses: houseData,
     houseAddOns: houseAddOnData,
+    enemies: [],
   },
   getters: {
     canRest: (state) => {
@@ -55,6 +65,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setActiveTab(state, payload) {
+      state.activeTab = payload;
+    },
     addViking(state, payload) {
       state.vikings.push(payload);
     },
@@ -129,6 +142,7 @@ export default new Vuex.Store({
   actions: {
     async tick({ state, commit, getters }) {
       // check the day cycle
+      var battleLog = state.battleLog;
       var newDay = false;
       if (state.day.dayTicks === state.day.dayLength) {
         state.day.dayTicks = 0;
@@ -136,33 +150,133 @@ export default new Vuex.Store({
         newDay = true;
       }
       state.day.dayTicks++;
+
+      // should we enter combat?
+      if (newDay && state.vikings.length) {
+        var chance = Math.random();
+        if (state.enemies.length) {
+          state.combat = true;
+        } else if (chance < state.baseEncounterChance) {
+          state.combat = true;
+          state.flags.combatUnlocked = true;
+          state.activeTab = "combat";
+          battleLog =
+            "Starting day " + state.day.totalDays + " on the battlefield...\n";
+
+          // get how many enemies to add
+          var numberOfEnemies = mixin.methods.randomIntFromInterval(
+            1,
+            state.vikings.length
+          );
+
+          for (var i = 1; i <= numberOfEnemies; i++) {
+            state.enemies.push({
+              name: "Test Baddie",
+              stamina: 25,
+              health: 25,
+              maxStamina: 25,
+              maxHealth: 25,
+              staminaRegen: 1,
+              baseStaminaRegen: 1,
+              healthRegen: 0,
+              baseHealthRegen: 0,
+              tier: 1,
+              attacks: [
+                { name: "Swipe", damage: "10", stamina: 10, accuracy: 0.75 },
+              ],
+            });
+            battleLog += "A Test Baddie has entered the battlefield!\n";
+          }
+        } else {
+          state.enemies = [];
+          state.combat = false;
+        }
+      }
+
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
         var totalStaminaCost = 0,
           totalStaminaDrain = viking.staminaRegen;
 
-        _.forEach(viking.tasks, (task) => {
-          // get items first if stamina is positive
-          if (viking.stamina > 0) {
-            _.forEach(task.items, (item) => {
-              commit("incrementObject", {
-                objectKey: "inventory",
-                key: item.name,
-                amount: item.perSecond,
+        // if in combat, disable tasks
+        if (!state.combat) {
+          _.forEach(viking.tasks, (task) => {
+            // get items first if stamina is positive
+            if (viking.stamina > 0) {
+              _.forEach(task.items, (item) => {
+                commit("incrementObject", {
+                  objectKey: "inventory",
+                  key: item.name,
+                  amount: item.perSecond,
+                });
               });
-            });
 
-            _.forEach(task.food, (item) => {
-              commit("incrementObject", {
-                objectKey: "food",
-                key: item.name,
-                amount: item.perSecond,
+              _.forEach(task.food, (item) => {
+                commit("incrementObject", {
+                  objectKey: "food",
+                  key: item.name,
+                  amount: item.perSecond,
+                });
               });
-            });
-            // calculate stamina costs for this task
-            totalStaminaCost += task.staminaCost;
+              // calculate stamina costs for this task
+              totalStaminaCost += task.staminaCost;
+            }
+          });
+        } else {
+          // attack only on some of ticks dayTick % (dayLength / attackTicks) === 0
+          if (
+            state.day.dayTicks % (state.day.dayLength / state.attackTicks) ===
+              0 &&
+            viking.stamina > 0 &&
+            state.enemies.length
+          ) {
+            // get target
+            var targetIndex = mixin.methods.randomIntFromInterval(
+              0,
+              state.enemies.length - 1
+            );
+            // calculate damage
+            var weapon = mixin.methods.getWeapon(viking.gear);
+            var hit =
+              mixin.methods.randomIntFromInterval(0, 1) <
+              weapon.combat.accuracy;
+            var damage = hit ? weapon.combat.damage : 0;
+            var staminaCost = weapon.combat.stamina;
+            if (hit) {
+              battleLog +=
+                viking.name +
+                " hits for " +
+                damage +
+                " damage and uses " +
+                staminaCost +
+                " stamina!\n";
+            } else {
+              battleLog +=
+                viking.name +
+                " misses and uses " +
+                staminaCost +
+                " stamina...\n";
+            }
+            // subtract damage from enemy health
+            state.enemies[targetIndex].health -= damage;
+            if (state.enemies[targetIndex].health <= 0) {
+              battleLog +=
+                viking.name +
+                " has defeated " +
+                state.enemies[targetIndex].name +
+                "!\n";
+              state.enemies.splice(targetIndex, 1);
+            }
+            // subtract stamina from viking
+            totalStaminaCost += staminaCost;
+
+            // reset combat if all enemies are defeated
+            if (!state.enemies.length) {
+              state.combat = false;
+              battleLog += "You are victorious on this day!\n";
+            }
           }
-        });
+        }
         totalStaminaDrain -= totalStaminaCost;
         commit("addStamina", {
           vikingIndex: i,
@@ -240,6 +354,8 @@ export default new Vuex.Store({
           });
         }
       });
+
+      state.battleLog = battleLog;
     },
     async createViking({ state, commit }) {
       if (state.vikings.length < state.maxVikings) {
@@ -277,6 +393,7 @@ export default new Vuex.Store({
     async craftGear({ commit }, payload) {
       let newGear = {
         name: payload.name,
+        combat: payload.combat,
       };
 
       // decrement components from inventory

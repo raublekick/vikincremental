@@ -2,6 +2,7 @@
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+@import "~@creativebulma/bulma-divider";
 .item:not(:last-child):not(:empty) {
   border-bottom: 1px solid $grey-lighter;
   padding-bottom: 0.5em;

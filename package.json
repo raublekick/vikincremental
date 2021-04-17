@@ -9,6 +9,7 @@
     "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "@creativebulma/bulma-divider": "^1.1.0",
     "buefy": "^0.9.6",
     "core-js": "^3.6.5",
     "lodash": "^4.17.21",

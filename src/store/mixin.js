@@ -18,6 +18,34 @@ export default {
     hasRequirement(collection) {
       return collection && collection.length;
     },
+    randomIntFromInterval(min, max) {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    },
+    getWeapon(collection) {
+      var gear = _.orderBy(
+        _.filter(collection, (item) => {
+          return item.combat;
+        }),
+        (item) => {
+          return item.combat.damage;
+        },
+        ["desc"]
+      );
+
+      if (!gear.length) {
+        return {
+          name: "Bare Fists",
+          combat: {
+            damage: "10",
+            stamina: 10,
+            accuracy: 0.75,
+          },
+        };
+      }
+
+      return gear[0];
+    },
     craftable(item, house, houseAddOns) {
       // must have all components
       var componentsMet =

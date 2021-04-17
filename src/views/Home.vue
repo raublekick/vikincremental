@@ -20,10 +20,12 @@
         <div class="subtitle">Lore:</div>
       </div>
       <div class="column">
-        <b-tabs v-model="activeTab">
-          <b-tab-item label="Vikings"> <vikings /> </b-tab-item>
+        <b-tabs v-model="tab">
+          <b-tab-item label="Vikings" value="vikings">
+            <vikings />
+          </b-tab-item>
 
-          <b-tab-item label="Inventory">
+          <b-tab-item label="Inventory" value="inventory">
             <div class="columns">
               <div class="column">
                 <inventory />
@@ -37,6 +39,9 @@
               </div>
             </div>
           </b-tab-item>
+          <b-tab-item label="Combat" value="combat">
+            <combat />
+          </b-tab-item>
         </b-tabs>
       </div>
     </div>
@@ -44,20 +49,19 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 import Vikings from "@/components/Vikings";
 import Inventory from "@/components/Inventory";
 import Craftables from "@/components/Craftables";
 import Houses from "@/components/Houses";
 import HouseAddOns from "@/components/HouseAddOns";
 import Gear from "@/components/Gear";
+import Combat from "@/components/Combat";
 
 export default {
   name: "Home",
   data() {
-    return {
-      activeTab: 0,
-    };
+    return {};
   },
 
   components: {
@@ -67,10 +71,13 @@ export default {
     Gear,
     Houses,
     HouseAddOns,
+    Combat,
   },
 
   computed: {
     ...mapState([
+      "activeTab",
+      "combat",
       "vikings",
       "tasks",
       "inventory",
@@ -78,11 +85,21 @@ export default {
       "craftables",
       "day",
       "house",
+      "flags",
     ]),
+    tab: {
+      get() {
+        return this.activeTab;
+      },
+      set(value) {
+        this.setActiveTab(value);
+      },
+    },
   },
 
   methods: {
     ...mapActions(["tick"]),
+    ...mapMutations(["setActiveTab"]),
   },
 
   created() {

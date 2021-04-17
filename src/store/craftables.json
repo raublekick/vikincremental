@@ -19,7 +19,12 @@
         "name": "Stone",
         "amount": 2
       }
-    ]
+    ],
+    "combat": {
+      "damage": 15,
+      "stamina": 10,
+      "accuracy": 0.85
+    }
   },
   {
     "name": "Crude Bow",
