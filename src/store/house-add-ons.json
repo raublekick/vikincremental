@@ -1,8 +1,8 @@
 [
   {
     "name": "Kiln",
-    "gearRequirements": ["Hammer"],
-    "addOnRequirements": ["Workbench"],
+    "gearRequirements": [],
+    "addOnRequirements": ["Workbench", "Hammer"],
     "enabled": false,
     "components": [
       {
@@ -19,8 +19,8 @@
   },
   {
     "name": "Smelter",
-    "gearRequirements": ["Hammer"],
-    "addOnRequirements": ["Workbench"],
+    "gearRequirements": [],
+    "addOnRequirements": ["Workbench", "Hammer"],
     "enabled": false,
     "components": [
       {
@@ -37,14 +37,27 @@
     }]
   },
   {
+    "name": "Hammer",
+    "built": false,
+    "enabled": true,
+    "bedRequirement": 0,
+    "gearRequirements": [],
+    "addOnRequirements": [],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ],
+    "processing": []
+  },
+  {
     "name": "Workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
-    "gearRequirements": [
-      "Hammer"
-    ],
-    "addOnRequirements": [],
+    "gearRequirements": [],
+    "addOnRequirements": ["Hammer"],
     "components": [
       {
         "name": "Wood",

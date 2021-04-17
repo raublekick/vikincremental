@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <div v-if="!combat">You are not in combat.</div>
+  <div class="box">
     <pre>{{ battleLog }}</pre>
     <div v-if="combat">
       <div class="columns">

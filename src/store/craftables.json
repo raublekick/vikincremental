@@ -1,14 +1,5 @@
 [
   {
-    "name": "Hammer",
-    "components": [
-      {
-        "name": "Wood",
-        "amount": 8
-      }
-    ]
-  },
-  {
     "name": "Stone Axe",
     "components": [
       {

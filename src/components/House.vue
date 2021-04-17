@@ -38,10 +38,10 @@ export default {
   },
 
   computed: {
-    ...mapState(["inventory", "gear", "house"]),
+    ...mapState(["inventory", "gear", "house", "houseAddOns"]),
     canCraft() {
       return (
-        this.craftable(this.item, this.house) &&
+        this.craftable(this.item, this.house, this.houseAddOns) &&
         this.house.beds < this.item.beds
       );
     },

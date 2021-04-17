@@ -22,7 +22,8 @@
       <div class="column">
         <b-tabs v-model="tab">
           <b-tab-item label="Vikings" value="vikings">
-            <vikings />
+            <combat />
+            <vikings v-if="!combat" />
           </b-tab-item>
 
           <b-tab-item label="Inventory" value="inventory">
@@ -38,9 +39,6 @@
                 <craftables />
               </div>
             </div>
-          </b-tab-item>
-          <b-tab-item label="Combat" value="combat">
-            <combat />
           </b-tab-item>
         </b-tabs>
       </div>

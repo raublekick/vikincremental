@@ -3,19 +3,19 @@
     "name": "Hut",
     "beds": 1,
     "components": [{ "name": "Wood", "amount": 100 }],
-    "gearRequirements": ["Hammer"]
+    "addOnRequirements": ["Hammer"]
   },
   {
     "name": "Small House",
     "beds": 2,
     "components": [{ "name": "Wood", "amount": 200 }],
-    "gearRequirements": ["Hammer"]
+    "addOnRequirements": ["Hammer"]
   },
   {
     "name": "Longhouse",
     "beds": 4,
     "components": [{ "name": "Wood", "amount": 800 }],
-    "gearRequirements": ["Hammer"]
+    "addOnRequirements": ["Hammer"]
   },
   {
     "name": "Grand Hall",
@@ -25,7 +25,7 @@
       { "name": "Stone", "amount": 500 },
       { "name": "Copper bar", "amount": 100 }
     ],
-    "gearRequirements": ["Hammer"]
+    "addOnRequirements": ["Hammer"]
   },
   {
     "name": "Fortress",
@@ -35,6 +35,6 @@
       { "name": "Stone", "amount": 3000 },
       { "name": "Iron bar", "amount": 100 }
     ],
-    "gearRequirements": ["Hammer"]
+    "addOnRequirements": ["Hammer"]
   }
 ]

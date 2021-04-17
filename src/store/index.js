@@ -167,7 +167,6 @@ export default new Vuex.Store({
         } else if (chance < state.baseEncounterChance) {
           state.combat = true;
           state.flags.combatUnlocked = true;
-          state.activeTab = "combat";
           battleLog =
             "Starting day " + state.day.totalDays + " on the battlefield...\n";
 
@@ -180,10 +179,10 @@ export default new Vuex.Store({
           for (var i = 1; i <= numberOfEnemies; i++) {
             state.enemies.push({
               name: "Test Baddie",
-              stamina: 25,
-              health: 25,
-              maxStamina: 25,
-              maxHealth: 25,
+              stamina: 15,
+              health: 15,
+              maxStamina: 15,
+              maxHealth: 15,
               staminaRegen: 1,
               baseStaminaRegen: 1,
               healthRegen: 0,
@@ -236,7 +235,8 @@ export default new Vuex.Store({
             state.day.dayTicks % (state.day.dayLength / state.attackTicks) ===
               0 &&
             viking.stamina > 0 &&
-            state.enemies.length
+            state.enemies.length &&
+            !newDay
           ) {
             // get target
             var targetIndex = mixin.methods.randomIntFromInterval(
@@ -337,7 +337,7 @@ export default new Vuex.Store({
       });
 
       // enemy battle
-      if (state.combat && state.enemies.length) {
+      if (state.combat && state.enemies.length && !newDay) {
         _.forEach(state.enemies, (enemy) => {
           var totalStaminaCost = 0,
             totalStaminaDrain = enemy.staminaRegen;
@@ -410,10 +410,8 @@ export default new Vuex.Store({
             // check that every input is available
             var tmpItems = [];
             _.forEach(process.input, (item) => {
-              if (
-                mixin.methods.findItem(state.inventory, item.name).amount >=
-                item.amount
-              ) {
+              var tmpItem = mixin.methods.findItem(state.inventory, item.name);
+              if (tmpItem && tmpItem.amount >= item.amount) {
                 tmpItems.push(item);
               }
             });
