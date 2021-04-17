@@ -540,6 +540,21 @@ export default new Vuex.Store({
       // add new gear to gear store
       commit("setHouse", newHouse);
     },
+    async craftAddOn({ commit }, payload) {
+      // decrement components from inventory
+      _.forEach(payload.components, (component) => {
+        commit("decrementObject", {
+          objectKey: "inventory",
+          key: component.name,
+          amount: component.amount,
+        });
+      });
+      commit("setAddOnBuildState", {
+        objectKey: "houseAddOns",
+        key: payload.name,
+        state: true,
+      });
+    },
   },
   modules: {},
 });

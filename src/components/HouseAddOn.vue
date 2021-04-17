@@ -5,15 +5,7 @@
         <div class="is-size-5">{{ item.name }}</div>
       </div>
       <div class="column is-half has-text-right">
-        <b-button
-          v-if="canCraft && !item.built"
-          @click="
-            setAddOnBuildState({
-              objectKey: 'houseAddOns',
-              key: item.name,
-              state: true,
-            })
-          "
+        <b-button v-if="canCraft && !item.built" @click="craftAddOn(item)"
           >Craft Add-on</b-button
         >
         <div v-else-if="item.built && item.processing.length">
@@ -51,7 +43,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 import mixin from "@/store/mixin";
 export default {
   name: "HouseAddOn",
@@ -80,7 +72,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setAddOnBuildState"]),
+    ...mapActions(["craftAddOn"]),
   },
 };
 </script>
