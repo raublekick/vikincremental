@@ -3,6 +3,12 @@
     <div class="column">
       <div>{{ item.name }}</div>
       <div>
+        <b-progress :max="item.maxHealth" :value="item.health" show-value
+          >{{ item.health }} / {{ item.maxHealth }}</b-progress
+        >
+      </div>
+      <div>Health Regen: {{ item.healthRegen }}</div>
+      <div>
         <b-progress :max="item.maxStamina" :value="item.stamina" show-value
           >{{ item.stamina }} / {{ item.maxStamina }}</b-progress
         >

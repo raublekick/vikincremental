@@ -37,9 +37,9 @@ export default {
         return {
           name: "Bare Fists",
           combat: {
-            damage: "10",
-            stamina: 10,
-            accuracy: 0.75,
+            damage: 5,
+            stamina: 5,
+            accuracy: 0.95,
           },
         };
       }

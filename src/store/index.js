@@ -80,6 +80,14 @@ export default new Vuex.Store({
       }
       state.vikings[payload.vikingIndex].stamina = stamina;
     },
+    addHealth(state, payload) {
+      var health = (state.vikings[payload.vikingIndex].health += payload.value);
+      var maxHealth = state.vikings[payload.vikingIndex].maxHealth;
+      if (health > maxHealth) {
+        health = maxHealth;
+      }
+      state.vikings[payload.vikingIndex].health = health;
+    },
     incrementObject(state, payload) {
       var index = mixin.methods.findIndex(
         state[payload.objectKey],
@@ -182,7 +190,7 @@ export default new Vuex.Store({
               baseHealthRegen: 0,
               tier: 1,
               attacks: [
-                { name: "Swipe", damage: "10", stamina: 10, accuracy: 0.75 },
+                { name: "Swipe", damage: "10", stamina: 10, accuracy: 0.45 },
               ],
             });
             battleLog += "A Test Baddie has entered the battlefield!\n";
@@ -237,15 +245,15 @@ export default new Vuex.Store({
             );
             // calculate damage
             var weapon = mixin.methods.getWeapon(viking.gear);
-            var hit =
-              mixin.methods.randomIntFromInterval(0, 1) <
-              weapon.combat.accuracy;
+            var hit = Math.random() < weapon.combat.accuracy;
             var damage = hit ? weapon.combat.damage : 0;
             var staminaCost = weapon.combat.stamina;
             if (hit) {
               battleLog +=
                 viking.name +
-                " hits for " +
+                " hits " +
+                state.enemies[targetIndex].name +
+                " for " +
                 damage +
                 " damage and uses " +
                 staminaCost +
@@ -282,6 +290,10 @@ export default new Vuex.Store({
           vikingIndex: i,
           staminaCost: totalStaminaDrain,
         });
+        commit("addHealth", {
+          vikingIndex: i,
+          value: viking.healthRegen,
+        });
 
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (newDay && getters.canRest === true) {
@@ -290,6 +302,7 @@ export default new Vuex.Store({
           viking.maxStamina = state.defaultStamina;
 
           let stamina = 0;
+          let healthRegen = 0;
           let foodEaten = 0;
           if (viking.foodPreference === "best") {
             _.forEach(getters.foodBestToWorst, (food) => {
@@ -297,6 +310,7 @@ export default new Vuex.Store({
                 return;
               }
               stamina += food.stamina;
+              healthRegen += food.healthRegen;
               commit("decrementObject", {
                 objectKey: "food",
                 key: food.name,
@@ -316,10 +330,77 @@ export default new Vuex.Store({
               }
             );
           viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
+          viking.healthRegen = viking.baseHealthRegen + healthRegen;
           viking.maxStamina += stamina;
           viking.stamina += stamina;
         }
       });
+
+      // enemy battle
+      if (state.combat && state.enemies.length) {
+        _.forEach(state.enemies, (enemy) => {
+          var totalStaminaCost = 0,
+            totalStaminaDrain = enemy.staminaRegen;
+          if (
+            state.day.dayTicks % (state.day.dayLength / state.attackTicks) ===
+              0 &&
+            enemy.stamina > 0 &&
+            state.vikings.length
+          ) {
+            // get target
+            var targetIndex = mixin.methods.randomIntFromInterval(
+              0,
+              state.vikings.length - 1
+            );
+            // calculate damage
+            var weapon =
+              enemy.attacks[
+                mixin.methods.randomIntFromInterval(0, enemy.attacks.length - 1)
+              ];
+            var hit = Math.random() < weapon.accuracy;
+            var damage = hit ? weapon.damage : 0;
+            var staminaCost = weapon.stamina;
+            if (hit) {
+              battleLog +=
+                enemy.name +
+                " hits " +
+                state.vikings[targetIndex].name +
+                " for " +
+                damage +
+                " damage and uses " +
+                staminaCost +
+                " stamina!\n";
+            } else {
+              battleLog +=
+                enemy.name +
+                " misses and uses " +
+                staminaCost +
+                " stamina...\n";
+            }
+            // subtract damage from enemy health
+            state.vikings[targetIndex].health -= damage;
+            if (state.vikings[targetIndex].health <= 0) {
+              battleLog +=
+                state.vikings[targetIndex].name +
+                " has been defeated by " +
+                enemy.name +
+                "...\n";
+              state.vikings.splice(targetIndex, 1);
+            }
+            // subtract stamina from viking
+            totalStaminaCost += staminaCost;
+
+            // reset combat if all enemies are defeated
+            if (!state.vikings.length) {
+              state.combat = false;
+              state.enemies = [];
+              battleLog += "Your party has been eliminated...\n";
+            }
+          }
+          totalStaminaDrain -= totalStaminaCost;
+          enemy.stamina -= totalStaminaDrain;
+        });
+      }
 
       // process enabled house add-ons
       _.forEach(state.houseAddOns, (addOn) => {
