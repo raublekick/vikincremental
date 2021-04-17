@@ -28,7 +28,7 @@ export default new Vuex.Store({
     combat: false,
     battleLog: "",
     attackTicks: 6,
-    baseEncounterChance: 1,
+    baseEncounterChance: 0.25,
     maxVikings: 10,
     maxFood: 3,
     comfort: 0,
