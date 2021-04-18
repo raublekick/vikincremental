@@ -183,10 +183,11 @@ export default new Vuex.Store({
           });
 
           for (var i = 1; i <= numberOfEnemies; i++) {
-            var selectedEnemy =
+            var selectedEnemy = _.clone(
               tierEnemies[
                 mixin.methods.randomIntFromInterval(0, tierEnemies.length - 1)
-              ];
+              ]
+            );
             state.enemies.push(selectedEnemy);
             state.battleLog +=
               "A " + selectedEnemy.name + " has entered the battlefield!\n";
@@ -380,7 +381,8 @@ export default new Vuex.Store({
                 mixin.methods.randomIntFromInterval(0, enemy.attacks.length - 1)
               ];
             var hit = Math.random() < weapon.accuracy;
-            var damage = hit ? weapon.damage : 0;
+            var armor = mixin.methods.getArmor(state.vikings[targetIndex].gear);
+            var damage = hit ? weapon.damage - armor.armorTotal : 0;
             var staminaCost = weapon.stamina;
             if (hit) {
               state.battleLog +=
@@ -399,8 +401,7 @@ export default new Vuex.Store({
                 staminaCost +
                 " stamina...\n";
             }
-            // subtract damage from enemy health
-            state.vikings[targetIndex].health -= damage;
+            // subtract damage from viking health
             if (state.vikings[targetIndex].health <= 0) {
               state.battleLog +=
                 state.vikings[targetIndex].name +

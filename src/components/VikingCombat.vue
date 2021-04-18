@@ -14,6 +14,7 @@
         >
       </div>
       <div>Stamina Regen: {{ item.staminaRegen }}</div>
+      <div>Armor: {{ armor.armorTotal }}</div>
     </div>
     <div class="column">
       <div>{{ weapon.name }}</div>
@@ -53,6 +54,9 @@ export default {
 
   computed: {
     ...mapState(["tasks"]),
+    armor() {
+      return this.getArmor(this.item.gear);
+    },
     weapon() {
       return this.getWeapon(this.item.gear);
     },

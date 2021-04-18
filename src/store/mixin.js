@@ -25,7 +25,7 @@ export default {
     getWeapon(collection) {
       var gear = _.orderBy(
         _.filter(collection, (item) => {
-          return item.combat;
+          return item.combat && item.combat.damage;
         }),
         (item) => {
           return item.combat.damage;
@@ -45,6 +45,47 @@ export default {
       }
 
       return gear[0];
+    },
+    getArmor(collection) {
+      var headArmor = _.orderBy(
+        _.filter(collection, (item) => {
+          return item.armorType && item.armorType === "Head";
+        }),
+        (item) => {
+          return item.armor;
+        },
+        ["desc"]
+      )[0];
+
+      var bodyArmor = _.orderBy(
+        _.filter(collection, (item) => {
+          return item.armorType && item.armorType === "Body";
+        }),
+        (item) => {
+          return item.armor;
+        },
+        ["desc"]
+      )[0];
+
+      var legArmor = _.orderBy(
+        _.filter(collection, (item) => {
+          return item.armorType && item.armorType === "Legs";
+        }),
+        (item) => {
+          return item.armor;
+        },
+        ["desc"]
+      )[0];
+
+      var value = headArmor
+        ? headArmor.armor
+        : 0 + bodyArmor
+        ? bodyArmor.armor
+        : 0 + legArmor
+        ? legArmor.armor
+        : 0;
+
+      return { armorTotal: value, armor: [headArmor, bodyArmor, legArmor] };
     },
     craftable(item, house, houseAddOns) {
       // must have all components

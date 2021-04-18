@@ -31,5 +31,44 @@
       "stamina": 5,
       "accuracy": 0.65
     }
+  },
+  {
+    "name": "Leather Armor",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 4
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 4
+  },
+  {
+    "name": "Leather Helmet",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 2
+  },
+  {
+    "name": "Leather Greaves",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 2
   }
 ]
