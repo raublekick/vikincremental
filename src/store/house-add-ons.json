@@ -37,6 +37,28 @@
     }]
   },
   {
+    "name": "Cooking Station",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Campfire"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 5
+      }
+    ],
+    "processing": [{
+      "input": [
+        { "name": "Wood", "amount": 1}, 
+        { "name": "Raw Meat", "amount": 1}
+      ],
+      "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+    }]
+  },
+  {
     "name": "Hammer",
     "built": false,
     "enabled": true,
@@ -87,25 +109,19 @@
     "processing": []
   },
   {
-    "name": "Cooking Station",
+    "name": "Deer Rug",
     "built": false,
-    "enabled": false,
+    "enabled": true,
     "gearRequirements": [],
     "bedRequirement": 1,
-    "addOnRequirements": ["Campfire"],
-    "comfort": 0,
+    "addOnRequirements": ["Workbench"],
+    "comfort": 1,
     "components": [
       {
-        "name": "Wood",
-        "amount": 5
+        "name": "Leather Hide",
+        "amount": 4
       }
     ],
-    "processing": [{
-      "input": [
-        { "name": "Wood", "amount": 1}, 
-        { "name": "Raw Meat", "amount": 1}
-      ],
-      "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
-    }]
+    "processing": []
   }
 ]
