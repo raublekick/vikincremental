@@ -14,7 +14,7 @@
   {
     "name": "Longhouse",
     "beds": 4,
-    "components": [{ "name": "Wood", "amount": 800 }],
+    "components": [{ "name": "Wood", "amount": 800 }, { "name": "Hard Wood", "amount": 200}],
     "addOnRequirements": ["Hammer"]
   },
   {
@@ -22,7 +22,8 @@
     "beds": 6,
     "components": [
       { "name": "Wood", "amount": 1000 },
-      { "name": "Stone", "amount": 500 },
+      { "name": "Hard Wood", "amount": 400},
+      { "name": "Stone", "amount": 400 },
       { "name": "Copper bar", "amount": 100 }
     ],
     "addOnRequirements": ["Hammer"]

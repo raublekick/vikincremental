@@ -30,8 +30,8 @@ export default new Vuex.Store({
     newDay: false,
     battleLog: "",
     attackTicks: 6,
-    encounterChance: 0.05,
-    baseEncounterChance: 0.05,
+    encounterChance: 0.25,
+    baseEncounterChance: 0.25,
     maxVikings: 10,
     maxFood: 3,
     comfort: 0,
@@ -478,7 +478,8 @@ export default new Vuex.Store({
 
         state.encounterChance =
           state.baseEncounterChance +
-          (state.comfort + state.vikings.length) / 10;
+          state.vikings.length / 100 +
+          (state.comfort * 5) / 100;
       }
       state.day.dayTicks++;
 
