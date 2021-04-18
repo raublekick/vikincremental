@@ -329,21 +329,25 @@ export default new Vuex.Store({
           let stamina = 0;
           let health = 0;
           let foodEaten = 0;
+          var food = [];
           if (viking.foodPreference === "best") {
-            _.forEach(getters.foodBestToWorst, (food) => {
-              if (foodEaten >= state.maxFood) {
-                return;
-              }
-              stamina += food.stamina;
-              health += food.health;
-              commit("decrementObject", {
-                objectKey: "food",
-                key: food.name,
-                amount: 1,
-              });
-              foodEaten++;
-            });
+            food = getters.foodBestToWorst;
+          } else {
+            food = getters.foodWorstToBest;
           }
+          _.forEach(food, (food) => {
+            if (foodEaten >= state.maxFood) {
+              return;
+            }
+            stamina += food.stamina;
+            health += food.health;
+            commit("decrementObject", {
+              objectKey: "food",
+              key: food.name,
+              amount: 1,
+            });
+            foodEaten++;
+          });
 
           viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
           viking.healthRegen = viking.baseHealthRegen + state.comfort;
