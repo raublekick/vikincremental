@@ -12,7 +12,7 @@
         <div class="subtitle">
           Vikings: {{ vikings.length }} / {{ house.beds || 1 }}
         </div>
-        <div>Encounter Rate: {{ baseEncounterChance * 100 }}% / day</div>
+        <div>Encounter Rate: {{ encounterChance * 100 }}% / day</div>
         <hr />
         <houses />
         <hr />
@@ -85,7 +85,7 @@ export default {
       "day",
       "house",
       "flags",
-      "baseEncounterChance",
+      "encounterChance",
     ]),
     tab: {
       get() {

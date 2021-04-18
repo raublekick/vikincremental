@@ -17,7 +17,7 @@ let defaultViking = vikingData;
 export default new Vuex.Store({
   state: {
     day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 6,
+      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
       dayTicks: 0,
       totalDays: 0,
     },
@@ -30,11 +30,14 @@ export default new Vuex.Store({
     newDay: false,
     battleLog: "",
     attackTicks: 6,
-    baseEncounterChance: 0.25,
+    encounterChance: 0.05,
+    baseEncounterChance: 0.05,
     maxVikings: 10,
     maxFood: 3,
     comfort: 0,
     baseComfort: 0,
+    fortifications: 0,
+    baseFortifications: 0,
     vikings: [],
     tasks: taskData,
     inventory: [],
@@ -166,7 +169,7 @@ export default new Vuex.Store({
         var chance = Math.random();
         if (state.enemies.length) {
           state.combat = true;
-        } else if (chance < state.baseEncounterChance) {
+        } else if (chance < state.encounterChance) {
           state.combat = true;
           state.flags.combatUnlocked = true;
           state.battleLog =
@@ -287,7 +290,10 @@ export default new Vuex.Store({
                   drop.name +
                   "!\n";
               });
-              commit("removeObject", { objectKey: "enemies", index: i });
+              commit("removeObject", {
+                objectKey: "enemies",
+                index: targetIndex,
+              });
             }
             // subtract stamina from viking
             totalStaminaCost += staminaCost;
@@ -309,17 +315,6 @@ export default new Vuex.Store({
           value: viking.healthRegen,
         });
 
-        // need to calculate comfort outside of new day so it is ready
-        state.comfort =
-          state.baseComfort +
-          _.sumBy(
-            _.filter(state.houseAddOns, (addOn) => {
-              return addOn.built === true && addOn.enabled === true;
-            }),
-            (addOn) => {
-              return addOn.comfort ? addOn.comfort : 0;
-            }
-          );
         // if this is a new day, eat and set each viking's stamina to the max, set stamina regen based on comfort
         if (state.newDay && getters.canRest === true) {
           // reset to default. If there is no edible food or not enough to eat, will not gain benefit from prior day
@@ -468,6 +463,22 @@ export default new Vuex.Store({
         state.day.dayTicks = 0;
         state.day.totalDays += 1;
         state.newDay = true;
+
+        // set comfort level for the day
+        state.comfort =
+          state.baseComfort +
+          _.sumBy(
+            _.filter(state.houseAddOns, (addOn) => {
+              return addOn.built === true && addOn.enabled === true;
+            }),
+            (addOn) => {
+              return addOn.comfort ? addOn.comfort : 0;
+            }
+          );
+
+        state.encounterChance =
+          state.baseEncounterChance +
+          (state.comfort + state.vikings.length) / 10;
       }
       state.day.dayTicks++;
 
