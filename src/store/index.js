@@ -8,6 +8,7 @@ import houseData from "./houses.json";
 import taskData from "./tasks.json";
 import foodData from "./food.json";
 import houseAddOnData from "./house-add-ons.json";
+import fortificationData from "./fortifications.json";
 import enemyData from "./enemies.json";
 
 Vue.use(Vuex);
@@ -36,8 +37,8 @@ export default new Vuex.Store({
     maxFood: 3,
     comfort: 0,
     baseComfort: 0,
-    fortifications: 0,
-    baseFortifications: 0,
+    fortification: 0,
+    baseFortification: 0,
     vikings: [],
     tasks: taskData,
     inventory: [],
@@ -47,6 +48,7 @@ export default new Vuex.Store({
     house: { name: "None", beds: 0 },
     houses: houseData,
     houseAddOns: houseAddOnData,
+    fortifications: fortificationData,
     enemies: [],
     enemyList: enemyData,
   },
@@ -476,10 +478,22 @@ export default new Vuex.Store({
             }
           );
 
+        state.fortification =
+          state.baseFortification +
+          _.sumBy(
+            _.filter(state.fortifications, (addOn) => {
+              return addOn.built === true && addOn.enabled === true;
+            }),
+            (addOn) => {
+              return addOn.fortification ? addOn.fortification : 0;
+            }
+          );
+
         state.encounterChance =
           state.baseEncounterChance +
           state.vikings.length / 100 +
-          (state.comfort * 5) / 100;
+          (state.comfort * 5) / 100 -
+          (state.fortification * 2.5) / 100;
       }
       state.day.dayTicks++;
 
@@ -568,6 +582,21 @@ export default new Vuex.Store({
       });
       commit("setAddOnBuildState", {
         objectKey: "houseAddOns",
+        key: payload.name,
+        state: true,
+      });
+    },
+    async craftFortification({ commit }, payload) {
+      // decrement components from inventory
+      _.forEach(payload.components, (component) => {
+        commit("decrementObject", {
+          objectKey: "inventory",
+          key: component.name,
+          amount: component.amount,
+        });
+      });
+      commit("setAddOnBuildState", {
+        objectKey: "fortifications",
         key: payload.name,
         state: true,
       });

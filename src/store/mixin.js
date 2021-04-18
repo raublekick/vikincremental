@@ -77,13 +77,10 @@ export default {
         ["desc"]
       )[0];
 
-      var value = headArmor
-        ? headArmor.armor
-        : 0 + bodyArmor
-        ? bodyArmor.armor
-        : 0 + legArmor
-        ? legArmor.armor
-        : 0;
+      var headValue = headArmor ? headArmor.armor : 0;
+      var bodyValue = bodyArmor ? bodyArmor.armor : 0;
+      var legValue = legArmor ? legArmor.armor : 0;
+      var value = headValue + bodyValue + legValue;
 
       return { armorTotal: value, armor: [headArmor, bodyArmor, legArmor] };
     },

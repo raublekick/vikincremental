@@ -9,8 +9,11 @@
       </div>
       <div class="column has-text-right">
         Beds: {{ item.beds }}
-        <b-button :disabled="!canCraft" @click="updateHouse(item)"
-          >Craft House</b-button
+        <b-button
+          size="is-small"
+          :disabled="!canCraft"
+          @click="updateHouse(item)"
+          >Craft</b-button
         >
       </div>
     </div>

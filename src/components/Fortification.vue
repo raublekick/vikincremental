@@ -8,16 +8,9 @@
         <b-button
           size="is-small"
           v-if="canCraft && !item.built"
-          @click="craftAddOn(item)"
+          @click="craftFortification(item)"
           >Craft</b-button
         >
-        <div v-else-if="item.built && item.processing.length">
-          <b-field>
-            <b-checkbox v-model="item.enabled" :native-value="item.enabled">
-              Enabled
-            </b-checkbox>
-          </b-field>
-        </div>
       </div>
       <div class="column house-input">
         <div v-if="!item.built">
@@ -26,19 +19,8 @@
           </div>
         </div>
         <div v-else-if="item.built && item.enabled">
-          <div v-if="item.comfort">Comfort: {{ item.comfort }}</div>
-          <div
-            v-for="(process, index) in item.processing"
-            :key="'process' + index"
-          >
-            <span
-              v-for="(item, index) in process.input"
-              :key="'item' + index"
-              class="list-item"
-              >{{ item.amount }} {{ item.name }}</span
-            >
-            -> {{ process.output.name }}
-            {{ process.output.amount }}
+          <div v-if="item.fortification">
+            Fortification: {{ item.fortification }}
           </div>
         </div>
       </div>
@@ -49,7 +31,7 @@
 import { mapState, mapActions } from "vuex";
 import mixin from "@/store/mixin";
 export default {
-  name: "HouseAddOn",
+  name: "Fortification",
   data() {
     return { enabled: false };
   },
@@ -67,7 +49,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["inventory", "gear", "house", "houseAddOns"]),
+    ...mapState(["inventory", "house", "houseAddOns"]),
     canCraft() {
       // must have all components
       return this.craftable(this.item, this.house, this.houseAddOns);
@@ -75,7 +57,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["craftAddOn"]),
+    ...mapActions(["craftFortification"]),
   },
 };
 </script>

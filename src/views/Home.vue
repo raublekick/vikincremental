@@ -14,9 +14,19 @@
         </div>
         <div>Encounter Rate: {{ encounterChance * 100 }}% / day</div>
         <hr />
-        <houses />
+        <!-- <houses /> -->
+        <div class="subtitle">Housing</div>
+        <div>
+          {{ house.name }}
+        </div>
+        <div>Beds: {{ house.beds }}</div>
+        <div>Comfort: {{ comfort }}</div>
+        <div>Fortification: {{ fortification }}</div>
         <hr />
-        <house-add-ons />
+        <!-- <house-add-ons /> -->
+        <!-- <hr /> -->
+        <div class="subtitle">Inventory</div>
+        <inventory />
         <hr />
         <div class="subtitle">Lore:</div>
       </div>
@@ -27,11 +37,23 @@
             <vikings v-if="!combat" />
           </b-tab-item>
 
-          <b-tab-item label="Inventory" value="inventory">
+          <b-tab-item label="Building" value="building">
             <div class="columns">
               <div class="column">
-                <inventory />
+                <houses />
               </div>
+              <div class="column">
+                <house-add-ons />
+              </div>
+
+              <div class="column">
+                <fortifications />
+              </div>
+            </div>
+          </b-tab-item>
+
+          <b-tab-item label="Crafting" value="crafting">
+            <div class="columns">
               <div class="column">
                 <gear />
               </div>
@@ -54,6 +76,7 @@ import Inventory from "@/components/Inventory";
 import Craftables from "@/components/Craftables";
 import Houses from "@/components/Houses";
 import HouseAddOns from "@/components/HouseAddOns";
+import Fortifications from "@/components/Fortifications";
 import Gear from "@/components/Gear";
 import Combat from "@/components/Combat";
 
@@ -71,6 +94,7 @@ export default {
     Houses,
     HouseAddOns,
     Combat,
+    Fortifications,
   },
 
   computed: {
@@ -86,6 +110,8 @@ export default {
       "house",
       "flags",
       "encounterChance",
+      "comfort",
+      "fortification",
     ]),
     tab: {
       get() {

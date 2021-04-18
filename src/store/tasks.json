@@ -28,7 +28,7 @@
     "name": "Chop Wood",
     "staminaCost": 5,
     "requirements": ["Stone Axe", "Flint Axe"],
-    "items": [{ "name": "Wood", "perSecond": 3 }]
+    "items": [{ "name": "Wood", "perSecond": 3 }, { "name": "Resin", "perSecond": 0.1 }]
   },
   {
     "name": "Small Game Hunting",

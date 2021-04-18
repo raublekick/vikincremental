@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Wood Torches",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Workbench"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Resin",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "name": "Wood Walls",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Workbench"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 200
+      }
+    ]
+  }
+]
