@@ -3,59 +3,15 @@ import Vuex from "vuex";
 import mixin from "@/store/mixin";
 import * as _ from "lodash";
 import vikingData from "./viking.json";
-import craftingData from "./craftables.json";
-import houseData from "./houses.json";
-import taskData from "./tasks.json";
-import foodData from "./food.json";
-import houseAddOnData from "./house-add-ons.json";
-import fortificationData from "./fortifications.json";
-import enemyData from "./enemies.json";
-import bossData from "./bosses.json";
+
+import defaultState from "./state";
 
 Vue.use(Vuex);
 
 let defaultViking = vikingData;
 
 export default new Vuex.Store({
-  state: {
-    day: {
-      dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
-      dayTicks: 0,
-      totalDays: 0,
-    },
-    flags: {
-      combatUnlocked: false,
-    },
-    worldTier: 0,
-    activeTab: "vikings",
-    combat: false,
-    bossCombat: false,
-    newDay: false,
-    battleLog: "",
-    attackTicks: 6,
-    encounterChance: 0.25,
-    baseEncounterChance: 0.25,
-    maxVikings: 10,
-    maxFood: 3,
-    comfort: 0,
-    baseComfort: 0,
-    fortification: 0,
-    baseFortification: 0,
-    vikings: [],
-    ripVikings: [],
-    tasks: taskData,
-    inventory: [],
-    gear: [],
-    food: foodData,
-    craftables: craftingData,
-    house: { name: "None", beds: 0 },
-    houses: houseData,
-    houseAddOns: houseAddOnData,
-    fortifications: fortificationData,
-    enemies: [],
-    enemyList: enemyData,
-    bossList: bossData,
-  },
+  state: defaultState,
   getters: {
     canRest: (state) => {
       // if has a fire
@@ -75,6 +31,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    init(state, payload) {
+      state = payload;
+    },
     setActiveTab(state, payload) {
       state.activeTab = payload;
     },
@@ -170,6 +129,13 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    async initialize({ commit, dispatch }, payload) {
+      if (!payload.loadGame) {
+        defaultState.flags.gameStart = true;
+        commit("init", defaultState);
+        dispatch("createViking", payload.name);
+      }
+    },
     async initializeCombat({ state }) {
       if (state.newDay && state.vikings.length && !state.bossCombat) {
         var chance = Math.random();
@@ -305,6 +271,14 @@ export default new Vuex.Store({
                   drop.name +
                   "!\n";
               });
+              if (state.bossCombat) {
+                // mark the boss as defeated
+                var boss = mixin.methods.findItem(
+                  state.bosses,
+                  state.enemies[targetIndex].name
+                );
+                boss.defeated = true;
+              }
               commit("removeObject", {
                 objectKey: "enemies",
                 index: targetIndex,
@@ -316,8 +290,14 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
-              state.bossCombat = false;
               state.battleLog += "You are victorious on this day!\n";
+              if (state.bossCombat) {
+                state.bossCombat = false;
+                state.worldTier += 1;
+                // drop boss artifacts
+                state.battleLog +=
+                  "For your victory, you are rewarded a sacred artifact.\n";
+              }
             }
           }
         }
@@ -556,10 +536,14 @@ export default new Vuex.Store({
       // process enabled house add-ons
       await dispatch("processingTick");
     },
-    async createViking({ state, commit }) {
+    async createViking({ state, commit }, name) {
       if (state.vikings.length < state.maxVikings) {
         let newViking = JSON.parse(JSON.stringify(defaultViking));
-        newViking.name = "Viking " + (state.vikings.length + 1);
+        if (name) {
+          newViking.name = name;
+        } else {
+          newViking.name = "Viking " + (state.vikings.length + 1);
+        }
 
         commit("addViking", newViking);
       }
