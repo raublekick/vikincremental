@@ -10,6 +10,7 @@ import foodData from "./food.json";
 import houseAddOnData from "./house-add-ons.json";
 import fortificationData from "./fortifications.json";
 import enemyData from "./enemies.json";
+import bossData from "./bosses.json";
 
 Vue.use(Vuex);
 
@@ -25,9 +26,10 @@ export default new Vuex.Store({
     flags: {
       combatUnlocked: false,
     },
-    worldTier: 1,
+    worldTier: 0,
     activeTab: "vikings",
     combat: false,
+    bossCombat: false,
     newDay: false,
     battleLog: "",
     attackTicks: 6,
@@ -40,6 +42,7 @@ export default new Vuex.Store({
     fortification: 0,
     baseFortification: 0,
     vikings: [],
+    ripVikings: [],
     tasks: taskData,
     inventory: [],
     gear: [],
@@ -51,6 +54,7 @@ export default new Vuex.Store({
     fortifications: fortificationData,
     enemies: [],
     enemyList: enemyData,
+    bossList: bossData,
   },
   getters: {
     canRest: (state) => {
@@ -167,7 +171,7 @@ export default new Vuex.Store({
   },
   actions: {
     async initializeCombat({ state }) {
-      if (state.newDay && state.vikings.length) {
+      if (state.newDay && state.vikings.length && !state.bossCombat) {
         var chance = Math.random();
         if (state.enemies.length) {
           state.combat = true;
@@ -202,6 +206,15 @@ export default new Vuex.Store({
           state.combat = false;
         }
       }
+    },
+    async challengeBoss({ state }, boss) {
+      state.bossCombat = true;
+      state.combat = true;
+      state.enemies = [_.clone(boss)];
+      state.battleLog =
+        "You have challenged the mighty " +
+        boss.name +
+        "! Do not fear, for even in death you may be rewarded for such bravery.\n";
     },
     async vikingTick({ state, commit, getters }) {
       // fill inventory from task items
@@ -303,6 +316,7 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
+              state.bossCombat = false;
               state.battleLog += "You are victorious on this day!\n";
             }
           }
@@ -399,12 +413,17 @@ export default new Vuex.Store({
                 " stamina...\n";
             }
             // subtract damage from viking health
+            state.vikings[targetIndex].health -= damage;
             if (state.vikings[targetIndex].health <= 0) {
               state.battleLog +=
                 state.vikings[targetIndex].name +
                 " has been defeated by " +
                 enemy.name +
                 "...\n";
+              if (state.bossCombat) {
+                var ripViking = _.clone(state.vikings[targetIndex]);
+                state.ripVikings.push(ripViking);
+              }
               state.vikings.splice(targetIndex, 1);
             }
             // subtract stamina from viking
@@ -422,6 +441,34 @@ export default new Vuex.Store({
             state.combat = false;
             state.battleLog += "Your party has been eliminated...\n";
             state.enemies = [];
+            if (state.bossCombat) {
+              state.bossCombat = false;
+
+              // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
+              _.forEach(state.ripVikings, (viking) => {
+                var bossesDefeated = _.filter(
+                  state.bosses,
+                  (boss) => (boss.defeated = true)
+                ).length;
+                var bonus = 1 + bossesDefeated;
+                state.battleLog +=
+                  "For your bravery, you are reborn with a bonus " +
+                  (1 + bossesDefeated) +
+                  " point each to maximum health, health regen, maximum stamina, and stamina regen.";
+                viking.tasks = [];
+                viking.baseHealthRegen += bonus;
+                viking.baseStaminaRegen += bonus;
+                viking.baseHealth += bonus;
+                viking.baseStamina += bonus;
+                viking.maxHealth = viking.baseHealth;
+                viking.maxStamina = viking.baseStamina;
+                viking.health = viking.baseHealth;
+                viking.stamina = viking.baseStamina;
+                viking.staminaRegen = viking.baseStaminaRegen;
+                viking.healthRegen = viking.baseHealthRegen;
+              });
+              state.vikings = state.ripVikings;
+            }
           }
         });
       }

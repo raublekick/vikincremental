@@ -1,0 +1,28 @@
+[
+  
+  {
+    "name": "Boss 1",
+    "worldTier": 0,
+    "stamina": 100,
+    "health": 100,
+    "maxStamina": 100,
+    "maxHealth": 100,
+    "staminaRegen": 2,
+    "baseStaminaRegen": 2,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 30, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 10, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 10, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  }
+]

@@ -63,6 +63,10 @@
               </div>
             </div>
           </b-tab-item>
+
+          <b-tab-item label="Proving Grounds" value="proving">
+            <proving-grounds />
+          </b-tab-item>
         </b-tabs>
       </div>
     </div>
@@ -79,6 +83,7 @@ import HouseAddOns from "@/components/HouseAddOns";
 import Fortifications from "@/components/Fortifications";
 import Gear from "@/components/Gear";
 import Combat from "@/components/Combat";
+import ProvingGrounds from "@/components/ProvingGrounds";
 
 export default {
   name: "Home",
@@ -95,6 +100,7 @@ export default {
     HouseAddOns,
     Combat,
     Fortifications,
+    ProvingGrounds,
   },
 
   computed: {
