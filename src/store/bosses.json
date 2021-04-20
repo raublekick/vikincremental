@@ -23,5 +23,130 @@
     "drops": [
       { "name": "Ichor", "amount": 10 }
     ]
+  },
+  {
+    "name": "Boss 2",
+    "worldTier": 1,
+    "stamina": 200,
+    "health": 200,
+    "maxStamina": 200,
+    "maxHealth": 200,
+    "staminaRegen": 8,
+    "baseStaminaRegen": 8,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 60, "stamina": 60, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "Boss 3",
+    "worldTier": 2,
+    "stamina": 600,
+    "health": 600,
+    "maxStamina": 600,
+    "maxHealth": 600,
+    "staminaRegen": 12,
+    "baseStaminaRegen": 12,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 30, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 30, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "Boss 4",
+    "worldTier": 3,
+    "stamina": 600,
+    "health": 600,
+    "maxStamina": 600,
+    "maxHealth": 600,
+    "staminaRegen": 16,
+    "baseStaminaRegen": 16,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "Boss 5",
+    "worldTier": 4,
+    "stamina": 700,
+    "health": 700,
+    "maxStamina": 700,
+    "maxHealth": 700,
+    "staminaRegen": 20,
+    "baseStaminaRegen": 20,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "Boss 6",
+    "worldTier": 5,
+    "stamina": 1000,
+    "health": 1000,
+    "maxStamina": 1000,
+    "maxHealth": 1000,
+    "staminaRegen": 30,
+    "baseStaminaRegen": 30,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Wood", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 100, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 50, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 50, "stamina": 10, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
   }
 ]
