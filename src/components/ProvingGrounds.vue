@@ -1,7 +1,6 @@
 <template>
   <div class="box">
     <div v-if="bossCombat">
-      <pre>{{ battleLog }}</pre>
       <combat />
     </div>
     <div v-else-if="!bossCombat && !combat">

@@ -3,12 +3,28 @@
     <panel heading="Vikings">
       <template slot="buttons">
         <b-button
+          v-if="!showName"
           :disabled="!canCreateViking"
-          @click="createViking()"
+          @click="showName = true"
           :type="canCreateViking ? 'is-primary' : ''"
         >
           +1 Viking
         </b-button>
+        <b-field class="has-addons" v-if="showName">
+          <div class="control">
+            <b-input placeholder="State your name" v-model="name"> </b-input>
+          </div>
+          <div class="control">
+            <a
+              class="button is-primary"
+              @click.prevent="
+                showName = false;
+                createViking(name);
+              "
+              >Summon</a
+            >
+          </div>
+        </b-field>
       </template>
       <template slot="content">
         <div class="item" v-for="(viking, index) in vikings" :key="index">
@@ -25,7 +41,10 @@ import Panel from "@/components/Panel";
 export default {
   name: "Vikings",
   data() {
-    return {};
+    return {
+      showName: false,
+      name: "",
+    };
   },
 
   components: {

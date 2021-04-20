@@ -425,6 +425,7 @@ export default new Vuex.Store({
             state.combat = false;
             state.battleLog += "Your party has been eliminated...\n";
             state.enemies = [];
+
             if (state.bossCombat) {
               state.bossCombat = false;
 
@@ -438,7 +439,7 @@ export default new Vuex.Store({
                 state.battleLog +=
                   "For your bravery, you are reborn with a bonus " +
                   (1 + bossesDefeated) +
-                  " point each to maximum health, health regen, maximum stamina, and stamina regen.";
+                  " point each to maximum health, health regen, maximum stamina, and stamina regen.\n";
                 viking.tasks = [];
                 viking.baseHealthRegen += bonus;
                 viking.baseStaminaRegen += bonus;
@@ -451,7 +452,15 @@ export default new Vuex.Store({
                 viking.staminaRegen = viking.baseStaminaRegen;
                 viking.healthRegen = viking.baseHealthRegen;
               });
-              state.vikings = state.ripVikings;
+              state.vikings = _.clone(state.ripVikings);
+            } else {
+              // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
+              state.worldTier = 0;
+              state.ripVikings = [];
+              state.bossList = _.clone(defaultState.bossList);
+              state.biomes = _.clone(defaultState.biomes);
+              state.battleLog +=
+                "Flying far above the battlefield the crow observes, knowing that now it must retrieve more mortals. But these vikings have made a place for themselves, and it may be of use to those to come.\n";
             }
           }
         });
@@ -543,6 +552,7 @@ export default new Vuex.Store({
     async createViking({ state, commit }, name) {
       if (state.vikings.length < state.maxVikings) {
         let newViking = JSON.parse(JSON.stringify(defaultViking));
+        newViking.birthday = state.day.totalDays;
         if (name) {
           newViking.name = name;
         } else {

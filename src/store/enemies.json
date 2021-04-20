@@ -17,5 +17,78 @@
     "drops": [
       { "name": "Ichor", "amount": 1 }
     ]
+  },
+  {
+    "name": "Tier 2 Enemy",
+    "worldTier": 1,
+    "stamina": 30,
+    "health": 30,
+    "maxStamina": 30,
+    "maxHealth": 30,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Swipe", "damage": 20, "stamina": 10, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Tier 2 Brute",
+    "worldTier": 1,
+    "stamina": 40,
+    "health": 50,
+    "maxStamina": 40,
+    "maxHealth": 50,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Club", "damage": 40, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Tier 2 Club Troll",
+    "worldTier": 1,
+    "stamina": 100,
+    "health": 100,
+    "maxStamina": 100,
+    "maxHealth": 100,
+    "staminaRegen": 3,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Club", "damage": 50, "stamina": 20, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Tier 2 Troll",
+    "worldTier": 1,
+    "stamina": 100,
+    "health": 100,
+    "maxStamina": 100,
+    "maxHealth": 100,
+    "staminaRegen": 3,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Smash", "damage": 50, "stamina": 20, "accuracy": 0.45 },
+      { "name": "Rock Throw", "damage": 50, "stamina": 20, "accuracy": 0.35 }
+    ],
+    "drops": [
+      { "name": "Troll Hide", "amount": 5 }
+    ]
   }
 ]

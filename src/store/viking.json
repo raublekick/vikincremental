@@ -12,5 +12,7 @@
   "baseHealthRegen": 0,
   "gear": [],
   "tasks": [],
-  "foodPreference": "best"
+  "foodPreference": "best",
+  "birthday": 0,
+  "deathday": 0
 }
