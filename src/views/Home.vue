@@ -9,7 +9,7 @@
 //import { mapState, mapActions, mapMutations } from "vuex";
 import Game from "@/components/Game";
 import Start from "@/components/Start";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -22,6 +22,12 @@ export default {
   },
   computed: {
     ...mapState(["flags"]),
+  },
+  methods: {
+    ...mapActions(["initialize"]),
+  },
+  created() {
+    this.initialize();
   },
 };
 </script>

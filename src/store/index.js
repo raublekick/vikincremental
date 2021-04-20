@@ -3,6 +3,9 @@ import Vuex from "vuex";
 import mixin from "@/store/mixin";
 import * as _ from "lodash";
 import vikingData from "./viking.json";
+import idbs from "./idbService";
+
+const store = "vikings";
 
 import defaultState from "./state";
 
@@ -32,7 +35,10 @@ export default new Vuex.Store({
   },
   mutations: {
     init(state, payload) {
-      state = payload;
+      Object.assign(state, payload);
+    },
+    setLoading(state, payload) {
+      state.isLoading = payload;
     },
     setActiveTab(state, payload) {
       state.activeTab = payload;
@@ -129,13 +135,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async initialize({ commit, dispatch }, payload) {
-      if (!payload.loadGame) {
-        defaultState.flags.gameStart = true;
-        commit("init", defaultState);
-        dispatch("createViking", payload.name);
-      }
-    },
     async initializeCombat({ state }) {
       if (state.newDay && state.vikings.length && !state.bossCombat) {
         var chance = Math.random();
@@ -631,6 +630,46 @@ export default new Vuex.Store({
         key: payload.name,
         state: true,
       });
+    },
+    async clear({ commit }, payload) {
+      commit("setLoading", true);
+      idbs.clear(payload);
+      commit("setLoading", false);
+    },
+    async saveToDb({ state, commit, dispatch }) {
+      commit("setLoading", true);
+      await dispatch("clear", store);
+      try {
+        await idbs.save(store, [state]);
+      } catch (e) {
+        console.log("Error saving " + store + ": " + e);
+      }
+      commit("setLoading", false);
+    },
+    async newGame({ commit, dispatch }, payload) {
+      var newGame = _.clone(defaultState);
+      newGame.flags.gameStart = true;
+      commit("init", newGame);
+      dispatch("createViking", payload.name);
+    },
+    async initialize({ commit }) {
+      commit("setLoading", true);
+      try {
+        let data = await idbs.getAll(store);
+        if (data === null) {
+          throw new Error("Could not load save data!");
+        } else if (data.length === 0) {
+          console.log("No saved data found");
+        } else {
+          console.log("Loaded from save");
+          commit("init", data[0]);
+        }
+      } catch (e) {
+        // The value in storage was invalid or corrupt so just set it to blank
+        console.log(e);
+        //commit("init", { store, data: {} });
+      }
+      commit("setLoading", false);
     },
   },
   modules: {},

@@ -7,6 +7,7 @@ import fortificationData from "./fortifications.json";
 import enemyData from "./enemies.json";
 import bossData from "./bosses.json";
 export default {
+  isLoading: false,
   day: {
     dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
     dayTicks: 0,

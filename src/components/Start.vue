@@ -18,7 +18,7 @@
       </div>
       <div v-if="step === 2">
         <pre>{{ message }}</pre>
-        <b-button @click="initialize({ name: name })">Start</b-button>
+        <b-button @click="newGame({ name: name })">Start</b-button>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["initialize"]),
+    ...mapActions(["newGame"]),
   },
 };
 </script>

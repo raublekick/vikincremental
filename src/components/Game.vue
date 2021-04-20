@@ -130,13 +130,14 @@ export default {
   },
 
   methods: {
-    ...mapActions(["tick"]),
+    ...mapActions(["tick", "saveToDb"]),
     ...mapMutations(["setActiveTab"]),
   },
 
   created() {
     setInterval(() => {
       this.tick();
+      this.saveToDb();
     }, 1000);
   },
 };
