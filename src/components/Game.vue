@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="content">
-      <h1 class="title">Vikincrement</h1>
+      <h1 class="title p-4">
+        Vikincrement<b-button @click="reset()" class="is-pulled-right"
+          >Reset</b-button
+        >
+      </h1>
     </div>
     <div class="columns">
       <div class="column is-3 box mr-4">
@@ -130,7 +134,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["tick", "saveToDb"]),
+    ...mapActions(["tick", "saveToDb", "reset"]),
     ...mapMutations(["setActiveTab"]),
   },
 

@@ -14,7 +14,7 @@ Vue.use(Vuex);
 let defaultViking = vikingData;
 
 export default new Vuex.Store({
-  state: defaultState,
+  state: _.clone(defaultState),
   getters: {
     canRest: (state) => {
       // if has a fire
@@ -277,6 +277,12 @@ export default new Vuex.Store({
                   state.enemies[targetIndex].name
                 );
                 boss.defeated = true;
+                if (boss.worldTier === state.worldTier) {
+                  state.worldTier++;
+                  if (state.biomes[state.worldTier]) {
+                    state.biomes[state.worldTier].unlocked = true;
+                  }
+                }
               }
               commit("removeObject", {
                 objectKey: "enemies",
@@ -645,6 +651,9 @@ export default new Vuex.Store({
         console.log("Error saving " + store + ": " + e);
       }
       commit("setLoading", false);
+    },
+    async reset({ commit }) {
+      commit("init", _.clone(defaultState));
     },
     async newGame({ commit, dispatch }, payload) {
       var newGame = _.clone(defaultState);

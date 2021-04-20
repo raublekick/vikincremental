@@ -1,0 +1,33 @@
+[
+  
+  {
+    "name": "Grasslands",
+    "unlocked": true,
+    "flavor": "Grasslands it is."
+  },
+  {
+    "name": "Forest",
+    "unlocked": false,
+    "flavor": "It is a dark forest."
+  },
+  {
+    "name": "Mountains",
+    "unlocked": false,
+    "flavor": "It big."
+  },
+  {
+    "name": "Caldera",
+    "unlocked": false,
+    "flavor": "Hot hot hot"
+  },
+  {
+    "name": "Ruined City",
+    "unlocked": false,
+    "flavor": "What happen?"
+  },
+  {
+    "name": "Coastal Plains",
+    "unlocked": false,
+    "flavor": "Wimdy"
+  }
+]

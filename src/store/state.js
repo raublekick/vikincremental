@@ -6,6 +6,8 @@ import houseAddOnData from "./house-add-ons.json";
 import fortificationData from "./fortifications.json";
 import enemyData from "./enemies.json";
 import bossData from "./bosses.json";
+import biomeData from "./biomes.json";
+
 export default {
   isLoading: false,
   day: {
@@ -19,6 +21,7 @@ export default {
   },
   journal: [],
   worldTier: 0,
+  biomes: biomeData,
   activeTab: "vikings",
   combat: false,
   bossCombat: false,
