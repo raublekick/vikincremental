@@ -16,6 +16,8 @@
         <div class="subtitle">
           Vikings: {{ vikings.length }} / {{ house.beds || 1 }}
         </div>
+        <div class="subtitle">Exploring: {{ biomes[worldTier].name }}</div>
+        <div class="subtitle">World Tier: {{ worldTier }}</div>
         <div>Encounter Rate: {{ encounterChance * 100 }}% / day</div>
         <hr />
         <!-- <houses /> -->
@@ -122,6 +124,8 @@ export default {
       "encounterChance",
       "comfort",
       "fortification",
+      "worldTier",
+      "biomes",
     ]),
     tab: {
       get() {

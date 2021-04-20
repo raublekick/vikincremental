@@ -27,12 +27,21 @@
   {
     "name": "Chop Wood",
     "staminaCost": 5,
-    "requirements": ["Stone Axe", "Flint Axe"],
+    "worldTier": 0,
+    "requirements": ["Stone Axe", "Flint Axe", "Bronze Axe"],
     "items": [{ "name": "Wood", "perSecond": 3 }, { "name": "Resin", "perSecond": 0.1 }]
+  },
+  {
+    "name": "Forestry",
+    "worldTier": 1,
+    "staminaCost": 7,
+    "requirements": ["Bronze Axe"],
+    "items": [{ "name": "Wood", "perSecond": 3 }, { "name": "Resin", "perSecond": 0.1 }, { "name": "Hard Wood", "perSecond": 1 }, { "name": "Ornate Wood", "perSecond": 1 }]
   },
   {
     "name": "Small Game Hunting",
     "staminaCost": 5,
+    "worldTier": null,
     "requirements": ["Crude Bow", "Short Bow"],
     "items": [
       { "name": "Leather Hide", "perSecond": 0.1 },
@@ -40,5 +49,26 @@
       { "name": "Deer Head", "perSecond": 0.075 },
       { "name": "Raw Meat", "perSecond": 0.2 }
     ]
+  },
+  {
+    "name": "Stone Mining",
+    "staminaCost": 10,
+    "worldTier": null,
+    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "items": [{"name": "Stone", "perSecond": 3}]
+  },
+  {
+    "name": "Tin Mining",
+    "staminaCost": 10,
+    "worldTier": 1,
+    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "items": [{"name": "Tin Ore", "perSecond": 3}]
+  },
+  {
+    "name": "Copper Mining",
+    "staminaCost": 10,
+    "worldTier": 1,
+    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "items": [{"name": "Copper Ore", "perSecond": 3}]
   }
 ]

@@ -77,7 +77,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["tasks"]),
+    ...mapState(["tasks", "worldTier"]),
     preference: {
       get() {
         return this.item.foodPreference;
@@ -88,17 +88,17 @@ export default {
     },
     usableTasks() {
       var tasks = _.filter(this.tasks, (task) => {
-        if (!task.requirements || !task.requirements.length) {
-          return true;
-        }
+        var inBiome = task.worldTier ? task.worldTier === this.worldTier : true;
+        var requirementsMet =
+          !task.requirements || task.requirements.length === 0
+            ? 1
+            : _.filter(task.requirements, (requirement) => {
+                return _.filter(this.item.gear, (gear) => {
+                  return gear.name === requirement;
+                }).length;
+              }).length;
 
-        var requirementsMet = _.filter(task.requirements, (requirement) => {
-          return _.filter(this.item.gear, (gear) => {
-            return gear.name === requirement;
-          }).length;
-        }).length;
-
-        return requirementsMet > 0;
+        return inBiome && requirementsMet > 0;
       });
 
       return tasks;

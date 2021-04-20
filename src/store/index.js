@@ -273,7 +273,7 @@ export default new Vuex.Store({
               if (state.bossCombat) {
                 // mark the boss as defeated
                 var boss = mixin.methods.findItem(
-                  state.bosses,
+                  state.bossList,
                   state.enemies[targetIndex].name
                 );
                 boss.defeated = true;
@@ -298,7 +298,6 @@ export default new Vuex.Store({
               state.battleLog += "You are victorious on this day!\n";
               if (state.bossCombat) {
                 state.bossCombat = false;
-                state.worldTier += 1;
                 // drop boss artifacts
                 state.battleLog +=
                   "For your victory, you are rewarded a sacred artifact.\n";
