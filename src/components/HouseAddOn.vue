@@ -85,18 +85,20 @@ export default {
 
   watch: {
     unlocked: {
-      handler() {
-        this.setNewAddOn(true);
+      handler(value) {
+        if (value && !this.item.built) {
+          this.setNewAddOn(true);
+        }
       },
       deep: true,
     },
   },
 
-  created() {
-    if (this.unlocked) {
-      this.setNewAddOn(true);
-    }
-  },
+  // created() {
+  //   if (this.unlocked) {
+  //     this.setNewAddOn(true);
+  //   }
+  // },
 };
 </script>
 <style scoped>

@@ -56,24 +56,26 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setAddOn"]),
+    ...mapMutations(["setNewAddOn"]),
     ...mapActions(["updateHouse"]),
   },
 
   watch: {
     canCraft: {
-      handler() {
-        this.setNewAddOn(true);
+      handler(value) {
+        if (value) {
+          this.setNewAddOn(true);
+        }
       },
       deep: true,
     },
   },
 
-  created() {
-    if (this.canCraft) {
-      this.setNewAddOn(true);
-    }
-  },
+  // created() {
+  //   if (this.canCraft) {
+  //     this.setNewAddOn(true);
+  //   }
+  // },
 };
 </script>
 <style scoped>

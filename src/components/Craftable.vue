@@ -55,17 +55,19 @@ export default {
 
   watch: {
     unlocked: {
-      handler() {
-        this.setNewCraft(true);
+      handler(value) {
+        if (value && !this.item.built) {
+          this.setNewCraft(true);
+        }
       },
       deep: true,
     },
   },
 
-  created() {
-    if (this.unlocked) {
-      this.setNewCraft(true);
-    }
-  },
+  // created() {
+  //   if (this.unlocked) {
+  //     this.setNewCraft(true);
+  //   }
+  // },
 };
 </script>
