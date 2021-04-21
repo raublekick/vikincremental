@@ -3,6 +3,7 @@
   {
     "name": "Goblin Youngling",
     "worldTier": 0,
+    "threshold": 0,
     "stamina": 15,
     "health": 15,
     "maxStamina": 15,
@@ -21,6 +22,7 @@
   {
     "name": "Tier 2 Enemy",
     "worldTier": 1,
+    "threshold": 0,
     "stamina": 30,
     "health": 30,
     "maxStamina": 30,
@@ -39,6 +41,7 @@
   {
     "name": "Tier 2 Brute",
     "worldTier": 1,
+    "threshold": 0.20,
     "stamina": 40,
     "health": 50,
     "maxStamina": 40,
@@ -48,7 +51,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Club", "damage": 40, "stamina": 15, "accuracy": 0.55 }
+      { "name": "Club", "damage": 30, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }
@@ -57,6 +60,7 @@
   {
     "name": "Tier 2 Club Troll",
     "worldTier": 1,
+    "threshold": 0.80,
     "stamina": 100,
     "health": 100,
     "maxStamina": 100,
@@ -75,6 +79,7 @@
   {
     "name": "Tier 2 Troll",
     "worldTier": 1,
+    "threshold": 0.75,
     "stamina": 100,
     "health": 100,
     "maxStamina": 100,
@@ -84,7 +89,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Smash", "damage": 50, "stamina": 20, "accuracy": 0.45 },
+      { "name": "Smash", "damage": 40, "stamina": 20, "accuracy": 0.45 },
       { "name": "Rock Throw", "damage": 50, "stamina": 20, "accuracy": 0.35 }
     ],
     "drops": [

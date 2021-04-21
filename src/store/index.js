@@ -160,9 +160,12 @@ export default new Vuex.Store({
             1,
             state.vikings.length
           );
+          var threshold = Math.random();
 
           var tierEnemies = _.filter(state.enemyList, (enemy) => {
-            return enemy.worldTier === state.worldTier;
+            return (
+              enemy.worldTier === state.worldTier && enemy.threshold < threshold
+            );
           });
 
           for (var i = 1; i <= numberOfEnemies; i++) {
