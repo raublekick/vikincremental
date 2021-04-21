@@ -73,7 +73,8 @@
       { "name": "Club", "damage": 50, "stamina": 20, "accuracy": 0.45 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 1 },
+      { "name": "Troll Hide", "amount": 5}
     ]
   },
   {

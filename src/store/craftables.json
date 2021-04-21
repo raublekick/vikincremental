@@ -18,6 +18,29 @@
     }
   },
   {
+    "name": "Bronze Axe",
+    "addOnRequirements": ["Forge"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 8
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 8
+      }
+    ],
+    "combat": {
+      "damage": 20,
+      "stamina": 10,
+      "accuracy": 0.8
+    }
+  },
+  {
     "name": "Crude Bow",
     "addOnRequirements": ["Workbench"],
     "components": [
@@ -31,6 +54,21 @@
       "stamina": 5,
       "accuracy": 0.65
     }
+  },
+  {
+    "name": "Bone Pickaxe",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Large Bone",
+        "amount": 1
+      },
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ],
+    "combat": {}
   },
   {
     "name": "Leather Armor",
@@ -71,19 +109,50 @@
     "armorType": "Legs",
     "armor": 2
   },
+
+
+
+
   {
-    "name": "Bone Pickaxe",
+    "name": "Troll Armor",
     "addOnRequirements": ["Workbench"],
+    "bedRequirement": 2,
     "components": [
       {
-        "name": "Large Bone",
-        "amount": 1
-      },
-      {
-        "name": "Wood",
-        "amount": 8
+        "name": "Troll Hide",
+        "amount": 5
       }
     ],
-    "combat": {}
+    "combat": {},
+    "armorType": "Body",
+    "armor": 8
+  },
+  {
+    "name": "Troll Helmet",
+    "addOnRequirements": ["Workbench"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Troll Hide",
+        "amount": 4
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 4
+  },
+  {
+    "name": "Troll Greaves",
+    "addOnRequirements": ["Workbench"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Troll Hide",
+        "amount": 2
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 4
   }
 ]

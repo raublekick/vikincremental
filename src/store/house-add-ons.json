@@ -98,6 +98,33 @@
     "processing": []
   },
   {
+    "name": "Forge",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": ["Bone Pickaxe", "Bronze Pickaxe"],
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 4
+      },
+      {
+        "name": "Coal",
+        "amount": 4
+      },
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 6
+      }
+    ],
+    "processing": []
+  },
+  {
     "name": "Campfire",
     "built": false,
     "enabled": true,
