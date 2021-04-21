@@ -10,6 +10,9 @@ import biomeData from "./biomes.json";
 
 export default {
   isLoading: false,
+  newCraft: false,
+  newAddOn: false,
+  newHouse: false,
   day: {
     dayLength: process.env.NODE_ENV === "production" ? 24 : 24,
     dayTicks: 0,

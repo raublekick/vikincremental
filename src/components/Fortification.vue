@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 import mixin from "@/store/mixin";
 export default {
   name: "Fortification",
@@ -61,7 +61,23 @@ export default {
   },
 
   methods: {
+    ...mapMutations(["setAddOn"]),
     ...mapActions(["craftFortification"]),
+  },
+
+  watch: {
+    unlocked: {
+      handler() {
+        this.setNewAddOn(true);
+      },
+      deep: true,
+    },
+  },
+
+  created() {
+    if (this.unlocked) {
+      this.setNewAddOn(true);
+    }
   },
 };
 </script>

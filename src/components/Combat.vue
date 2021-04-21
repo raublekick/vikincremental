@@ -36,7 +36,6 @@ export default {
   },
   watch: {
     battleLog() {
-      console.log("log changed");
       this.$nextTick(() => {
         this.$refs.log.scrollTop = this.$refs.log.scrollHeight;
       });

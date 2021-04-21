@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 import mixin from "@/store/mixin";
 export default {
   name: "House",
@@ -42,16 +42,37 @@ export default {
 
   computed: {
     ...mapState(["inventory", "gear", "house", "houseAddOns"]),
+    unlocked() {
+      return this.requirementsMet(this.item, this.house, this.houseAddOns);
+    },
     canCraft() {
+      // must have all components
       return (
-        this.craftable(this.item, this.house, this.houseAddOns) &&
+        this.craftable(this.item) &&
+        this.unlocked &&
         this.house.beds < this.item.beds
       );
     },
   },
 
   methods: {
+    ...mapMutations(["setAddOn"]),
     ...mapActions(["updateHouse"]),
+  },
+
+  watch: {
+    canCraft: {
+      handler() {
+        this.setNewAddOn(true);
+      },
+      deep: true,
+    },
+  },
+
+  created() {
+    if (this.canCraft) {
+      this.setNewAddOn(true);
+    }
   },
 };
 </script>

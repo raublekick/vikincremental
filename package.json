@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@creativebulma/bulma-divider": "^1.1.0",
+    "@mdi/font": "^5.9.55",
     "buefy": "^0.9.6",
     "core-js": "^3.6.5",
     "idb": "^6.0.0",

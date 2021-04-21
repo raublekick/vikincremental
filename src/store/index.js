@@ -37,6 +37,15 @@ export default new Vuex.Store({
     init(state, payload) {
       Object.assign(state, payload);
     },
+    setNewCraft(state, payload) {
+      state.newCraft = payload;
+    },
+    setNewAddOn(state, payload) {
+      state.newAddOn = payload;
+    },
+    setNewHouse(state, payload) {
+      state.newHouse = payload;
+    },
     setLoading(state, payload) {
       state.isLoading = payload;
     },

@@ -37,13 +37,17 @@
         <div class="subtitle">Lore:</div>
       </div>
       <div class="column">
-        <b-tabs v-model="tab">
+        <b-tabs v-model="tab" @input="clearNewItem">
           <b-tab-item label="Vikings" value="vikings">
             <combat />
             <vikings v-if="!combat" />
           </b-tab-item>
 
-          <b-tab-item label="Building" value="building">
+          <b-tab-item
+            label="Building"
+            value="building"
+            :icon="newAddOn ? 'alert-circle' : ''"
+          >
             <div class="columns">
               <div class="column">
                 <houses />
@@ -58,7 +62,11 @@
             </div>
           </b-tab-item>
 
-          <b-tab-item label="Crafting" value="crafting">
+          <b-tab-item
+            label="Crafting"
+            value="crafting"
+            :icon="newCraft ? 'alert-circle' : ''"
+          >
             <div class="columns">
               <div class="column">
                 <gear />
@@ -126,6 +134,8 @@ export default {
       "fortification",
       "worldTier",
       "biomes",
+      "newCraft",
+      "newAddOn",
     ]),
     tab: {
       get() {
@@ -139,7 +149,20 @@ export default {
 
   methods: {
     ...mapActions(["tick", "saveToDb", "reset"]),
-    ...mapMutations(["setActiveTab"]),
+    ...mapMutations(["setActiveTab", "setNewCraft", "setNewAddOn"]),
+    clearNewItem(event) {
+      console.log(event);
+      switch (event) {
+        case "crafting":
+          this.setNewCraft(false);
+          break;
+        case "building":
+          this.setNewAddOn(false);
+          break;
+        default:
+          break;
+      }
+    },
   },
 
   created() {

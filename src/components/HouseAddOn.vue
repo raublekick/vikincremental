@@ -47,7 +47,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 import mixin from "@/store/mixin";
 export default {
   name: "HouseAddOn",
@@ -79,7 +79,23 @@ export default {
   },
 
   methods: {
+    ...mapMutations(["setNewAddOn"]),
     ...mapActions(["craftAddOn"]),
+  },
+
+  watch: {
+    unlocked: {
+      handler() {
+        this.setNewAddOn(true);
+      },
+      deep: true,
+    },
+  },
+
+  created() {
+    if (this.unlocked) {
+      this.setNewAddOn(true);
+    }
   },
 };
 </script>
