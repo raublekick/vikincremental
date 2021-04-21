@@ -86,9 +86,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-</style>
+<style scoped></style>

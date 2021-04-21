@@ -1,5 +1,5 @@
 <template>
-  <div v-if="canCraft || item.built">
+  <div v-if="unlocked || item.built">
     <div class="columns is-multiline">
       <div class="column is-half house-top">
         <div class="is-size-5">{{ item.name }}</div>
@@ -7,7 +7,8 @@
       <div class="column is-half has-text-right">
         <b-button
           size="is-small"
-          v-if="canCraft && !item.built"
+          :disabled="!canCraft"
+          v-if="!item.built"
           @click="craftFortification(item)"
           >Craft</b-button
         >
@@ -50,9 +51,12 @@ export default {
 
   computed: {
     ...mapState(["inventory", "house", "houseAddOns"]),
+    unlocked() {
+      return this.requirementsMet(this.item, this.house, this.houseAddOns);
+    },
     canCraft() {
       // must have all components
-      return this.craftable(this.item, this.house, this.houseAddOns);
+      return this.craftable(this.item) && this.unlocked;
     },
   },
 

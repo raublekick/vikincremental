@@ -1,5 +1,5 @@
 <template>
-  <div class="columns" v-if="canCraft">
+  <div class="columns" v-if="unlocked">
     <div class="column">
       <div>{{ item.name }}</div>
     </div>
@@ -39,8 +39,12 @@ export default {
   computed: {
     ...mapState(["inventory", "house", "houseAddOns"]),
 
+    unlocked() {
+      return this.requirementsMet(this.item, this.house, this.houseAddOns);
+    },
     canCraft() {
-      return this.craftable(this.item, this.house, this.houseAddOns);
+      // must have all components
+      return this.craftable(this.item) && this.unlocked;
     },
   },
 

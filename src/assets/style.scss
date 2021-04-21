@@ -12,3 +12,8 @@
 .list-item:not(:empty) ~ .list-item:not(:empty):before {
   content: ", ";
 }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

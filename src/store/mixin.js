@@ -84,16 +84,7 @@ export default {
 
       return { armorTotal: value, armor: [headArmor, bodyArmor, legArmor] };
     },
-    craftable(item, house, houseAddOns) {
-      // must have all components
-      var componentsMet =
-        item.components && item.components.length > 0
-          ? _.filter(item.components, (component) => {
-              var inventoryItem = this.findItem(this.inventory, component.name);
-              return inventoryItem && inventoryItem.amount >= component.amount;
-            }).length === item.components.length
-          : true;
-
+    requirementsMet(item, house, houseAddOns) {
       // must have one requirement
       var requirementsMet =
         item.gearRequirements && item.gearRequirements.length > 0
@@ -124,7 +115,20 @@ export default {
 
       // check if inventory contains at least one of the inputs (i.e. player cannot unlock smelter until an ore has been mined)
 
-      return componentsMet && requirementsMet && addOnsMet && bedsMet;
+      return bedsMet && addOnsMet && requirementsMet;
+    },
+    craftable(item) {
+      //var open = this.unlocked(item, house, houseAddOns);
+      // must have all components
+      var componentsMet =
+        item.components && item.components.length > 0
+          ? _.filter(item.components, (component) => {
+              var inventoryItem = this.findItem(this.inventory, component.name);
+              return inventoryItem && inventoryItem.amount >= component.amount;
+            }).length === item.components.length
+          : true;
+
+      return componentsMet; // && open;
     },
   },
 };

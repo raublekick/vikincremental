@@ -52,9 +52,5 @@ export default {
 pre {
   height: auto;
   max-height: 200px;
-  overflow: auto;
-  word-break: normal !important;
-  word-wrap: normal !important;
-  white-space: pre !important;
 }
 </style>
