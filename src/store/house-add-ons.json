@@ -14,7 +14,7 @@
       "input": [
         { "name": "Wood", "amount": 1}
       ],
-      "output": { "name": "Coal", "amount": 1 }
+      "output": { "name": "Coal", "amount": 1, "type": "inventory" }
     }]
   },
   {
@@ -28,13 +28,22 @@
         "amount": 50
       }
     ],
-    "processing": [{
-      "input": [
-        { "name": "Coal", "amount": 2}, 
-        { "name": "Copper Ore", "amount": 1}
-      ],
-      "output": { "name": "Copper Bar", "amount": 1, "type": "inventory" }
-    }]
+    "processing": [
+      {
+        "input": [
+          { "name": "Coal", "amount": 2}, 
+          { "name": "Copper Ore", "amount": 1}
+        ],
+        "output": { "name": "Copper Bar", "amount": 1, "type": "inventory" }
+      },
+      {
+        "input": [
+          { "name": "Coal", "amount": 1}, 
+          { "name": "Tin Ore", "amount": 1}
+        ],
+        "output": { "name": "Tin Bar", "amount": 1, "type": "inventory" }
+      }
+    ]
   },
   {
     "name": "Cooking Station",

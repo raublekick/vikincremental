@@ -257,15 +257,19 @@ export default new Vuex.Store({
                 "!\n";
               // get enemy drops
               _.forEach(state.enemies[targetIndex].drops, (drop) => {
+                // bonus drops based on # of vikings
+                var amount = state.bossCombat
+                  ? drop.amount * state.vikings.length
+                  : drop.amount;
                 commit("incrementObject", {
                   objectKey: "inventory",
                   key: drop.name,
-                  amount: drop.amount,
+                  amount: amount,
                 });
                 state.battleLog +=
                   state.enemies[targetIndex].name +
                   " drops " +
-                  drop.amount +
+                  amount +
                   " " +
                   drop.name +
                   "!\n";
@@ -299,8 +303,8 @@ export default new Vuex.Store({
               if (state.bossCombat) {
                 state.bossCombat = false;
                 // drop boss artifacts
-                state.battleLog +=
-                  "For your victory, you are rewarded a sacred artifact.\n";
+                // state.battleLog +=
+                //   "For your victory, you are rewarded a sacred artifact.\n";
               }
             }
           }

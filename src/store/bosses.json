@@ -21,7 +21,8 @@
     ],
     "artifacts": [],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 2 },
+      { "name": "Large Bone", "amount": 1 }
     ]
   },
   {

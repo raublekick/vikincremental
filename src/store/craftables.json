@@ -70,5 +70,20 @@
     "combat": {},
     "armorType": "Legs",
     "armor": 2
+  },
+  {
+    "name": "Bone Pickaxe",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Large Bone",
+        "amount": 1
+      },
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ],
+    "combat": {}
   }
 ]
