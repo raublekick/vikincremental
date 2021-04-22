@@ -26,7 +26,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-
+import mixin from "../store/mixin";
 export default {
   name: "Start",
   data() {
@@ -35,6 +35,8 @@ export default {
       name: "",
     };
   },
+
+  mixins: [mixin],
 
   components: {},
 
@@ -83,6 +85,9 @@ export default {
 
   methods: {
     ...mapActions(["newGame"]),
+  },
+  created() {
+    this.name = this.randomName();
   },
 };
 </script>

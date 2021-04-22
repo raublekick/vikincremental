@@ -1,6 +1,13 @@
 import * as _ from "lodash";
+import names from "./names.json";
+import titles from "./title.json";
 export default {
   methods: {
+    randomName() {
+      var titleIndex = this.randomIntFromInterval(0, titles.length);
+      var nameIndex = this.randomIntFromInterval(0, names.length);
+      return names[nameIndex] + " " + titles[titleIndex];
+    },
     findItem(collection, name) {
       var item = _.find(collection, (item) => {
         return item.name === name;

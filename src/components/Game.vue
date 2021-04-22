@@ -173,7 +173,7 @@ export default {
     },
   },
 
-  created() {
+  async created() {
     setInterval(() => {
       if (!this.isPaused) {
         this.tick();

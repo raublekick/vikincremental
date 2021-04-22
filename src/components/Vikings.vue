@@ -20,6 +20,7 @@
               @click.prevent="
                 showName = false;
                 createViking(name);
+                name = randomName();
               "
               >Summon</a
             >
@@ -38,6 +39,7 @@
 import { mapState, mapActions } from "vuex";
 import Viking from "@/components/Viking";
 import Panel from "@/components/Panel";
+import mixin from "../store/mixin";
 export default {
   name: "Vikings",
   data() {
@@ -46,6 +48,8 @@ export default {
       name: "",
     };
   },
+
+  mixins: [mixin],
 
   components: {
     Viking,
@@ -69,6 +73,10 @@ export default {
 
   methods: {
     ...mapActions(["createViking"]),
+  },
+
+  created() {
+    this.name = this.randomName();
   },
 };
 </script>
