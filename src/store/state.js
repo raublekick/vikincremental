@@ -47,7 +47,7 @@ export default {
   gear: [],
   food: foodData,
   craftables: craftingData,
-  house: { name: "None", beds: 10 },
+  house: { name: "None", beds: 0 },
   houses: houseData,
   houseAddOns: houseAddOnData,
   fortifications: fortificationData,

@@ -5,7 +5,7 @@
         <div class="columns">
           <div class="column">{{ item.name }}</div>
           <div class="column">
-            <b-field class="has-addons">
+            <b-field class="has-addons" v-if="vikings.length">
               <div class="control">
                 <b-select
                   size="is-small"
