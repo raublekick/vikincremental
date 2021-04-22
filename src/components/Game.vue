@@ -11,6 +11,13 @@
       <div class="column is-3 box mr-4">
         <div class="subtitle">
           Day: {{ day.totalDays }} ( {{ day.dayTicks }} / {{ day.dayLength }})
+          <b-button
+            class="is-pulled-right"
+            :icon-left="isPaused ? 'play' : 'pause'"
+            :type="isPaused ? 'is-success is-light' : 'is-warning is-light'"
+            @click="setField({ name: 'isPaused', value: !isPaused })"
+            >Pause</b-button
+          >
         </div>
         <hr />
         <div class="subtitle">
@@ -136,6 +143,7 @@ export default {
       "biomes",
       "newCraft",
       "newAddOn",
+      "isPaused",
     ]),
     tab: {
       get() {
@@ -167,8 +175,10 @@ export default {
 
   created() {
     setInterval(() => {
-      this.tick();
-      this.saveToDb();
+      if (!this.isPaused) {
+        this.tick();
+        this.saveToDb();
+      }
     }, 1000);
   },
 };
