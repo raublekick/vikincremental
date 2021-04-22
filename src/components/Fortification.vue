@@ -61,7 +61,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setNewAddOn"]),
+    ...mapMutations(["setField"]),
     ...mapActions(["craftFortification"]),
   },
 
@@ -69,18 +69,12 @@ export default {
     unlocked: {
       handler(value) {
         if (value && !this.item.built) {
-          this.setNewAddOn(true);
+          this.setField({ name: "newAddOn", value: true });
         }
       },
       deep: true,
     },
   },
-
-  // created() {
-  //   if (this.unlocked) {
-  //     this.setNewAddOn(true);
-  //   }
-  // },
 };
 </script>
 <style scoped>

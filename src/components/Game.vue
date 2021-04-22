@@ -142,22 +142,22 @@ export default {
         return this.activeTab;
       },
       set(value) {
-        this.setActiveTab(value);
+        this.setField({ name: "activeTab", value: value });
       },
     },
   },
 
   methods: {
     ...mapActions(["tick", "saveToDb", "reset"]),
-    ...mapMutations(["setActiveTab", "setNewCraft", "setNewAddOn"]),
+    ...mapMutations(["setField", "setField"]),
     clearNewItem(event) {
       console.log(event);
       switch (event) {
         case "crafting":
-          this.setNewCraft(false);
+          this.setField({ name: "newCraft", value: false });
           break;
         case "building":
-          this.setNewAddOn(false);
+          this.setField({ name: "newAddOn", value: false });
           break;
         default:
           break;

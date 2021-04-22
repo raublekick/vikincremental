@@ -37,20 +37,8 @@ export default new Vuex.Store({
     init(state, payload) {
       Object.assign(state, payload);
     },
-    setNewCraft(state, payload) {
-      state.newCraft = payload;
-    },
-    setNewAddOn(state, payload) {
-      state.newAddOn = payload;
-    },
-    setNewHouse(state, payload) {
-      state.newHouse = payload;
-    },
-    setLoading(state, payload) {
-      state.isLoading = payload;
-    },
-    setActiveTab(state, payload) {
-      state.activeTab = payload;
+    setField(state, payload) {
+      state[payload.name] = payload.value;
     },
     addViking(state, payload) {
       state.vikings.push(payload);
@@ -663,19 +651,19 @@ export default new Vuex.Store({
       });
     },
     async clear({ commit }, payload) {
-      commit("setLoading", true);
+      commit("setField", { name: "isLoading", value: true });
       idbs.clear(payload);
-      commit("setLoading", false);
+      commit("setField", { name: "isLoading", value: true });
     },
     async saveToDb({ state, commit, dispatch }) {
-      commit("setLoading", true);
+      commit("setField", { name: "isLoading", value: true });
       await dispatch("clear", store);
       try {
         await idbs.save(store, [state]);
       } catch (e) {
         console.log("Error saving " + store + ": " + e);
       }
-      commit("setLoading", false);
+      commit("setField", { name: "isLoading", value: true });
     },
     async reset({ commit }) {
       commit("init", _.clone(defaultState));
@@ -687,7 +675,7 @@ export default new Vuex.Store({
       dispatch("createViking", payload.name);
     },
     async initialize({ commit }) {
-      commit("setLoading", true);
+      commit("setField", { name: "isLoading", value: true });
       try {
         let data = await idbs.getAll(store);
         if (data === null) {
@@ -703,7 +691,7 @@ export default new Vuex.Store({
         console.log(e);
         //commit("init", { store, data: {} });
       }
-      commit("setLoading", false);
+      commit("setField", { name: "isLoading", value: true });
     },
   },
   modules: {},

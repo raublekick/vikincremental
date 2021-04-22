@@ -49,7 +49,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setNewCraft"]),
+    ...mapMutations(["setField"]),
     ...mapActions(["craftGear"]),
   },
 
@@ -57,17 +57,11 @@ export default {
     unlocked: {
       handler(value) {
         if (value && !this.item.built) {
-          this.setNewCraft(true);
+          this.setField({ name: "newCraft", value: true });
         }
       },
       deep: true,
     },
   },
-
-  // created() {
-  //   if (this.unlocked) {
-  //     this.setNewCraft(true);
-  //   }
-  // },
 };
 </script>

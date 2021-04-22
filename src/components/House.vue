@@ -56,7 +56,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setNewAddOn"]),
+    ...mapMutations(["setField"]),
     ...mapActions(["updateHouse"]),
   },
 
@@ -64,18 +64,12 @@ export default {
     canCraft: {
       handler(value) {
         if (value) {
-          this.setNewAddOn(true);
+          this.setField({ name: "newAddOn", value: true });
         }
       },
       deep: true,
     },
   },
-
-  // created() {
-  //   if (this.canCraft) {
-  //     this.setNewAddOn(true);
-  //   }
-  // },
 };
 </script>
 <style scoped>
