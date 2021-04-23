@@ -28,6 +28,7 @@ export default {
   biomes: biomeData,
   activeTab: "vikings",
   combat: false,
+  delve: false,
   bossCombat: false,
   newDay: false,
   battleLog: "",
