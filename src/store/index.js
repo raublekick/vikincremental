@@ -133,7 +133,12 @@ export default new Vuex.Store({
   },
   actions: {
     async initializeCombat({ state }) {
-      if (state.newDay && state.vikings.length && !state.bossCombat) {
+      if (
+        state.newDay &&
+        state.vikings.length &&
+        !state.bossCombat &&
+        !state.delve
+      ) {
         var chance = Math.random();
         if (state.enemies.length) {
           state.combat = true;
@@ -180,6 +185,14 @@ export default new Vuex.Store({
         "You have challenged the mighty " +
         boss.name +
         "! Do not fear, for even in death you may be rewarded for such bravery.\n";
+    },
+    async initializeDelve({ state }) {
+      state.delve = true;
+      state.battleLog = "Entering a delve";
+      state.biomes[state.worldTier].delve.mapData = null;
+    },
+    async updateMapData({ state }, { index, mapData }) {
+      state.biomes[index].delve.mapData = mapData;
     },
     async vikingTick({ state, commit, getters }) {
       // fill inventory from task items

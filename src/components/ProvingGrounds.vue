@@ -1,25 +1,33 @@
 <template>
-  <div class="box">
+  <div v-if="vikings.length">
     <div v-if="bossCombat">
       <combat />
     </div>
-    <div v-else-if="!bossCombat && !combat">
-      <!-- <div v-for="(boss, i) in bossList" :key="'boss' + i" class="item">
-        <boss :item="boss" />
-      </div> -->
+    <div v-else-if="delve"><delve /></div>
+    <div v-else-if="!bossCombat && !combat" class="box">
       <div v-for="(biome, i) in unlockedBiomes" :key="'biome' + i" class="item">
-        <h3 class="subtitle">{{ biome.name }}</h3>
+        <h3 class="subtitle">
+          {{ biome.name
+          }}<b-button
+            :disabled="worldTier != i"
+            @click="initializeDelve()"
+            class="is-small is-pulled-right"
+            >Delve</b-button
+          >
+        </h3>
         <pre>{{ biome.flavor }}</pre>
-        <boss :item="bossList[i]" />
+
+        <boss class="pt-4" :item="bossList[i]" />
       </div>
     </div>
     <div v-else>Cannot challenge a boss while in combat.</div>
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import Boss from "@/components/Boss";
 import Combat from "@/components/Combat";
+import Delve from "@/components/Delve";
 import * as _ from "lodash";
 export default {
   name: "ProvingGrounds",
@@ -29,6 +37,7 @@ export default {
   components: {
     Boss,
     Combat,
+    Delve,
   },
   computed: {
     ...mapState([
@@ -39,12 +48,17 @@ export default {
       "battleLog",
       "bossList",
       "biomes",
+      "delve",
+      "worldTier",
     ]),
     unlockedBiomes() {
       return _.filter(this.biomes, (biome) => {
         return biome.unlocked;
       });
     },
+  },
+  methods: {
+    ...mapActions(["initializeDelve"]),
   },
 };
 </script>

@@ -3,7 +3,15 @@
   {
     "name": "Grasslands",
     "unlocked": true,
-    "flavor": "Grasslands it is."
+    "flavor": "Grasslands it is.",
+    "delve": {
+      "xLength": 40,
+      "yHeight": 40,
+      "spawns": 8,
+      "totems": 3,
+      "treasure": 10,
+      "mapData": null
+    }
   },
   {
     "name": "Forest",

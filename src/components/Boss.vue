@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div class="columns" v-if="canCraft">
     <div class="column">
       <div>{{ item.name }}</div>
     </div>
@@ -11,7 +11,7 @@
     <div class="column has-text-right">
       <b-button
         size="is-small"
-        :disabled="!canCraft"
+        :disabled="!canCraft && worldTier != item.worldTier"
         @click="challengeBoss(item)"
         >Challenge</b-button
       >
