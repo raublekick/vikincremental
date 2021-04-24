@@ -42,7 +42,8 @@ export default {
       spaces: ["X", "s", " ", "t", "e"],
       playerCoords: null,
       previousSpace: null,
-      fog: 6,
+      fog: 80,
+      sizeDivisor: 3,
     };
   },
   props: {
@@ -157,29 +158,80 @@ export default {
       newArray.push(first);
       return newArray;
     },
-    makeMap() {
-      /*
-      Legend:
-      X = wall,
-      S = start,
-      T = treasure,
-      E = enemy,
-      blank = empty space
-      */
-
-      // default map, all closed spaces
-      var array = Array.apply(null, Array(this.config.yHeight)).map(() => {
+    initMap() {
+      return Array.apply(null, Array(this.config.yHeight)).map(() => {
         return Array.apply(null, Array(this.config.xLength)).map(() => {
           return "X";
         });
       });
+    },
+    buildSpace(
+      xNew,
+      yNew,
+      xCurr,
+      yCurr,
+      usedSpaces,
+      newDirection,
+      currDirection,
+      array
+    ) {
+      // is it possible to build here
+      if (array[yNew][xNew] === "X") {
+        // should we build here?
+        if (Math.random() < this.chanceToBuild) {
+          // what to build?
+          if (
+            Math.random() < this.chanceForSpawn &&
+            this.map.spawns.length < this.config.spawns
+          ) {
+            array[yNew][xNew] =
+              "<span class='marker' style='background-color:grey;color:white;'>!</span>";
+            this.map.spawns.push({ x: xNew, y: yNew });
+          } else if (
+            Math.random() < this.chanceForTotem &&
+            this.map.totems.length < this.config.totems
+          ) {
+            array[yNew][xNew] =
+              "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
+            this.map.totems.push({ x: xNew, y: yNew });
+          } else if (
+            Math.random() < this.chanceForTreasure &&
+            this.map.treasure.length < this.config.treasure
+          ) {
+            array[yNew][xNew] =
+              "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
+            this.map.treasure.push({ x: xNew, y: yNew });
+          } else {
+            array[yNew][xNew] = "."; // this.spaces[item];
+          }
 
-      // get random starting point, just not 0,0 because it breaks
+          // move to new coord and break
+          return {
+            xCurr: xNew,
+            yCurr: yNew,
+            usedSpaces: usedSpaces + 1,
+            currDirection: newDirection,
+            built: true,
+            array: array,
+          };
+        }
+      }
+
+      // move to new coord and break
+      return {
+        xCurr: xCurr,
+        yCurr: yCurr,
+        usedSpaces: usedSpaces,
+        currDirection: currDirection,
+        built: false,
+        array: array,
+      };
+    },
+    makeMap() {
+      var array = this.initMap();
       this.xStart = this.randomIntFromInterval(1, this.config.xLength - 1);
       this.yStart = this.randomIntFromInterval(1, this.config.yHeight - 1);
-      //array[this.yStart][this.xStart] = "<span class='marker' style='color:red;'>S</span>";
 
-      // initiate map
       this.playerCoords = {
         x: this.xStart,
         y: this.yStart,
@@ -200,8 +252,10 @@ export default {
       var directions = ["left", "up", "right", "down"];
       var currDirection = "left";
 
-      while (usedSpaces <= (this.config.xLength * this.config.yHeight) / 3) {
-        console.log("at " + xCurr + ", " + yCurr);
+      while (
+        usedSpaces <=
+        (this.config.xLength * this.config.yHeight) / this.sizeDivisor
+      ) {
         var built = false;
         _.forEach(directions, (direction) => {
           if (!built) {
@@ -212,46 +266,23 @@ export default {
                   xNew = xCurr - 1;
                   yNew = yCurr;
 
-                  // is it possible to build here
-                  if (array[yNew][xNew] === "X") {
-                    // should we build here?
-                    if (Math.random() < this.chanceToBuild) {
-                      // what to build?
-                      //var item = this.randomIntFromInterval(2, this.spaces.length);
-                      if (
-                        Math.random() < this.chanceForSpawn &&
-                        this.map.spawns.length < this.config.spawns
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:grey;color:white;'>!</span>";
-                        this.map.spawns.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTotem &&
-                        this.map.totems.length < this.config.totems
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
-                        this.map.totems.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTreasure &&
-                        this.map.treasure.length < this.config.treasure
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
-                        this.map.treasure.push({ x: xNew, y: yNew });
-                      } else {
-                        array[yNew][xNew] = "."; // this.spaces[item];
-                      }
-
-                      // move to new coord and break
-                      xCurr = xNew;
-                      yCurr = yNew;
-                      usedSpaces++;
-                      currDirection = "left";
-                      built = true;
-                      console.log("built left");
-                    }
-                  }
+                  ({
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    currDirection,
+                    built,
+                    array,
+                  } = this.buildSpace(
+                    xNew,
+                    yNew,
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    "left",
+                    currDirection,
+                    array
+                  ));
                 }
                 break;
               case "up":
@@ -260,45 +291,23 @@ export default {
                   xNew = xCurr;
                   yNew = yCurr - 1;
 
-                  // is it possible to build here
-                  if (array[yNew][xNew] === "X") {
-                    // should we build here?
-                    if (Math.random() < this.chanceToBuild) {
-                      // what to build?
-                      //var item = this.randomIntFromInterval(2, this.spaces.length);
-                      if (
-                        Math.random() < this.chanceForSpawn &&
-                        this.map.spawns.length < this.config.spawns
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:grey;color:white;'>!</span>";
-                        this.map.spawns.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTotem &&
-                        this.map.totems.length < this.config.totems
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
-                        this.map.totems.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTreasure &&
-                        this.map.treasure.length < this.config.treasure
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
-                        this.map.treasure.push({ x: xNew, y: yNew });
-                      } else {
-                        array[yNew][xNew] = "."; // this.spaces[item];
-                      }
-                      // move to new coord and break
-                      xCurr = xNew;
-                      yCurr = yNew;
-                      usedSpaces++;
-                      currDirection = "up";
-                      built = true;
-                      console.log("built up");
-                    }
-                  }
+                  ({
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    currDirection,
+                    built,
+                    array,
+                  } = this.buildSpace(
+                    xNew,
+                    yNew,
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    "up",
+                    currDirection,
+                    array
+                  ));
                 }
                 break;
               case "right":
@@ -307,45 +316,23 @@ export default {
                   xNew = xCurr + 1;
                   yNew = yCurr;
 
-                  // is it possible to build here
-                  if (array[yNew][xNew] === "X") {
-                    // should we build here?
-                    if (Math.random() < this.chanceToBuild) {
-                      // what to build?
-                      //var item = this.randomIntFromInterval(2, this.spaces.length);
-                      if (
-                        Math.random() < this.chanceForSpawn &&
-                        this.map.spawns.length < this.config.spawns
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:grey;color:white;'>!</span>";
-                        this.map.spawns.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTotem &&
-                        this.map.totems.length < this.config.totems
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
-                        this.map.totems.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTreasure &&
-                        this.map.treasure.length < this.config.treasure
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
-                        this.map.treasure.push({ x: xNew, y: yNew });
-                      } else {
-                        array[yNew][xNew] = "."; // this.spaces[item];
-                      }
-                      // move to new coord and break
-                      xCurr = xNew;
-                      yCurr = yNew;
-                      usedSpaces++;
-                      currDirection = "right";
-                      built = true;
-                      console.log("built right");
-                    }
-                  }
+                  ({
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    currDirection,
+                    built,
+                    array,
+                  } = this.buildSpace(
+                    xNew,
+                    yNew,
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    "right",
+                    currDirection,
+                    array
+                  ));
                 }
                 break;
               case "down":
@@ -354,45 +341,23 @@ export default {
                   xNew = xCurr;
                   yNew = yCurr + 1;
 
-                  // is it possible to build here
-                  if (array[yNew][xNew] === "X") {
-                    // should we build here?
-                    if (Math.random() < this.chanceToBuild) {
-                      // what to build?
-                      //var item = this.randomIntFromInterval(2, this.spaces.length);
-                      if (
-                        Math.random() < this.chanceForSpawn &&
-                        this.map.spawns.length < this.config.spawns
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:grey;color:white;'>!</span>";
-                        this.map.spawns.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTotem &&
-                        this.map.totems.length < this.config.totems
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
-                        this.map.totems.push({ x: xNew, y: yNew });
-                      } else if (
-                        Math.random() < this.chanceForTreasure &&
-                        this.map.treasure.length < this.config.treasure
-                      ) {
-                        array[yNew][xNew] =
-                          "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
-                        this.map.treasure.push({ x: xNew, y: yNew });
-                      } else {
-                        array[yNew][xNew] = "."; // this.spaces[item];
-                      }
-                      // move to new coord and break
-                      xCurr = xNew;
-                      yCurr = yNew;
-                      usedSpaces++;
-                      currDirection = "down";
-                      built = true;
-                      console.log("built down");
-                    }
-                  }
+                  ({
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    currDirection,
+                    built,
+                    array,
+                  } = this.buildSpace(
+                    xNew,
+                    yNew,
+                    xCurr,
+                    yCurr,
+                    usedSpaces,
+                    "down",
+                    currDirection,
+                    array
+                  ));
                 }
                 break;
             }
