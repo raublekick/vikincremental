@@ -10,7 +10,9 @@
       @keydown.left="left"
       @keydown.right="right"
     >
-      <div class="map" v-html="mapHtml"></div>
+      <div>
+        <div class="map" v-html="mapHtml"></div>
+      </div>
       <b-button v-if="atStart">Leave</b-button>
     </div>
   </div>
@@ -40,6 +42,7 @@ export default {
       spaces: ["X", "s", " ", "t", "e"],
       playerCoords: null,
       previousSpace: null,
+      fog: 6,
     };
   },
   props: {
@@ -180,7 +183,8 @@ export default {
       this.playerCoords = {
         x: this.xStart,
         y: this.yStart,
-        previousValue: "<span class='marker' style='color:red;'>S</span>",
+        previousValue:
+          "<span class='marker' style='background-color:crimson;color:white;'>S</span>",
       };
       array[this.yStart][this.xStart] =
         "<span class='marker' style='background-color:green;color:white'>@</span>";
@@ -480,7 +484,10 @@ export default {
           var pX = this.playerCoords.x;
           var pY = this.playerCoords.y;
           var distanceFromPlayer = Math.sqrt((x - pX) ** 2 + (y - pY) ** 2);
-          mapString += distanceFromPlayer <= 80 ? col : "?";
+          mapString +=
+            distanceFromPlayer <= this.fog
+              ? col
+              : "<span style='background-color:#999;color:grey;'>?</span>";
         });
         mapString += "<br/>";
       });
@@ -509,7 +516,8 @@ export default {
   letter-spacing: 1px;
   color: #999;
   cursor: default;
-  border: 1px solid black;
+  border: 1px solid #999;
+  display: inline-block;
 }
 .marker {
   background-clip: content-box;
