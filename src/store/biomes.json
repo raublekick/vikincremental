@@ -14,10 +14,8 @@
       "totem": "Ikon of the Bounty",
       "totemDropChance": 0.25,
       "treasures": { 
-        "items": [
-          { "name": "Bones", "max": 1 }
-        ],
-        "food": [ { "name": "Yellow Mushrooms", "max": 2 } ]
+        "items": [],
+        "food": [ { "name": "Yellow Mushrooms", "max": 1 } ]
       }
     }
   },
@@ -34,11 +32,10 @@
       "mapData": null,
       "totem": "Ikon of Renewal",
       "totemDropChance": 0.25,
-      "treasures": [
-        { "name": "Bones", "max": 1 },
-        { "name": "Yellow Mushrooms", "max": 4 },
-        { "name": "Dwarven Core", "max": 3 }
-      ]
+      "treasures": { 
+        "items": [ { "name": "Dwarven Core", "max": 3 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
     }
   },
   {

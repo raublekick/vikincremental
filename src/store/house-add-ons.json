@@ -8,6 +8,10 @@
       {
         "name": "Stone",
         "amount": 50
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 5
       }
     ],
     "processing": [{
@@ -26,6 +30,10 @@
       {
         "name": "Stone",
         "amount": 50
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 5
       }
     ],
     "processing": [
@@ -145,6 +153,50 @@
     "processing": []
   },
   {
+    "name": "Hearth",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Stonecutter"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 20
+      },
+      {
+        "name": "Stone",
+        "amount": 100
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Hanging Brazier",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Bronze Bar",
+        "amount": 20
+      },
+      {
+        "name": "Coal",
+        "amount": 10
+      },
+      {
+        "name": "Chains",
+        "amount": 1
+      }
+    ],
+    "processing": []
+  },
+  {
     "name": "Deer Rug",
     "built": false,
     "enabled": true,
@@ -156,6 +208,138 @@
       {
         "name": "Leather Hide",
         "amount": 4
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Wolf Rug",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Workbench"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 4
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Steer Rug",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Workbench"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Steer Hide",
+        "amount": 4
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Banners",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Workbench"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Leather Scraps",
+        "amount": 30
+      },
+      {
+        "name": "Berries",
+        "amount": 10
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Table",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Chairs",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Throne",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 5
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Comfortable Beds",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "comfort": 1,
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 100
+      },
+      {
+        "name": "Leather Hide",
+        "amount": 10
+      },
+      {
+        "name": "Wolf Hide",
+        "amount": 5
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 10
       }
     ],
     "processing": []
