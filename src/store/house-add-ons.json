@@ -67,13 +67,48 @@
         "amount": 5
       }
     ],
-    "processing": [{
-      "input": [
-        { "name": "Wood", "amount": 1}, 
-        { "name": "Raw Meat", "amount": 1}
-      ],
-      "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
-    }]
+    "processing": [
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Meat", "amount": 1}
+        ],
+        "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+      }
+    ]
+  },
+  {
+    "name": "Cooking Pot",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 2,
+    "addOnRequirements": ["Campfire"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Tin Bar",
+        "amount": 10
+      }
+    ],
+    "processing": [
+      {
+        "input": [
+          { "name": "Wood", "amount": 1 }, 
+          { "name": "Carrot", "amount": 3 },
+          { "name": "Mushroom", "amount": 1 }
+        ],
+        "output": { "name": "Carrot Soup", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Meat", "amount": 1},
+          { "name": "Turnip", "amount": 1 }
+        ],
+        "output": { "name": "Turnip Stew", "amount": 1, "type": "food" }
+      }
+    ]
   },
   {
     "name": "Hammer",
