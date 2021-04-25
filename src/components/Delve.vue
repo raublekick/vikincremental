@@ -3,7 +3,7 @@
     <combat v-if="combat" />
 
     <div class="box">
-      <pre>{{ battleLog }}</pre>
+      <pre v-show="!combat">{{ battleLog }}</pre>
       <delve-map :config="biome.delve" />
     </div>
   </div>

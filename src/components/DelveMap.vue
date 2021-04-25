@@ -1,6 +1,8 @@
 <template>
   <div class="pt-4">
-    <b-button v-if="!map.data" @click="makeMap()">Begin!</b-button>
+    <b-button v-if="!map.data && vikings.length" @click="makeMap()"
+      >Begin!</b-button
+    >
     <div
       class="has-text-centered"
       v-if="mapHtml != ''"
@@ -56,7 +58,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["worldTier"]),
+    ...mapState(["worldTier", "vikings"]),
     atStart() {
       return (
         this.playerCoords.x === this.xStart &&
@@ -66,42 +68,38 @@ export default {
   },
   methods: {
     ...mapMutations(["setField"]),
-    ...mapActions(["updateMapData"]),
-    up(event) {
+    ...mapActions(["updateMapData", "setupCombat"]),
+    up() {
       if (
         this.playerCoords.y > 0 &&
         this.map.data[this.playerCoords.y - 1][this.playerCoords.x] !== "X"
       ) {
         this.movePlayer({ x: this.playerCoords.x, y: this.playerCoords.y - 1 });
       }
-      console.log(event);
     },
-    down(event) {
+    down() {
       if (
         this.playerCoords.y < this.config.yHeight &&
         this.map.data[this.playerCoords.y + 1][this.playerCoords.x] !== "X"
       ) {
         this.movePlayer({ x: this.playerCoords.x, y: this.playerCoords.y + 1 });
       }
-      console.log(event);
     },
-    left(event) {
+    left() {
       if (
         this.playerCoords.x > 0 &&
         this.map.data[this.playerCoords.y][this.playerCoords.x - 1] !== "X"
       ) {
         this.movePlayer({ x: this.playerCoords.x - 1, y: this.playerCoords.y });
       }
-      console.log(event);
     },
-    right(event) {
+    right() {
       if (
         this.playerCoords.x < this.config.xLength - 1 &&
         this.map.data[this.playerCoords.y][this.playerCoords.x + 1] !== "X"
       ) {
         this.movePlayer({ x: this.playerCoords.x + 1, y: this.playerCoords.y });
       }
-      console.log(event);
     },
     movePlayer(coords) {
       this.map.data[this.playerCoords.y][
@@ -117,11 +115,11 @@ export default {
           );
         }) >= 0
       ) {
-        console.log("Combat");
         _.remove(this.map.spawns, (spawn) => {
           spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
         });
         this.playerCoords.previousValue = ".";
+        this.setupCombat("Monsters jump out of the darkness!\n");
       } else if (
         _.findIndex(this.map.totems, (spawn) => {
           return (
@@ -129,7 +127,6 @@ export default {
           );
         }) >= 0
       ) {
-        console.log("Combat");
         _.remove(this.map.totems, (spawn) => {
           spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
         });
@@ -141,7 +138,6 @@ export default {
           );
         }) >= 0
       ) {
-        console.log("Combat");
         _.remove(this.map.treasure, (spawn) => {
           spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
         });
@@ -380,7 +376,6 @@ export default {
           // if(xCurr === 0 && yCurr === 0) {
           //   xCurr = this.xStart;
           //   yCurr = this.yStart;
-          //   console.log("back to start");
           //   continue;
           // }
           var moved = false;
@@ -390,7 +385,7 @@ export default {
                 case "left":
                   if (xCurr != 0 && array[yCurr][xCurr - 1] !== "X") {
                     xCurr = xCurr - 1;
-                    console.log("moved left");
+
                     moved = true;
                     currDirection = "left";
                   }
@@ -398,7 +393,7 @@ export default {
                 case "up":
                   if (yCurr != 0 && array[yCurr - 1][xCurr] !== "X") {
                     yCurr = yCurr - 1;
-                    console.log("moved up");
+
                     moved = true;
                     currDirection = "up";
                   }
@@ -409,7 +404,7 @@ export default {
                     array[yCurr][xCurr + 1] !== "X"
                   ) {
                     xCurr = xCurr + 1;
-                    console.log("moved right");
+
                     moved = true;
                     currDirection = "right";
                   }
@@ -420,7 +415,7 @@ export default {
                     array[yCurr + 1][xCurr] !== "X"
                   ) {
                     yCurr = yCurr + 1;
-                    console.log("moved down");
+
                     moved = true;
                     currDirection = "down";
                   }
@@ -436,12 +431,12 @@ export default {
             // couldn't move, what do?
             // shuffle directions
             directions = this.shiftArray(directions);
-            console.log("trying again");
+
             continue;
           }
         }
       }
-      console.log("finished");
+
       this.map.data = array;
       this.drawMap();
     },

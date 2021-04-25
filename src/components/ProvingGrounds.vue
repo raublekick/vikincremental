@@ -1,5 +1,5 @@
 <template>
-  <div v-if="vikings.length">
+  <div>
     <div v-if="bossCombat">
       <combat />
     </div>

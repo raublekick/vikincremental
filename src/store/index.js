@@ -132,7 +132,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    async initializeCombat({ state }) {
+    async initializeCombat({ state, dispatch }) {
       if (
         state.newDay &&
         state.vikings.length &&
@@ -143,38 +143,44 @@ export default new Vuex.Store({
         if (state.enemies.length) {
           state.combat = true;
         } else if (chance < state.encounterChance) {
-          state.combat = true;
-          state.flags.combatUnlocked = true;
-          state.battleLog =
-            "Starting day " + state.day.totalDays + " on the battlefield...\n";
-
-          // get how many enemies to add
-          var numberOfEnemies = mixin.methods.randomIntFromInterval(
-            1,
-            state.vikings.length
+          dispatch(
+            "setupCombat",
+            "Starting day " + state.day.totalDays + " on the battlefield...\n"
           );
-          var threshold = Math.random();
-
-          var tierEnemies = _.filter(state.enemyList, (enemy) => {
-            return (
-              enemy.worldTier === state.worldTier && enemy.threshold < threshold
-            );
-          });
-
-          for (var i = 1; i <= numberOfEnemies; i++) {
-            var selectedEnemy = _.clone(
-              tierEnemies[
-                mixin.methods.randomIntFromInterval(0, tierEnemies.length - 1)
-              ]
-            );
-            state.enemies.push(selectedEnemy);
-            state.battleLog +=
-              "A " + selectedEnemy.name + " has entered the battlefield!\n";
-          }
         } else {
           state.enemies = [];
           state.combat = false;
         }
+      }
+    },
+    async setupCombat({ state }, msg) {
+      state.combat = true;
+      state.flags.combatUnlocked = true;
+      state.battleLog = msg;
+      state.enemies = [];
+
+      // get how many enemies to add
+      var numberOfEnemies = mixin.methods.randomIntFromInterval(
+        1,
+        state.vikings.length
+      );
+      var threshold = Math.random();
+
+      var tierEnemies = _.filter(state.enemyList, (enemy) => {
+        return (
+          enemy.worldTier === state.worldTier && enemy.threshold < threshold
+        );
+      });
+
+      for (var i = 1; i <= numberOfEnemies; i++) {
+        var selectedEnemy = _.clone(
+          tierEnemies[
+            mixin.methods.randomIntFromInterval(0, tierEnemies.length - 1)
+          ]
+        );
+        state.enemies.push(selectedEnemy);
+        state.battleLog +=
+          "A " + selectedEnemy.name + " has entered the battlefield!\n";
       }
     },
     async challengeBoss({ state }, boss) {
@@ -440,6 +446,7 @@ export default new Vuex.Store({
           } else {
             // reset combat if all enemies are defeated
             state.combat = false;
+            state.delve = false;
             state.battleLog += "Your party has been eliminated...\n";
             state.enemies = [];
 
