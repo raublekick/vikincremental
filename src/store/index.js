@@ -452,6 +452,7 @@ export default new Vuex.Store({
             var hit = Math.random() < weapon.accuracy;
             var armor = mixin.methods.getArmor(state.vikings[targetIndex].gear);
             var damage = hit ? weapon.damage - armor.armorTotal : 0;
+            if (damage < 0) damage = 0;
             var staminaCost = weapon.stamina;
             if (hit) {
               state.battleLog +=
