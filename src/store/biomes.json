@@ -10,7 +10,10 @@
       "spawns": 8,
       "totems": 3,
       "treasure": 10,
-      "mapData": null
+      "mapData": null,
+      "totem": "Ikon of the Bounty",
+      "totemDropChance": 0.25,
+      "treasures": ["Stone", "Wood", "Leather"]
     }
   },
   {

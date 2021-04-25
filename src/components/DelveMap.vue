@@ -44,6 +44,7 @@ export default {
       chanceToBuild: 0.5,
       chanceForSpawn: 0.025,
       chanceForTotem: 0.025,
+      chanceForTotemDrop: 0.25,
       chanceForTreasure: 0.025,
       spaces: ["X", "s", " ", "t", "e"],
       playerCoords: null,
@@ -68,7 +69,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setField"]),
-    ...mapActions(["updateMapData", "setupCombat"]),
+    ...mapActions(["updateMapData", "setupCombat", "addTotem"]),
     up() {
       if (
         this.playerCoords.y > 0 &&
@@ -110,7 +111,7 @@ export default {
       ] = this.playerCoords.previousValue;
       this.playerCoords.y = coords.y;
       this.playerCoords.x = coords.x;
-
+      var spawnIndex = null;
       if (
         _.findIndex(this.map.spawns, (spawn) => {
           return (
@@ -118,9 +119,12 @@ export default {
           );
         }) >= 0
       ) {
-        _.remove(this.map.spawns, (spawn) => {
-          spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
+        spawnIndex = _.findIndex(this.map.spawns, (spawn) => {
+          return (
+            spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y
+          );
         });
+        this.map.spawns.splice(spawnIndex, 1);
         this.playerCoords.previousValue = ".";
         this.setupCombat("Monsters jump out of the darkness!\n");
       } else if (
@@ -130,10 +134,15 @@ export default {
           );
         }) >= 0
       ) {
-        _.remove(this.map.totems, (spawn) => {
-          spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
+        spawnIndex = _.findIndex(this.map.totems, (spawn) => {
+          return (
+            spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y
+          );
         });
+        this.map.totems.splice(spawnIndex, 1);
         this.playerCoords.previousValue = ".";
+        // give a totem
+        this.addTotem(this.config);
       } else if (
         _.findIndex(this.map.treasure, (spawn) => {
           return (
@@ -141,10 +150,11 @@ export default {
           );
         }) >= 0
       ) {
-        _.remove(this.map.treasure, (spawn) => {
+        this.map.treasure = _.remove(this.map.treasure, (spawn) => {
           spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
         });
         this.playerCoords.previousValue = ".";
+        // give treasure
       } else {
         this.playerCoords.previousValue = this.map.data[this.playerCoords.y][
           this.playerCoords.x
