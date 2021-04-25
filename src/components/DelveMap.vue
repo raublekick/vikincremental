@@ -13,14 +13,18 @@
       <div>
         <div class="map" v-html="mapHtml"></div>
       </div>
-      <b-button v-if="atStart">Leave</b-button>
+      <b-button
+        v-if="atStart"
+        @click="setField({ name: 'delve', value: false })"
+        >Leave</b-button
+      >
     </div>
   </div>
 </template>
 
 <script>
 import * as _ from "lodash";
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapMutations } from "vuex";
 export default {
   name: "DelveMap",
   data() {
@@ -61,6 +65,7 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(["setField"]),
     ...mapActions(["updateMapData"]),
     up(event) {
       if (
