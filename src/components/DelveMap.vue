@@ -7,10 +7,10 @@
       class="has-text-centered"
       v-if="mapHtml != ''"
       tabindex="0"
-      @keydown.up="up"
-      @keydown.down="down"
-      @keydown.left="left"
-      @keydown.right="right"
+      @keydown.up.prevent="up"
+      @keydown.down.prevent="down"
+      @keydown.left.prevent="left"
+      @keydown.right.prevent="right"
     >
       <div>
         <div class="map" v-html="mapHtml"></div>
@@ -58,7 +58,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["worldTier", "vikings"]),
+    ...mapState(["worldTier", "vikings", "combat"]),
     atStart() {
       return (
         this.playerCoords.x === this.xStart &&
@@ -102,6 +102,9 @@ export default {
       }
     },
     movePlayer(coords) {
+      if (this.combat) {
+        return;
+      }
       this.map.data[this.playerCoords.y][
         this.playerCoords.x
       ] = this.playerCoords.previousValue;
