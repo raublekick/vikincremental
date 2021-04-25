@@ -4,8 +4,8 @@ import titles from "./title.json";
 export default {
   methods: {
     randomName() {
-      var titleIndex = this.randomIntFromInterval(0, titles.length);
-      var nameIndex = this.randomIntFromInterval(0, names.length);
+      var titleIndex = this.randomIntFromInterval(0, titles.length - 1);
+      var nameIndex = this.randomIntFromInterval(0, names.length - 1);
       return names[nameIndex] + " " + titles[titleIndex];
     },
     findItem(collection, name) {

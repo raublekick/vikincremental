@@ -168,7 +168,10 @@ export default new Vuex.Store({
 
       var tierEnemies = _.filter(state.enemyList, (enemy) => {
         return (
-          enemy.worldTier === state.worldTier && enemy.threshold < threshold
+          enemy.worldTier === state.worldTier &&
+          enemy.threshold < threshold &&
+          ((state.delve === true && enemy.delve === true) ||
+            (state.delve === false && enemy.overworld === true))
         );
       });
 
@@ -218,12 +221,24 @@ export default new Vuex.Store({
     async addTreasure({ state, commit }, payload) {
       state.battleLog += "You dig into an ancient chest...\n";
       var drops = 0;
-      _.forEach(payload.treasures, (drop) => {
-        // bonus drops based on # of vikings
+      _.forEach(payload.treasures.items, (drop) => {
         var amount = mixin.methods.randomIntFromInterval(0, drop.max);
         if (amount > 0) {
           commit("incrementObject", {
             objectKey: "inventory",
+            key: drop.name,
+            amount: amount,
+          });
+          state.battleLog += "You find " + amount + " " + drop.name + "!\n";
+          drops++;
+        }
+      });
+      _.forEach(payload.treasures.food, (drop) => {
+        // bonus drops based on # of vikings
+        var amount = mixin.methods.randomIntFromInterval(0, drop.max);
+        if (amount > 0) {
+          commit("incrementObject", {
+            objectKey: "food",
             key: drop.name,
             amount: amount,
           });
@@ -243,7 +258,7 @@ export default new Vuex.Store({
           totalStaminaDrain = viking.staminaRegen;
 
         // if in combat, disable tasks
-        if (!state.combat) {
+        if (!state.combat && !state.delve) {
           _.forEach(viking.tasks, (task) => {
             // get items first if stamina is positive
             if (viking.stamina > 0) {

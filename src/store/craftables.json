@@ -77,6 +77,10 @@
       {
         "name": "Leather Hide",
         "amount": 4
+      },
+      {
+        "name": "Bones",
+        "amount": 1
       }
     ],
     "combat": {},
@@ -90,6 +94,10 @@
       {
         "name": "Leather Hide",
         "amount": 2
+      },
+      {
+        "name": "Bones",
+        "amount": 1
       }
     ],
     "combat": {},
@@ -103,16 +111,16 @@
       {
         "name": "Leather Hide",
         "amount": 2
+      },
+      {
+        "name": "Bones",
+        "amount": 1
       }
     ],
     "combat": {},
     "armorType": "Legs",
     "armor": 2
   },
-
-
-
-
   {
     "name": "Troll Armor",
     "addOnRequirements": ["Workbench"],
@@ -121,6 +129,10 @@
       {
         "name": "Troll Hide",
         "amount": 5
+      },
+      {
+        "name": "Bones",
+        "amount": 2
       }
     ],
     "combat": {},
@@ -135,6 +147,10 @@
       {
         "name": "Troll Hide",
         "amount": 4
+      },
+      {
+        "name": "Bones",
+        "amount": 2
       }
     ],
     "combat": {},
@@ -148,6 +164,10 @@
     "components": [
       {
         "name": "Troll Hide",
+        "amount": 2
+      },
+      {
+        "name": "Bones",
         "amount": 2
       }
     ],

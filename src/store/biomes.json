@@ -3,7 +3,7 @@
   {
     "name": "Grasslands",
     "unlocked": true,
-    "flavor": "Grasslands it is.",
+    "flavor": "A verdant paradise of sprawling hillsides dotted with trees and shrubbery.",
     "delve": {
       "xLength": 10,
       "yHeight": 10,
@@ -13,16 +13,43 @@
       "mapData": null,
       "totem": "Ikon of the Bounty",
       "totemDropChance": 0.25,
-      "treasures": [
-        { "name": "Bones", "max": 1 },
-        { "name": "Yellow Mushrooms", "max": 2 }
-      ]
+      "treasures": { 
+        "items": [
+          { "name": "Bones", "max": 1 }
+        ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 2 } ]
+      }
     }
   },
   {
     "name": "Forest",
     "unlocked": false,
-    "flavor": "It is a dark forest."
+    "flavor": "Light filtered though the lush canopy provides a heavenly atmosphere, until night falls.",
+    "delve": {
+      "xLength": 20,
+      "yHeight": 20,
+      "spawns": 6,
+      "totems": 3,
+      "treasure": 6,
+      "mapData": null,
+      "totem": "Ikon of Renewal",
+      "totemDropChance": 0.25,
+      "treasures": [
+        { "name": "Bones", "max": 1 },
+        { "name": "Yellow Mushrooms", "max": 4 },
+        { "name": "Dwarven Core", "max": 3 }
+      ]
+    }
+  },
+  {
+    "name": "Ruined City",
+    "unlocked": false,
+    "flavor": "The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate."
+  },
+  {
+    "name": "Swamps",
+    "unlocked": false,
+    "flavor": "The air is thick with noxious haze and unknown sounds permeate the stagnant atmosphere."
   },
   {
     "name": "Mountains",
@@ -33,11 +60,6 @@
     "name": "Caldera",
     "unlocked": false,
     "flavor": "Hot hot hot"
-  },
-  {
-    "name": "Ruined City",
-    "unlocked": false,
-    "flavor": "What happen?"
   },
   {
     "name": "Coastal Plains",

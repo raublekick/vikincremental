@@ -38,7 +38,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Wood", "amount": 2 }
+      { "name": "Ikon of Renewal", "amount": 5 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 60, "stamina": 60, "accuracy": 0.15 },

@@ -1,8 +1,9 @@
 [
-  
   {
     "name": "Goblin Youngling",
     "worldTier": 0,
+    "delve": false,
+    "overworld": true,
     "threshold": 0,
     "stamina": 15,
     "health": 15,
@@ -20,8 +21,52 @@
     ]
   },
   {
-    "name": "Tier 2 Enemy",
+    "name": "Skeleton",
+    "worldTier": 0,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0,
+    "stamina": 25,
+    "health": 25,
+    "maxStamina": 25,
+    "maxHealth": 25,
+    "staminaRegen": 2,
+    "baseStaminaRegen": 2,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 15, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Bones", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Skeleton",
     "worldTier": 1,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0,
+    "stamina": 15,
+    "health": 15,
+    "maxStamina": 15,
+    "maxHealth": 15,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 20, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Bones", "amount": 2 }
+    ]
+  },
+  {
+    "name": "Goblin Scout",
+    "worldTier": 1,
+    "delve": false,
+    "overworld": true,
     "threshold": 0,
     "stamina": 30,
     "health": 30,
@@ -39,8 +84,10 @@
     ]
   },
   {
-    "name": "Tier 2 Brute",
+    "name": "Goblin Brute",
     "worldTier": 1,
+    "delve": false,
+    "overworld": true,
     "threshold": 0.20,
     "stamina": 40,
     "health": 50,
@@ -58,8 +105,10 @@
     ]
   },
   {
-    "name": "Tier 2 Club Troll",
+    "name": "Troll",
     "worldTier": 1,
+    "delve": true,
+    "overworld": true,
     "threshold": 0.80,
     "stamina": 100,
     "health": 100,
@@ -78,8 +127,10 @@
     ]
   },
   {
-    "name": "Tier 2 Troll",
+    "name": "Troll",
     "worldTier": 1,
+    "delve": true,
+    "overworld": true,
     "threshold": 0.75,
     "stamina": 100,
     "health": 100,
