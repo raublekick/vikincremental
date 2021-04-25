@@ -1,8 +1,8 @@
 <template>
   <div class="pt-4">
-    <b-button v-if="!map.data && vikings.length" @click="makeMap()"
+    <!-- <b-button v-if="!map.data && vikings.length" @click="makeMap()"
       >Begin!</b-button
-    >
+    > -->
     <div
       class="has-text-centered"
       v-if="mapHtml != ''"
@@ -11,6 +11,7 @@
       @keydown.down.prevent="down"
       @keydown.left.prevent="left"
       @keydown.right.prevent="right"
+      ref="map"
     >
       <div>
         <div class="map" v-html="mapHtml"></div>
@@ -49,7 +50,7 @@ export default {
       spaces: ["X", "s", " ", "t", "e"],
       playerCoords: null,
       previousSpace: null,
-      fog: 80,
+      fog: 6,
       sizeDivisor: 3,
     };
   },
@@ -475,6 +476,9 @@ export default {
       });
 
       this.mapHtml = mapString;
+      this.$nextTick(() => {
+        this.$refs.map.focus();
+      });
     },
     randomIntFromInterval(min, max) {
       // min and max included
@@ -485,6 +489,8 @@ export default {
     if (this.config.mapData) {
       this.map.data = this.config.mapData;
       this.drawMap();
+    } else {
+      this.makeMap();
     }
   },
 };

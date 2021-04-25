@@ -201,14 +201,15 @@ export default new Vuex.Store({
       state.biomes[index].delve.mapData = mapData;
     },
     async addTotem({ state, commit }, payload) {
-      if (Math.random() < payload.chanceForTotemDrop) {
+      var chance = Math.random();
+      if (chance < payload.totemDropChance) {
         commit("incrementObject", {
           objectKey: "inventory",
           key: payload.totem,
           amount: 1,
         });
         state.battleLog +=
-          "Upon a dusty altar you find a " + payload.totem + "\n";
+          "Upon a dusty altar you find an " + payload.totem + "\n";
       } else {
         state.battleLog +=
           "A dusty altar sits before you, but it has nothing to offer.\n";

@@ -7,15 +7,15 @@
     "delve": {
       "xLength": 10,
       "yHeight": 10,
-      "spawns": 8,
+      "spawns": 3,
       "totems": 3,
-      "treasure": 10,
+      "treasure": 5,
       "mapData": null,
       "totem": "Ikon of the Bounty",
       "totemDropChance": 0.25,
       "treasures": [
-        { "name": "Bones", "max": 2 },
-        { "name": "Yellow Mushrooms", "max": 5 }
+        { "name": "Bones", "max": 1 },
+        { "name": "Yellow Mushrooms", "max": 2 }
       ]
     }
   },

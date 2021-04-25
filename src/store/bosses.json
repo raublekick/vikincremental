@@ -12,7 +12,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Wood", "amount": 2 }
+      { "name": "Ikon of the Bounty", "amount": 3 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 30, "stamina": 30, "accuracy": 0.15 },

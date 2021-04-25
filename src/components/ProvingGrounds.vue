@@ -9,7 +9,7 @@
         <h3 class="subtitle">
           {{ biome.name
           }}<b-button
-            :disabled="worldTier != i"
+            :disabled="worldTier != i || vikings.length === 0"
             @click="initializeDelve()"
             class="is-small is-pulled-right"
             >Delve</b-button
@@ -20,7 +20,7 @@
         <boss class="pt-4" :item="bossList[i]" />
       </div>
     </div>
-    <div v-else>Cannot challenge a boss while in combat.</div>
+    <div v-else>Cannot delve or challenge a boss while in combat.</div>
   </div>
 </template>
 <script>
