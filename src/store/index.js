@@ -459,14 +459,10 @@ export default new Vuex.Store({
             });
           } else {
             // reset combat if all enemies are defeated
-            state.combat = false;
-            state.delve = false;
+
             state.battleLog += "Your party has been eliminated...\n";
-            state.enemies = [];
 
             if (state.bossCombat) {
-              state.bossCombat = false;
-
               // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
               _.forEach(state.ripVikings, (viking) => {
                 var bossesDefeated = _.filter(
@@ -491,15 +487,21 @@ export default new Vuex.Store({
                 viking.healthRegen = viking.baseHealthRegen;
               });
               state.vikings = _.clone(state.ripVikings);
-            } else {
-              // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
-              state.worldTier = 0;
               state.ripVikings = [];
-              state.bossList = _.clone(defaultState.bossList);
-              state.biomes = _.clone(defaultState.biomes);
+            } else {
               state.battleLog +=
                 "Flying far above the battlefield the crow observes, knowing that now it must retrieve more mortals. But these vikings have made a place for themselves, and it may be of use to those to come.\n";
             }
+
+            // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
+            state.enemies = [];
+            state.combat = false;
+            state.delve = false;
+            state.bossCombat = false;
+            state.worldTier = 0;
+            state.ripVikings = [];
+            state.bossList = _.clone(defaultState.bossList);
+            state.biomes = _.clone(defaultState.biomes);
           }
         });
       }
