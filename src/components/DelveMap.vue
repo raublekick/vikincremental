@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setField"]),
-    ...mapActions(["updateMapData", "setupCombat", "addTotem"]),
+    ...mapActions(["updateMapData", "setupCombat", "addTotem", "addTreasure"]),
     up() {
       if (
         this.playerCoords.y > 0 &&
@@ -150,11 +150,15 @@ export default {
           );
         }) >= 0
       ) {
-        this.map.treasure = _.remove(this.map.treasure, (spawn) => {
-          spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y;
+        spawnIndex = _.findIndex(this.map.treasure, (spawn) => {
+          return (
+            spawn.x === this.playerCoords.x && spawn.y === this.playerCoords.y
+          );
         });
+        this.map.treasure.splice(spawnIndex, 1);
         this.playerCoords.previousValue = ".";
         // give treasure
+        this.addTreasure(this.config);
       } else {
         this.playerCoords.previousValue = this.map.data[this.playerCoords.y][
           this.playerCoords.x

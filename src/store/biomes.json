@@ -5,15 +5,18 @@
     "unlocked": true,
     "flavor": "Grasslands it is.",
     "delve": {
-      "xLength": 40,
-      "yHeight": 40,
+      "xLength": 10,
+      "yHeight": 10,
       "spawns": 8,
       "totems": 3,
       "treasure": 10,
       "mapData": null,
       "totem": "Ikon of the Bounty",
       "totemDropChance": 0.25,
-      "treasures": ["Stone", "Wood", "Leather"]
+      "treasures": [
+        { "name": "Bones", "max": 2 },
+        { "name": "Yellow Mushrooms", "max": 5 }
+      ]
     }
   },
   {

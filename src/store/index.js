@@ -214,6 +214,27 @@ export default new Vuex.Store({
           "A dusty altar sits before you, but it has nothing to offer.\n";
       }
     },
+    async addTreasure({ state, commit }, payload) {
+      state.battleLog += "You dig into an ancient chest...\n";
+      var drops = 0;
+      _.forEach(payload.treasures, (drop) => {
+        // bonus drops based on # of vikings
+        var amount = mixin.methods.randomIntFromInterval(0, drop.max);
+        if (amount > 0) {
+          commit("incrementObject", {
+            objectKey: "inventory",
+            key: drop.name,
+            amount: amount,
+          });
+          state.battleLog += "You find " + amount + " " + drop.name + "!\n";
+          drops++;
+        }
+      });
+      if (drops === 0) {
+        state.battleLog +=
+          "If any treasure was once here, it is long gone...\n";
+      }
+    },
     async vikingTick({ state, commit, getters }) {
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
