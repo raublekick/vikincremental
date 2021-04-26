@@ -117,12 +117,17 @@ export default {
             }).length > 0
           : true;
 
+      var tierMet =
+        this.worldTier !== null && item.tierRequirement
+          ? this.worldTier >= item.tierRequirement
+          : true;
+
       var bedsMet =
         house && item.bedRequirement ? item.bedRequirement <= house.beds : true;
 
       // check if inventory contains at least one of the inputs (i.e. player cannot unlock smelter until an ore has been mined)
 
-      return bedsMet && addOnsMet && requirementsMet;
+      return bedsMet && addOnsMet && requirementsMet && tierMet;
     },
     craftable(item) {
       //var open = this.unlocked(item, house, houseAddOns);

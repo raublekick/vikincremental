@@ -5,6 +5,9 @@
         Vikincrement<b-button @click="reset()" class="is-pulled-right"
           >Reset</b-button
         >
+        <!-- <b-button @click="resetTier()" class="is-pulled-right"
+          >Reset Tier</b-button
+        > -->
       </h1>
     </div>
     <div class="columns">
@@ -170,6 +173,9 @@ export default {
         default:
           break;
       }
+    },
+    resetTier() {
+      this.setField({ name: "worldTier", value: 0 });
     },
   },
 

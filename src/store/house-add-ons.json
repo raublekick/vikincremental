@@ -229,8 +229,8 @@
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
-    "gearRequirements": ["Bone Pickaxe", "Bronze Pickaxe"],
-    "addOnRequirements": ["Workbench"],
+    "gearRequirements": [],
+    "addOnRequirements": ["Kiln", "Smelter"],
     "components": [
       {
         "name": "Stone",
