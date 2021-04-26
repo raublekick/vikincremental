@@ -2,7 +2,7 @@
   {
     "name": "Gather",
     "staminaCost": 2,
-    "requirements": [],
+    "gearRequirements": [],
     "food": [
       {
         "name": "Berries",
@@ -28,21 +28,22 @@
     "name": "Chop Wood",
     "staminaCost": 5,
     "worldTier": 0,
-    "requirements": ["Stone Axe", "Flint Axe", "Bronze Axe"],
+    "gearRequirements": ["Stone Axe", "Flint Axe", "Bronze Axe"],
+    "addOnRequirements": ["Chopping Block"],
     "items": [{ "name": "Wood", "perSecond": 3 }, { "name": "Resin", "perSecond": 0.1 }]
   },
   {
     "name": "Forestry",
     "worldTier": 1,
     "staminaCost": 7,
-    "requirements": ["Bronze Axe"],
+    "gearRequirements": ["Bronze Axe"],
     "items": [{ "name": "Wood", "perSecond": 3 }, { "name": "Resin", "perSecond": 0.1 }, { "name": "Hard Wood", "perSecond": 1 }, { "name": "Ornate Wood", "perSecond": 1 }]
   },
   {
     "name": "Small Game Hunting",
     "staminaCost": 5,
     "worldTier": null,
-    "requirements": ["Crude Bow", "Short Bow"],
+    "gearRequirements": ["Crude Bow", "Short Bow"],
     "items": [
       { "name": "Leather Hide", "perSecond": 0.1 },
       { "name": "Leather Scraps", "perSecond": 0.2 },
@@ -54,21 +55,21 @@
     "name": "Stone Mining",
     "staminaCost": 10,
     "worldTier": null,
-    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "gearRequirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
     "items": [{"name": "Stone", "perSecond": 3}]
   },
   {
     "name": "Tin Mining",
     "staminaCost": 10,
     "worldTier": 1,
-    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "gearRequirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
     "items": [{"name": "Tin Ore", "perSecond": 0.5}]
   },
   {
     "name": "Copper Mining",
     "staminaCost": 10,
     "worldTier": 1,
-    "requirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
+    "gearRequirements": ["Bone Pickaxe", "Bronze Pickaxe", "Iron Pickaxe"],
     "items": [{"name": "Copper Ore", "perSecond": 0.125}, {"name": "Stone", "perSecond": 0.5}]
   }
 ]

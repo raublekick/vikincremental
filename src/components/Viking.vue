@@ -77,7 +77,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["tasks", "worldTier"]),
+    ...mapState(["tasks", "worldTier", "houseAddOns"]),
     preference: {
       get() {
         return this.item.foodPreference;
@@ -90,15 +90,28 @@ export default {
       var tasks = _.filter(this.tasks, (task) => {
         var inBiome = task.worldTier ? task.worldTier === this.worldTier : true;
         var requirementsMet =
-          !task.requirements || task.requirements.length === 0
+          !task.gearRequirements || task.gearRequirements.length === 0
             ? 1
-            : _.filter(task.requirements, (requirement) => {
+            : _.filter(task.gearRequirements, (requirement) => {
                 return _.filter(this.item.gear, (gear) => {
                   return gear.name === requirement;
                 }).length;
               }).length;
 
-        return inBiome && requirementsMet > 0;
+        var addOnsMet =
+          task.addOnRequirements &&
+          task.addOnRequirements.length > 0 &&
+          this.houseAddOns
+            ? _.filter(task.addOnRequirements, (requirement) => {
+                return (
+                  _.filter(this.houseAddOns, (addOn) => {
+                    return addOn.name === requirement && addOn.built === true;
+                  }).length > 0
+                );
+              }).length > 0
+            : true;
+
+        return inBiome && requirementsMet > 0 && addOnsMet;
       });
 
       return tasks;

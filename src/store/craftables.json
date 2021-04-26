@@ -19,7 +19,7 @@
   },
   {
     "name": "Bronze Axe",
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Forge Cooler"],
     "components": [
       {
         "name": "Wood",
@@ -56,6 +56,25 @@
     }
   },
   {
+    "name": "Ornaate Bow",
+    "addOnRequirements": ["Adze"],
+    "components": [
+      {
+        "name": "Ornate Bow",
+        "amount": 8
+      },
+      {
+        "name": "Leather Hide",
+        "amount": 4
+      }
+    ],
+    "combat": {
+      "damage": 15,
+      "stamina": 5,
+      "accuracy": 0.65
+    }
+  },
+  {
     "name": "Bone Pickaxe",
     "addOnRequirements": ["Workbench"],
     "components": [
@@ -72,7 +91,7 @@
   },
   {
     "name": "Leather Armor",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "components": [
       {
         "name": "Leather Hide",
@@ -89,7 +108,7 @@
   },
   {
     "name": "Leather Helmet",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "components": [
       {
         "name": "Leather Hide",
@@ -106,7 +125,7 @@
   },
   {
     "name": "Leather Greaves",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "components": [
       {
         "name": "Leather Hide",
@@ -123,7 +142,7 @@
   },
   {
     "name": "Troll Armor",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "bedRequirement": 2,
     "components": [
       {
@@ -141,7 +160,7 @@
   },
   {
     "name": "Troll Helmet",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "bedRequirement": 2,
     "components": [
       {
@@ -159,7 +178,7 @@
   },
   {
     "name": "Troll Greaves",
-    "addOnRequirements": ["Workbench"],
+    "addOnRequirements": ["Tanning Rack"],
     "bedRequirement": 2,
     "components": [
       {

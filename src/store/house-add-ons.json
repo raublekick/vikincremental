@@ -141,6 +141,90 @@
     "processing": []
   },
   {
+    "name": "Chopping Block",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 1,
+    "gearRequirements": [],
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Stone",
+        "amount": 5
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Tanning Rack",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 1,
+    "gearRequirements": [],
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 30
+      },
+      {
+        "name": "Leather Hide",
+        "amount": 5
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Adze",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 1,
+    "gearRequirements": [],
+    "addOnRequirements": ["Forge"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 10
+      },
+      {
+        "name": "Bronze Bar",
+        "amount": 5
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Tool Rack",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 1,
+    "gearRequirements": [],
+    "addOnRequirements": ["Forge"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 10
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 5
+      },
+      {
+        "name": "Obsidian",
+        "amount": 5
+      }
+    ],
+    "processing": []
+  },
+  {
     "name": "Forge",
     "built": false,
     "enabled": false,
@@ -217,8 +301,12 @@
     "comfort": 1,
     "components": [
       {
-        "name": "Bronze Bar",
+        "name": "Copper Bar",
         "amount": 20
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 10
       },
       {
         "name": "Coal",
