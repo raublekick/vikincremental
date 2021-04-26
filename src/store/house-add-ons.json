@@ -54,6 +54,31 @@
     ]
   },
   {
+    "name": "Bee Hive",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Hammer"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 5
+      },
+      {
+        "name": "Queen Bee",
+        "amount": 1
+      }
+    ],
+    "processing": [
+      {
+        "input": [],
+        "output": { "name": "Honey", "amount": 0.2, "type": "food" }
+      }
+    ]
+  },
+  {
     "name": "Cooking Station",
     "built": false,
     "enabled": false,

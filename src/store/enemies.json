@@ -21,6 +21,27 @@
     ]
   },
   {
+    "name": "Bee Hive",
+    "worldTier": 0,
+    "delve": false,
+    "overworld": true,
+    "threshold": 0.9,
+    "stamina": 10,
+    "health": 10,
+    "maxStamina": 10,
+    "maxHealth": 10,
+    "staminaRegen": 0,
+    "baseStaminaRegen": 0,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sting", "damage": 1, "stamina": 10, "accuracy": 0.85 }
+    ],
+    "drops": [
+      { "name": "Queen Bee", "amount": 1 }
+    ]
+  },
+  {
     "name": "Skeleton",
     "worldTier": 0,
     "delve": true,

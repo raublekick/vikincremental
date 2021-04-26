@@ -14,13 +14,19 @@
   {
     "name": "Yellow Mushrooms",
     "stamina": 15,
-    "health": 10,
+    "health": 15,
+    "amount": 0
+  },
+  {
+    "name": "Honey",
+    "stamina": 15,
+    "health": 15,
     "amount": 0
   },
   {
     "name": "Cooked Meat",
-    "stamina": 10,
-    "health": 5,
+    "stamina": 15,
+    "health": 15,
     "amount": 0
   }
 ]

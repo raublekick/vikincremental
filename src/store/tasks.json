@@ -21,6 +21,10 @@
       {
         "name": "Wood",
         "perSecond": 1
+      },
+      {
+        "name": "Queen Bee",
+        "perSecond": 0.0005
       }
     ]
   },
