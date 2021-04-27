@@ -263,19 +263,23 @@ export default new Vuex.Store({
             // get items first if stamina is positive
             if (viking.stamina > 0) {
               _.forEach(task.items, (item) => {
-                commit("incrementObject", {
-                  objectKey: "inventory",
-                  key: item.name,
-                  amount: item.perSecond,
-                });
+                if (!item.worldTier || item.worldTier === state.worldTier) {
+                  commit("incrementObject", {
+                    objectKey: "inventory",
+                    key: item.name,
+                    amount: item.perSecond,
+                  });
+                }
               });
 
               _.forEach(task.food, (item) => {
-                commit("incrementObject", {
-                  objectKey: "food",
-                  key: item.name,
-                  amount: item.perSecond,
-                });
+                if (!item.worldTier || item.worldTier === state.worldTier) {
+                  commit("incrementObject", {
+                    objectKey: "food",
+                    key: item.name,
+                    amount: item.perSecond,
+                  });
+                }
               });
               // calculate stamina costs for this task
               totalStaminaCost += task.staminaCost;

@@ -9,6 +9,11 @@
         "perSecond": 0.2
       },
       {
+        "name": "Blueberries",
+        "perSecond": 0.2,
+        "worldTier": 1
+      },
+      {
         "name": "Mushrooms",
         "perSecond": 0.1
       }
@@ -16,7 +21,8 @@
     "items": [
       {
         "name": "Stone",
-        "perSecond": 0.25
+        "perSecond": 0.25,
+        "worldTier": 0
       },
       {
         "name": "Wood",
