@@ -54,51 +54,35 @@
     ]
   },
   {
-    "name": "Bee Hive",
+    "name": "Fermenter",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
-    "bedRequirement": 1,
-    "addOnRequirements": ["Hammer"],
+    "bedRequirement": 2,
+    "addOnRequirements": ["Forge"],
     "comfort": 0,
     "components": [
       {
-        "name": "Wood",
-        "amount": 5
+        "name": "Ornate Wood",
+        "amount": 25
       },
       {
-        "name": "Queen Bee",
-        "amount": 1
-      }
-    ],
-    "processing": [
+        "name": "Copper Bar",
+        "amount": 10
+      },
       {
-        "input": [],
-        "output": { "name": "Honey", "amount": 0.2, "type": "food" }
-      }
-    ]
-  },
-  {
-    "name": "Cooking Station",
-    "built": false,
-    "enabled": false,
-    "gearRequirements": [],
-    "bedRequirement": 1,
-    "addOnRequirements": ["Campfire"],
-    "comfort": 0,
-    "components": [
-      {
-        "name": "Wood",
+        "name": "Tin Bar",
         "amount": 5
       }
     ],
     "processing": [
       {
         "input": [
-          { "name": "Wood", "amount": 1}, 
-          { "name": "Raw Meat", "amount": 1}
+          { "name": "Honey", "amount": 1 }, 
+          { "name": "Blueberries", "amount": 8 },
+          { "name": "Berries", "amount": 8 }
         ],
-        "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+        "output": { "name": "Sweet Jam", "amount": 1, "type": "food" }
       }
     ]
   },
@@ -132,6 +116,55 @@
           { "name": "Turnip", "amount": 1 }
         ],
         "output": { "name": "Turnip Stew", "amount": 1, "type": "food" }
+      }
+    ]
+  },
+  {
+    "name": "Cooking Station",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Campfire"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 5
+      }
+    ],
+    "processing": [
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Meat", "amount": 1}
+        ],
+        "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+      }
+    ]
+  },
+  {
+    "name": "Bee Hive",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Hammer"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 5
+      },
+      {
+        "name": "Queen Bee",
+        "amount": 1
+      }
+    ],
+    "processing": [
+      {
+        "input": [],
+        "output": { "name": "Honey", "amount": 0.2, "type": "food" }
       }
     ]
   },
@@ -232,7 +265,7 @@
     "enabled": false,
     "bedRequirement": 1,
     "gearRequirements": [],
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Smith's Anvil"],
     "components": [
       {
         "name": "Hard Wood",
@@ -255,7 +288,7 @@
     "enabled": false,
     "bedRequirement": 2,
     "gearRequirements": [],
-    "addOnRequirements": ["Kiln", "Smelter"],
+    "addOnRequirements": ["Smelter"],
     "components": [
       {
         "name": "Stone",
@@ -272,6 +305,128 @@
       {
         "name": "Copper Bar",
         "amount": 6
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Forge Cooler",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Forge"],
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 10
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Anvils",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Forge Cooler"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 4
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 2
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Smith's Anvils",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Anvils"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Forge Toolrack",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Anvils"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 15
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Bellows",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Forge Toolrack"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 10
+      },
+      {
+        "name": "Leather Hide",
+        "amount": 10
+      },
+      {
+        "name": "Chain",
+        "amount": 2
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Grinding Wheel",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Stonecutter"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 25
+      },
+      {
+        "name": "Sharpening Stone",
+        "amount": 1
       }
     ],
     "processing": []
