@@ -73,14 +73,18 @@
       {
         "name": "Tin Bar",
         "amount": 5
+      },
+      {
+        "name": "Resin",
+        "amount": 4
       }
     ],
     "processing": [
       {
         "input": [
-          { "name": "Honey", "amount": 1 }, 
-          { "name": "Blueberries", "amount": 8 },
-          { "name": "Berries", "amount": 8 }
+          { "name": "Honey", "amount": 1, "type": "food" }, 
+          { "name": "Blueberries", "amount": 8, "type": "food" },
+          { "name": "Berries", "amount": 8, "type": "food" }
         ],
         "output": { "name": "Sweet Jam", "amount": 1, "type": "food" }
       }
@@ -104,16 +108,16 @@
       {
         "input": [
           { "name": "Wood", "amount": 1 }, 
-          { "name": "Carrot", "amount": 3 },
-          { "name": "Mushroom", "amount": 1 }
+          { "name": "Carrots", "amount": 3, "type": "food" },
+          { "name": "Mushrooms", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Carrot Soup", "amount": 1, "type": "food" }
       },
       {
         "input": [
           { "name": "Wood", "amount": 1}, 
-          { "name": "Raw Meat", "amount": 1},
-          { "name": "Turnip", "amount": 1 }
+          { "name": "Raw Meat", "amount": 1, "type": "food" },
+          { "name": "Turnips", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Turnip Stew", "amount": 1, "type": "food" }
       }
@@ -329,7 +333,7 @@
     "processing": []
   },
   {
-    "name": "Anvils",
+    "name": "Anvil",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -352,12 +356,12 @@
     "processing": []
   },
   {
-    "name": "Smith's Anvils",
+    "name": "Smith's Anvil",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
     "gearRequirements": [],
-    "addOnRequirements": ["Anvils"],
+    "addOnRequirements": ["Anvil"],
     "components": [
       {
         "name": "Wood",
@@ -376,7 +380,7 @@
     "enabled": false,
     "bedRequirement": 2,
     "gearRequirements": [],
-    "addOnRequirements": ["Anvils"],
+    "addOnRequirements": ["Anvil"],
     "components": [
       {
         "name": "Wood",
@@ -427,6 +431,29 @@
       {
         "name": "Sharpening Stone",
         "amount": 1
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Stonecutter",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Smelter"],
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 20
+      },
+      {
+        "name": "Wood",
+        "amount": 20
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 2
       }
     ],
     "processing": []

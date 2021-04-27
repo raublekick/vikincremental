@@ -18,6 +18,18 @@
     "amount": 0
   },
   {
+    "name": "Carrots",
+    "stamina": 15,
+    "health": 15,
+    "amount": 0
+  },
+  {
+    "name": "Turnips",
+    "stamina": 15,
+    "health": 15,
+    "amount": 0
+  },
+  {
     "name": "Honey",
     "stamina": 15,
     "health": 15,
@@ -27,6 +39,18 @@
     "name": "Cooked Meat",
     "stamina": 15,
     "health": 15,
+    "amount": 0
+  },
+  {
+    "name": "Carrot Soup",
+    "stamina": 30,
+    "health": 30,
+    "amount": 0
+  },
+  {
+    "name": "Turnip Stew",
+    "stamina": 40,
+    "health": 40,
     "amount": 0
   }
 ]

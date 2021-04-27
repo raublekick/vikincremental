@@ -552,18 +552,26 @@ export default new Vuex.Store({
             // check that every input is available
             var tmpItems = [];
             _.forEach(process.input, (item) => {
-              var tmpItem = mixin.methods.findItem(state.inventory, item.name);
-              if (tmpItem && tmpItem.amount >= item.amount) {
-                tmpItems.push(item);
+              var tmpItem = null;
+              if (item.type && item.type === "food") {
+                tmpItem = mixin.methods.findItem(state.food, item.name);
+                if (tmpItem && tmpItem.amount >= item.amount) {
+                  tmpItems.push({ type: "food", item: item });
+                }
+              } else {
+                tmpItem = mixin.methods.findItem(state.inventory, item.name);
+                if (tmpItem && tmpItem.amount >= item.amount) {
+                  tmpItems.push({ type: "inventory", item: item });
+                }
               }
             });
             // if all input items are available
             if (tmpItems.length === process.input.length) {
-              _.forEach(tmpItems, (item) => {
+              _.forEach(tmpItems, (input) => {
                 commit("decrementObject", {
-                  objectKey: "inventory",
-                  key: item.name,
-                  amount: item.amount,
+                  objectKey: input.type,
+                  key: input.item.name,
+                  amount: input.item.amount,
                 });
               });
               commit("incrementObject", {

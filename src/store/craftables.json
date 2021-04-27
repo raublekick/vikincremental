@@ -56,7 +56,7 @@
     }
   },
   {
-    "name": "Ornaate Bow",
+    "name": "Ornate Bow",
     "addOnRequirements": ["Adze"],
     "components": [
       {
@@ -73,21 +73,6 @@
       "stamina": 5,
       "accuracy": 0.65
     }
-  },
-  {
-    "name": "Bone Pickaxe",
-    "addOnRequirements": ["Workbench"],
-    "components": [
-      {
-        "name": "Large Bone",
-        "amount": 1
-      },
-      {
-        "name": "Wood",
-        "amount": 8
-      }
-    ],
-    "combat": {}
   },
   {
     "name": "Leather Armor",
@@ -193,5 +178,394 @@
     "combat": {},
     "armorType": "Legs",
     "armor": 4
+  },
+  {
+    "name": "Bronze Armor",
+    "addOnRequirements": ["Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 10
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 5
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 10
+  },
+  {
+    "name": "Bronze Helmet",
+    "addOnRequirements": ["Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 10
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 5
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 6
+  },
+  {
+    "name": "Bronze Greaves",
+    "addOnRequirements": ["Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 10
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 5
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 6
+  },
+  {
+    "name": "Iron Armor",
+    "addOnRequirements": ["Smith's Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 15
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 14
+  },
+  {
+    "name": "Iron Helmet",
+    "addOnRequirements": ["Smith's Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 15
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 10
+  },
+  {
+    "name": "Iron Greaves",
+    "addOnRequirements": ["Smith's Anvil"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 15
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 10
+  },
+  {
+    "name": "Steel Armor",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 18
+  },
+  {
+    "name": "Steel Helmet",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 14
+  },
+  {
+    "name": "Steel Greaves",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 14
+  },
+  {
+    "name": "Silver Armor",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Silver Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 22
+  },
+  {
+    "name": "Silver Helmet",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Silver Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 18
+  },
+  {
+    "name": "Silver Greaves",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Silver Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 18
+  },
+  {
+    "name": "Gold Armor",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Gold Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 26
+  },
+  {
+    "name": "Gold Helmet",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Gold Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 22
+  },
+  {
+    "name": "Gold Greaves",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Gold Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 22
+  },
+  {
+    "name": "Titanium Armor",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Body",
+    "armor": 30
+  },
+  {
+    "name": "Titanium Helmet",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Head",
+    "armor": 26
+  },
+  {
+    "name": "Titanium Greaves",
+    "addOnRequirements": ["Blast Furnace"],
+    "bedRequirement": 2,
+    "components": [
+      {
+        "name": "Wolf Hide",
+        "amount": 2
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 20
+      }
+    ],
+    "combat": {},
+    "armorType": "Legs",
+    "armor": 26
+  },
+  {
+    "name": "Bone Pickaxe",
+    "addOnRequirements": ["Workbench"],
+    "components": [
+      {
+        "name": "Large Bone",
+        "amount": 1
+      },
+      {
+        "name": "Wood",
+        "amount": 8
+      }
+    ],
+    "combat": {}
+  },
+  {
+    "name": "Bronze Pickaxe",
+    "addOnRequirements": ["Anvil"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 5
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 16
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 8
+      }
+    ],
+    "combat": {}
+  },
+  {
+    "name": "Cultivator",
+    "addOnRequirements": ["Anvil"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 5
+      },
+      {
+        "name": "Copper Bar",
+        "amount": 8
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 4
+      }
+    ],
+    "combat": {}
   }
 ]

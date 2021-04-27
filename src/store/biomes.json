@@ -39,14 +39,14 @@
     }
   },
   {
+    "name": "Swamps",
+    "unlocked": false,
+    "flavor": "On the fringe it appears to be a thriving wetland. Deeper in, the air is thick with noxious haze, unknown sounds permeate the stagnant atmosphere, and the dense foliage blocks the sunlight."
+  },
+  {
     "name": "Ruined City",
     "unlocked": false,
     "flavor": "The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate."
-  },
-  {
-    "name": "Swamps",
-    "unlocked": false,
-    "flavor": "The air is thick with noxious haze and unknown sounds permeate the stagnant atmosphere."
   },
   {
     "name": "Mountains",
