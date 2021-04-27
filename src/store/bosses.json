@@ -2,10 +2,10 @@
   {
     "name": "Boss 1",
     "worldTier": 0,
-    "stamina": 100,
+    "stamina": 200,
     "health": 100,
     "maxStamina": 100,
-    "maxHealth": 100,
+    "maxHealth": 200,
     "staminaRegen": 2,
     "baseStaminaRegen": 2,
     "healthRegen": 0,
@@ -15,9 +15,9 @@
       { "name": "Ikon of the Bounty", "amount": 3 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 30, "stamina": 30, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 10, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 10, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 50, "stamina": 30, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 30, "stamina": 15, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -28,8 +28,8 @@
   {
     "name": "Boss 2",
     "worldTier": 1,
-    "stamina": 200,
-    "health": 200,
+    "stamina": 400,
+    "health": 400,
     "maxStamina": 200,
     "maxHealth": 200,
     "staminaRegen": 8,
@@ -42,8 +42,8 @@
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 60, "stamina": 60, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 2", "damage": 30, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 20, "stamina": 15, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
