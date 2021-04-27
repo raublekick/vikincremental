@@ -68,8 +68,8 @@
     "delve": true,
     "overworld": false,
     "threshold": 0,
-    "stamina": 15,
-    "health": 15,
+    "stamina": 30,
+    "health": 30,
     "maxStamina": 15,
     "maxHealth": 15,
     "staminaRegen": 1,
@@ -80,7 +80,7 @@
       { "name": "Sword Swing", "damage": 20, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Bones", "amount": 2 }
+      { "name": "Bones", "amount": 1 }
     ]
   },
   {
@@ -140,7 +140,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Club", "damage": 50, "stamina": 20, "accuracy": 0.45 }
+      { "name": "Club Smash", "damage": 50, "stamina": 30, "accuracy": 0.35 },
+      { "name": "Club Swipe", "damage": 30, "stamina": 20, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 },
@@ -163,31 +164,10 @@
     "baseHealthRegen": 0,
     "attacks": [
       { "name": "Smash", "damage": 40, "stamina": 20, "accuracy": 0.45 },
-      { "name": "Rock Throw", "damage": 50, "stamina": 20, "accuracy": 0.35 }
+      { "name": "Rock Throw", "damage": 30, "stamina": 20, "accuracy": 0.35 }
     ],
     "drops": [
       { "name": "Troll Hide", "amount": 5 }
-    ]
-  },
-  {
-    "name": "Skeleton",
-    "worldTier": 2,
-    "delve": true,
-    "overworld": false,
-    "threshold": 0,
-    "stamina": 30,
-    "health": 30,
-    "maxStamina": 30,
-    "maxHealth": 30,
-    "staminaRegen": 1,
-    "baseStaminaRegen": 1,
-    "healthRegen": 0,
-    "baseHealthRegen": 0,
-    "attacks": [
-      { "name": "Sword Swing", "damage": 30, "stamina": 15, "accuracy": 0.55 }
-    ],
-    "drops": [
-      { "name": "Bones", "amount": 2 }
     ]
   },
   {
