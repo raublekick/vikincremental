@@ -410,7 +410,7 @@
         "amount": 10
       },
       {
-        "name": "Chain",
+        "name": "Chains",
         "amount": 2
       }
     ],
@@ -589,7 +589,8 @@
       },
       {
         "name": "Berries",
-        "amount": 10
+        "amount": 10,
+        "type": "food"
       }
     ],
     "processing": []

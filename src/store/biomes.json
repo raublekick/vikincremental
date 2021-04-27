@@ -41,7 +41,21 @@
   {
     "name": "Swamps",
     "unlocked": false,
-    "flavor": "On the fringe it appears to be a thriving wetland. Deeper in, the air is thick with noxious haze, unknown sounds permeate the stagnant atmosphere, and the dense foliage blocks the sunlight."
+    "flavor": "On the fringe it appears to be a thriving wetland. Deeper in, the air is thick with noxious haze, unknown sounds permeate the stagnant atmosphere, and the dense foliage blocks the sunlight.",
+    "delve": {
+      "xLength": 25,
+      "yHeight": 25,
+      "spawns": 8,
+      "totems": 4,
+      "treasure": 8,
+      "mapData": null,
+      "totem": "Ikon of Decay",
+      "totemDropChance": 0.25,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
   },
   {
     "name": "Ruined City",

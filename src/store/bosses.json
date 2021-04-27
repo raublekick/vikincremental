@@ -47,7 +47,7 @@
     ],
     "artifacts": [],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 3 }
     ]
   },
   {
@@ -63,7 +63,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Wood", "amount": 2 }
+      { "name": "Ikon of Decay", "amount": 3 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },

@@ -168,5 +168,90 @@
     "drops": [
       { "name": "Troll Hide", "amount": 5 }
     ]
+  },
+  {
+    "name": "Skeleton",
+    "worldTier": 2,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0,
+    "stamina": 30,
+    "health": 30,
+    "maxStamina": 30,
+    "maxHealth": 30,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 30, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Bones", "amount": 2 }
+    ]
+  },
+  {
+    "name": "Wraith",
+    "worldTier": 2,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0.85,
+    "stamina": 40,
+    "health": 40,
+    "maxStamina": 40,
+    "maxHealth": 40,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 1,
+    "baseHealthRegen": 1,
+    "attacks": [
+      { "name": "Possess", "damage": 30, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Chains", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Draugr",
+    "worldTier": 2,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 35,
+    "health": 35,
+    "maxStamina": 35,
+    "maxHealth": 35,
+    "staminaRegen": 2,
+    "baseStaminaRegen": 2,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 25, "stamina": 15, "accuracy": 0.65 }
+    ],
+    "drops": [
+      { "name": "Entrails", "amount": 4 }
+    ]
+  },
+  {
+    "name": "Slime",
+    "worldTier": 2,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 30,
+    "health": 50,
+    "maxStamina": 30,
+    "maxHealth": 50,
+    "staminaRegen": 2,
+    "baseStaminaRegen": 2,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Foul Stench", "damage": 10, "stamina": 5, "accuracy": 0.45 },
+      { "name": "Lunge", "damage": 10, "stamina": 10, "accuracy": 0.35 }
+    ],
+    "drops": [
+      { "name": "Resin", "amount": 4 }
+    ]
   }
 ]
