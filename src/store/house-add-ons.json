@@ -1,25 +1,59 @@
 [
   {
-    "name": "Kiln",
-    "gearRequirements": [],
-    "addOnRequirements": ["Workbench"],
+    "name": "Blast Furnace",
+    "built": false,
     "enabled": false,
+    "bedRequirement": 2,
+    "gearRequirements": [],
+    "addOnRequirements": ["Bellows"],
     "components": [
       {
-        "name": "Stone",
-        "amount": 50
+        "name": "Ornate Wood",
+        "amount": 20
       },
       {
         "name": "Dwarven Core",
         "amount": 5
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 10
+      },
+      {
+        "name": "Stone",
+        "amount": 20
       }
     ],
-    "processing": [{
-      "input": [
-        { "name": "Wood", "amount": 1}
-      ],
-      "output": { "name": "Coal", "amount": 1, "type": "inventory" }
-    }]
+    "processing": [
+      {
+        "input": [
+          { "name": "Coal", "amount": 2}, 
+          { "name": "Iron Ore", "amount": 1}
+        ],
+        "output": { "name": "Steel Bar", "amount": 1, "type": "inventory" }
+      },
+      {
+        "input": [
+          { "name": "Coal", "amount": 2}, 
+          { "name": "Silver Ore", "amount": 1}
+        ],
+        "output": { "name": "Silver Bar", "amount": 1, "type": "inventory" }
+      },
+      {
+        "input": [
+          { "name": "Coal", "amount": 2}, 
+          { "name": "Gold Ore", "amount": 1}
+        ],
+        "output": { "name": "Gold Bar", "amount": 1, "type": "inventory" }
+      },
+      {
+        "input": [
+          { "name": "Coal", "amount": 2}, 
+          { "name": "Titanium Ore", "amount": 1}
+        ],
+        "output": { "name": "Titanium Bar", "amount": 1, "type": "inventory" }
+      }
+    ]
   },
   {
     "name": "Smelter",
@@ -52,6 +86,28 @@
         "output": { "name": "Tin Bar", "amount": 1, "type": "inventory" }
       }
     ]
+  },
+  {
+    "name": "Kiln",
+    "gearRequirements": [],
+    "addOnRequirements": ["Workbench"],
+    "enabled": false,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 50
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 5
+      }
+    ],
+    "processing": [{
+      "input": [
+        { "name": "Wood", "amount": 1}
+      ],
+      "output": { "name": "Coal", "amount": 1, "type": "inventory" }
+    }]
   },
   {
     "name": "Fermenter",
@@ -257,8 +313,12 @@
         "amount": 10
       },
       {
-        "name": "Bronze Bar",
-        "amount": 5
+        "name": "Copper Bar",
+        "amount": 6
+      },
+      {
+        "name": "Tin Bar",
+        "amount": 3
       }
     ],
     "processing": []
@@ -322,7 +382,7 @@
     "addOnRequirements": ["Forge"],
     "components": [
       {
-        "name": "Ornate Wood",
+        "name": "Wood",
         "amount": 20
       },
       {
@@ -412,6 +472,25 @@
       {
         "name": "Chains",
         "amount": 2
+      }
+    ],
+    "processing": []
+  },
+  {
+    "name": "Artisan Table",
+    "built": false,
+    "enabled": false,
+    "bedRequirement": 10,
+    "gearRequirements": [],
+    "addOnRequirements": ["Blast Furnace"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 20
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "processing": []

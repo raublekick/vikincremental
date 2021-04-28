@@ -38,7 +38,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Ikon of Renewal", "amount": 5 }
+      { "name": "Ikon of Renewal", "amount": 4 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 70, "stamina": 60, "accuracy": 0.15 },
@@ -63,7 +63,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Ikon of Decay", "amount": 3 }
+      { "name": "Ikon of Decay", "amount": 6 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 110, "stamina": 80, "accuracy": 0.15 },
@@ -72,7 +72,8 @@
     ],
     "artifacts": [],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 10 }, 
+      { "name": "Ichor Shard", "amount": 2 }
     ]
   },
   {

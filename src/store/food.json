@@ -6,6 +6,12 @@
     "amount": 0
   },
   {
+    "name": "Blueberries",
+    "stamina": 10,
+    "health": 10,
+    "amount": 0
+  },
+  {
     "name": "Mushrooms",
     "stamina": 10,
     "health": 5,

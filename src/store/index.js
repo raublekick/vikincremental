@@ -251,7 +251,7 @@ export default new Vuex.Store({
           "If any treasure was once here, it is long gone...\n";
       }
     },
-    async vikingTick({ state, commit, getters }) {
+    async vikingTick({ state, commit, dispatch, getters }) {
       // fill inventory from task items
       _.forEach(state.vikings, (viking, i) => {
         var totalStaminaCost = 0,
@@ -281,6 +281,11 @@ export default new Vuex.Store({
                   });
                 }
               });
+
+              if (task.processing) {
+                // if enough input exists in inventory, remove it and add output to inventory
+                dispatch("processItems", task.processing);
+              }
               // calculate stamina costs for this task
               totalStaminaCost += task.staminaCost;
             }
@@ -548,43 +553,47 @@ export default new Vuex.Store({
         });
       }
     },
-    async processingTick({ state, commit }) {
+    async processItems({ state, commit }, processing) {
+      // if enough input exists in inventory, remove it and add output to inventory
+      _.forEach(processing, (process) => {
+        // check that every input is available
+        var tmpItems = [];
+        _.forEach(process.input, (item) => {
+          var tmpItem = null;
+          if (item.type && item.type === "food") {
+            tmpItem = mixin.methods.findItem(state.food, item.name);
+            if (tmpItem && tmpItem.amount >= item.amount) {
+              tmpItems.push({ type: "food", item: item });
+            }
+          } else {
+            tmpItem = mixin.methods.findItem(state.inventory, item.name);
+            if (tmpItem && tmpItem.amount >= item.amount) {
+              tmpItems.push({ type: "inventory", item: item });
+            }
+          }
+        });
+        // if all input items are available
+        if (tmpItems.length === process.input.length) {
+          _.forEach(tmpItems, (input) => {
+            commit("decrementObject", {
+              objectKey: input.type,
+              key: input.item.name,
+              amount: input.item.amount,
+            });
+          });
+          commit("incrementObject", {
+            objectKey: process.output.type,
+            key: process.output.name,
+            amount: process.output.amount,
+          });
+        }
+      });
+    },
+    async processingTick({ state, dispatch }) {
       _.forEach(state.houseAddOns, (addOn) => {
         if (addOn.enabled) {
           // if enough input exists in inventory, remove it and add output to inventory
-          _.forEach(addOn.processing, (process) => {
-            // check that every input is available
-            var tmpItems = [];
-            _.forEach(process.input, (item) => {
-              var tmpItem = null;
-              if (item.type && item.type === "food") {
-                tmpItem = mixin.methods.findItem(state.food, item.name);
-                if (tmpItem && tmpItem.amount >= item.amount) {
-                  tmpItems.push({ type: "food", item: item });
-                }
-              } else {
-                tmpItem = mixin.methods.findItem(state.inventory, item.name);
-                if (tmpItem && tmpItem.amount >= item.amount) {
-                  tmpItems.push({ type: "inventory", item: item });
-                }
-              }
-            });
-            // if all input items are available
-            if (tmpItems.length === process.input.length) {
-              _.forEach(tmpItems, (input) => {
-                commit("decrementObject", {
-                  objectKey: input.type,
-                  key: input.item.name,
-                  amount: input.item.amount,
-                });
-              });
-              commit("incrementObject", {
-                objectKey: process.output.type,
-                key: process.output.name,
-                amount: process.output.amount,
-              });
-            }
-          });
+          dispatch("processItems", addOn.processing);
         }
       });
     },

@@ -25,6 +25,16 @@
         "worldTier": 0
       },
       {
+        "name": "Carrot Seeds",
+        "perSecond": 0.25,
+        "worldTier": 1
+      },
+      {
+        "name": "Turnip Seeds",
+        "perSecond": 0.25,
+        "worldTier": 2
+      },
+      {
         "name": "Wood",
         "perSecond": 1
       },
@@ -113,6 +123,20 @@
     "name": "Farming",
     "staminaCost": 5,
     "gearRequirements": ["Cultivator"],
+    "processing": [
+      {
+        "input": [
+          { "name": "Carrot Seeds", "amount": 1}
+        ],
+        "output": { "name": "Carrots", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Turnip Seeds", "amount": 1}
+        ],
+        "output": { "name": "Turnips", "amount": 1, "type": "food" }
+      }
+    ],
     "items": [
       {"name": "Carrots", "perSecond": 0.25}, 
       {"name": "Turnips", "perSecond": 0.125},
