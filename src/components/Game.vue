@@ -91,6 +91,18 @@
           <b-tab-item label="Proving Grounds" value="proving">
             <proving-grounds />
           </b-tab-item>
+
+          <b-tab-item label="Debug" value="debug">
+            <b-button type="is-primary" label="Copy" @click="copy(state)" />
+            <b-field>
+              <b-input
+                type="textarea"
+                v-model="newState"
+                @input="updateState()"
+              >
+              </b-input>
+            </b-field>
+          </b-tab-item>
         </b-tabs>
       </div>
     </div>
@@ -112,7 +124,9 @@ import ProvingGrounds from "@/components/ProvingGrounds";
 export default {
   name: "Game",
   data() {
-    return {};
+    return {
+      newState: null,
+    };
   },
 
   components: {
@@ -148,19 +162,29 @@ export default {
       "newAddOn",
       "isPaused",
     ]),
+    state: {
+      get() {
+        return this.$store.state;
+      },
+      set(value) {
+        this.init(value);
+      },
+    },
     tab: {
       get() {
         return this.activeTab;
       },
       set(value) {
-        this.setField({ name: "activeTab", value: value });
+        if (value != "") {
+          this.setField({ name: "activeTab", value: value });
+        }
       },
     },
   },
 
   methods: {
     ...mapActions(["tick", "saveToDb", "reset"]),
-    ...mapMutations(["setField", "setField"]),
+    ...mapMutations(["setField", "setField", "init"]),
     clearNewItem(event) {
       console.log(event);
       switch (event) {
@@ -176,6 +200,16 @@ export default {
     },
     resetTier() {
       this.setField({ name: "worldTier", value: 0 });
+    },
+    async copy(s) {
+      await navigator.clipboard.writeText(JSON.stringify(s));
+      this.$buefy.toast.open({
+        message: "Copied to clipboard!",
+        type: "is-success",
+      });
+    },
+    updateState() {
+      this.state = JSON.parse(this.newState);
     },
   },
 
