@@ -136,10 +136,10 @@ export default {
         item.components && item.components.length > 0
           ? _.filter(item.components, (component) => {
               var tmpItem = {};
-              if (item.type && item.type === "food") {
-                tmpItem = this.findItem(this.food, item.name);
+              if (component.type && component.type === "food") {
+                tmpItem = this.findItem(this.food, component.name);
               } else {
-                tmpItem = this.findItem(this.inventory, item.name);
+                tmpItem = this.findItem(this.inventory, component.name);
               }
 
               return tmpItem && tmpItem.amount >= component.amount;
