@@ -2,10 +2,10 @@
   {
     "name": "Boss 1",
     "worldTier": 0,
-    "stamina": 200,
-    "health": 100,
+    "stamina": 100,
+    "health": 300,
     "maxStamina": 100,
-    "maxHealth": 200,
+    "maxHealth": 300,
     "staminaRegen": 2,
     "baseStaminaRegen": 2,
     "healthRegen": 0,
@@ -28,10 +28,10 @@
   {
     "name": "Boss 2",
     "worldTier": 1,
-    "stamina": 400,
-    "health": 400,
+    "stamina": 200,
+    "health": 800,
     "maxStamina": 200,
-    "maxHealth": 200,
+    "maxHealth": 800,
     "staminaRegen": 8,
     "baseStaminaRegen": 8,
     "healthRegen": 0,
@@ -41,7 +41,7 @@
       { "name": "Ikon of Renewal", "amount": 5 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 60, "stamina": 60, "accuracy": 0.15 },
+      { "name": "Attack 1", "damage": 70, "stamina": 60, "accuracy": 0.15 },
       { "name": "Attack 2", "damage": 30, "stamina": 20, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 20, "stamina": 15, "accuracy": 0.75 }
     ],
@@ -54,9 +54,9 @@
     "name": "Boss 3",
     "worldTier": 2,
     "stamina": 600,
-    "health": 600,
+    "health": 1800,
     "maxStamina": 600,
-    "maxHealth": 600,
+    "maxHealth": 1800,
     "staminaRegen": 12,
     "baseStaminaRegen": 12,
     "healthRegen": 0,
@@ -66,9 +66,9 @@
       { "name": "Ikon of Decay", "amount": 3 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 30, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 30, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 110, "stamina": 80, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 40, "stamina": 30, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 30, "stamina": 20, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -78,22 +78,22 @@
   {
     "name": "Boss 4",
     "worldTier": 3,
-    "stamina": 600,
-    "health": 600,
-    "maxStamina": 600,
-    "maxHealth": 600,
+    "stamina": 750,
+    "health": 3500,
+    "maxStamina": 750,
+    "maxHealth": 3500,
     "staminaRegen": 16,
     "baseStaminaRegen": 16,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Wood", "amount": 2 }
+      { "name": "Ikon of Regret", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 130, "stamina": 100, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 60, "stamina": 50, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -103,10 +103,10 @@
   {
     "name": "Boss 5",
     "worldTier": 4,
-    "stamina": 700,
-    "health": 700,
-    "maxStamina": 700,
-    "maxHealth": 700,
+    "stamina": 1000,
+    "health": 7000,
+    "maxStamina": 1000,
+    "maxHealth": 7000,
     "staminaRegen": 20,
     "baseStaminaRegen": 20,
     "healthRegen": 0,
@@ -116,9 +116,9 @@
       { "name": "Wood", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 80, "stamina": 30, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 40, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 140, "stamina": 150, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 70, "stamina": 75, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -129,9 +129,9 @@
     "name": "Boss 6",
     "worldTier": 5,
     "stamina": 1000,
-    "health": 1000,
+    "health": 9000,
     "maxStamina": 1000,
-    "maxHealth": 1000,
+    "maxHealth": 9000,
     "staminaRegen": 30,
     "baseStaminaRegen": 30,
     "healthRegen": 0,
@@ -141,9 +141,34 @@
       { "name": "Wood", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 100, "stamina": 30, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 50, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 50, "stamina": 10, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 150, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "The Allfather",
+    "worldTier": 6,
+    "stamina": 1000,
+    "health": 40000,
+    "maxStamina": 1000,
+    "maxHealth": 40000,
+    "staminaRegen": 40,
+    "baseStaminaRegen": 40,
+    "healthRegen": 1,
+    "baseHealthRegen": 1,
+    "defeated": false,
+    "components": [
+      { "name": "Ikon of Pride", "amount": 10 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 165, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 120, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 75, "stamina": 50, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [

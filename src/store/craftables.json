@@ -32,12 +32,163 @@
       {
         "name": "Copper Bar",
         "amount": 8
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
       }
     ],
     "combat": {
       "damage": 20,
       "stamina": 10,
       "accuracy": 0.8
+    }
+  },
+  {
+    "name": "Iron Mace",
+    "addOnRequirements": ["Smith's Anvil"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      }
+    ],
+    "combat": {
+      "damage": 30,
+      "stamina": 20,
+      "accuracy": 0.85
+    }
+  },
+  {
+    "name": "Steel Mace",
+    "addOnRequirements": ["Blast Furnace"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      },
+      {
+        "name": "Steel Bar",
+        "amount": 20
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      }
+    ],
+    "combat": {
+      "damage": 35,
+      "stamina": 20,
+      "accuracy": 0.85
+    }
+  },
+  {
+    "name": "Silver Sword",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 8
+      },
+      {
+        "name": "Silver Bar",
+        "amount": 40
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 50
+      }
+    ],
+    "combat": {
+      "damage": 45,
+      "stamina": 20,
+      "accuracy": 0.85
+    }
+  },
+  {
+    "name": "Gold Spear",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 8
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Gold Bar",
+        "amount": 40
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 100
+      }
+    ],
+    "combat": {
+      "damage": 50,
+      "stamina": 30,
+      "accuracy": 0.85
+    }
+  },
+  {
+    "name": "Titanium Sword",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 8
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 40
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 200
+      }
+    ],
+    "combat": {
+      "damage": 50,
+      "stamina": 30,
+      "accuracy": 0.85
     }
   },
   {
@@ -66,10 +217,14 @@
       {
         "name": "Leather Hide",
         "amount": 4
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 10
       }
     ],
     "combat": {
-      "damage": 15,
+      "damage": 20,
       "stamina": 5,
       "accuracy": 0.65
     }
@@ -221,7 +376,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 6
+    "armor": 5
   },
   {
     "name": "Bronze Greaves",
@@ -243,7 +398,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 6
+    "armor": 5
   },
   {
     "name": "Iron Armor",
@@ -279,7 +434,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 10
+    "armor": 7
   },
   {
     "name": "Iron Greaves",
@@ -297,7 +452,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 10
+    "armor": 7
   },
   {
     "name": "Steel Armor",
@@ -333,7 +488,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 14
+    "armor": 9
   },
   {
     "name": "Steel Greaves",
@@ -351,7 +506,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 14
+    "armor": 9
   },
   {
     "name": "Silver Armor",
@@ -387,7 +542,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 18
+    "armor": 11
   },
   {
     "name": "Silver Greaves",
@@ -405,7 +560,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 18
+    "armor": 11
   },
   {
     "name": "Gold Armor",
@@ -441,7 +596,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 22
+    "armor": 13
   },
   {
     "name": "Gold Greaves",
@@ -459,7 +614,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 22
+    "armor": 13
   },
   {
     "name": "Titanium Armor",
@@ -495,7 +650,7 @@
     ],
     "combat": {},
     "armorType": "Head",
-    "armor": 26
+    "armor": 15
   },
   {
     "name": "Titanium Greaves",
@@ -513,7 +668,7 @@
     ],
     "combat": {},
     "armorType": "Legs",
-    "armor": 26
+    "armor": 15
   },
   {
     "name": "Bone Pickaxe",
