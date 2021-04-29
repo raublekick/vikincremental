@@ -211,7 +211,7 @@
     "addOnRequirements": ["Adze"],
     "components": [
       {
-        "name": "Ornate Bow",
+        "name": "Ornate Wood",
         "amount": 8
       },
       {
