@@ -11,6 +11,7 @@
       @keydown.down.prevent="down"
       @keydown.left.prevent="left"
       @keydown.right.prevent="right"
+      @keydown.space.prevent="space"
       ref="map"
     >
       <div>
@@ -101,6 +102,11 @@ export default {
         this.map.data[this.playerCoords.y][this.playerCoords.x + 1] !== "X"
       ) {
         this.movePlayer({ x: this.playerCoords.x + 1, y: this.playerCoords.y });
+      }
+    },
+    space() {
+      if (this.atStart) {
+        this.setField({ name: "delve", value: false });
       }
     },
     movePlayer(coords) {
