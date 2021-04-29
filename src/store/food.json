@@ -30,9 +30,21 @@
     "amount": 0
   },
   {
+    "name": "Carrot Soup",
+    "stamina": 50,
+    "health": 30,
+    "amount": 0
+  },
+  {
     "name": "Turnips",
     "stamina": 15,
     "health": 15,
+    "amount": 0
+  },
+  {
+    "name": "Turnip Stew",
+    "stamina": 50,
+    "health": 50,
     "amount": 0
   },
   {
@@ -42,20 +54,68 @@
     "amount": 0
   },
   {
-    "name": "Cooked Meat",
-    "stamina": 15,
-    "health": 15,
-    "amount": 0
-  },
-  {
-    "name": "Carrot Soup",
+    "name": "Jam",
     "stamina": 30,
-    "health": 30,
+    "health": 20,
     "amount": 0
   },
   {
-    "name": "Turnip Stew",
-    "stamina": 40,
+    "name": "Mead",
+    "stamina": 50,
+    "health": 50,
+    "amount": 0
+  },
+  {
+    "name": "Cooked Meat",
+    "stamina": 20,
+    "health": 20,
+    "amount": 0
+  },
+  {
+    "name": "Sausages",
+    "stamina": 60,
+    "health": 40,
+    "amount": 0
+  },
+  {
+    "name": "Cooked Fish",
+    "stamina": 45,
+    "health": 25,
+    "amount": 0
+  },
+  {
+    "name": "Fish Wraps",
+    "stamina": 60,
+    "health": 60,
+    "amount": 0
+  },
+  {
+    "name": "Large Game Meat",
+    "stamina": 25,
+    "health": 60,
+    "amount": 0
+  },
+  {
+    "name": "Meat Pie",
+    "stamina": 50,
+    "health": 70,
+    "amount": 0
+  },
+  {
+    "name": "Serpent Meat",
+    "stamina": 25,
+    "health": 60,
+    "amount": 0
+  },
+  {
+    "name": "Serpent Stew",
+    "stamina": 80,
+    "health": 80,
+    "amount": 0
+  },
+  {
+    "name": "Bread",
+    "stamina": 70,
     "health": 40,
     "amount": 0
   }

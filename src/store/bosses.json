@@ -41,9 +41,9 @@
       { "name": "Ikon of Renewal", "amount": 4 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 70, "stamina": 60, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 30, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 20, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 85, "stamina": 60, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 40, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 25, "stamina": 15, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -66,9 +66,9 @@
       { "name": "Ikon of Decay", "amount": 6 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 110, "stamina": 80, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 40, "stamina": 30, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 30, "stamina": 20, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 120, "stamina": 80, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 50, "stamina": 30, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 40, "stamina": 20, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
@@ -117,7 +117,7 @@
       { "name": "Wood", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 140, "stamina": 150, "accuracy": 0.15 },
+      { "name": "Attack 1", "damage": 100, "stamina": 150, "accuracy": 0.25 },
       { "name": "Attack 2", "damage": 70, "stamina": 75, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
     ],
@@ -127,7 +127,7 @@
     ]
   },
   {
-    "name": "Boss 6",
+    "name": "Surtr",
     "worldTier": 5,
     "stamina": 1000,
     "health": 9000,
@@ -142,7 +142,7 @@
       { "name": "Wood", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 150, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 1", "damage": 200, "stamina": 200, "accuracy": 0.15 },
       { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
     ],
@@ -167,8 +167,8 @@
       { "name": "Ikon of Pride", "amount": 10 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 165, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 120, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 145, "stamina": 150, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 75, "stamina": 50, "accuracy": 0.75 }
     ],
     "artifacts": [],
