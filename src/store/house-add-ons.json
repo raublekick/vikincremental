@@ -145,10 +145,18 @@
       {
         "input": [
           { "name": "Honey", "amount": 1, "type": "food" }, 
-          { "name": "Blueberries", "amount": 8, "type": "food" },
-          { "name": "Berries", "amount": 8, "type": "food" }
+          { "name": "Blueberries", "amount": 4, "type": "food" },
+          { "name": "Berries", "amount": 4, "type": "food" }
         ],
         "output": { "name": "Sweet Jam", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Honey", "amount": 1, "type": "food" }, 
+          { "name": "Winterberries", "amount": 4, "type": "food" },
+          { "name": "Wheat", "amount": 1, "type": "food" }
+        ],
+        "output": { "name": "Mead", "amount": 1, "type": "food" }
       }
     ]
   },
@@ -183,6 +191,39 @@
           { "name": "Turnips", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Turnip Stew", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Meat", "amount": 1, "type": "food" },
+          { "name": "Entrails", "amount": 4, "type": "food" }
+        ],
+        "output": { "name": "Sausages", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Serpent Meat", "amount": 1 },
+          { "name": "Mushrooms", "amount": 1, "type": "food" }
+        ],
+        "output": { "name": "Serpent Stew", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Large Game Meat", "amount": 1 },
+          { "name": "Mushrooms", "amount": 1, "type": "food" },
+          { "name": "Flour", "amount": 4, "type": "food" }
+        ],
+        "output": { "name": "Meat Pie", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Fish", "amount": 1 },
+          { "name": "Flour", "amount": 4, "type": "food" }
+        ],
+        "output": { "name": "Fish Wraps", "amount": 1, "type": "food" }
       }
     ]
   },
@@ -208,6 +249,27 @@
           { "name": "Raw Meat", "amount": 1}
         ],
         "output": { "name": "Cooked Meat", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Large Game Meat", "amount": 1}
+        ],
+        "output": { "name": "Large Game Meat", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Raw Serpent Meat", "amount": 1}
+        ],
+        "output": { "name": "Serpent Meat", "amount": 1, "type": "food" }
+      },
+      {
+        "input": [
+          { "name": "Wood", "amount": 1}, 
+          { "name": "Flour", "amount": 4, "type": "food" }
+        ],
+        "output": { "name": "Bread", "amount": 1, "type": "food" }
       }
     ]
   },

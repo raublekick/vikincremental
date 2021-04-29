@@ -12,6 +12,12 @@
     "amount": 0
   },
   {
+    "name": "Winterberries",
+    "stamina": 20,
+    "health": 10,
+    "amount": 0
+  },
+  {
     "name": "Mushrooms",
     "stamina": 10,
     "health": 5,
@@ -54,7 +60,7 @@
     "amount": 0
   },
   {
-    "name": "Jam",
+    "name": "Sweet Jam",
     "stamina": 30,
     "health": 20,
     "amount": 0
