@@ -233,5 +233,226 @@
     "drops": [
       { "name": "Resin", "amount": 4 }
     ]
+  },
+  {
+    "name": "Wolf",
+    "worldTier": 3,
+    "delve": false,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 50,
+    "health": 100,
+    "maxStamina": 50,
+    "maxHealth": 100,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Bite", "damage": 40, "stamina": 15, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Wolf Hide", "amount": 3 },
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Werewolf",
+    "worldTier": 3,
+    "delve": false,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 75,
+    "health": 200,
+    "maxStamina": 75,
+    "maxHealth": 200,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Bite", "damage": 50, "stamina": 15, "accuracy": 0.55 },
+      { "name": "Claw", "damage": 30, "stamina": 15, "accuracy": 0.75 }
+    ],
+    "drops": [
+      { "name": "Wolf Hide", "amount": 5 },
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Stone Golem",
+    "worldTier": 3,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0.8,
+    "stamina": 100,
+    "health": 400,
+    "maxStamina": 100,
+    "maxHealth": 400,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Smash", "damage": 100, "stamina": 15, "accuracy": 0.10 },
+      { "name": "Smash", "damage": 75, "stamina": 15, "accuracy": 0.10 },
+      { "name": "Smash", "damage": 60, "stamina": 15, "accuracy": 0.10 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 50 }
+    ]
+  },
+  {
+    "name": "Dark Elf",
+    "worldTier": 3,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0,
+    "stamina": 50,
+    "health": 100,
+    "maxStamina": 50,
+    "maxHealth": 100,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Attack 1", "damage": 30, "stamina": 10, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.85 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 },
+      { "name": "Elf Blood", "amount": 3 }
+    ]
+  },
+  {
+    "name": "Drake",
+    "worldTier": 4,
+    "delve": false,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 100,
+    "health": 150,
+    "maxStamina": 100,
+    "maxHealth": 150,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Slash", "damage": 50, "stamina": 25, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Lizardman",
+    "worldTier": 4,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 100,
+    "health": 200,
+    "maxStamina": 100,
+    "maxHealth": 200,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Slash", "damage": 50, "stamina": 25, "accuracy": 0.65 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Lizardbrute",
+    "worldTier": 4,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0.2,
+    "stamina": 100,
+    "health": 300,
+    "maxStamina": 100,
+    "maxHealth": 300,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Smash", "damage": 80, "stamina": 25, "accuracy": 0.65 },
+      { "name": "Pound", "damage": 60, "stamina": 25, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Surtling",
+    "worldTier": 5,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 100,
+    "health": 200,
+    "maxStamina": 100,
+    "maxHealth": 200,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Fireball", "damage": 50, "stamina": 15, "accuracy": 0.85 },
+      { "name": "Engulf", "damage": 80, "stamina": 15, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Shadow",
+    "worldTier": 6,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 150,
+    "health": 300,
+    "maxStamina": 150,
+    "maxHealth": 300,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Spook", "damage": 80, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+  {
+    "name": "Spectre",
+    "worldTier": 6,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0.3,
+    "stamina": 150,
+    "health": 500,
+    "maxStamina": 150,
+    "maxHealth": 500,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Spook", "damage": 80, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
   }
 ]

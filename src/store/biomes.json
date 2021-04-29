@@ -60,21 +60,77 @@
   {
     "name": "Mountains",
     "unlocked": false,
-    "flavor": "It big."
+    "flavor": "Appearing serene and peaceful from a distnace, the mountains are a craggy and harsh enviornment. Its peaks stretch above the clouds, hiding what exists beyond the earth below.",
+    "delve": {
+      "xLength": 30,
+      "yHeight": 30,
+      "spawns": 8,
+      "totems": 4,
+      "treasure": 8,
+      "mapData": null,
+      "totem": "Ikon of Regret",
+      "totemDropChance": 0.25,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
   },
   {
     "name": "Plains",
     "unlocked": false,
-    "flavor": "Wimdy"
+    "flavor": "A wind-swept valley hidden by the surrounding mountains. These fertile lands are home to many grazing beasts and other natural resources.",
+    "delve": {
+      "xLength": 35,
+      "yHeight": 35,
+      "spawns": 8,
+      "totems": 4,
+      "treasure": 8,
+      "mapData": null,
+      "totem": "Ikon of the Wind",
+      "totemDropChance": 0.5,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
   },
   {
     "name": "Caldera",
     "unlocked": false,
-    "flavor": "Hot hot hot"
+    "flavor": "Swirling formations of old rock that once flowed like rivers have shaped the landscape into a treacherous domain. While not a welcoming sight, those brave enough may be rewarded.",
+    "delve": {
+      "xLength": 40,
+      "yHeight": 40,
+      "spawns": 10,
+      "totems": 4,
+      "treasure": 10,
+      "mapData": null,
+      "totem": "Ikon of the Primordial",
+      "totemDropChance": 0.25,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
   }, 
   {
     "name": "Ruined City",
     "unlocked": false,
-    "flavor": "The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate."
+    "flavor": "Crumbling spires that once touched the sky now lie broken. Grand structures now give way to the elements. The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate.",
+    "delve": {
+      "xLength": 40,
+      "yHeight": 40,
+      "spawns": 10,
+      "totems": 4,
+      "treasure": 10,
+      "mapData": null,
+      "totem": "Ikon of Pride",
+      "totemDropChance": 0.25,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
   }
 ]
