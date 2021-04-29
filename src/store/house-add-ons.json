@@ -59,6 +59,7 @@
     "name": "Smelter",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
+    "built": false,
     "enabled": false,
     "components": [
       {
@@ -91,6 +92,7 @@
     "name": "Kiln",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
+    "built": false,
     "enabled": false,
     "components": [
       {
