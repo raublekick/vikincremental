@@ -1,6 +1,7 @@
 [
   {
     "name": "Blast Furnace",
+    "type": "processing",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -57,6 +58,7 @@
   },
   {
     "name": "Smelter",
+    "type": "processing",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
     "built": false,
@@ -90,6 +92,7 @@
   },
   {
     "name": "Kiln",
+    "type": "processing",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
     "built": false,
@@ -113,6 +116,7 @@
   },
   {
     "name": "Fermenter",
+    "type": "processing",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -150,6 +154,7 @@
   },
   {
     "name": "Cooking Pot",
+    "type": "processing",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -183,6 +188,7 @@
   },
   {
     "name": "Cooking Station",
+    "type": "processing",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -207,6 +213,7 @@
   },
   {
     "name": "Bee Hive",
+    "type": "processing",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -232,6 +239,7 @@
   },
   {
     "name": "Hammer",
+    "type": "workbench",
     "built": false,
     "enabled": true,
     "bedRequirement": 0,
@@ -247,6 +255,7 @@
   },
   {
     "name": "Workbench",
+    "type": "workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -262,6 +271,7 @@
   },
   {
     "name": "Chopping Block",
+    "type": "workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -281,6 +291,7 @@
   },
   {
     "name": "Tanning Rack",
+    "type": "workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -304,6 +315,7 @@
   },
   {
     "name": "Adze",
+    "type": "workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -327,6 +339,7 @@
   },
   {
     "name": "Tool Rack",
+    "type": "workbench",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -350,6 +363,7 @@
   },
   {
     "name": "Forge",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -377,6 +391,7 @@
   },
   {
     "name": "Forge Cooler",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -396,6 +411,7 @@
   },
   {
     "name": "Anvil",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -419,6 +435,7 @@
   },
   {
     "name": "Smith's Anvil",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -438,6 +455,7 @@
   },
   {
     "name": "Forge Toolrack",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -457,6 +475,7 @@
   },
   {
     "name": "Bellows",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -480,6 +499,7 @@
   },
   {
     "name": "Artisan Table",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 10,
@@ -499,6 +519,7 @@
   },
   {
     "name": "Grinding Wheel",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -518,6 +539,7 @@
   },
   {
     "name": "Stonecutter",
+    "type": "forge",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -541,6 +563,7 @@
   },
   {
     "name": "Campfire",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -561,6 +584,7 @@
   },
   {
     "name": "Hearth",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -581,6 +605,7 @@
   },
   {
     "name": "Hanging Brazier",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -609,6 +634,7 @@
   },
   {
     "name": "Deer Rug",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -625,6 +651,7 @@
   },
   {
     "name": "Wolf Rug",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -641,6 +668,7 @@
   },
   {
     "name": "Steer Rug",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -657,6 +685,7 @@
   },
   {
     "name": "Banners",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -678,6 +707,7 @@
   },
   {
     "name": "Table",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -694,6 +724,7 @@
   },
   {
     "name": "Chairs",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -710,6 +741,7 @@
   },
   {
     "name": "Throne",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -730,6 +762,7 @@
   },
   {
     "name": "Comfortable Beds",
+    "type": "comfort",
     "built": false,
     "enabled": true,
     "gearRequirements": [],

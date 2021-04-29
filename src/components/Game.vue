@@ -63,11 +63,24 @@
                 <houses />
               </div>
               <div class="column">
-                <house-add-ons />
+                <fortifications />
               </div>
 
               <div class="column">
-                <fortifications />
+                <house-add-ons type="processing" label="Processing" />
+              </div>
+            </div>
+
+            <div class="columns">
+              <div class="column">
+                <house-add-ons type="workbench" label="Workbench" />
+              </div>
+              <div class="column">
+                <house-add-ons type="forge" label="Forge" />
+              </div>
+
+              <div class="column">
+                <house-add-ons type="comfort" label="Decorations" />
               </div>
             </div>
           </b-tab-item>
