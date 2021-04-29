@@ -58,23 +58,23 @@
     }
   },
   {
-    "name": "Ruined City",
-    "unlocked": false,
-    "flavor": "The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate."
-  },
-  {
     "name": "Mountains",
     "unlocked": false,
     "flavor": "It big."
   },
   {
+    "name": "Plains",
+    "unlocked": false,
+    "flavor": "Wimdy"
+  },
+  {
+    "name": "Ruined City",
+    "unlocked": false,
+    "flavor": "The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate."
+  },
+  {
     "name": "Caldera",
     "unlocked": false,
     "flavor": "Hot hot hot"
-  },
-  {
-    "name": "Coastal Plains",
-    "unlocked": false,
-    "flavor": "Wimdy"
-  }
+  }  
 ]

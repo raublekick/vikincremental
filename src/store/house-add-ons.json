@@ -212,6 +212,70 @@
     ]
   },
   {
+    "name": "Windmill",
+    "type": "processing",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Artisan Table"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Wood",
+        "amount": 30
+      },
+      {
+        "name": "Stone",
+        "amount": 20
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 30
+      }
+    ],
+    "processing": [
+      {
+        "input": [
+          { "name": "Wheat", "amount": 1}
+        ],
+        "output": { "name": "Flour", "amount": 1, "type": "inventory" }
+      }
+    ]
+  },
+  {
+    "name": "Spinning Wheel",
+    "type": "processing",
+    "built": false,
+    "enabled": false,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Artisan Table"],
+    "comfort": 0,
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 30
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 10
+      }
+    ],
+    "processing": [
+      {
+        "input": [
+          { "name": "Flax", "amount": 1}
+        ],
+        "output": { "name": "Threads", "amount": 1, "type": "inventory" }
+      }
+    ]
+  },
+  {
     "name": "Bee Hive",
     "type": "processing",
     "built": false,

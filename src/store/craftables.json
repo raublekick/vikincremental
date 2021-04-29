@@ -520,6 +520,10 @@
       {
         "name": "Silver Bar",
         "amount": 20
+      },
+      {
+        "name": "Threads",
+        "amount": 20
       }
     ],
     "combat": {},
@@ -537,6 +541,10 @@
       },
       {
         "name": "Silver Bar",
+        "amount": 20
+      },
+      {
+        "name": "Threads",
         "amount": 20
       }
     ],
@@ -556,6 +564,10 @@
       {
         "name": "Silver Bar",
         "amount": 20
+      },
+      {
+        "name": "Threads",
+        "amount": 20
       }
     ],
     "combat": {},
@@ -573,6 +585,10 @@
       },
       {
         "name": "Gold Bar",
+        "amount": 20
+      },
+      {
+        "name": "Threads",
         "amount": 20
       }
     ],
@@ -592,6 +608,10 @@
       {
         "name": "Gold Bar",
         "amount": 20
+      },
+      {
+        "name": "Threads",
+        "amount": 20
       }
     ],
     "combat": {},
@@ -609,6 +629,10 @@
       },
       {
         "name": "Gold Bar",
+        "amount": 20
+      },
+      {
+        "name": "Threads",
         "amount": 20
       }
     ],
@@ -628,6 +652,10 @@
       {
         "name": "Titanium Bar",
         "amount": 20
+      },
+      {
+        "name": "Threads",
+        "amount": 20
       }
     ],
     "combat": {},
@@ -646,6 +674,10 @@
       {
         "name": "Titanium Bar",
         "amount": 20
+      },
+      {
+        "name": "Threads",
+        "amount": 20
       }
     ],
     "combat": {},
@@ -663,6 +695,10 @@
       },
       {
         "name": "Titanium Bar",
+        "amount": 20
+      },
+      {
+        "name": "Threads",
         "amount": 20
       }
     ],
