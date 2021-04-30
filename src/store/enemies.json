@@ -389,34 +389,57 @@
       { "name": "Ichor", "amount": 1 }
     ]
   },
+  
   {
-    "name": "Surtling",
+    "name": "Draugr Warrior",
     "worldTier": 5,
     "delve": true,
     "overworld": true,
     "threshold": 0,
-    "stamina": 100,
+    "stamina": 150,
     "health": 200,
-    "maxStamina": 100,
+    "maxStamina": 150,
     "maxHealth": 200,
     "staminaRegen": 1,
     "baseStaminaRegen": 1,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Fireball", "damage": 50, "stamina": 15, "accuracy": 0.85 },
-      { "name": "Engulf", "damage": 80, "stamina": 15, "accuracy": 0.45 }
+      { "name": "Sword Swing", "damage": 70, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Stab", "damage": 90, "stamina": 30, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }
     ]
   },
   {
-    "name": "Shadow",
-    "worldTier": 6,
+    "name": "Draugr Noble",
+    "worldTier": 5,
     "delve": true,
     "overworld": true,
-    "threshold": 0,
+    "threshold": 0.1,
+    "stamina": 100,
+    "health": 100,
+    "maxStamina": 100,
+    "maxHealth": 100,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Slash", "damage": 10, "stamina": 20, "accuracy": 0.75 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 },
+    { "name": "Gold", "amount": 3 }
+    ]
+  },
+  {
+    "name": "Shadow",
+    "worldTier": 5,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0.2,
     "stamina": 150,
     "health": 300,
     "maxStamina": 150,
@@ -435,7 +458,7 @@
   },
   {
     "name": "Spectre",
-    "worldTier": 6,
+    "worldTier": 5,
     "delve": true,
     "overworld": true,
     "threshold": 0.3,
@@ -450,6 +473,29 @@
     "attacks": [
       { "name": "Spook", "damage": 80, "stamina": 20, "accuracy": 0.75 },
       { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 1 }
+    ]
+  },
+
+  {
+    "name": "Surtling",
+    "worldTier": 6,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 100,
+    "health": 200,
+    "maxStamina": 100,
+    "maxHealth": 200,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Fireball", "damage": 50, "stamina": 15, "accuracy": 0.85 },
+      { "name": "Engulf", "damage": 80, "stamina": 15, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }

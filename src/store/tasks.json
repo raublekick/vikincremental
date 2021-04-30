@@ -6,7 +6,7 @@
     "food": [
       {
         "name": "Berries",
-        "perSecond": 100
+        "perSecond": 0.2
       },
       {
         "name": "Blueberries",
@@ -51,11 +51,7 @@
       },
       {
         "name": "Wood",
-        "perSecond": 100
-      },
-      {
-        "name": "Leather Scraps",
-        "perSecond": 100
+        "perSecond": 1
       },
       {
         "name": "Queen Bee",
@@ -82,7 +78,7 @@
     "name": "Small Game Hunting",
     "staminaCost": 5,
     "worldTier": null,
-    "gearRequirements": ["Crude Bow", "Short Bow"],
+    "gearRequirements": ["Crude Bow", "Ornate Bow"],
     "items": [
       { "name": "Leather Hide", "perSecond": 0.1 },
       { "name": "Leather Scraps", "perSecond": 0.2 },

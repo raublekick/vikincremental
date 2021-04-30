@@ -133,11 +133,20 @@ export default new Vuex.Store({
   },
   actions: {
     async initializeCombat({ state, dispatch }) {
+      var tierEnemies = _.filter(state.enemyList, (enemy) => {
+        return (
+          enemy.worldTier === state.worldTier &&
+          ((state.delve === true && enemy.delve === true) ||
+            (state.delve === false && enemy.overworld === true))
+        );
+      });
+
       if (
         state.newDay &&
         state.vikings.length &&
         !state.bossCombat &&
-        !state.delve
+        !state.delve &&
+        tierEnemies.length > 0
       ) {
         var chance = Math.random();
         if (state.enemies.length) {

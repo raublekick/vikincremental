@@ -127,7 +127,7 @@
     ]
   },
   {
-    "name": "The Doomed God",
+    "name": "The Trickster",
     "worldTier": 5,
     "stamina": 1000,
     "health": 9000,
@@ -152,8 +152,33 @@
     ]
   },
   {
-    "name": "The Allfather",
+    "name": "The Doomed God",
     "worldTier": 6,
+    "stamina": 1000,
+    "health": 20000,
+    "maxStamina": 1000,
+    "maxHealth": 20000,
+    "staminaRegen": 30,
+    "baseStaminaRegen": 30,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "defeated": false,
+    "components": [
+      { "name": "Ikon of the Primordial", "amount": 2 }
+    ],
+    "attacks": [
+      { "name": "Attack 1", "damage": 200, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
+    ],
+    "artifacts": [],
+    "drops": [
+      { "name": "Ichor", "amount": 10 }
+    ]
+  },
+  {
+    "name": "The Allfather",
+    "worldTier": 7,
     "stamina": 1000,
     "health": 40000,
     "maxStamina": 1000,
@@ -163,9 +188,7 @@
     "healthRegen": 1,
     "baseHealthRegen": 1,
     "defeated": false,
-    "components": [
-      { "name": "Ikon of Pride", "amount": 10 }
-    ],
+    "components": [],
     "attacks": [
       { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.15 },
       { "name": "Attack 2", "damage": 145, "stamina": 150, "accuracy": 0.75 },

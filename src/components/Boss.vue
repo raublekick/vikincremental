@@ -11,7 +11,7 @@
     <div class="column has-text-right">
       <b-button
         size="is-small"
-        :disabled="!canCraft && worldTier != item.worldTier"
+        :disabled="!canCraft || worldTier != item.worldTier"
         :type="canCraft && worldTier === item.worldTier ? 'is-success' : ''"
         @click="challengeBoss(item)"
         >Challenge</b-button
@@ -41,7 +41,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["bossCombat", "inventory"]),
+    ...mapState(["bossCombat", "inventory", "worldTier"]),
 
     canCraft() {
       return this.craftable(this.item);

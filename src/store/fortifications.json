@@ -32,5 +32,50 @@
         "amount": 200
       }
     ]
+  },
+  {
+    "name": "Spikes",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Forge"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 200
+      }
+    ]
+  },
+  {
+    "name": "Stone Walls",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Stonecutter"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 1000
+      }
+    ]
+  },
+  {
+    "name": "Iron Gates",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Smith's Anvil"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Iron Bar",
+        "amount": 30
+      }
+    ]
   }
 ]

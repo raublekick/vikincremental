@@ -9,6 +9,7 @@
         <h3 class="subtitle">
           {{ biome.name
           }}<b-button
+            v-if="biome.delve"
             :disabled="worldTier != i || vikings.length === 0"
             :type="worldTier === i && vikings.length > 0 ? 'is-success' : ''"
             @click="initializeDelve()"

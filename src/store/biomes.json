@@ -95,6 +95,27 @@
       }
     }
   },
+  
+  {
+    "name": "Ruined City",
+    "unlocked": false,
+    "flavor": "Crumbling spires that once touched the sky now lie broken. Grand structures now give way to the elements. The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate.",
+    "delve": {
+      "xLength": 40,
+      "yHeight": 40,
+      "spawns": 10,
+      "totems": 4,
+      "treasure": 10,
+      "mapData": null,
+      "totem": "Ikon of Pride",
+      "totemDropChance": 0.50,
+      "treasures": { 
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 }, { "name": "Gold", "max": 20 } ],
+        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
+      }
+    }
+  },
+
   {
     "name": "Caldera",
     "unlocked": false,
@@ -114,23 +135,10 @@
       }
     }
   }, 
+
   {
-    "name": "Ruined City",
+    "name": "Valhalla",
     "unlocked": false,
-    "flavor": "Crumbling spires that once touched the sky now lie broken. Grand structures now give way to the elements. The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate.",
-    "delve": {
-      "xLength": 40,
-      "yHeight": 40,
-      "spawns": 10,
-      "totems": 4,
-      "treasure": 10,
-      "mapData": null,
-      "totem": "Ikon of Pride",
-      "totemDropChance": 0.50,
-      "treasures": { 
-        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
-        "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
-      }
-    }
+    "flavor": "Peace. Merriment. Food and drink. Prove yourself to earn your place."
   }
 ]
