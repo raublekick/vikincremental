@@ -31,14 +31,14 @@
         <div>Encounter Rate: {{ encounterChance * 100 }}% / day</div>
         <hr />
         <!-- <houses /> -->
-        <div class="subtitle">Housing</div>
+        <!-- <div class="subtitle">Housing</div>
         <div>
           {{ house.name }}
         </div>
         <div>Beds: {{ house.beds }}</div>
         <div>Comfort: {{ comfort }}</div>
         <div>Fortification: {{ fortification }}</div>
-        <hr />
+        <hr /> -->
         <!-- <house-add-ons /> -->
         <!-- <hr /> -->
         <div class="subtitle">Inventory</div>
@@ -58,6 +58,9 @@
             value="building"
             :icon="newAddOn ? 'alert-circle' : ''"
           >
+            <b-field>
+              <b-input v-model="search" placeholder="Search..."> </b-input>
+            </b-field>
             <div class="columns">
               <div class="column">
                 <houses />
@@ -67,20 +70,32 @@
               </div>
 
               <div class="column">
-                <house-add-ons type="processing" label="Processing" />
+                <house-add-ons
+                  type="processing"
+                  label="Processing"
+                  :filter="search"
+                />
               </div>
             </div>
 
             <div class="columns">
               <div class="column">
-                <house-add-ons type="workbench" label="Workbench" />
+                <house-add-ons
+                  type="workbench"
+                  label="Workbench"
+                  :filter="search"
+                />
               </div>
               <div class="column">
-                <house-add-ons type="forge" label="Forge" />
+                <house-add-ons type="forge" label="Forge" :filter="search" />
               </div>
 
               <div class="column">
-                <house-add-ons type="comfort" label="Decorations" />
+                <house-add-ons
+                  type="comfort"
+                  label="Decorations"
+                  :filter="search"
+                />
               </div>
             </div>
           </b-tab-item>
@@ -139,6 +154,7 @@ export default {
   data() {
     return {
       newState: null,
+      search: "",
     };
   },
 

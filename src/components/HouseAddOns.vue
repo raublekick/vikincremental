@@ -27,6 +27,13 @@ export default {
     label: {
       required: true,
     },
+    filter: {
+      required: false,
+      type: String,
+      default() {
+        return "";
+      },
+    },
   },
 
   components: { HouseAddOn, Panel },
@@ -35,7 +42,18 @@ export default {
     ...mapState(["houseAddOns", "house"]),
     items() {
       return _.filter(this.houseAddOns, (item) => {
-        return item.type === this.type;
+        var typeMatch = item.type === this.type;
+        var filterMatch = true;
+        if (this.filter != "") {
+          filterMatch =
+            item.name.toLowerCase().includes(this.filter.toLowerCase()) ||
+            _.filter(item.components, (component) => {
+              return component.name
+                .toLowerCase()
+                .includes(this.filter.toLowerCase());
+            }).length > 0;
+        }
+        return filterMatch && typeMatch;
       });
     },
   },
