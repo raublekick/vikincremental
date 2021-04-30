@@ -8,6 +8,7 @@
         <b-button
           size="is-small"
           :disabled="!canCraft"
+          :type="canCraft ? 'is-success' : ''"
           v-if="!item.built"
           @click="craftFortification(item)"
           >Craft</b-button

@@ -12,6 +12,7 @@
       <b-button
         size="is-small"
         :disabled="!canCraft && worldTier != item.worldTier"
+        :type="canCraft && worldTier === item.worldTier ? 'is-success' : ''"
         @click="challengeBoss(item)"
         >Challenge</b-button
       >

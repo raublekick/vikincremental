@@ -9,7 +9,11 @@
       </div>
     </div>
     <div class="column has-text-right">
-      <b-button size="is-small" :disabled="!canCraft" @click="craftGear(item)"
+      <b-button
+        size="is-small"
+        :disabled="!canCraft"
+        @click="craftGear(item)"
+        :type="canCraft ? 'is-success' : ''"
         >Craft</b-button
       >
     </div>

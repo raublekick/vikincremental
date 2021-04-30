@@ -4,7 +4,7 @@
       <p class="title">Vikingcrement</p>
       <p class="subtitle">An incremental text adventure</p>
       <div v-if="step === 0">
-        <b-button @click="step = 1">New Game</b-button>
+        <b-button @click="step = 1" type="is-success">New Game</b-button>
       </div>
       <div v-if="step === 1">
         <b-field class="has-addons">
@@ -18,7 +18,9 @@
       </div>
       <div v-if="step === 2">
         <pre>{{ message }}</pre>
-        <b-button @click="newGame({ name: name })">Start</b-button>
+        <b-button @click="newGame({ name: name })" type="is-success"
+          >Start</b-button
+        >
       </div>
     </div>
   </section>

@@ -53,6 +53,16 @@ export default {
       previousSpace: null,
       fog: 6,
       sizeDivisor: 3,
+      start:
+        "<span class='marker has-background-danger' style='color:white;'>S</span>",
+      player:
+        "<span class='marker has-background-primary' style='color:white'>@</span>",
+      enemy:
+        "<span class='marker' style='background-color:grey;color:white;'>!</span>",
+      totem:
+        "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>",
+      treasure:
+        "<span class='marker has-background-warning' style='color:black;'>#</span>",
     };
   },
   props: {
@@ -209,22 +219,19 @@ export default {
             Math.random() < this.chanceForSpawn &&
             this.map.spawns.length < this.config.spawns
           ) {
-            array[yNew][xNew] =
-              "<span class='marker' style='background-color:grey;color:white;'>!</span>";
+            array[yNew][xNew] = this.enemy;
             this.map.spawns.push({ x: xNew, y: yNew });
           } else if (
             Math.random() < this.chanceForTotem &&
             this.map.totems.length < this.config.totems
           ) {
-            array[yNew][xNew] =
-              "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>";
+            array[yNew][xNew] = this.totem;
             this.map.totems.push({ x: xNew, y: yNew });
           } else if (
             Math.random() < this.chanceForTreasure &&
             this.map.treasure.length < this.config.treasure
           ) {
-            array[yNew][xNew] =
-              "<span class='marker' style='background-color:Goldenrod;color:black;'>#</span>";
+            array[yNew][xNew] = this.treasure;
             this.map.treasure.push({ x: xNew, y: yNew });
           } else {
             array[yNew][xNew] = "."; // this.spaces[item];
@@ -260,11 +267,9 @@ export default {
       this.playerCoords = {
         x: this.xStart,
         y: this.yStart,
-        previousValue:
-          "<span class='marker' style='background-color:crimson;color:white;'>S</span>",
+        previousValue: this.start,
       };
-      array[this.yStart][this.xStart] =
-        "<span class='marker' style='background-color:green;color:white'>@</span>";
+      array[this.yStart][this.xStart] = this.player;
 
       // set coordinates to starting point, follow path generator
       var xCurr = this.xStart;

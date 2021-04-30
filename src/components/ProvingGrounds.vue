@@ -10,6 +10,7 @@
           {{ biome.name
           }}<b-button
             :disabled="worldTier != i || vikings.length === 0"
+            :type="worldTier === i && vikings.length > 0 ? 'is-success' : ''"
             @click="initializeDelve()"
             class="is-small is-pulled-right"
             >Delve</b-button

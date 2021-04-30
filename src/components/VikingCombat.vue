@@ -3,13 +3,21 @@
     <div class="column">
       <div>{{ item.name }}</div>
       <div>
-        <b-progress :max="item.maxHealth" :value="item.health" show-value
+        <b-progress
+          :type="healthColor"
+          :max="item.maxHealth"
+          :value="item.health"
+          show-value
           >{{ item.health }} / {{ item.maxHealth }}</b-progress
         >
       </div>
       <div>Health Regen: {{ item.healthRegen }}</div>
       <div>
-        <b-progress :max="item.maxStamina" :value="item.stamina" show-value
+        <b-progress
+          :max="item.maxStamina"
+          :value="item.stamina"
+          show-value
+          type="is-warning"
           >{{ item.stamina }} / {{ item.maxStamina }}</b-progress
         >
       </div>
@@ -54,6 +62,15 @@ export default {
 
   computed: {
     ...mapState(["tasks"]),
+    healthColor() {
+      if (this.item.health > this.item.maxHealth / 2) {
+        return "is-success";
+      } else if (this.item.health > this.item.maxHealth / 4) {
+        return "is-warning";
+      } else {
+        return "is-danger";
+      }
+    },
     armor() {
       return this.getArmor(this.item.gear);
     },

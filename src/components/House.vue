@@ -12,6 +12,7 @@
         <b-button
           size="is-small"
           :disabled="!canCraft"
+          :type="canCraft ? 'is-success' : ''"
           @click="updateHouse(item)"
           >Craft</b-button
         >

@@ -2,7 +2,10 @@
   <div>
     <div class="content">
       <h1 class="title p-4">
-        Vikincrement<b-button @click="reset()" class="is-pulled-right"
+        Vikincrement<b-button
+          @click="reset()"
+          class="is-pulled-right"
+          type="is-danger"
           >Reset</b-button
         >
         <!-- <b-button @click="resetTier()" class="is-pulled-right"
