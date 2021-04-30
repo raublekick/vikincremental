@@ -1,7 +1,7 @@
 <template>
   <panel heading="Gear">
     <template slot="content">
-      <div v-for="(item, index) in gear" :key="index" class="item">
+      <div v-for="(item, index) in items" :key="index" class="item">
         <div class="columns">
           <div class="column">{{ item.name }}</div>
           <div class="column">
@@ -39,6 +39,7 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
+import * as _ from "lodash";
 import Panel from "@/components/Panel";
 export default {
   name: "Gear",
@@ -48,10 +49,35 @@ export default {
     };
   },
 
+  props: {
+    filter: {
+      required: false,
+      type: String,
+      default() {
+        return "";
+      },
+    },
+  },
+
   components: { Panel },
 
   computed: {
     ...mapState(["gear", "vikings"]),
+    items() {
+      if (this.filter != "") {
+        return _.filter(this.gear, (item) => {
+          return (
+            item.name.toLowerCase().includes(this.filter.toLowerCase()) ||
+            _.filter(item.components, (component) => {
+              return component.name
+                .toLowerCase()
+                .includes(this.filter.toLowerCase());
+            }).length > 0
+          );
+        });
+      }
+      return this.gear;
+    },
   },
 
   methods: {

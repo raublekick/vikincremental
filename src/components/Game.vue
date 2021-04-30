@@ -69,7 +69,7 @@
                 <houses />
               </div>
               <div class="column">
-                <fortifications />
+                <fortifications :filter="search" />
               </div>
 
               <div class="column">
@@ -108,13 +108,16 @@
             value="crafting"
             :icon="newCraft ? 'alert-circle' : ''"
           >
+            <b-field>
+              <b-input v-model="search" placeholder="Search..."> </b-input>
+            </b-field>
             <div class="columns">
               <div class="column">
-                <gear />
+                <gear :filter="search" />
               </div>
 
               <div class="column">
-                <craftables />
+                <craftables :filter="search" />
               </div>
             </div>
           </b-tab-item>
