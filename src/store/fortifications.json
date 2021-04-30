@@ -109,6 +109,14 @@
       {
         "name": "Steel Bar",
         "amount": 30
+      },
+      {
+        "name": "Stone",
+        "amount": 500
+      },
+      {
+        "name": "Hard Wood",
+        "amount": 200
       }
     ]
   }
