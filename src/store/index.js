@@ -640,7 +640,7 @@ export default new Vuex.Store({
         state.encounterChance =
           state.baseEncounterChance +
           state.vikings.length / 100 +
-          (state.comfort * 5) / 100 -
+          (state.comfort * 3) / 100 -
           (state.fortification * 2.5) / 100;
       }
       state.day.dayTicks++;

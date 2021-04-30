@@ -64,6 +64,25 @@
     ]
   },
   {
+    "name": "Watchtowers",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Stonecutter"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 500
+      },
+      {
+        "name": "Hard Wood",
+        "amount": 200
+      }
+    ]
+  },
+  {
     "name": "Iron Gates",
     "built": false,
     "enabled": true,
@@ -74,6 +93,21 @@
     "components": [
       {
         "name": "Iron Bar",
+        "amount": 30
+      }
+    ]
+  },
+  {
+    "name": "Parapets",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Blast Furnace"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Steel Bar",
         "amount": 30
       }
     ]
