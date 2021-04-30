@@ -488,10 +488,10 @@ export default new Vuex.Store({
                 " has been defeated by " +
                 enemy.name +
                 "...\n";
-              if (state.bossCombat) {
-                var ripViking = _.clone(state.vikings[targetIndex]);
-                state.ripVikings.push(ripViking);
-              }
+              //if (state.bossCombat) {
+              var ripViking = _.clone(state.vikings[targetIndex]);
+              state.ripVikings.push(ripViking);
+              //}
               state.vikings.splice(targetIndex, 1);
             }
             // subtract stamina from viking
@@ -509,36 +509,36 @@ export default new Vuex.Store({
 
             state.battleLog += "Your party has been eliminated...\n";
 
-            if (state.bossCombat) {
-              // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
-              _.forEach(state.ripVikings, (viking) => {
-                var bossesDefeated = _.filter(
-                  state.bosses,
-                  (boss) => (boss.defeated = true)
-                ).length;
-                var bonus = 1 + bossesDefeated;
-                state.battleLog +=
-                  "For your bravery, you are reborn with a bonus " +
-                  (1 + bossesDefeated) +
-                  " point each to maximum health, health regen, maximum stamina, and stamina regen.\n";
-                viking.tasks = [];
-                viking.baseHealthRegen += bonus;
-                viking.baseStaminaRegen += bonus;
-                viking.baseHealth += bonus;
-                viking.baseStamina += bonus;
-                viking.maxHealth = viking.baseHealth;
-                viking.maxStamina = viking.baseStamina;
-                viking.health = viking.baseHealth;
-                viking.stamina = viking.baseStamina;
-                viking.staminaRegen = viking.baseStaminaRegen;
-                viking.healthRegen = viking.baseHealthRegen;
-              });
-              state.vikings = _.clone(state.ripVikings);
-              state.ripVikings = [];
-            } else {
+            //if (state.bossCombat) {
+            // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
+            _.forEach(state.ripVikings, (viking) => {
+              var bossesDefeated = _.filter(
+                state.bosses,
+                (boss) => (boss.defeated = true)
+              ).length;
+              var bonus = bossesDefeated;
               state.battleLog +=
-                "Flying far above the battlefield the crow observes, knowing that now it must retrieve more mortals. But these vikings have made a place for themselves, and it may be of use to those to come.\n";
-            }
+                "For your bravery, you are reborn with a bonus " +
+                bossesDefeated +
+                " point each to maximum health, health regen, maximum stamina, and stamina regen.\n";
+              viking.tasks = [];
+              viking.baseHealthRegen += bonus;
+              viking.baseStaminaRegen += bonus;
+              viking.baseHealth += bonus;
+              viking.baseStamina += bonus;
+              viking.maxHealth = viking.baseHealth;
+              viking.maxStamina = viking.baseStamina;
+              viking.health = viking.baseHealth;
+              viking.stamina = viking.baseStamina;
+              viking.staminaRegen = viking.baseStaminaRegen;
+              viking.healthRegen = viking.baseHealthRegen;
+            });
+            state.vikings = _.clone(state.ripVikings);
+            state.ripVikings = [];
+            // } else {
+            //   state.battleLog +=
+            //     "Flying far above the battlefield the crow observes, knowing that now it must retrieve more mortals. But these vikings have made a place for themselves, and it may be of use to those to come.\n";
+            // }
 
             // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
             state.enemies = [];

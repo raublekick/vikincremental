@@ -2,7 +2,7 @@
   {
     "name": "The Mother",
     "worldTier": 0,
-    "stamina": 100,
+    "stamina": 200,
     "health": 300,
     "maxStamina": 100,
     "maxHealth": 300,
@@ -28,7 +28,7 @@
   {
     "name": "The Stag",
     "worldTier": 1,
-    "stamina": 200,
+    "stamina": 250,
     "health": 800,
     "maxStamina": 200,
     "maxHealth": 800,

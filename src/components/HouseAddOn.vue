@@ -28,18 +28,23 @@
         </div>
         <div v-else-if="item.built && item.enabled">
           <div v-if="item.comfort">Comfort: {{ item.comfort }}</div>
-          <div
-            v-for="(process, index) in item.processing"
-            :key="'process' + index"
-          >
-            <span
-              v-for="(item, index) in process.input"
-              :key="'item' + index"
-              class="list-item"
-              >{{ item.amount }} {{ item.name }}</span
-            >
-            -> {{ process.output.name }}
-            {{ process.output.amount }}
+          <div v-if="item.processing.length">
+            <a href="#" @click.prevent="show = !show">show | hide</a>
+            <div v-if="show">
+              <div
+                v-for="(process, index) in item.processing"
+                :key="'process' + index"
+              >
+                <span
+                  v-for="(item, index) in process.input"
+                  :key="'item' + index"
+                  class="list-item"
+                  >{{ item.amount }} {{ item.name }}</span
+                >
+                -> {{ process.output.name }}
+                {{ process.output.amount }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +57,7 @@ import mixin from "@/store/mixin";
 export default {
   name: "HouseAddOn",
   data() {
-    return { enabled: false };
+    return { enabled: false, show: true };
   },
 
   mixins: [mixin],

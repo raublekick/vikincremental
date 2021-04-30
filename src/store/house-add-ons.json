@@ -187,7 +187,7 @@
       {
         "input": [
           { "name": "Wood", "amount": 1}, 
-          { "name": "Raw Meat", "amount": 1, "type": "food" },
+          { "name": "Raw Meat", "amount": 1 },
           { "name": "Turnips", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Turnip Stew", "amount": 1, "type": "food" }

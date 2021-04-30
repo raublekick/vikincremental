@@ -12,7 +12,7 @@
       "treasure": 5,
       "mapData": null,
       "totem": "Ikon of the Bounty",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [],
         "food": [ { "name": "Yellow Mushrooms", "max": 1 } ]
@@ -31,7 +31,7 @@
       "treasure": 6,
       "mapData": null,
       "totem": "Ikon of Renewal",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [ { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
@@ -50,7 +50,7 @@
       "treasure": 8,
       "mapData": null,
       "totem": "Ikon of Decay",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [ { "name": "Chains", "max": 1 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
@@ -69,7 +69,7 @@
       "treasure": 8,
       "mapData": null,
       "totem": "Ikon of Regret",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
@@ -107,7 +107,7 @@
       "treasure": 10,
       "mapData": null,
       "totem": "Ikon of the Primordial",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
@@ -126,7 +126,7 @@
       "treasure": 10,
       "mapData": null,
       "totem": "Ikon of Pride",
-      "totemDropChance": 0.25,
+      "totemDropChance": 0.50,
       "treasures": { 
         "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]

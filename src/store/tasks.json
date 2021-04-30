@@ -153,9 +153,7 @@
       }
     ],
     "items": [
-      {"name": "Carrots", "perSecond": 0.25}, 
-      {"name": "Turnips", "perSecond": 0.125},
-      {"name": "Mushrooms", "perSecond": 0.125}
+      {"name": "Mushrooms", "perSecond": 0.125, "type": "food"}
     ]
   }
 ]
