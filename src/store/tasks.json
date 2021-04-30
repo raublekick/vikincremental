@@ -86,6 +86,22 @@
     ]
   },
   {
+    "name": "Fishing",
+    "staminaCost": 5,
+    "worldTier": 0,
+    "gearRequirements": ["Fishing Rod"],
+    "addOnRequirements": ["Spinning Wheel"],
+    "items": [{ "name": "Raw Fish", "perSecond": 0.5 }]
+  },
+  {
+    "name": "Deep Sea Fishing",
+    "staminaCost": 5,
+    "worldTier": 0,
+    "gearRequirements": ["Harpoon"],
+    "addOnRequirements": ["Spinning Wheel"],
+    "items": [{ "name": "Raw Fish", "perSecond": 0.5 }]
+  },
+  {
     "name": "Stone Mining",
     "staminaCost": 10,
     "worldTier": null,

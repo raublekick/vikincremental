@@ -758,5 +758,39 @@
       }
     ],
     "combat": {}
+  },
+  {
+    "name": "Fishing Rod",
+    "addOnRequirements": ["Spinning Wheel"],
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Threads",
+        "amount": 25
+      }
+    ],
+    "combat": {}
+  },
+  {
+    "name": "Harpoon",
+    "addOnRequirements": ["Spinning Wheel"],
+    "components": [
+      {
+        "name": "Large Bone",
+        "amount": 1
+      },
+      {
+        "name": "Hard Wood",
+        "amount": 8
+      },
+      {
+        "name": "Threads",
+        "amount": 100
+      }
+    ],
+    "combat": {}
   }
 ]
