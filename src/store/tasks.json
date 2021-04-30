@@ -6,7 +6,7 @@
     "food": [
       {
         "name": "Berries",
-        "perSecond": 0.2
+        "perSecond": 100
       },
       {
         "name": "Blueberries",
@@ -51,7 +51,11 @@
       },
       {
         "name": "Wood",
-        "perSecond": 1
+        "perSecond": 100
+      },
+      {
+        "name": "Leather Scraps",
+        "perSecond": 100
       },
       {
         "name": "Queen Bee",

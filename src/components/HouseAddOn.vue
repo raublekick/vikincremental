@@ -74,7 +74,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["inventory", "gear", "house", "houseAddOns"]),
+    ...mapState(["inventory", "food", "gear", "house", "houseAddOns"]),
     unlocked() {
       return this.requirementsMet(this.item, this.house, this.houseAddOns);
     },
