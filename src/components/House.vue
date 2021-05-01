@@ -65,7 +65,7 @@ export default {
     canCraft: {
       handler(value) {
         if (value) {
-          this.setField({ name: "newAddOn", value: true });
+          this.setField({ name: "newHouse", value: true });
         }
       },
       deep: true,

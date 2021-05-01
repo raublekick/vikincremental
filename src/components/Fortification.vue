@@ -70,7 +70,7 @@ export default {
     unlocked: {
       handler(value) {
         if (value && !this.item.built) {
-          this.setField({ name: "newAddOn", value: true });
+          this.setField({ name: "newHouse", value: true });
         }
       },
       deep: true,

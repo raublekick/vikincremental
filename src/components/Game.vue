@@ -57,9 +57,9 @@
           </b-tab-item>
 
           <b-tab-item
-            label="Building"
+            label="Housing"
             value="building"
-            :icon="newAddOn ? 'alert-circle' : ''"
+            :icon="newHouse ? 'alert-circle' : ''"
           >
             <b-field>
               <b-input v-model="search" placeholder="Search..."> </b-input>
@@ -74,13 +74,22 @@
 
               <div class="column">
                 <house-add-ons
-                  type="processing"
-                  label="Processing"
+                  type="comfort"
+                  label="Decorations"
                   :filter="search"
                 />
               </div>
             </div>
+          </b-tab-item>
 
+          <b-tab-item
+            label="Workshop"
+            value="workshop"
+            :icon="newAddOn ? 'alert-circle' : ''"
+          >
+            <b-field>
+              <b-input v-model="search" placeholder="Search..."> </b-input>
+            </b-field>
             <div class="columns">
               <div class="column">
                 <house-add-ons
@@ -95,8 +104,8 @@
 
               <div class="column">
                 <house-add-ons
-                  type="comfort"
-                  label="Decorations"
+                  type="processing"
+                  label="Processing"
                   :filter="search"
                 />
               </div>
@@ -195,6 +204,7 @@ export default {
       "biomes",
       "newCraft",
       "newAddOn",
+      "newHouse",
       "isPaused",
     ]),
     state: {
@@ -227,6 +237,9 @@ export default {
           this.setField({ name: "newCraft", value: false });
           break;
         case "building":
+          this.setField({ name: "newHouse", value: false });
+          break;
+        case "workshop":
           this.setField({ name: "newAddOn", value: false });
           break;
         default:

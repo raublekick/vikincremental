@@ -93,7 +93,15 @@ export default {
     unlocked: {
       handler(value) {
         if (value && !this.item.built) {
-          this.setField({ name: "newAddOn", value: true });
+          if (
+            this.item.type === "workbench" ||
+            this.item.type === "forge" ||
+            this.item.type === "processing"
+          ) {
+            this.setField({ name: "newAddOn", value: true });
+          } else {
+            this.setField({ name: "newHouse", value: true });
+          }
         }
       },
       deep: true,
