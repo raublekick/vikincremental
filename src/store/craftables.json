@@ -13,7 +13,7 @@
     ],
     "combat": {
       "damage": 15,
-      "stamina": 10,
+      "stamina": 15,
       "accuracy": 0.75
     }
   },
@@ -40,7 +40,7 @@
     ],
     "combat": {
       "damage": 20,
-      "stamina": 10,
+      "stamina": 20,
       "accuracy": 0.8
     }
   },
@@ -63,7 +63,7 @@
     ],
     "combat": {
       "damage": 30,
-      "stamina": 20,
+      "stamina": 25,
       "accuracy": 0.85
     }
   },
@@ -86,7 +86,7 @@
     ],
     "combat": {
       "damage": 35,
-      "stamina": 20,
+      "stamina": 30,
       "accuracy": 0.85
     }
   },
@@ -117,7 +117,7 @@
     ],
     "combat": {
       "damage": 45,
-      "stamina": 20,
+      "stamina": 30,
       "accuracy": 0.85
     }
   },
@@ -152,7 +152,7 @@
     ],
     "combat": {
       "damage": 50,
-      "stamina": 30,
+      "stamina": 40,
       "accuracy": 0.85
     }
   },
@@ -186,8 +186,8 @@
       }
     ],
     "combat": {
-      "damage": 50,
-      "stamina": 30,
+      "damage": 100,
+      "stamina": 40,
       "accuracy": 0.85
     }
   },
@@ -225,7 +225,7 @@
     ],
     "combat": {
       "damage": 20,
-      "stamina": 5,
+      "stamina": 10,
       "accuracy": 0.65
     }
   },

@@ -684,7 +684,7 @@
     "enabled": false,
     "bedRequirement": 2,
     "gearRequirements": [],
-    "addOnRequirements": ["Smelter"],
+    "addOnRequirements": ["Forge"],
     "components": [
       {
         "name": "Stone",
