@@ -25,7 +25,7 @@
                 <a
                   class="button is-small is-primary"
                   @click.prevent="
-                    assignGear({ gearIndex: index, vikingIndex: vikingIndex })
+                    assignGear({ item: item, vikingIndex: vikingIndex })
                   "
                   >Assign</a
                 >

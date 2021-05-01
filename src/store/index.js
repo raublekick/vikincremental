@@ -99,8 +99,9 @@ export default new Vuex.Store({
       state.house = house;
     },
     assignGear(state, payload) {
-      var gear = state.gear[payload.gearIndex];
-      state.gear.splice(payload.gearIndex, 1);
+      var index = mixin.methods.findIndex(state.gear, payload.item.name);
+      var gear = state.gear[index];
+      state.gear.splice(index, 1);
       state.vikings[payload.vikingIndex].gear.push(gear);
     },
     removeGear(state, payload) {
