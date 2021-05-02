@@ -91,8 +91,8 @@ export default {
 
   watch: {
     unlocked: {
-      handler(value) {
-        if (value && !this.item.built) {
+      handler(value, old) {
+        if (value && !old && !this.item.built) {
           if (
             this.item.type === "workbench" ||
             this.item.type === "forge" ||

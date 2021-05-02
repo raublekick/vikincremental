@@ -68,8 +68,8 @@ export default {
 
   watch: {
     unlocked: {
-      handler(value) {
-        if (value && !this.item.built) {
+      handler(value, old) {
+        if (value && !old && !this.item.built) {
           this.setField({ name: "newHouse", value: true });
           this.notification("New fortification unlocked: " + this.item.name);
         }

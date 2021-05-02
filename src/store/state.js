@@ -32,7 +32,7 @@ export default {
   bossCombat: false,
   newDay: false,
   battleLog: "",
-  attackTicks: 6,
+  attackTicks: 8,
   encounterChance: 0.25,
   baseEncounterChance: 0.25,
   maxVikings: 10,

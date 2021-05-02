@@ -63,8 +63,8 @@ export default {
 
   watch: {
     canCraft: {
-      handler(value) {
-        if (value) {
+      handler(value, old) {
+        if (value && !old) {
           this.setField({ name: "newHouse", value: true });
           this.notification("New house unlocked: " + this.item.name);
         }

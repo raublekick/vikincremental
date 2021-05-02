@@ -59,8 +59,8 @@ export default {
 
   watch: {
     unlocked: {
-      handler(value) {
-        if (value && !this.item.built) {
+      handler(value, old) {
+        if (value && !old && !this.item.built) {
           this.setField({ name: "newCraft", value: true });
           this.notification("New crafting item unlocked: " + this.item.name);
         }
