@@ -6,7 +6,7 @@ export default {
     notification(message) {
       this.$buefy.notification.open({
         message: message,
-        queue: false,
+        queue: true,
         duration: 5000,
 
         type: "is-info",
