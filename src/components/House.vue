@@ -66,6 +66,7 @@ export default {
       handler(value) {
         if (value) {
           this.setField({ name: "newHouse", value: true });
+          this.notification("New house unlocked: " + this.item.name);
         }
       },
       deep: true,

@@ -99,8 +99,14 @@ export default {
             this.item.type === "processing"
           ) {
             this.setField({ name: "newAddOn", value: true });
+            this.notification(
+              "New " + this.item.type + " item unlocked: " + this.item.name
+            );
           } else {
             this.setField({ name: "newHouse", value: true });
+            this.notification(
+              "New " + this.item.type + " item unlocked: " + this.item.name
+            );
           }
         }
       },

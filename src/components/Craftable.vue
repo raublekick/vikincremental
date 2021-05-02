@@ -62,6 +62,7 @@ export default {
       handler(value) {
         if (value && !this.item.built) {
           this.setField({ name: "newCraft", value: true });
+          this.notification("New crafting item unlocked: " + this.item.name);
         }
       },
       deep: true,

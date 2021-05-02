@@ -3,6 +3,18 @@ import names from "./names.json";
 import titles from "./title.json";
 export default {
   methods: {
+    notification(message) {
+      this.$buefy.notification.open({
+        message: message,
+        queue: false,
+        duration: 5000,
+
+        type: "is-info",
+        "has-icon": true,
+        position: "is-top-right",
+        indefinite: false,
+      });
+    },
     randomName() {
       var titleIndex = this.randomIntFromInterval(0, titles.length - 1);
       var nameIndex = this.randomIntFromInterval(0, names.length - 1);

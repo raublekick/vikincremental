@@ -71,6 +71,7 @@ export default {
       handler(value) {
         if (value && !this.item.built) {
           this.setField({ name: "newHouse", value: true });
+          this.notification("New fortification unlocked: " + this.item.name);
         }
       },
       deep: true,
