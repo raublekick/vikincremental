@@ -5,12 +5,17 @@ $turquoise: #51a584;
 $turquoise: findColorInvert($green);
 $green: #51a584;
 $green-invert: findColorInvert($green);
+$green-light: findLightColor($green);
+$green-light-invert: findColorInvert($green-light);
 $yellow: #e9bb2a;
 $yellow-invert: findColorInvert($yellow);
 $blue: #99afbc;
 $blue-invert: findColorInvert($blue);
 $red: #b44939;
 $red-invert: findColorInvert($red);
+$red-light: findLightColor($red);
+$red-light-invert: findColorInvert($red-light);
+
 
 $white-ter: #f9f9f9;
 
@@ -43,6 +48,10 @@ $colors: (
     $green,
     $green-invert
   ),
+  "success-light": (
+    $green-light,
+    $green-light-invert
+  ),
   "warning": (
     $yellow,
     $yellow-invert
@@ -50,13 +59,21 @@ $colors: (
   "danger": (
     $red,
     $red-invert
+  ),
+  "danger-light": (
+    $red-light,
+    $red-light-invert
+  ),
+  "grey-lightest": (
+    $grey-lightest,
+    findColorInvert($grey-lightest)
   )
 );
 
 $link: $blue;
 $link-invert: $blue-invert;
 $link-focus-border: $blue;
-$divider-margin-inner-size: 0px;
+// $divider-margin-inner-size: 0px;
 $body-background-color: $white-ter;
 
 @import "~bulma";

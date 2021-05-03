@@ -18,6 +18,7 @@
       </div>
       <div v-if="step === 2">
         <pre>{{ message }}</pre>
+        <div class="map" v-html="htmlMessage"></div>
         <b-button @click="newGame({ name: name })" type="is-success"
           >Start</b-button
         >
@@ -51,10 +52,12 @@ export default {
       message +=
         "As you land, the bird disappears into a cloud of mist and reappears, smaller, perched on a rock pedestal in front of you.\n\n";
       message +=
-        '"Hail, ' + this.name + '! Welcome to my lands", the bird squawks.\n\n';
+        '<span class="has-background-danger has-text-light">"Hail, ' +
+        this.name +
+        '! Welcome to my lands"</span>, the bird squawks.\n\n';
 
       message +=
-        '"Where am I? Why am I here? And how do you know my name?", you ask.\n\n';
+        '<span class="has-background-success has-text-light">"Where am I? Why am I here? And how do you know my name?"</span>, you ask.\n\n';
 
       message +=
         '"Where is here? Here is where. In truth, I do not know the name of this realm. Your name, however, enters my mind as if I have always known."\n\n';
@@ -83,6 +86,9 @@ export default {
         "The bird disappears once more into a cloud of mist, and seems to be gone for good.";
       return message;
     },
+    htmlMessage() {
+      return this.message.replace(/\n/g, "<br />");
+    },
   },
 
   methods: {
@@ -93,4 +99,18 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.map {
+  font-family: monospace;
+  /* line-height: 10px;
+  letter-spacing: 1px; */
+  color: #4a4a4a;
+  font-size: 0.875em;
+  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  background-color: whitesmoke;
+  cursor: default;
+  border: 1px solid whitesmoke;
+  display: inline-block;
+}
+</style>
