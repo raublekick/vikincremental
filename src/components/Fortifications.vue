@@ -2,8 +2,8 @@
   <section>
     <panel heading="Fortifications">
       <template slot="content">
-        <div v-for="(item, index) in items" :key="index" class="item">
-          <fortification :item="item" />
+        <div v-for="(item, index) in items" :key="index">
+          <fortification :item="item" class="item" />
         </div>
       </template>
     </panel>
