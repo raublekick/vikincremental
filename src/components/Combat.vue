@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <pre ref="log">{{ battleLog }}</pre>
+    <div class="log" ref="log" v-html="battleLog"></div>
     <div v-if="combat">
       <div class="columns">
         <div class="column">
@@ -44,8 +44,9 @@ export default {
 };
 </script>
 <style scoped>
-pre {
+.log {
   height: auto;
   max-height: 200px;
+  width: 100%;
 }
 </style>

@@ -99,18 +99,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.log {
-  font-family: monospace;
-  /* line-height: 10px;
-  letter-spacing: 1px; */
-  color: #4a4a4a;
-  font-size: 0.875em;
-  overflow-x: auto;
-  padding: 1.25rem 1.5rem;
-  background-color: whitesmoke;
-  cursor: default;
-  border: 1px solid whitesmoke;
-  display: inline-block;
-}
-</style>
+<style scoped></style>

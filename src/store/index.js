@@ -155,7 +155,9 @@ export default new Vuex.Store({
         } else if (chance < state.encounterChance) {
           dispatch(
             "setupCombat",
-            "Starting day " + state.day.totalDays + " on the battlefield...\n"
+            "Starting day " +
+              state.day.totalDays +
+              " on the battlefield...<br/>"
           );
         } else {
           state.enemies = [];
@@ -193,7 +195,7 @@ export default new Vuex.Store({
         );
         state.enemies.push(selectedEnemy);
         state.battleLog +=
-          "A " + selectedEnemy.name + " has entered the battlefield!\n";
+          "A " + selectedEnemy.name + " has entered the battlefield!<br/>";
       }
     },
     async challengeBoss({ state }, boss) {
@@ -203,11 +205,11 @@ export default new Vuex.Store({
       state.battleLog =
         "You have challenged the mighty " +
         boss.name +
-        "! Do not fear, for even in death you may be rewarded for such bravery.\n";
+        "! Do not fear, for even in death you may be rewarded for such bravery.<br/>";
     },
     async initializeDelve({ state }) {
       state.delve = true;
-      state.battleLog = "You step down into the darkness...\n";
+      state.battleLog = "You step down into the darkness...<br/>";
       state.biomes[state.worldTier].delve.mapData = null;
     },
     async updateMapData({ state }, { index, mapData }) {
@@ -222,14 +224,16 @@ export default new Vuex.Store({
           amount: 1,
         });
         state.battleLog +=
-          "Upon a dusty altar you find an " + payload.totem + "\n";
+          "<span class='marker' style='background-color:Fuchsia;color:white;'>Upon a dusty altar you find an " +
+          payload.totem +
+          "</span><br/><br/>";
       } else {
         state.battleLog +=
-          "A dusty altar sits before you, but it has nothing to offer.\n";
+          "A dusty altar sits before you, but it has nothing to offer.<br/>";
       }
     },
     async addTreasure({ state, commit }, payload) {
-      state.battleLog += "You dig into an ancient chest...\n";
+      state.battleLog += "You dig into an ancient chest...<br/>";
       var drops = 0;
       _.forEach(payload.treasures.items, (drop) => {
         var amount = mixin.methods.randomIntFromInterval(0, drop.max);
@@ -239,7 +243,12 @@ export default new Vuex.Store({
             key: drop.name,
             amount: amount,
           });
-          state.battleLog += "You find " + amount + " " + drop.name + "!\n";
+          state.battleLog +=
+            "<span class='marker has-background-warning' style='color:black;'>You find " +
+            amount +
+            " " +
+            drop.name +
+            "!</span><br/><br/>";
           drops++;
         }
       });
@@ -252,13 +261,18 @@ export default new Vuex.Store({
             key: drop.name,
             amount: amount,
           });
-          state.battleLog += "You find " + amount + " " + drop.name + "!\n";
+          state.battleLog +=
+            "<span class='marker has-background-warning' style='color:black;'>You find " +
+            amount +
+            " " +
+            drop.name +
+            "!</span><br/><br/>";
           drops++;
         }
       });
       if (drops === 0) {
         state.battleLog +=
-          "If any treasure was once here, it is long gone...\n";
+          "If any treasure was once here, it is long gone...<br/>";
       }
     },
     async vikingTick({ state, commit, dispatch, getters }) {
@@ -321,6 +335,7 @@ export default new Vuex.Store({
             var staminaCost = weapon.combat.stamina;
             if (hit) {
               state.battleLog +=
+                "<span class='has-background-success has-text-light'>" +
                 viking.name +
                 " hits " +
                 state.enemies[targetIndex].name +
@@ -328,22 +343,23 @@ export default new Vuex.Store({
                 damage +
                 " damage and uses " +
                 staminaCost +
-                " stamina!\n";
+                " stamina!</span><br/><br/>";
             } else {
               state.battleLog +=
                 viking.name +
                 " misses and uses " +
                 staminaCost +
-                " stamina...\n";
+                " stamina...<br/><br/>";
             }
             // subtract damage from enemy health
             state.enemies[targetIndex].health -= damage;
             if (state.enemies[targetIndex].health <= 0) {
               state.battleLog +=
+                "<span class='has-background-success has-text-light'>" +
                 viking.name +
                 " has defeated " +
                 state.enemies[targetIndex].name +
-                "!\n";
+                "!</span></br>";
               // get enemy drops
               _.forEach(state.enemies[targetIndex].drops, (drop) => {
                 // bonus drops based on # of vikings
@@ -356,12 +372,13 @@ export default new Vuex.Store({
                   amount: amount,
                 });
                 state.battleLog +=
+                  "<span class='has-background-warning has-text-black'>" +
                   state.enemies[targetIndex].name +
                   " drops " +
                   amount +
                   " " +
                   drop.name +
-                  "!\n";
+                  "!</span><br/><br/>";
               });
               if (state.bossCombat) {
                 // mark the boss as defeated
@@ -388,12 +405,10 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
-              state.battleLog += "You are victorious on this day!\n";
+              state.battleLog +=
+                "<span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>";
               if (state.bossCombat) {
                 state.bossCombat = false;
-                // drop boss artifacts
-                // state.battleLog +=
-                //   "For your victory, you are rewarded a sacred artifact.\n";
               }
             }
           }
@@ -475,6 +490,7 @@ export default new Vuex.Store({
             var staminaCost = weapon.stamina;
             if (hit) {
               state.battleLog +=
+                "<span class='has-background-danger has-text-light'>" +
                 enemy.name +
                 " hits " +
                 state.vikings[targetIndex].name +
@@ -482,22 +498,23 @@ export default new Vuex.Store({
                 damage +
                 " damage and uses " +
                 staminaCost +
-                " stamina!\n";
+                " stamina!</span><br/><br/>";
             } else {
               state.battleLog +=
                 enemy.name +
                 " misses and uses " +
                 staminaCost +
-                " stamina...\n";
+                " stamina...<br/><br/>";
             }
             // subtract damage from viking health
             state.vikings[targetIndex].health -= damage;
             if (state.vikings[targetIndex].health <= 0) {
               state.battleLog +=
+                "<span class='has-background-danger has-text-light'>" +
                 state.vikings[targetIndex].name +
                 " has been defeated by " +
                 enemy.name +
-                "...\n";
+                "...</span><br/><br/>";
               //if (state.bossCombat) {
               var ripViking = _.clone(state.vikings[targetIndex]);
               state.ripVikings.push(ripViking);
@@ -517,7 +534,8 @@ export default new Vuex.Store({
           } else {
             // reset combat if all enemies are defeated
 
-            state.battleLog += "Your party has been eliminated...\n";
+            state.battleLog +=
+              "<span class='has-background-danger has-text-light'>Your party has been eliminated...</span><br/><br/>";
 
             //if (state.bossCombat) {
             // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
@@ -530,7 +548,7 @@ export default new Vuex.Store({
               state.battleLog +=
                 "For your bravery, you are reborn with a bonus " +
                 bossesDefeated +
-                " point each to maximum health, health regen, maximum stamina, and stamina regen.\n";
+                " point each to maximum health, health regen, maximum stamina, and stamina regen.<br/>";
               viking.tasks = [];
               viking.baseHealthRegen += bonus;
               viking.baseStaminaRegen += bonus;
@@ -545,10 +563,6 @@ export default new Vuex.Store({
             });
             state.vikings = _.clone(state.ripVikings);
             state.ripVikings = [];
-            // } else {
-            //   state.battleLog +=
-            //     "Flying far above the battlefield the crow observes, knowing that now it must retrieve more mortals. But these vikings have made a place for themselves, and it may be of use to those to come.\n";
-            // }
 
             // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
             state.enemies = [];
