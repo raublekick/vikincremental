@@ -17,8 +17,7 @@
         </b-field>
       </div>
       <div v-if="step === 2">
-        <pre>{{ message }}</pre>
-        <div class="map" v-html="htmlMessage"></div>
+        <div class="log" v-html="message"></div>
         <b-button @click="newGame({ name: name })" type="is-success"
           >Start</b-button
         >
@@ -47,47 +46,48 @@ export default {
     ...mapState(["flags"]),
     message() {
       var message =
-        "You awaken in the clutches of an enormous black bird, its feathers shimmering in the bright sun. The wind batters your face as you come to the realization that you are being carried in the air. Regaining your senses, you have no recollection of how you came to be in this situation. From the vantage of this flight you can see green rolling meadows surrounded by a thick, impenetrable fog. The bird descends towards a mysterious stone arrangement, too well formed to be anything natural, but unlike any design you can recall.\n\n";
+        "You awaken in the clutches of an enormous black bird, its feathers shimmering in the bright sun. The wind batters your face as you come to the realization that you are being carried in the air. Regaining your senses, you have no recollection of how you came to be in this situation. From the vantage of this flight you can see green rolling meadows surrounded by a thick, impenetrable fog. The bird descends towards a mysterious stone arrangement, too well formed to be anything natural, but unlike any design you can recall.<br /><br />";
 
       message +=
-        "As you land, the bird disappears into a cloud of mist and reappears, smaller, perched on a rock pedestal in front of you.\n\n";
+        "As you land, the bird disappears into a cloud of mist and reappears, smaller, perched on a rock pedestal in front of you.<br /><br />";
       message +=
         '<span class="has-background-danger has-text-light">"Hail, ' +
         this.name +
-        '! Welcome to my lands"</span>, the bird squawks.\n\n';
+        '! Welcome to my lands"</span>, the bird squawks.<br /><br />';
 
       message +=
-        '<span class="has-background-success has-text-light">"Where am I? Why am I here? And how do you know my name?"</span>, you ask.\n\n';
+        '<span class="has-background-success has-text-light">"Where am I? Why am I here? And how do you know my name?"</span>, you ask.<br /><br />';
 
       message +=
-        '"Where is here? Here is where. In truth, I do not know the name of this realm. Your name, however, enters my mind as if I have always known."\n\n';
-
-      message += '"And my reason for being here?"\n\n';
-
-      message += '"That I cannot say."\n\n';
-
-      message += '"But didn\'t you just say these were your lands?"\n\n';
+        '<span class="has-background-danger has-text-light">"Where is here? Here is where. In truth, I do not know the name of this realm. Your name, however, enters my mind as if I have always known."</span><br /><br />';
 
       message +=
-        '"Hmm. Nobody has told me these are not my lands. I have been ferrying mortals such as you to these lands for as long as I can remember, but I can no longer remember why."\n\n';
+        '<span class="has-background-success has-text-light">"And my reason for being here?"</span><br /><br />';
 
       message +=
-        '"So I have been carried here by you, against my will, robbed of my memory, for reasons you cannot explain?"\n\n';
+        '<span class="has-background-danger has-text-light">"That I cannot say."</span><br /><br />';
 
       message +=
-        '"So it seems. I can tell you what little I know. These meadows are a relatively peaceful and bountiful land. Make use of the resources you find here. Build yourself a place to rest your head and your work may be rewarded."\n\n';
-
-      message += '"And what of the fog surrounding these lands?"\n\n';
+        '<span class="has-background-success has-text-light">"But didn\'t you just say these were your lands?"</span><br /><br />';
 
       message +=
-        '"The fog... the fog... Oh yes, the fog! Beyond the fog are more dangerous lands. One might want to steer clear of those lands, but then again, one might not."\n\n';
+        '<span class="has-background-danger has-text-light">"Hmm. Nobody has told me these are not my lands. I have been ferrying mortals such as you to these lands for as long as I can remember, but I can no longer remember why."</span><br /><br />';
+
+      message +=
+        '<span class="has-background-success has-text-light">"So I have been carried here by you, against my will, robbed of my memory, for reasons you cannot explain?"</span><br /><br />';
+
+      message +=
+        '<span class="has-background-danger has-text-light">"So it seems. I can tell you what little I know. These meadows are a relatively peaceful and bountiful land. Make use of the resources you find here. Build yourself a place to rest your head and your work may be rewarded."</span><br /><br />';
+
+      message +=
+        '<span class="has-background-success has-text-light">"And what of the fog surrounding these lands?"</span><br /><br />';
+
+      message +=
+        '<span class="has-background-danger has-text-light">"The fog... the fog... Oh yes, the fog! Beyond the fog are more dangerous lands. One might want to steer clear of those lands, but then again, one might not."</span><br /><br />';
 
       message +=
         "The bird disappears once more into a cloud of mist, and seems to be gone for good.";
       return message;
-    },
-    htmlMessage() {
-      return this.message.replace(/\n/g, "<br />");
     },
   },
 
@@ -100,7 +100,7 @@ export default {
 };
 </script>
 <style scoped>
-.map {
+.log {
   font-family: monospace;
   /* line-height: 10px;
   letter-spacing: 1px; */
