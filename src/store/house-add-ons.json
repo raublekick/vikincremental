@@ -2,6 +2,7 @@
   {
     "name": "Blast Furnace",
     "type": "processing",
+    "tooltip": "Technology that brings even more advanced arms and armor.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -66,6 +67,7 @@
   {
     "name": "Smelter",
     "type": "processing",
+    "tooltip": "The basis for crafting advanced arms and armor.",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
     "built": false,
@@ -107,6 +109,7 @@
   {
     "name": "Kiln",
     "type": "processing",
+    "tooltip": "A staple of any forge.",
     "gearRequirements": [],
     "addOnRequirements": ["Workbench"],
     "built": false,
@@ -131,6 +134,7 @@
   {
     "name": "Fermenter",
     "type": "processing",
+    "tooltip": "Brew your favorite mead and other sweets.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -177,6 +181,7 @@
   {
     "name": "Cooking Pot",
     "type": "processing",
+    "tooltip": "A culinary tool for advanced recipes.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -244,6 +249,7 @@
   {
     "name": "Cooking Station",
     "type": "processing",
+    "tooltip": "The basis for staving off hunger.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -290,6 +296,7 @@
   {
     "name": "Windmill",
     "type": "processing",
+    "tooltip": "Harnesses the power of the wind to process nature's staples.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -322,6 +329,7 @@
   {
     "name": "Spinning Wheel",
     "type": "processing",
+    "tooltip": "A tool for creating fine threads and rope.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -354,6 +362,7 @@
   {
     "name": "Bee Hive",
     "type": "processing",
+    "tooltip": "A sustainable food source.",
     "built": false,
     "enabled": false,
     "gearRequirements": [],
@@ -380,6 +389,7 @@
   {
     "name": "Hammer",
     "type": "workbench",
+    "tooltip": "The start of any homestead.",
     "built": false,
     "enabled": true,
     "bedRequirement": 0,
@@ -396,6 +406,7 @@
   {
     "name": "Workbench",
     "type": "workbench",
+    "tooltip": "The foundation of making a house a home, and more.",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -412,6 +423,7 @@
   {
     "name": "Chopping Block",
     "type": "workbench",
+    "tooltip": "Woodcutting is necessary work to survive.",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -432,6 +444,7 @@
   {
     "name": "Tanning Rack",
     "type": "workbench",
+    "tooltip": "A necessity for creating basic arms and armor.",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -456,6 +469,7 @@
   {
     "name": "Adze",
     "type": "workbench",
+    "tooltip": "A tool used for fine woodworking.",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -480,6 +494,7 @@
   {
     "name": "Tool Rack",
     "type": "workbench",
+    "tooltip": "An organized workshop allows focusing on more advanced projects.",
     "built": false,
     "enabled": false,
     "bedRequirement": 1,
@@ -504,6 +519,7 @@
   {
     "name": "Forge",
     "type": "forge",
+    "tooltip": "An advanced tool for metallurgy.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -532,6 +548,7 @@
   {
     "name": "Forge Cooler",
     "type": "forge",
+    "tooltip": "Better heat control means better craftsmanship.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -552,6 +569,7 @@
   {
     "name": "Anvil",
     "type": "forge",
+    "tooltip": "Used for shaping soft metals.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -576,6 +594,7 @@
   {
     "name": "Smith's Anvil",
     "type": "forge",
+    "tooltip": "Necessary for shaping hard metals.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -596,6 +615,7 @@
   {
     "name": "Forge Toolrack",
     "type": "forge",
+    "tooltip": "An organized workshop allows focusing on more advanced projects.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -616,6 +636,7 @@
   {
     "name": "Bellows",
     "type": "forge",
+    "tooltip": "Better heat control means better craftsmanship.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -640,6 +661,7 @@
   {
     "name": "Artisan Table",
     "type": "forge",
+    "tooltip": "Imbued with magical properties for advanced metallurgy.",
     "built": false,
     "enabled": false,
     "bedRequirement": 10,
@@ -660,6 +682,7 @@
   {
     "name": "Grinding Wheel",
     "type": "forge",
+    "tooltip": "",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -680,6 +703,7 @@
   {
     "name": "Stonecutter",
     "type": "forge",
+    "tooltip": "With the strength of stone, a house can become a fortress.",
     "built": false,
     "enabled": false,
     "bedRequirement": 2,
@@ -704,6 +728,7 @@
   {
     "name": "Campfire",
     "type": "comfort",
+    "tooltip": "A comfort for cooking, shelter, rest, and more.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -725,6 +750,7 @@
   {
     "name": "Hearth",
     "type": "comfort",
+    "tooltip": "A functional flame, but even more beautiful than a basic campfire.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -746,6 +772,7 @@
   {
     "name": "Hanging Brazier",
     "type": "comfort",
+    "tooltip": "Provides light, and assurance, in the darkness.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -775,6 +802,7 @@
   {
     "name": "Deer Rug",
     "type": "comfort",
+    "tooltip": "The soft deer skin helps to sleep through the night",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -792,6 +820,7 @@
   {
     "name": "Wolf Rug",
     "type": "comfort",
+    "tooltip": "The warm, thick furs make sleep even more delightful.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -809,6 +838,7 @@
   {
     "name": "Steer Rug",
     "type": "comfort",
+    "tooltip": "The dense hide provides a soft floor.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -826,6 +856,7 @@
   {
     "name": "Banners",
     "type": "comfort",
+    "tooltip": "An inspiration to greet you at the dawn of each day.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -848,11 +879,12 @@
   {
     "name": "Table",
     "type": "comfort",
+    "tooltip": "A social space for relaxation",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
     "bedRequirement": 1,
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Adze"],
     "comfort": 1,
     "components": [
       {
@@ -865,11 +897,12 @@
   {
     "name": "Chairs",
     "type": "comfort",
+    "tooltip": "After a long day, a good sit can rejuvinate.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
     "bedRequirement": 1,
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Adze"],
     "comfort": 1,
     "components": [
       {
@@ -882,11 +915,12 @@
   {
     "name": "Throne",
     "type": "comfort",
+    "tooltip": "A commanding seat to invigorate.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
     "bedRequirement": 1,
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Adze"],
     "comfort": 1,
     "components": [
       {
@@ -903,11 +937,12 @@
   {
     "name": "Comfortable Beds",
     "type": "comfort",
+    "tooltip": "With as much warmth as you need, this soft bed keeps worry at bay.",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
     "bedRequirement": 1,
-    "addOnRequirements": ["Forge"],
+    "addOnRequirements": ["Adze"],
     "comfort": 1,
     "components": [
       {
