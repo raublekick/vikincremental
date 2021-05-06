@@ -387,6 +387,8 @@ export default new Vuex.Store({
                   state.enemies[targetIndex].name
                 );
                 boss.defeated = true;
+                boss.health = boss.maxHealth;
+                boss.stamina = boss.maxStamina;
                 if (boss.worldTier === state.worldTier) {
                   state.worldTier++;
                   if (state.biomes[state.worldTier]) {
@@ -537,18 +539,24 @@ export default new Vuex.Store({
             state.battleLog +=
               "<span class='has-background-danger has-text-light'>Your party has been eliminated...</span><br/><br/>";
 
-            //if (state.bossCombat) {
             // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
+            var bossesDefeated = _.filter(state.bossList, (boss) => {
+              return (boss.defeated = true);
+            }).length;
+            var bonus = bossesDefeated;
+
+            if (state.bossCombat) {
+              state.bossList[state.worldTier].health =
+                state.bossList[state.worldTier].maxHealth;
+              state.bossList[state.worldTier].stamina =
+                state.bossList[state.worldTier].maxStamina;
+            }
+
+            state.battleLog +=
+              "For your bravery, you are reborn with a bonus " +
+              bossesDefeated +
+              " point each to maximum health, health regen, maximum stamina, and stamina regen.<br/>";
             _.forEach(state.ripVikings, (viking) => {
-              var bossesDefeated = _.filter(
-                state.bosses,
-                (boss) => (boss.defeated = true)
-              ).length;
-              var bonus = bossesDefeated;
-              state.battleLog +=
-                "For your bravery, you are reborn with a bonus " +
-                bossesDefeated +
-                " point each to maximum health, health regen, maximum stamina, and stamina regen.<br/>";
               viking.tasks = [];
               viking.baseHealthRegen += bonus;
               viking.baseStaminaRegen += bonus;
