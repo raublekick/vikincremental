@@ -541,7 +541,7 @@ export default new Vuex.Store({
 
             // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
             var bossesDefeated = _.filter(state.bossList, (boss) => {
-              return (boss.defeated = true);
+              return boss.defeated === true;
             }).length;
             var bonus = bossesDefeated;
 
