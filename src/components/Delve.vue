@@ -3,7 +3,7 @@
     <combat v-if="combat" />
 
     <div class="box">
-      <div ref="delveLog" class="log" v-html="battleLog"></div>
+      <div ref="delveLog" class="log" v-html="battleLog" v-if="!combat"></div>
       <delve-map :config="biome.delve" />
     </div>
   </div>
@@ -46,8 +46,9 @@ export default {
 };
 </script>
 <style scoped>
-pre {
+.log {
   height: auto;
   max-height: 200px;
+  width: 100%;
 }
 </style>

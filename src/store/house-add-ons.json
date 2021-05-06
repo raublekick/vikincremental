@@ -186,7 +186,7 @@
     "enabled": false,
     "gearRequirements": [],
     "bedRequirement": 2,
-    "addOnRequirements": ["Campfire"],
+    "addOnRequirements": ["Forge"],
     "comfort": 0,
     "components": [
       {

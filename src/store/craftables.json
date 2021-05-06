@@ -202,7 +202,7 @@
     ],
     "combat": {
       "damage": 15,
-      "stamina": 5,
+      "stamina": 10,
       "accuracy": 0.65
     }
   },
@@ -225,7 +225,7 @@
     ],
     "combat": {
       "damage": 20,
-      "stamina": 10,
+      "stamina": 15,
       "accuracy": 0.65
     }
   },

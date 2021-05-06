@@ -31,7 +31,9 @@
         </div>
         <div>Exploring: {{ biomes[worldTier].name }}</div>
         <div>World Tier: {{ worldTier }}</div>
-        <div>Encounter Rate: {{ encounterChance * 100 }}% / day</div>
+        <div>
+          Encounter Rate: {{ (encounterChance * 100).toFixed(2) }}% / day
+        </div>
         <hr />
         <!-- <houses /> -->
         <!-- <div class="subtitle">Housing</div>
