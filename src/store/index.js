@@ -454,7 +454,7 @@ export default new Vuex.Store({
           });
 
           viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
-          viking.healthRegen = viking.baseHealthRegen + state.comfort;
+          viking.healthRegen = (viking.baseHealthRegen + state.comfort) / 2;
           viking.maxStamina += stamina;
           viking.stamina += stamina;
           viking.maxHealth += health;

@@ -398,7 +398,7 @@
     "components": [
       {
         "name": "Wood",
-        "amount": 8
+        "amount": 4
       }
     ],
     "processing": []
@@ -415,7 +415,7 @@
     "components": [
       {
         "name": "Wood",
-        "amount": 10
+        "amount": 8
       }
     ],
     "processing": []
@@ -432,7 +432,7 @@
     "components": [
       {
         "name": "Wood",
-        "amount": 10
+        "amount": 8
       },
       {
         "name": "Stone",
@@ -453,11 +453,11 @@
     "components": [
       {
         "name": "Wood",
-        "amount": 10
+        "amount": 15
       },
       {
         "name": "Leather Scraps",
-        "amount": 30
+        "amount": 25
       },
       {
         "name": "Leather Hide",

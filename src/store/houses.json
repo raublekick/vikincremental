@@ -2,13 +2,13 @@
   {
     "name": "Hut",
     "beds": 1,
-    "components": [{ "name": "Wood", "amount": 30 }],
+    "components": [{ "name": "Wood", "amount": 20 }],
     "addOnRequirements": ["Hammer"]
   },
   {
     "name": "Small House",
     "beds": 2,
-    "components": [{ "name": "Wood", "amount": 200 }],
+    "components": [{ "name": "Wood", "amount": 150 }],
     "addOnRequirements": ["Hammer"]
   },
   {
