@@ -345,11 +345,11 @@
       },
       {
         "name": "Copper Bar",
-        "amount": 10
+        "amount": 8
       },
       {
         "name": "Tin Bar",
-        "amount": 5
+        "amount": 4
       }
     ],
     "combat": {},
@@ -367,11 +367,11 @@
       },
       {
         "name": "Copper Bar",
-        "amount": 10
+        "amount": 6
       },
       {
         "name": "Tin Bar",
-        "amount": 5
+        "amount": 3
       }
     ],
     "combat": {},
@@ -389,11 +389,11 @@
       },
       {
         "name": "Copper Bar",
-        "amount": 10
+        "amount": 4
       },
       {
         "name": "Tin Bar",
-        "amount": 5
+        "amount": 2
       }
     ],
     "combat": {},

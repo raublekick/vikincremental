@@ -10,7 +10,7 @@
       },
       {
         "name": "Blueberries",
-        "perSecond": 0.5,
+        "perSecond": 0.05,
         "worldTier": 1
       },
       {
