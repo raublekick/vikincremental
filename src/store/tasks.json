@@ -6,21 +6,21 @@
     "food": [
       {
         "name": "Berries",
-        "perSecond": 0.05
+        "perSecond": 0.125
       },
       {
         "name": "Blueberries",
-        "perSecond": 0.05,
+        "perSecond": 0.125,
         "worldTier": 1
       },
       {
         "name": "Winterberries",
-        "perSecond": 0.025,
+        "perSecond": 0.1,
         "worldTier": 3
       },
       {
         "name": "Mushrooms",
-        "perSecond": 0.05
+        "perSecond": 0.125
       }
     ],
     "items": [
@@ -31,12 +31,12 @@
       },
       {
         "name": "Carrot Seeds",
-        "perSecond": 0.05,
+        "perSecond": 0.15,
         "worldTier": 1
       },
       {
         "name": "Turnip Seeds",
-        "perSecond": 0.05,
+        "perSecond": 0.125,
         "worldTier": 2
       },
       {
