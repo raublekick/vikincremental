@@ -13,8 +13,7 @@
         > -->
       </h1>
     </div>
-
-    <div class="columns">
+    <div class="columns mb-4">
       <div class="column is-3 box mr-4">
         <div class="subtitle">
           Day: {{ day.totalDays }} ( {{ day.dayTicks }} / {{ day.dayLength }})
@@ -23,7 +22,7 @@
             :icon-left="isPaused ? 'play' : 'pause'"
             :type="isPaused ? 'is-success is-light' : 'is-warning is-light'"
             @click="setField({ name: 'isPaused', value: !isPaused })"
-            >Pause</b-button
+            >{{ isPaused ? "Play" : "Pause" }}</b-button
           >
         </div>
         <hr />
@@ -35,27 +34,17 @@
         <div>
           Encounter Rate: {{ (encounterChance * 100).toFixed(2) }}% / day
         </div>
-        <hr />
-        <!-- <houses /> -->
-        <!-- <div class="subtitle">Housing</div>
-        <div>
-          {{ house.name }}
-        </div>
-        <div>Beds: {{ house.beds }}</div>
-        <div>Comfort: {{ comfort }}</div>
-        <div>Fortification: {{ fortification }}</div>
-        <hr /> -->
-        <!-- <house-add-ons /> -->
-        <!-- <hr /> -->
+      </div>
+      <div class="column box">
+        <div class="log" ref="log" v-html="battleLog"></div>
+      </div>
+    </div>
 
+    <div class="columns">
+      <div class="column is-3 box mr-4">
         <inventory />
-        <!-- <hr />
-        <div class="subtitle">Lore:</div> -->
       </div>
       <div class="column">
-        <div class="box">
-          <div class="log" ref="log" v-html="battleLog"></div>
-        </div>
         <b-tabs v-model="tab" @input="clearNewItem">
           <b-tab-item label="Vikings" value="vikings">
             <combat />
@@ -291,5 +280,21 @@ export default {
   height: 200px;
   max-height: 200px;
   width: 100%;
+}
+.content {
+  height: 100%;
+}
+.info {
+  max-height: 250px;
+}
+.main-area {
+  max-height: 30vmax;
+}
+.scrollable {
+  overflow: auto;
+  /* max-height: 100vmax; */
+}
+.column.box {
+  margin-bottom: 1rem;
 }
 </style>
