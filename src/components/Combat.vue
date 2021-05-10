@@ -1,7 +1,6 @@
 <template>
-  <div class="box">
-    <div class="log" ref="log" v-html="battleLog"></div>
-    <div v-if="combat">
+  <div>
+    <div class="box" v-if="combat">
       <div class="columns">
         <div class="column">
           <div class="item" v-for="(viking, index) in vikings" :key="index">
@@ -32,21 +31,8 @@ export default {
     Enemy,
   },
   computed: {
-    ...mapState(["combat", "vikings", "enemies", "battleLog"]),
-  },
-  watch: {
-    battleLog() {
-      this.$nextTick(() => {
-        this.$refs.log.scrollTop = this.$refs.log.scrollHeight;
-      });
-    },
+    ...mapState(["combat", "vikings", "enemies"]),
   },
 };
 </script>
-<style scoped>
-.log {
-  height: auto;
-  max-height: 200px;
-  width: 100%;
-}
-</style>
+<style scoped></style>

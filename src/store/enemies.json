@@ -141,7 +141,7 @@
     "baseHealthRegen": 0,
     "attacks": [
       { "name": "Club Smash", "damage": 50, "stamina": 30, "accuracy": 0.35 },
-      { "name": "Club Swipe", "damage": 30, "stamina": 20, "accuracy": 0.45 }
+      { "name": "Club Swipe", "damage": 20, "stamina": 20, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 },
@@ -163,7 +163,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Smash", "damage": 40, "stamina": 20, "accuracy": 0.45 },
+      { "name": "Smash", "damage": 30, "stamina": 20, "accuracy": 0.45 },
       { "name": "Rock Throw", "damage": 30, "stamina": 20, "accuracy": 0.35 }
     ],
     "drops": [

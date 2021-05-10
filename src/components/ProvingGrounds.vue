@@ -47,7 +47,6 @@ export default {
       "combat",
       "vikings",
       "enemies",
-      "battleLog",
       "bossList",
       "biomes",
       "delve",

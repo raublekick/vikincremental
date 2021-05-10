@@ -13,6 +13,7 @@
         > -->
       </h1>
     </div>
+
     <div class="columns">
       <div class="column is-3 box mr-4">
         <div class="subtitle">
@@ -46,12 +47,15 @@
         <hr /> -->
         <!-- <house-add-ons /> -->
         <!-- <hr /> -->
-        <div class="subtitle">Inventory</div>
+
         <inventory />
-        <hr />
-        <div class="subtitle">Lore:</div>
+        <!-- <hr />
+        <div class="subtitle">Lore:</div> -->
       </div>
       <div class="column">
+        <div class="box">
+          <div class="log" ref="log" v-html="battleLog"></div>
+        </div>
         <b-tabs v-model="tab" @input="clearNewItem">
           <b-tab-item label="Vikings" value="vikings">
             <combat />
@@ -66,7 +70,7 @@
             <b-field>
               <b-input v-model="search" placeholder="Search..."> </b-input>
             </b-field>
-            <div class="columns">
+            <div class="columns tab-container">
               <div class="column">
                 <houses />
               </div>
@@ -92,7 +96,7 @@
             <b-field>
               <b-input v-model="search" placeholder="Search..."> </b-input>
             </b-field>
-            <div class="columns">
+            <div class="columns tab-container">
               <div class="column">
                 <house-add-ons
                   type="workbench"
@@ -208,6 +212,7 @@ export default {
       "newAddOn",
       "newHouse",
       "isPaused",
+      "battleLog",
     ]),
     state: {
       get() {
@@ -263,6 +268,14 @@ export default {
     },
   },
 
+  watch: {
+    battleLog() {
+      this.$nextTick(() => {
+        this.$refs.log.scrollTop = this.$refs.log.scrollHeight;
+      });
+    },
+  },
+
   async created() {
     setInterval(() => {
       if (!this.isPaused) {
@@ -273,3 +286,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.log {
+  height: 200px;
+  max-height: 200px;
+  width: 100%;
+}
+</style>

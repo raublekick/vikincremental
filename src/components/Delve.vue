@@ -3,7 +3,6 @@
     <combat v-if="combat" />
 
     <div class="box">
-      <div ref="delveLog" class="log" v-html="battleLog" v-if="!combat"></div>
       <delve-map :config="biome.delve" />
     </div>
   </div>
@@ -27,7 +26,7 @@ export default {
       "combat",
       "vikings",
       "enemies",
-      "battleLog",
+
       "delve",
       "worldTier",
       "biomes",
@@ -36,19 +35,6 @@ export default {
       return this.biomes[this.worldTier];
     },
   },
-  watch: {
-    battleLog() {
-      this.$nextTick(() => {
-        this.$refs.delveLog.scrollTop = this.$refs.delveLog.scrollHeight;
-      });
-    },
-  },
 };
 </script>
-<style scoped>
-.log {
-  height: auto;
-  max-height: 200px;
-  width: 100%;
-}
-</style>
+<style scoped></style>

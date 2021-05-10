@@ -5,11 +5,13 @@
     <b-field>
       <b-input v-model="search" placeholder="Search..."> </b-input>
     </b-field>
+    <div class="subtitle">Inventory</div>
     <template v-for="(item, index) in items">
       <div class="item" :key="index" v-if="Math.floor(item.amount) >= 1">
         {{ item.name }}: {{ Math.floor(item.amount) }}
       </div>
     </template>
+    <div class="subtitle">Food</div>
     <template v-for="(item, index) in foodItems">
       <div
         :key="'food' + index"
