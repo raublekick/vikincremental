@@ -1,21 +1,40 @@
 <template>
-  <div class="columns" v-if="unlocked">
-    <div class="column">
-      <div>{{ item.name }}</div>
-    </div>
-    <div class="column">
-      <div v-for="component in item.components" :key="component.name">
-        {{ component.name }}: {{ component.amount }}
+  <div v-if="unlocked">
+    <div class="columns">
+      <div class="column">
+        <div>
+          <b-tooltip position="is-bottom" multilined dashed>
+            {{ item.name }}
+            <template v-slot:content>
+              <div v-if="item.tooltip">
+                {{ item.tooltip }}
+              </div>
+              <div v-if="item.combat">
+                <div>Damage: {{ item.combat.damage }}</div>
+                <div>Stamina: {{ item.combat.stamina }}</div>
+                <div>Acc: {{ item.combat.accuracy }}</div>
+              </div>
+              <div v-if="item.armorType">
+                <div>{{ item.armorType }}, {{ item.armor }} armor</div>
+              </div>
+            </template>
+          </b-tooltip>
+        </div>
       </div>
-    </div>
-    <div class="column has-text-right">
-      <b-button
-        size="is-small"
-        :disabled="!canCraft"
-        @click="craftGear(item)"
-        :type="canCraft ? 'is-success' : ''"
-        >Craft</b-button
-      >
+      <div class="column">
+        <div v-for="component in item.components" :key="component.name">
+          {{ component.name }}: {{ component.amount }}
+        </div>
+      </div>
+      <div class="column has-text-right">
+        <b-button
+          size="is-small"
+          :disabled="!canCraft"
+          @click="craftGear(item)"
+          :type="canCraft ? 'is-success' : ''"
+          >Craft</b-button
+        >
+      </div>
     </div>
   </div>
 </template>

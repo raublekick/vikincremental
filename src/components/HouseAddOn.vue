@@ -1,59 +1,59 @@
 <template>
   <div v-if="unlocked || item.built">
-    <b-tooltip :label="item.tooltip" type="is-primary is-light">
-      <div class="columns is-multiline">
-        <div class="column is-half house-top">
-          <div class="is-size-5">
-            {{ item.name }}
+    <div class="columns is-multiline">
+      <div class="column is-half house-top">
+        <div class="is-size-5">
+          <b-tooltip :label="item.tooltip" type="is-primary is-light" dashed>{{
+            item.name
+          }}</b-tooltip>
+        </div>
+      </div>
+      <div class="column is-half has-text-right">
+        <b-button
+          size="is-small"
+          :disabled="!canCraft"
+          :type="canCraft ? 'is-success' : ''"
+          v-if="!item.built"
+          @click="craftAddOn(item)"
+          >Craft</b-button
+        >
+        <div v-else-if="item.built && item.processing.length">
+          <b-field>
+            <b-checkbox v-model="item.enabled" :native-value="item.enabled">
+              Enabled
+            </b-checkbox>
+          </b-field>
+        </div>
+      </div>
+      <div class="column house-input">
+        <div v-if="!item.built">
+          <div v-for="component in item.components" :key="component.name">
+            {{ component.name }}: {{ component.amount }}
           </div>
         </div>
-        <div class="column is-half has-text-right">
-          <b-button
-            size="is-small"
-            :disabled="!canCraft"
-            :type="canCraft ? 'is-success' : ''"
-            v-if="!item.built"
-            @click="craftAddOn(item)"
-            >Craft</b-button
-          >
-          <div v-else-if="item.built && item.processing.length">
-            <b-field>
-              <b-checkbox v-model="item.enabled" :native-value="item.enabled">
-                Enabled
-              </b-checkbox>
-            </b-field>
-          </div>
-        </div>
-        <div class="column house-input">
-          <div v-if="!item.built">
-            <div v-for="component in item.components" :key="component.name">
-              {{ component.name }}: {{ component.amount }}
-            </div>
-          </div>
-          <div v-else-if="item.built && item.enabled">
-            <div v-if="item.comfort">Comfort: {{ item.comfort }}</div>
-            <div v-if="item.processing.length">
-              <a href="#" @click.prevent="show = !show">show | hide</a>
-              <div v-if="show">
-                <div
-                  v-for="(process, index) in item.processing"
-                  :key="'process' + index"
+        <div v-else-if="item.built && item.enabled">
+          <div v-if="item.comfort">Comfort: {{ item.comfort }}</div>
+          <div v-if="item.processing.length">
+            <a href="#" @click.prevent="show = !show">show | hide</a>
+            <div v-if="show">
+              <div
+                v-for="(process, index) in item.processing"
+                :key="'process' + index"
+              >
+                <span
+                  v-for="(item, index) in process.input"
+                  :key="'item' + index"
+                  class="list-item"
+                  >{{ item.amount }} {{ item.name }}</span
                 >
-                  <span
-                    v-for="(item, index) in process.input"
-                    :key="'item' + index"
-                    class="list-item"
-                    >{{ item.amount }} {{ item.name }}</span
-                  >
-                  -> {{ process.output.name }}
-                  {{ process.output.amount }}
-                </div>
+                -> {{ process.output.name }}
+                {{ process.output.amount }}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </b-tooltip>
+    </div>
   </div>
 </template>
 <script>

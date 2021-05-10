@@ -242,7 +242,7 @@
         "amount": 1
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 4
   },
@@ -259,7 +259,7 @@
         "amount": 1
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 2
   },
@@ -276,7 +276,7 @@
         "amount": 1
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 2
   },
@@ -294,7 +294,7 @@
         "amount": 2
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 8
   },
@@ -312,7 +312,7 @@
         "amount": 2
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 4
   },
@@ -330,7 +330,7 @@
         "amount": 2
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 4
   },
@@ -352,7 +352,7 @@
         "amount": 4
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 10
   },
@@ -374,7 +374,7 @@
         "amount": 3
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 5
   },
@@ -396,7 +396,7 @@
         "amount": 2
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 5
   },
@@ -414,7 +414,7 @@
         "amount": 15
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 14
   },
@@ -432,7 +432,7 @@
         "amount": 15
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 7
   },
@@ -450,7 +450,7 @@
         "amount": 15
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 7
   },
@@ -468,7 +468,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 18
   },
@@ -486,7 +486,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 9
   },
@@ -504,7 +504,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 9
   },
@@ -526,7 +526,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 22
   },
@@ -548,7 +548,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 11
   },
@@ -570,7 +570,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 11
   },
@@ -592,7 +592,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 26
   },
@@ -614,7 +614,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 13
   },
@@ -636,7 +636,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 13
   },
@@ -658,7 +658,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Body",
     "armor": 30
   },
@@ -680,7 +680,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Head",
     "armor": 15
   },
@@ -702,7 +702,7 @@
         "amount": 20
       }
     ],
-    "combat": {},
+    "combat": null,
     "armorType": "Legs",
     "armor": 15
   },
@@ -719,7 +719,7 @@
         "amount": 8
       }
     ],
-    "combat": {}
+    "combat": null
   },
   {
     "name": "Bronze Pickaxe",
@@ -738,7 +738,7 @@
         "amount": 8
       }
     ],
-    "combat": {}
+    "combat": null
   },
   {
     "name": "Cultivator",
@@ -757,7 +757,7 @@
         "amount": 4
       }
     ],
-    "combat": {}
+    "combat": null
   },
   {
     "name": "Fishing Rod",
@@ -772,7 +772,7 @@
         "amount": 25
       }
     ],
-    "combat": {}
+    "combat": null
   },
   {
     "name": "Harpoon",
@@ -791,6 +791,6 @@
         "amount": 100
       }
     ],
-    "combat": {}
+    "combat": null
   }
 ]
