@@ -34,7 +34,7 @@
     ]
   },
   {
-    "name": "Spikes",
+    "name": "Wood Spikes",
     "built": false,
     "enabled": true,
     "gearRequirements": [],
@@ -83,6 +83,21 @@
     ]
   },
   {
+    "name": "Moat",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Stonecutter"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Stone",
+        "amount": 500
+      }
+    ]
+  },
+  {
     "name": "Iron Gates",
     "built": false,
     "enabled": true,
@@ -94,6 +109,29 @@
       {
         "name": "Iron Bar",
         "amount": 30
+      }
+    ]
+  },
+  {
+    "name": "Portcullis",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Blast Furnace"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Steel Bar",
+        "amount": 30
+      },
+      {
+        "name": "Stone",
+        "amount": 250
+      },
+      {
+        "name": "Hard Wood",
+        "amount": 200
       }
     ]
   },
@@ -116,6 +154,64 @@
       },
       {
         "name": "Hard Wood",
+        "amount": 200
+      }
+    ]
+  },
+  {
+    "name": "Keep",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Artisan Table"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Iron Bar",
+        "amount": 30
+      },
+      {
+        "name": "Steel Bar",
+        "amount": 30
+      },
+      {
+        "name": "Silver Bar",
+        "amount": 10
+      },
+      {
+        "name": "Gold Bar",
+        "amount": 10
+      },
+      {
+        "name": "Stone",
+        "amount": 500
+      },
+      {
+        "name": "Hard Wood",
+        "amount": 200
+      }
+    ]
+  },
+  {
+    "name": "Wards",
+    "built": false,
+    "enabled": true,
+    "gearRequirements": [],
+    "bedRequirement": 1,
+    "addOnRequirements": ["Artisan Table"],
+    "fortification": 1,
+    "components": [
+      {
+        "name": "Titanium Bar",
+        "amount": 30
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ornate Wood",
         "amount": 200
       }
     ]

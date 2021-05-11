@@ -230,6 +230,33 @@
     }
   },
   {
+    "name": "Compound Bow",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Leather Hide",
+        "amount": 8
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 10
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      }
+    ],
+    "combat": {
+      "damage": 20,
+      "stamina": 15,
+      "accuracy": 0.65
+    }
+  },
+  {
     "name": "Leather Armor",
     "addOnRequirements": ["Tanning Rack"],
     "components": [

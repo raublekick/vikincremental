@@ -78,11 +78,21 @@
     "name": "Small Game Hunting",
     "staminaCost": 5,
     "worldTier": null,
-    "gearRequirements": ["Crude Bow", "Ornate Bow"],
+    "gearRequirements": ["Crude Bow", "Ornate Bow", "Compound Bow"],
     "items": [
       { "name": "Leather Hide", "perSecond": 0.1 },
       { "name": "Leather Scraps", "perSecond": 0.2 },
       { "name": "Raw Meat", "perSecond": 0.2 }
+    ]
+  },
+  {
+    "name": "Large Game Hunting",
+    "staminaCost": 5,
+    "worldTier": null,
+    "gearRequirements": ["Compound Bow"],
+    "items": [
+      { "name": "Steer Hide", "perSecond": 0.1 },
+      { "name": "Raw Large Game Meat", "perSecond": 0.2 }
     ]
   },
   {
