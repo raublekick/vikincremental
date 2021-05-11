@@ -176,16 +176,17 @@
     "delve": true,
     "overworld": false,
     "threshold": 0.85,
-    "stamina": 40,
-    "health": 40,
-    "maxStamina": 40,
-    "maxHealth": 40,
+    "stamina": 50,
+    "health": 200,
+    "maxStamina": 50,
+    "maxHealth": 200,
     "staminaRegen": 1,
     "baseStaminaRegen": 1,
     "healthRegen": 1,
     "baseHealthRegen": 1,
     "attacks": [
-      { "name": "Possess", "damage": 30, "stamina": 15, "accuracy": 0.55 }
+      { "name": "Possess", "damage": 30, "stamina": 15, "accuracy": 0.80 },
+      { "name": "Frighten", "damage": 50, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Chains", "amount": 1 }
@@ -197,16 +198,17 @@
     "delve": true,
     "overworld": true,
     "threshold": 0,
-    "stamina": 35,
-    "health": 35,
-    "maxStamina": 35,
-    "maxHealth": 35,
+    "stamina": 75,
+    "health": 100,
+    "maxStamina": 75,
+    "maxHealth": 100,
     "staminaRegen": 2,
     "baseStaminaRegen": 2,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Sword Swing", "damage": 25, "stamina": 15, "accuracy": 0.65 }
+      { "name": "Swing", "damage": 40, "stamina": 15, "accuracy": 0.65 },
+      { "name": "Bash", "damage": 25, "stamina": 15, "accuracy": 0.80 }
     ],
     "drops": [
       { "name": "Entrails", "amount": 4 }
@@ -218,17 +220,17 @@
     "delve": true,
     "overworld": true,
     "threshold": 0,
-    "stamina": 30,
-    "health": 50,
-    "maxStamina": 30,
-    "maxHealth": 50,
+    "stamina": 100,
+    "health": 300,
+    "maxStamina": 100,
+    "maxHealth": 300,
     "staminaRegen": 2,
     "baseStaminaRegen": 2,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Foul Stench", "damage": 10, "stamina": 5, "accuracy": 0.45 },
-      { "name": "Lunge", "damage": 10, "stamina": 10, "accuracy": 0.35 }
+      { "name": "Foul Stench", "damage": 25, "stamina": 5, "accuracy": 0.45 },
+      { "name": "Lunge", "damage": 35, "stamina": 10, "accuracy": 0.35 }
     ],
     "drops": [
       { "name": "Resin", "amount": 4 }
@@ -249,7 +251,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Bite", "damage": 40, "stamina": 15, "accuracy": 0.55 }
+      { "name": "Bite", "damage": 60, "stamina": 20, "accuracy": 0.55 },
+      { "name": "Claw", "damage": 40, "stamina": 15, "accuracy": 0.75 }
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 3 },
@@ -271,8 +274,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Bite", "damage": 50, "stamina": 15, "accuracy": 0.55 },
-      { "name": "Claw", "damage": 30, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Bite", "damage": 70, "stamina": 15, "accuracy": 0.55 },
+      { "name": "Claw", "damage": 50, "stamina": 15, "accuracy": 0.75 }
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 5 },
@@ -308,21 +311,20 @@
     "delve": true,
     "overworld": false,
     "threshold": 0,
-    "stamina": 50,
-    "health": 100,
-    "maxStamina": 50,
-    "maxHealth": 100,
+    "stamina": 100,
+    "health": 150,
+    "maxStamina": 100,
+    "maxHealth": 150,
     "staminaRegen": 1,
     "baseStaminaRegen": 1,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Attack 1", "damage": 30, "stamina": 10, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.85 }
+      { "name": "Stab", "damage": 50, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Slash", "damage": 35, "stamina": 10, "accuracy": 0.85 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 },
-      { "name": "Elf Blood", "amount": 3 }
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -340,7 +342,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Slash", "damage": 50, "stamina": 25, "accuracy": 0.55 }
+      { "name": "Slash", "damage": 60, "stamina": 25, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }

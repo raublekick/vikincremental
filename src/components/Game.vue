@@ -144,6 +144,20 @@
         </b-tabs>
       </div>
     </div>
+    <b-modal v-model="dead">
+      <div class="modal-card" style="width: auto">
+        <header class="modal-card-head">
+          <p class="modal-card-title">{{ deathHeader }}</p>
+          <button type="button" class="delete" @click="dead = false" />
+        </header>
+        <section class="modal-card-body">
+          {{ deathMessage }}
+        </section>
+        <footer class="modal-card-foot">
+          <b-button label="Close" @click="dead = false" />
+        </footer>
+      </div>
+    </b-modal>
   </div>
 </template>
 
@@ -202,6 +216,9 @@ export default {
       "newHouse",
       "isPaused",
       "battleLog",
+      "isDead",
+      "deathHeader",
+      "deathMessage",
     ]),
     state: {
       get() {
@@ -209,6 +226,15 @@ export default {
       },
       set(value) {
         this.init(value);
+      },
+    },
+    dead: {
+      get() {
+        return this.isDead;
+      },
+      set(value) {
+        this.setField({ name: "isDead", value: value });
+        this.setField({ name: "isPaused", value: value });
       },
     },
     tab: {
@@ -244,6 +270,10 @@ export default {
     },
     resetTier() {
       this.setField({ name: "worldTier", value: 0 });
+    },
+    closeModal() {
+      this.setField({ name: "isDead", value: false });
+      this.setField({ name: "isPaused", value: false });
     },
     async copy(s) {
       await navigator.clipboard.writeText(JSON.stringify(s));

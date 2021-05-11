@@ -535,9 +535,12 @@ export default new Vuex.Store({
             });
           } else {
             // reset combat if all enemies are defeated
-
+            var msg = "Your party has been eliminated...";
             state.battleLog +=
-              "<span class='has-background-danger has-text-light'>Your party has been eliminated...</span><br/><br/>";
+              "<span class='has-background-danger has-text-light'>" +
+              msg +
+              "</span><br/><br/>";
+            state.deathHeader = msg;
 
             // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
             var bossesDefeated = _.filter(state.bossList, (boss) => {
@@ -551,11 +554,14 @@ export default new Vuex.Store({
               state.bossList[state.worldTier].stamina =
                 state.bossList[state.worldTier].maxStamina;
             }
-
-            state.battleLog +=
+            msg =
               "For your bravery, you are reborn with a bonus " +
               bossesDefeated +
-              " point each to maximum health, health regen, maximum stamina, and stamina regen.<br/>";
+              " point each to maximum health, health regen, maximum stamina, and stamina regen.";
+            state.battleLog += msg + "<br/>";
+            state.deathMessage = msg;
+            state.isDead = true;
+            state.isPaused = true;
             _.forEach(state.ripVikings, (viking) => {
               viking.tasks = [];
               viking.baseHealthRegen += bonus;

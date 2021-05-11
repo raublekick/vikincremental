@@ -105,7 +105,7 @@ export default {
     },
     usableTasks() {
       var tasks = _.filter(this.tasks, (task) => {
-        var inBiome = task.worldTier ? task.worldTier === this.worldTier : true;
+        var inBiome = task.worldTier ? task.worldTier <= this.worldTier : true;
         var requirementsMet =
           !task.gearRequirements || task.gearRequirements.length === 0
             ? 1

@@ -41,9 +41,9 @@
       { "name": "Ikon of Renewal", "amount": 4 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 85, "stamina": 60, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 40, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 25, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 90, "stamina": 60, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 50, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 35, "stamina": 15, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [
