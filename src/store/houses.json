@@ -15,7 +15,7 @@
     "name": "Longhouse",
     "beds": 4,
     "components": [{ "name": "Wood", "amount": 600 }, { "name": "Hard Wood", "amount": 150}],
-    "addOnRequirements": ["Hammer"]
+    "addOnRequirements": ["Workbench"]
   },
   {
     "name": "Grand Hall",
