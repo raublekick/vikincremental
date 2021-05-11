@@ -768,6 +768,21 @@
     "combat": null
   },
   {
+    "name": "Iron Pickaxe",
+    "addOnRequirements": ["Smith's Anvil"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 5
+      },
+      {
+        "name": "Iron Bar",
+        "amount": 20
+      }
+    ],
+    "combat": null
+  },
+  {
     "name": "Cultivator",
     "addOnRequirements": ["Anvil"],
     "components": [
