@@ -24,7 +24,7 @@
       { "name": "Wood", "amount": 1000 },
       { "name": "Hard Wood", "amount": 400},
       { "name": "Stone", "amount": 400 },
-      { "name": "Copper bar", "amount": 100 }
+      { "name": "Iron Bar", "amount": 100 }
     ],
     "addOnRequirements": ["Stonecutter"]
   },
@@ -34,8 +34,9 @@
     "components": [
       { "name": "Wood", "amount": 5000 },
       { "name": "Stone", "amount": 3000 },
-      { "name": "Iron bar", "amount": 100 }
+      { "name": "Iron bar", "amount": 100 },
+      { "name": "Steel bar", "amount": 100 }
     ],
-    "addOnRequirements": ["Stonecutter"]
+    "addOnRequirements": ["Blast Furnace"]
   }
 ]

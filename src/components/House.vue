@@ -1,5 +1,5 @@
 <template>
-  <div v-if="canCraft" class="item">
+  <div v-if="unlocked && house.beds < item.beds" class="item">
     <div class="columns">
       <div class="column">
         <div class="is-size-5">{{ item.name }}</div>
