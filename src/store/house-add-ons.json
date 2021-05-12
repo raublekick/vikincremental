@@ -15,7 +15,7 @@
       },
       {
         "name": "Dwarven Core",
-        "amount": 5
+        "amount": 20
       },
       {
         "name": "Iron Bar",
@@ -310,6 +310,10 @@
       },
       {
         "name": "Stone",
+        "amount": 20
+      },
+      {
+        "name": "Dwarven Core",
         "amount": 20
       },
       {
@@ -675,6 +679,10 @@
       {
         "name": "Ichor Shard",
         "amount": 1
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 20
       }
     ],
     "processing": []
@@ -717,6 +725,10 @@
       {
         "name": "Wood",
         "amount": 20
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 10
       },
       {
         "name": "Iron Bar",
@@ -847,7 +859,7 @@
     "comfort": 1,
     "components": [
       {
-        "name": "Steer Hide",
+        "name": "Tough Hide",
         "amount": 4
       }
     ],

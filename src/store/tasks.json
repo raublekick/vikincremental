@@ -91,7 +91,7 @@
     "worldTier": null,
     "gearRequirements": ["Compound Bow"],
     "items": [
-      { "name": "Steer Hide", "perSecond": 0.1 },
+      { "name": "Tough Hide", "perSecond": 0.1 },
       { "name": "Raw Large Game Meat", "perSecond": 0.2 }
     ]
   },

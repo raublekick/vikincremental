@@ -6,8 +6,8 @@
   "newHouse":false,
   "day":{
      "dayLength":24,
-     "dayTicks":16,
-     "totalDays":103
+     "dayTicks":1,
+     "totalDays":79
   },
   "flags":{
      "gameStart":true,
@@ -16,7 +16,7 @@
   "journal":[
      
   ],
-  "worldTier":2,
+  "worldTier":1,
   "biomes":[
      {
         "name":"Grasslands",
@@ -75,7 +75,7 @@
      },
      {
         "name":"Swamps",
-        "unlocked":true,
+        "unlocked":false,
         "flavor":"On the fringe it appears to be a thriving wetland. Deeper in, the air is thick with noxious haze, unknown sounds permeate the stagnant atmosphere, and the dense foliage blocks the sunlight.",
         "delve":{
            "xLength":25,
@@ -91,6 +91,10 @@
                  {
                     "name":"Chains",
                     "max":1
+                 },
+                 {
+                    "name":"Dwarven Core",
+                    "max":3
                  }
               ],
               "food":[
@@ -118,12 +122,12 @@
            "treasures":{
               "items":[
                  {
-                    "name":"Chains",
-                    "max":1
-                 },
-                 {
                     "name":"Dwarven Core",
                     "max":3
+                 },
+                 {
+                    "name":"Ichor",
+                    "max":10
                  }
               ],
               "food":[
@@ -151,12 +155,16 @@
            "treasures":{
               "items":[
                  {
-                    "name":"Chains",
+                    "name":"Dwarven Core",
+                    "max":3
+                 },
+                 {
+                    "name":"Ichor Shard",
                     "max":1
                  },
                  {
-                    "name":"Dwarven Core",
-                    "max":3
+                    "name":"Ichor",
+                    "max":10
                  }
               ],
               "food":[
@@ -194,6 +202,14 @@
                  {
                     "name":"Gold",
                     "max":20
+                 },
+                 {
+                    "name":"Ichor Shard",
+                    "max":1
+                 },
+                 {
+                    "name":"Ichor",
+                    "max":10
                  }
               ],
               "food":[
@@ -221,12 +237,16 @@
            "treasures":{
               "items":[
                  {
-                    "name":"Chains",
+                    "name":"Dwarven Core",
+                    "max":3
+                 },
+                 {
+                    "name":"Ichor Shard",
                     "max":1
                  },
                  {
-                    "name":"Dwarven Core",
-                    "max":3
+                    "name":"Ichor",
+                    "max":20
                  }
               ],
               "food":[
@@ -245,33 +265,36 @@
      }
   ],
   "activeTab":"debug",
-  "combat":false,
+  "combat":true,
   "delve":false,
   "bossCombat":false,
-  "newDay":false,
-  "battleLog":"Starting day 102 on the battlefield...<br/>A Draugr has entered the battlefield!<br/>A Slime has entered the battlefield!<br/>A Draugr has entered the battlefield!<br/><span class='has-background-success has-text-light'>Njal The Raven hits Draugr for 20 damage and uses 20 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Arne The Fighter hits Draugr for 15 damage and uses 15 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Arne The Fighter has defeated Draugr!</span></br><span class='has-background-warning has-text-black'>Draugr drops 4 Entrails!</span><br/><br/>Gunhild The Small misses and uses 15 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Stone hits Slime for 20 damage and uses 15 stamina!</span><br/><br/>Slime misses and uses 10 stamina...<br/><br/>Draugr misses and uses 15 stamina...<br/><br/>Njal The Raven misses and uses 20 stamina...<br/><br/><span class='has-background-success has-text-light'>Arne The Fighter hits Slime for 15 damage and uses 15 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gunhild The Small hits Draugr for 20 damage and uses 15 stamina!</span><br/><br/>Gertrud The Stone misses and uses 15 stamina...<br/><br/>Slime misses and uses 5 stamina...<br/><br/>Draugr misses and uses 15 stamina...<br/><br/>Njal The Raven misses and uses 20 stamina...<br/><br/><span class='has-background-success has-text-light'>Arne The Fighter hits Slime for 15 damage and uses 15 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Arne The Fighter has defeated Slime!</span></br><span class='has-background-warning has-text-black'>Slime drops 4 Resin!</span><br/><br/><span class='has-background-success has-text-light'>Gunhild The Small hits Draugr for 20 damage and uses 15 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gunhild The Small has defeated Draugr!</span></br><span class='has-background-warning has-text-black'>Draugr drops 4 Entrails!</span><br/><br/><span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>",
+  "newDay":true,
+  "battleLog":"Starting day 79 on the battlefield...<br/>A Goblin Brute has entered the battlefield!<br/>A Goblin Scout has entered the battlefield!<br/>A Goblin Scout has entered the battlefield!<br/>",
+  "deathMessage":"For your bravery, you are reborn with a bonus 1 point each to maximum health, health regen, maximum stamina, and stamina regen.",
+  "deathHeader":"Your party has been eliminated...",
+  "isDead":false,
   "attackTicks":8,
-  "encounterChance":0.45,
+  "encounterChance":0.38999999999999996,
   "baseEncounterChance":0.25,
   "maxVikings":10,
   "maxFood":3,
-  "comfort":7,
+  "comfort":5,
   "baseComfort":0,
   "fortification":2,
   "baseFortification":0,
   "vikings":[
      {
-        "name":"Njal The Raven",
-        "stamina":85,
-        "health":125,
-        "baseStamina":25,
-        "baseHealth":25,
-        "maxStamina":145,
-        "maxHealth":125,
-        "staminaRegen":8,
-        "baseStaminaRegen":1,
-        "healthRegen":3.5,
-        "baseHealthRegen":0,
+        "name":"Torsten The Wise",
+        "stamina":126,
+        "health":96,
+        "baseStamina":26,
+        "baseHealth":26,
+        "maxStamina":126,
+        "maxHealth":96,
+        "staminaRegen":7,
+        "baseStaminaRegen":2,
+        "healthRegen":3,
+        "baseHealthRegen":1,
         "gear":[
            {
               "name":"Bone Pickaxe",
@@ -315,7 +338,7 @@
               ],
               "combat":{
                  "damage":20,
-                 "stamina":25,
+                 "stamina":35,
                  "accuracy":0.8
               }
            },
@@ -390,27 +413,6 @@
               "combat":null,
               "armorType":"Legs",
               "armor":5
-           },
-           {
-              "name":"Bronze Pickaxe",
-              "addOnRequirements":[
-                 "Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Copper Bar",
-                    "amount":16
-                 },
-                 {
-                    "name":"Tin Bar",
-                    "amount":8
-                 }
-              ],
-              "combat":null
            }
         ],
         "tasks":[
@@ -477,37 +479,48 @@
               ]
            },
            {
-              "name":"Iron Mining",
-              "staminaCost":10,
-              "worldTier":2,
+              "name":"Forestry",
+              "worldTier":1,
+              "staminaCost":7,
               "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
+                 "Bronze Axe"
               ],
               "items":[
                  {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
+                    "name":"Wood",
+                    "perSecond":3
+                 },
+                 {
+                    "name":"Resin",
+                    "perSecond":0.1
+                 },
+                 {
+                    "name":"Hard Wood",
+                    "perSecond":1
+                 },
+                 {
+                    "name":"Ornate Wood",
+                    "perSecond":1
                  }
               ]
            }
         ],
         "foodPreference":"best",
-        "birthday":0,
+        "birthday":12,
         "deathday":0
      },
      {
-        "name":"Arne The Fighter",
-        "stamina":85,
-        "health":125,
-        "baseStamina":25,
-        "baseHealth":25,
-        "maxStamina":145,
-        "maxHealth":125,
-        "staminaRegen":8,
-        "baseStaminaRegen":1,
-        "healthRegen":3.5,
-        "baseHealthRegen":0,
+        "name":"Ulfhild The Peaceful",
+        "stamina":126,
+        "health":96,
+        "baseStamina":26,
+        "baseHealth":26,
+        "maxStamina":126,
+        "maxHealth":96,
+        "staminaRegen":7,
+        "baseStaminaRegen":2,
+        "healthRegen":3,
+        "baseHealthRegen":1,
         "gear":[
            {
               "name":"Stone Axe",
@@ -615,27 +628,6 @@
               "combat":null,
               "armorType":"Legs",
               "armor":5
-           },
-           {
-              "name":"Bronze Pickaxe",
-              "addOnRequirements":[
-                 "Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Copper Bar",
-                    "amount":16
-                 },
-                 {
-                    "name":"Tin Bar",
-                    "amount":8
-                 }
-              ],
-              "combat":null
            }
         ],
         "tasks":[
@@ -700,57 +692,41 @@
                     "perSecond":0.0005
                  }
               ]
-           },
-           {
-              "name":"Iron Mining",
-              "staminaCost":10,
-              "worldTier":2,
-              "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
-              ],
-              "items":[
-                 {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
-                 }
-              ]
            }
         ],
         "foodPreference":"best",
-        "birthday":14,
+        "birthday":0,
         "deathday":0
      },
      {
-        "name":"Gunhild The Small",
-        "stamina":145,
-        "health":125,
+        "name":"Skarde The Bear",
+        "stamina":125,
+        "health":95,
         "baseStamina":25,
         "baseHealth":25,
-        "maxStamina":145,
-        "maxHealth":125,
-        "staminaRegen":8,
+        "maxStamina":125,
+        "maxHealth":95,
+        "staminaRegen":6,
         "baseStaminaRegen":1,
-        "healthRegen":3.5,
+        "healthRegen":2.5,
         "baseHealthRegen":0,
         "gear":[
            {
-              "name":"Stone Axe",
+              "name":"Bone Pickaxe",
+              "addOnRequirements":[
+                 "Workbench"
+              ],
               "components":[
                  {
-                    "name":"Wood",
-                    "amount":4
+                    "name":"Large Bone",
+                    "amount":1
                  },
                  {
-                    "name":"Stone",
-                    "amount":2
+                    "name":"Wood",
+                    "amount":8
                  }
               ],
-              "combat":{
-                 "damage":15,
-                 "stamina":15,
-                 "accuracy":0.75
-              }
+              "combat":null
            },
            {
               "name":"Ornate Bow",
@@ -772,8 +748,8 @@
                  }
               ],
               "combat":{
-                 "damage":20,
-                 "stamina":20,
+                 "damage":25,
+                 "stamina":35,
                  "accuracy":0.65
               }
            },
@@ -939,39 +915,22 @@
            }
         ],
         "foodPreference":"best",
-        "birthday":67,
+        "birthday":62,
         "deathday":0
      },
      {
-        "name":"Gertrud The Stone",
-        "stamina":50,
+        "name":"Knud The Beautiful",
+        "stamina":110,
         "health":90,
         "baseStamina":25,
         "baseHealth":25,
         "maxStamina":110,
         "maxHealth":90,
-        "staminaRegen":8,
+        "staminaRegen":6,
         "baseStaminaRegen":1,
-        "healthRegen":3.5,
+        "healthRegen":2.5,
         "baseHealthRegen":0,
         "gear":[
-           {
-              "name":"Crude Bow",
-              "addOnRequirements":[
-                 "Workbench"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 }
-              ],
-              "combat":{
-                 "damage":15,
-                 "stamina":10,
-                 "accuracy":0.65
-              }
-           },
            {
               "name":"Cultivator",
               "addOnRequirements":[
@@ -1013,8 +972,8 @@
                  }
               ],
               "combat":{
-                 "damage":20,
-                 "stamina":20,
+                "damage":25,
+                "stamina":35,
                  "accuracy":0.65
               }
            },
@@ -1151,30 +1110,6 @@
                  {
                     "name":"Queen Bee",
                     "perSecond":0.0005
-                 }
-              ]
-           },
-           {
-              "name":"Small Game Hunting",
-              "staminaCost":5,
-              "worldTier":null,
-              "gearRequirements":[
-                 "Crude Bow",
-                 "Ornate Bow",
-                 "Compound Bow"
-              ],
-              "items":[
-                 {
-                    "name":"Leather Hide",
-                    "perSecond":0.1
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "perSecond":0.2
-                 },
-                 {
-                    "name":"Raw Meat",
-                    "perSecond":0.2
                  }
               ]
            },
@@ -1222,7 +1157,7 @@
            }
         ],
         "foodPreference":"best",
-        "birthday":67,
+        "birthday":62,
         "deathday":0
      }
   ],
@@ -1374,7 +1309,7 @@
         ],
         "items":[
            {
-              "name":"Steer Hide",
+              "name":"Tough Hide",
               "perSecond":0.1
            },
            {
@@ -1572,163 +1507,162 @@
   "inventory":[
      {
         "name":"Stone",
-        "amount":500.30000000004384
+        "amount":463.0000000000187
      },
      {
         "name":"Wood",
-        "amount":980
+        "amount":682.5
      },
      {
         "name":"Queen Bee",
-        "amount":2.9940000000002502
+        "amount":1.3724999999999044
      },
      {
         "name":"Ichor",
-        "amount":78
+        "amount":44
      },
      {
         "name":"Resin",
-        "amount":56.10000000000037
+        "amount":26.100000000000065
      },
      {
         "name":"Leather Hide",
-        "amount":71.10000000000065
+        "amount":32.70000000000057
      },
      {
         "name":"Leather Scraps",
-        "amount":161.1999999999992
+        "amount":84.40000000000103
      },
      {
         "name":"Raw Meat",
-        "amount":15.199999999999866
+        "amount":0.40000000000000135
      },
      {
         "name":"Ikon of the Bounty",
-        "amount":4
+        "amount":3
      },
      {
         "name":"Bones",
-        "amount":0
+        "amount":5
      },
      {
         "name":"Large Bone",
         "amount":0
      },
      {
-        "name":"Carrot Seeds",
-        "amount":0.9000000000109196
+        "name":"Mother's Memory",
+        "amount":1
      },
      {
-        "name":"Dwarven Core",
-        "amount":13
+        "name":"Carrot Seeds",
+        "amount":10.700000000004842
      },
      {
         "name":"Troll Hide",
-        "amount":18
+        "amount":0
+     },
+     {
+        "name":"Dwarven Core",
+        "amount":1
      },
      {
         "name":"Ikon of Renewal",
-        "amount":4
+        "amount":6
+     },
+     {
+        "name":"Coal",
+        "amount":17
      },
      {
         "name":"Copper Ore",
-        "amount":0.19999999999999019
+        "amount":0.6000000000006551
      },
      {
         "name":"Tin Ore",
         "amount":0.5
      },
      {
-        "name":"Coal",
-        "amount":419
-     },
-     {
         "name":"Copper Bar",
-        "amount":41
+        "amount":71
      },
      {
         "name":"Tin Bar",
-        "amount":70
+        "amount":5
      },
      {
         "name":"Hard Wood",
-        "amount":161
+        "amount":124
      },
      {
         "name":"Ornate Wood",
-        "amount":285
+        "amount":208
      },
      {
         "name":"Mushrooms",
-        "amount":27.550000000000257
-     },
-     {
-        "name":"Turnip Seeds",
-        "amount":0.125
-     },
-     {
-        "name":"Iron Ore",
-        "amount":0.950000000000001
-     },
-     {
-        "name":"Iron Bar",
-        "amount":13
-     },
-     {
-        "name":"Entrails",
-        "amount":16
+        "amount":15.050000000000079
      }
   ],
   "gear":[
      {
-        "name":"Troll Armor",
+        "name":"Bone Pickaxe",
         "addOnRequirements":[
-           "Tanning Rack"
+           "Workbench"
         ],
-        "bedRequirement":2,
         "components":[
            {
-              "name":"Troll Hide",
-              "amount":5
+              "name":"Large Bone",
+              "amount":1
            },
            {
-              "name":"Bones",
-              "amount":2
+              "name":"Wood",
+              "amount":8
            }
         ],
-        "combat":null,
-        "armorType":"Body",
-        "armor":8
+        "combat":null
      },
      {
-        "name":"Troll Armor",
+        "name":"Crude Bow",
         "addOnRequirements":[
-           "Tanning Rack"
+           "Workbench"
         ],
-        "bedRequirement":2,
         "components":[
            {
-              "name":"Troll Hide",
-              "amount":5
-           },
-           {
-              "name":"Bones",
-              "amount":2
+              "name":"Wood",
+              "amount":8
            }
         ],
-        "combat":null,
-        "armorType":"Body",
-        "armor":8
+        "combat":{
+           "damage":15,
+           "stamina":10,
+           "accuracy":0.65
+        }
      },
      {
-        "name":"Leather Armor",
+        "name":"Crude Bow",
+        "addOnRequirements":[
+           "Workbench"
+        ],
+        "components":[
+           {
+              "name":"Wood",
+              "amount":8
+           }
+        ],
+        "combat":{
+           "damage":15,
+           "stamina":10,
+           "accuracy":0.65
+        }
+     },
+     {
+        "name":"Leather Helmet",
         "addOnRequirements":[
            "Tanning Rack"
         ],
         "components":[
            {
               "name":"Leather Hide",
-              "amount":4
+              "amount":2
            },
            {
               "name":"Bones",
@@ -1736,8 +1670,8 @@
            }
         ],
         "combat":null,
-        "armorType":"Body",
-        "armor":4
+        "armorType":"Head",
+        "armor":2
      },
      {
         "name":"Leather Armor",
@@ -1797,14 +1731,14 @@
         "armor":2
      },
      {
-        "name":"Leather Helmet",
+        "name":"Leather Armor",
         "addOnRequirements":[
            "Tanning Rack"
         ],
         "components":[
            {
               "name":"Leather Hide",
-              "amount":2
+              "amount":4
            },
            {
               "name":"Bones",
@@ -1812,8 +1746,48 @@
            }
         ],
         "combat":null,
+        "armorType":"Body",
+        "armor":4
+     },
+     {
+        "name":"Troll Helmet",
+        "addOnRequirements":[
+           "Tanning Rack"
+        ],
+        "bedRequirement":2,
+        "components":[
+           {
+              "name":"Troll Hide",
+              "amount":4
+           },
+           {
+              "name":"Bones",
+              "amount":2
+           }
+        ],
+        "combat":null,
         "armorType":"Head",
-        "armor":2
+        "armor":4
+     },
+     {
+        "name":"Troll Armor",
+        "addOnRequirements":[
+           "Tanning Rack"
+        ],
+        "bedRequirement":2,
+        "components":[
+           {
+              "name":"Troll Hide",
+              "amount":5
+           },
+           {
+              "name":"Bones",
+              "amount":2
+           }
+        ],
+        "combat":null,
+        "armorType":"Body",
+        "armor":8
      },
      {
         "name":"Leather Greaves",
@@ -1835,6 +1809,26 @@
         "armor":2
      },
      {
+        "name":"Troll Armor",
+        "addOnRequirements":[
+           "Tanning Rack"
+        ],
+        "bedRequirement":2,
+        "components":[
+           {
+              "name":"Troll Hide",
+              "amount":5
+           },
+           {
+              "name":"Bones",
+              "amount":2
+           }
+        ],
+        "combat":null,
+        "armorType":"Body",
+        "armor":8
+     },
+     {
         "name":"Troll Helmet",
         "addOnRequirements":[
            "Tanning Rack"
@@ -1873,80 +1867,6 @@
         "combat":null,
         "armorType":"Legs",
         "armor":4
-     },
-     {
-        "name":"Troll Helmet",
-        "addOnRequirements":[
-           "Tanning Rack"
-        ],
-        "bedRequirement":2,
-        "components":[
-           {
-              "name":"Troll Hide",
-              "amount":4
-           },
-           {
-              "name":"Bones",
-              "amount":2
-           }
-        ],
-        "combat":null,
-        "armorType":"Head",
-        "armor":4
-     },
-     {
-        "name":"Troll Greaves",
-        "addOnRequirements":[
-           "Tanning Rack"
-        ],
-        "bedRequirement":2,
-        "components":[
-           {
-              "name":"Troll Hide",
-              "amount":2
-           },
-           {
-              "name":"Bones",
-              "amount":2
-           }
-        ],
-        "combat":null,
-        "armorType":"Legs",
-        "armor":4
-     },
-     {
-        "name":"Crude Bow",
-        "addOnRequirements":[
-           "Workbench"
-        ],
-        "components":[
-           {
-              "name":"Wood",
-              "amount":8
-           }
-        ],
-        "combat":{
-           "damage":15,
-           "stamina":10,
-           "accuracy":0.65
-        }
-     },
-     {
-        "name":"Crude Bow",
-        "addOnRequirements":[
-           "Workbench"
-        ],
-        "components":[
-           {
-              "name":"Wood",
-              "amount":8
-           }
-        ],
-        "combat":{
-           "damage":15,
-           "stamina":10,
-           "accuracy":0.65
-        }
      }
   ],
   "food":[
@@ -1954,13 +1874,13 @@
         "name":"Berries",
         "stamina":5,
         "health":5,
-        "amount":180.5
+        "amount":118.125
      },
      {
         "name":"Blueberries",
         "stamina":10,
         "health":10,
-        "amount":1.25
+        "amount":1.75
      },
      {
         "name":"Winterberries",
@@ -1972,7 +1892,7 @@
         "name":"Mushrooms",
         "stamina":10,
         "health":5,
-        "amount":320.5
+        "amount":201.125
      },
      {
         "name":"Yellow Mushrooms",
@@ -1990,25 +1910,25 @@
         "name":"Carrot Soup",
         "stamina":50,
         "health":30,
-        "amount":0
+        "amount":32
      },
      {
         "name":"Turnips",
         "stamina":15,
         "health":15,
-        "amount":2
+        "amount":0
      },
      {
         "name":"Turnip Stew",
         "stamina":50,
         "health":50,
-        "amount":2
+        "amount":0
      },
      {
         "name":"Honey",
         "stamina":15,
         "health":15,
-        "amount":163.00000000000156
+        "amount":159.7999999999957
      },
      {
         "name":"Sweet Jam",
@@ -2026,7 +1946,7 @@
         "name":"Cooked Meat",
         "stamina":20,
         "health":20,
-        "amount":1
+        "amount":19
      },
      {
         "name":"Sausages",
@@ -2121,7 +2041,7 @@
         ],
         "combat":{
            "damage":20,
-           "stamina":20,
+           "stamina":35,
            "accuracy":0.8
         }
      },
@@ -2200,6 +2120,10 @@
            {
               "name":"Ichor",
               "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":1
            }
         ],
         "combat":{
@@ -2237,6 +2161,10 @@
            {
               "name":"Ichor",
               "amount":100
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":1
            }
         ],
         "combat":{
@@ -2274,6 +2202,10 @@
            {
               "name":"Ichor",
               "amount":200
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ],
         "combat":{
@@ -2319,8 +2251,8 @@
            }
         ],
         "combat":{
-           "damage":20,
-           "stamina":20,
+          "damage":25,
+          "stamina":35,
            "accuracy":0.65
         }
      },
@@ -2343,14 +2275,333 @@
               "amount":10
            },
            {
-              "name":"Titanium Bar",
+              "name":"Silver Bar",
               "amount":10
+           },
+           {
+              "name":"Ichor",
+              "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ],
         "combat":{
            "damage":20,
            "stamina":15,
            "accuracy":0.65
+        }
+     },
+     {
+        "name":"Queen's Sting",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Queen Bee",
+              "amount":25
+           },
+           {
+              "name":"Ornate Wood",
+              "amount":8
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of the Bounty",
+              "amount":1
+           },
+           {
+              "name":"Mother's Memory",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":200,
+           "stamina":40,
+           "accuracy":0.65
+        }
+     },
+     {
+        "name":"Treebreaker",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Hard Wood",
+              "amount":20
+           },
+           {
+              "name":"Ornate Wood",
+              "amount":20
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of Renewal",
+              "amount":1
+           },
+           {
+              "name":"Eternal Blossom",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":300,
+           "stamina":60,
+           "accuracy":0.8
+        }
+     },
+     {
+        "name":"Plaguebite",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Ornate Wood",
+              "amount":20
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of Decay",
+              "amount":1
+           },
+           {
+              "name":"Brackish Sludge",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":100,
+           "stamina":25,
+           "accuracy":0.95
+        }
+     },
+     {
+        "name":"Mountainspire",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Hard Wood",
+              "amount":20
+           },
+           {
+              "name":"Ornate Wood",
+              "amount":20
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of Regret",
+              "amount":1
+           },
+           {
+              "name":"Heart of the Mountain",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":400,
+           "stamina":80,
+           "accuracy":0.75
+        }
+     },
+     {
+        "name":"Galewind",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Hard Wood",
+              "amount":20
+           },
+           {
+              "name":"Ornate Wood",
+              "amount":20
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of the Wind",
+              "amount":1
+           },
+           {
+              "name":"Endless Breeze",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":300,
+           "stamina":60,
+           "accuracy":0.75
+        }
+     },
+     {
+        "name":"Sharptongue",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Ornate Wood",
+              "amount":20
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of the Primordial",
+              "amount":1
+           },
+           {
+              "name":"Ancient Fragment",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":225,
+           "stamina":35,
+           "accuracy":0.85
+        }
+     },
+     {
+        "name":"Flametongue",
+        "addOnRequirements":[
+           "Artisan Table"
+        ],
+        "components":[
+           {
+              "name":"Hard Wood",
+              "amount":8
+           },
+           {
+              "name":"Ornate Wood",
+              "amount":8
+           },
+           {
+              "name":"Titanium Bar",
+              "amount":10
+           },
+           {
+              "name":"Dwarven Core",
+              "amount":25
+           },
+           {
+              "name":"Leather Scraps",
+              "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":500
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":10
+           },
+           {
+              "name":"Ikon of the Primordial",
+              "amount":1
+           },
+           {
+              "name":"Endless Flame",
+              "amount":1
+           }
+        ],
+        "combat":{
+           "damage":200,
+           "stamina":40,
+           "accuracy":0.9
         }
      },
      {
@@ -2610,11 +2861,11 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Leather Hide",
+              "name":"Wolf Hide",
               "amount":2
            },
            {
-              "name":"Iron Bar",
+              "name":"Steel Bar",
               "amount":20
            }
         ],
@@ -2630,11 +2881,11 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Leather Hide",
+              "name":"Wolf Hide",
               "amount":2
            },
            {
-              "name":"Iron Bar",
+              "name":"Steel Bar",
               "amount":20
            }
         ],
@@ -2650,11 +2901,11 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Leather Hide",
+              "name":"Wolf Hide",
               "amount":2
            },
            {
-              "name":"Iron Bar",
+              "name":"Steel Bar",
               "amount":20
            }
         ],
@@ -2670,7 +2921,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2680,6 +2931,10 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
            }
         ],
         "combat":null,
@@ -2694,7 +2949,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2704,6 +2959,10 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
            }
         ],
         "combat":null,
@@ -2718,7 +2977,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2728,6 +2987,10 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
            }
         ],
         "combat":null,
@@ -2742,7 +3005,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2752,6 +3015,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":1
            }
         ],
         "combat":null,
@@ -2766,7 +3037,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2776,6 +3047,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":1
            }
         ],
         "combat":null,
@@ -2790,7 +3069,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2800,6 +3079,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":10
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":1
            }
         ],
         "combat":null,
@@ -2814,7 +3101,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2824,6 +3111,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ],
         "combat":null,
@@ -2838,7 +3133,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2848,6 +3143,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ],
         "combat":null,
@@ -2862,7 +3165,7 @@
         "bedRequirement":2,
         "components":[
            {
-              "name":"Wolf Hide",
+              "name":"Tough Hide",
               "amount":2
            },
            {
@@ -2872,6 +3175,14 @@
            {
               "name":"Threads",
               "amount":20
+           },
+           {
+              "name":"Ichor",
+              "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ],
         "combat":null,
@@ -2999,15 +3310,15 @@
      "components":[
         {
            "name":"Wood",
-           "amount":800
+           "amount":600
         },
         {
            "name":"Hard Wood",
-           "amount":200
+           "amount":150
         }
      ],
      "addOnRequirements":[
-        "Hammer"
+        "Workbench"
      ]
   },
   "houses":[
@@ -3043,15 +3354,15 @@
         "components":[
            {
               "name":"Wood",
-              "amount":800
+              "amount":600
            },
            {
               "name":"Hard Wood",
-              "amount":200
+              "amount":150
            }
         ],
         "addOnRequirements":[
-           "Hammer"
+           "Workbench"
         ]
      },
      {
@@ -3071,7 +3382,7 @@
               "amount":400
            },
            {
-              "name":"Copper bar",
+              "name":"Iron Bar",
               "amount":100
            }
         ],
@@ -3094,10 +3405,14 @@
            {
               "name":"Iron bar",
               "amount":100
+           },
+           {
+              "name":"Steel bar",
+              "amount":100
            }
         ],
         "addOnRequirements":[
-           "Stonecutter"
+           "Blast Furnace"
         ]
      }
   ],
@@ -3122,7 +3437,7 @@
            },
            {
               "name":"Dwarven Core",
-              "amount":5
+              "amount":20
            },
            {
               "name":"Iron Bar",
@@ -3308,7 +3623,7 @@
            "Workbench"
         ],
         "built":true,
-        "enabled":false,
+        "enabled":true,
         "components":[
            {
               "name":"Stone",
@@ -3585,7 +3900,7 @@
         "type":"processing",
         "tooltip":"The basis for staving off hunger.",
         "built":true,
-        "enabled":false,
+        "enabled":true,
         "gearRequirements":[
            
         ],
@@ -3693,6 +4008,10 @@
            },
            {
               "name":"Stone",
+              "amount":20
+           },
+           {
+              "name":"Dwarven Core",
               "amount":20
            },
            {
@@ -4060,7 +4379,7 @@
         "name":"Smith's Anvil",
         "type":"forge",
         "tooltip":"Necessary for shaping hard metals.",
-        "built":true,
+        "built":false,
         "enabled":false,
         "bedRequirement":2,
         "gearRequirements":[
@@ -4162,6 +4481,10 @@
            {
               "name":"Ichor Shard",
               "amount":1
+           },
+           {
+              "name":"Dwarven Core",
+              "amount":20
            }
         ],
         "processing":[
@@ -4199,7 +4522,7 @@
         "name":"Stonecutter",
         "type":"forge",
         "tooltip":"With the strength of stone, a house can become a fortress.",
-        "built":true,
+        "built":false,
         "enabled":false,
         "bedRequirement":2,
         "gearRequirements":[
@@ -4216,6 +4539,10 @@
            {
               "name":"Wood",
               "amount":20
+           },
+           {
+              "name":"Dwarven Core",
+              "amount":10
            },
            {
               "name":"Iron Bar",
@@ -4258,7 +4585,7 @@
         "name":"Hearth",
         "type":"comfort",
         "tooltip":"A functional flame, but even more beautiful than a basic campfire.",
-        "built":true,
+        "built":false,
         "enabled":true,
         "gearRequirements":[
            
@@ -4382,7 +4709,7 @@
         "comfort":1,
         "components":[
            {
-              "name":"Steer Hide",
+              "name":"Tough Hide",
               "amount":4
            }
         ],
@@ -4471,7 +4798,7 @@
         "name":"Throne",
         "type":"comfort",
         "tooltip":"A commanding seat to invigorate.",
-        "built":true,
+        "built":false,
         "enabled":true,
         "gearRequirements":[
            
@@ -4796,7 +5123,93 @@
      }
   ],
   "enemies":[
-     
+     {
+        "name":"Goblin Brute",
+        "worldTier":1,
+        "delve":false,
+        "overworld":true,
+        "threshold":0.2,
+        "stamina":40,
+        "health":50,
+        "maxStamina":40,
+        "maxHealth":50,
+        "staminaRegen":1,
+        "baseStaminaRegen":1,
+        "healthRegen":0,
+        "baseHealthRegen":0,
+        "attacks":[
+           {
+              "name":"Club",
+              "damage":30,
+              "stamina":15,
+              "accuracy":0.55
+           }
+        ],
+        "drops":[
+           {
+              "name":"Ichor",
+              "amount":1
+           }
+        ]
+     },
+     {
+        "name":"Goblin Scout",
+        "worldTier":1,
+        "delve":false,
+        "overworld":true,
+        "threshold":0,
+        "stamina":30,
+        "health":30,
+        "maxStamina":30,
+        "maxHealth":30,
+        "staminaRegen":1,
+        "baseStaminaRegen":1,
+        "healthRegen":0,
+        "baseHealthRegen":0,
+        "attacks":[
+           {
+              "name":"Swipe",
+              "damage":20,
+              "stamina":10,
+              "accuracy":0.55
+           }
+        ],
+        "drops":[
+           {
+              "name":"Ichor",
+              "amount":1
+           }
+        ]
+     },
+     {
+        "name":"Goblin Scout",
+        "worldTier":1,
+        "delve":false,
+        "overworld":true,
+        "threshold":0,
+        "stamina":30,
+        "health":30,
+        "maxStamina":30,
+        "maxHealth":30,
+        "staminaRegen":1,
+        "baseStaminaRegen":1,
+        "healthRegen":0,
+        "baseHealthRegen":0,
+        "attacks":[
+           {
+              "name":"Swipe",
+              "damage":20,
+              "stamina":10,
+              "accuracy":0.55
+           }
+        ],
+        "drops":[
+           {
+              "name":"Ichor",
+              "amount":1
+           }
+        ]
+     }
   ],
   "enemyList":[
      {
@@ -5053,10 +5466,10 @@
         "delve":true,
         "overworld":false,
         "threshold":0.85,
-        "stamina":40,
-        "health":40,
-        "maxStamina":40,
-        "maxHealth":40,
+        "stamina":50,
+        "health":200,
+        "maxStamina":50,
+        "maxHealth":200,
         "staminaRegen":1,
         "baseStaminaRegen":1,
         "healthRegen":1,
@@ -5065,6 +5478,12 @@
            {
               "name":"Possess",
               "damage":30,
+              "stamina":15,
+              "accuracy":0.8
+           },
+           {
+              "name":"Frighten",
+              "damage":50,
               "stamina":15,
               "accuracy":0.55
            }
@@ -5077,25 +5496,60 @@
         ]
      },
      {
+        "name":"Skeleton",
+        "worldTier":2,
+        "delve":true,
+        "overworld":true,
+        "threshold":0,
+        "stamina":50,
+        "health":75,
+        "maxStamina":50,
+        "maxHealth":75,
+        "staminaRegen":1,
+        "baseStaminaRegen":1,
+        "healthRegen":0,
+        "baseHealthRegen":0,
+        "attacks":[
+           {
+              "name":"Sword Swing",
+              "damage":35,
+              "stamina":10,
+              "accuracy":0.55
+           }
+        ],
+        "drops":[
+           {
+              "name":"Bones",
+              "amount":1
+           }
+        ]
+     },
+     {
         "name":"Draugr",
         "worldTier":2,
         "delve":true,
         "overworld":true,
         "threshold":0,
-        "stamina":35,
-        "health":35,
-        "maxStamina":35,
-        "maxHealth":35,
+        "stamina":75,
+        "health":100,
+        "maxStamina":75,
+        "maxHealth":100,
         "staminaRegen":2,
         "baseStaminaRegen":2,
         "healthRegen":0,
         "baseHealthRegen":0,
         "attacks":[
            {
-              "name":"Sword Swing",
-              "damage":25,
+              "name":"Swing",
+              "damage":40,
               "stamina":15,
               "accuracy":0.65
+           },
+           {
+              "name":"Bash",
+              "damage":25,
+              "stamina":15,
+              "accuracy":0.8
            }
         ],
         "drops":[
@@ -5111,10 +5565,10 @@
         "delve":true,
         "overworld":true,
         "threshold":0,
-        "stamina":30,
-        "health":50,
-        "maxStamina":30,
-        "maxHealth":50,
+        "stamina":100,
+        "health":300,
+        "maxStamina":100,
+        "maxHealth":300,
         "staminaRegen":2,
         "baseStaminaRegen":2,
         "healthRegen":0,
@@ -5122,13 +5576,13 @@
         "attacks":[
            {
               "name":"Foul Stench",
-              "damage":10,
+              "damage":25,
               "stamina":5,
               "accuracy":0.45
            },
            {
               "name":"Lunge",
-              "damage":10,
+              "damage":35,
               "stamina":10,
               "accuracy":0.35
            }
@@ -5143,7 +5597,7 @@
      {
         "name":"Wolf",
         "worldTier":3,
-        "delve":false,
+        "delve":true,
         "overworld":true,
         "threshold":0,
         "stamina":50,
@@ -5157,9 +5611,15 @@
         "attacks":[
            {
               "name":"Bite",
+              "damage":60,
+              "stamina":20,
+              "accuracy":0.55
+           },
+           {
+              "name":"Claw",
               "damage":40,
               "stamina":15,
-              "accuracy":0.55
+              "accuracy":0.75
            }
         ],
         "drops":[
@@ -5176,7 +5636,7 @@
      {
         "name":"Werewolf",
         "worldTier":3,
-        "delve":false,
+        "delve":true,
         "overworld":true,
         "threshold":0,
         "stamina":75,
@@ -5190,13 +5650,13 @@
         "attacks":[
            {
               "name":"Bite",
-              "damage":50,
+              "damage":70,
               "stamina":15,
               "accuracy":0.55
            },
            {
               "name":"Claw",
-              "damage":30,
+              "damage":50,
               "stamina":15,
               "accuracy":0.75
            }
@@ -5254,14 +5714,14 @@
         ]
      },
      {
-        "name":"Dark Elf",
+        "name":"Skeleton",
         "worldTier":3,
         "delve":true,
         "overworld":false,
         "threshold":0,
-        "stamina":50,
+        "stamina":75,
         "health":100,
-        "maxStamina":50,
+        "maxStamina":75,
         "maxHealth":100,
         "staminaRegen":1,
         "baseStaminaRegen":1,
@@ -5269,14 +5729,43 @@
         "baseHealthRegen":0,
         "attacks":[
            {
-              "name":"Attack 1",
-              "damage":30,
+              "name":"Sword Swing",
+              "damage":50,
               "stamina":10,
+              "accuracy":0.55
+           }
+        ],
+        "drops":[
+           {
+              "name":"Bones",
+              "amount":1
+           }
+        ]
+     },
+     {
+        "name":"Dark Elf",
+        "worldTier":3,
+        "delve":true,
+        "overworld":false,
+        "threshold":0,
+        "stamina":100,
+        "health":150,
+        "maxStamina":100,
+        "maxHealth":150,
+        "staminaRegen":1,
+        "baseStaminaRegen":1,
+        "healthRegen":0,
+        "baseHealthRegen":0,
+        "attacks":[
+           {
+              "name":"Stab",
+              "damage":50,
+              "stamina":20,
               "accuracy":0.75
            },
            {
-              "name":"Attack 2",
-              "damage":20,
+              "name":"Slash",
+              "damage":35,
               "stamina":10,
               "accuracy":0.85
            }
@@ -5285,10 +5774,6 @@
            {
               "name":"Ichor",
               "amount":1
-           },
-           {
-              "name":"Elf Blood",
-              "amount":3
            }
         ]
      },
@@ -5309,7 +5794,7 @@
         "attacks":[
            {
               "name":"Slash",
-              "damage":50,
+              "damage":60,
               "stamina":25,
               "accuracy":0.55
            }
@@ -5483,6 +5968,10 @@
         ],
         "drops":[
            {
+              "name":"Chains",
+              "amount":1
+           },
+           {
               "name":"Ichor",
               "amount":1
            }
@@ -5517,6 +6006,10 @@
            }
         ],
         "drops":[
+           {
+              "name":"Chains",
+              "amount":1
+           },
            {
               "name":"Ichor",
               "amount":1
@@ -5599,7 +6092,10 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Mother's Memory",
+              "amount":1
+           }
         ],
         "drops":[
            {
@@ -5615,7 +6111,7 @@
      {
         "name":"The Stag",
         "worldTier":1,
-        "stamina":200,
+        "stamina":250,
         "health":800,
         "maxStamina":200,
         "maxHealth":800,
@@ -5623,7 +6119,7 @@
         "baseStaminaRegen":8,
         "healthRegen":0,
         "baseHealthRegen":0,
-        "defeated":true,
+        "defeated":false,
         "components":[
            {
               "name":"Ikon of Renewal",
@@ -5633,25 +6129,28 @@
         "attacks":[
            {
               "name":"Attack 1",
-              "damage":85,
+              "damage":90,
               "stamina":60,
               "accuracy":0.15
            },
            {
               "name":"Attack 2",
-              "damage":40,
+              "damage":50,
               "stamina":20,
               "accuracy":0.75
            },
            {
               "name":"Attack 2",
-              "damage":25,
+              "damage":35,
               "stamina":15,
               "accuracy":0.75
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Eternal Blossom",
+              "amount":1
+           }
         ],
         "drops":[
            {
@@ -5699,7 +6198,10 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Brackish Sludge",
+              "amount":1
+           }
         ],
         "drops":[
            {
@@ -5747,7 +6249,10 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Heart of the Mountain",
+              "amount":1
+           }
         ],
         "drops":[
            {
@@ -5756,7 +6261,7 @@
            },
            {
               "name":"Ichor Shard",
-              "amount":2
+              "amount":1
            }
         ]
      },
@@ -5799,12 +6304,19 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Endless Breeze",
+              "amount":1
+           }
         ],
         "drops":[
            {
               "name":"Ichor",
               "amount":10
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":2
            }
         ]
      },
@@ -5822,7 +6334,7 @@
         "defeated":false,
         "components":[
            {
-              "name":"Ikon of the Primordial",
+              "name":"Ikon of Pride",
               "amount":2
            }
         ],
@@ -5847,12 +6359,19 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Ancient Fragment",
+              "amount":1
+           }
         ],
         "drops":[
            {
               "name":"Ichor",
-              "amount":10
+              "amount":50
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":3
            }
         ]
      },
@@ -5895,12 +6414,19 @@
            }
         ],
         "artifacts":[
-           
+           {
+              "name":"Endless Flame",
+              "amount":1
+           }
         ],
         "drops":[
            {
               "name":"Ichor",
-              "amount":10
+              "amount":100
+           },
+           {
+              "name":"Ichor Shard",
+              "amount":5
            }
         ]
      },
@@ -5945,10 +6471,14 @@
         "drops":[
            {
               "name":"Ichor",
+              "amount":100
+           },
+           {
+              "name":"Ichor Shard",
               "amount":10
            }
         ]
      }
   ],
-  "id":1363
+  "id":1392
 }

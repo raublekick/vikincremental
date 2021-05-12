@@ -193,6 +193,27 @@
     ]
   },
   {
+    "name": "Skeleton",
+    "worldTier": 2,
+    "delve": true,
+    "overworld": true,
+    "threshold": 0,
+    "stamina": 50,
+    "health": 75,
+    "maxStamina": 50,
+    "maxHealth": 75,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 35, "stamina": 10, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Bones", "amount": 1 }
+    ]
+  },
+  {
     "name": "Draugr",
     "worldTier": 2,
     "delve": true,
@@ -239,7 +260,7 @@
   {
     "name": "Wolf",
     "worldTier": 3,
-    "delve": false,
+    "delve": true,
     "overworld": true,
     "threshold": 0,
     "stamina": 50,
@@ -262,7 +283,7 @@
   {
     "name": "Werewolf",
     "worldTier": 3,
-    "delve": false,
+    "delve": true,
     "overworld": true,
     "threshold": 0,
     "stamina": 75,
@@ -303,6 +324,27 @@
     ],
     "drops": [
       { "name": "Ichor", "amount": 50 }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "worldTier": 3,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0,
+    "stamina": 75,
+    "health": 100,
+    "maxStamina": 75,
+    "maxHealth": 100,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 50, "stamina": 10, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Bones", "amount": 1 }
     ]
   },
   {
@@ -455,6 +497,7 @@
       { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
     ],
     "drops": [
+      { "name": "Chains", "amount": 1 },
       { "name": "Ichor", "amount": 1 }
     ]
   },
@@ -477,6 +520,7 @@
       { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
     ],
     "drops": [
+      { "name": "Chains", "amount": 1 },
       { "name": "Ichor", "amount": 1 }
     ]
   },

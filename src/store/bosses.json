@@ -19,7 +19,7 @@
       { "name": "Attack 2", "damage": 30, "stamina": 15, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 20, "stamina": 10, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Mother's Memory", "amount": 1 }],
     "drops": [
       { "name": "Ichor", "amount": 2 },
       { "name": "Large Bone", "amount": 1 }
@@ -32,8 +32,8 @@
     "health": 800,
     "maxStamina": 200,
     "maxHealth": 800,
-    "staminaRegen": 8,
-    "baseStaminaRegen": 8,
+    "staminaRegen": 4,
+    "baseStaminaRegen": 4,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "defeated": false,
@@ -45,7 +45,7 @@
       { "name": "Attack 2", "damage": 50, "stamina": 20, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 35, "stamina": 15, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Eternal Blossom", "amount": 1 }],
     "drops": [
       { "name": "Ichor", "amount": 3 }
     ]
@@ -70,7 +70,7 @@
       { "name": "Attack 2", "damage": 50, "stamina": 30, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 40, "stamina": 20, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Brackish Sludge", "amount": 1 }],
     "drops": [
       { "name": "Ichor", "amount": 10 }
     ]
@@ -95,10 +95,10 @@
       { "name": "Attack 2", "damage": 60, "stamina": 50, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Heart of the Mountain", "amount": 1 }],
     "drops": [
       { "name": "Ichor", "amount": 10 }, 
-      { "name": "Ichor Shard", "amount": 2 }
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
   {
@@ -121,9 +121,10 @@
       { "name": "Attack 2", "damage": 70, "stamina": 75, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Endless Breeze", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 10 }, 
+      { "name": "Ichor Shard", "amount": 2 }
     ]
   },
   {
@@ -139,16 +140,17 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Ikon of the Primordial", "amount": 2 }
+      { "name": "Ikon of Pride", "amount": 2 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 200, "stamina": 200, "accuracy": 0.15 },
       { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{ "name": "Ancient Fragment", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 50 }, 
+      { "name": "Ichor Shard", "amount": 3 }
     ]
   },
   {
@@ -171,9 +173,10 @@
       { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
       { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
     ],
-    "artifacts": [],
+    "artifacts": [{"name": "Endless Flame", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 100 }, 
+      { "name": "Ichor Shard", "amount": 5 }
     ]
   },
   {
@@ -196,7 +199,8 @@
     ],
     "artifacts": [],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 100 }, 
+      { "name": "Ichor Shard", "amount": 10 }
     ]
   }
 ]

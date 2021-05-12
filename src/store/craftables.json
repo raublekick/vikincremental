@@ -40,7 +40,7 @@
     ],
     "combat": {
       "damage": 20,
-      "stamina": 20,
+      "stamina": 35,
       "accuracy": 0.8
     }
   },
@@ -113,6 +113,10 @@
       {
         "name": "Ichor",
         "amount": 50
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "combat": {
@@ -148,6 +152,10 @@
       {
         "name": "Ichor",
         "amount": 100
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "combat": {
@@ -183,6 +191,10 @@
       {
         "name": "Ichor",
         "amount": 200
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 5
       }
     ],
     "combat": {
@@ -224,8 +236,8 @@
       }
     ],
     "combat": {
-      "damage": 20,
-      "stamina": 15,
+      "damage": 25,
+      "stamina": 35,
       "accuracy": 0.65
     }
   },
@@ -246,14 +258,319 @@
         "amount": 10
       },
       {
-        "name": "Titanium Bar",
+        "name": "Silver Bar",
         "amount": 10
+      },
+      {
+        "name": "Ichor",
+        "amount": 50
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 5
       }
     ],
     "combat": {
       "damage": 20,
       "stamina": 15,
       "accuracy": 0.65
+    }
+  },
+  {
+    "name": "Queen's Sting",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Queen Bee",
+        "amount": 25
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of the Bounty",
+        "amount": 1
+      },
+      {
+        "name": "Mother's Memory",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 200,
+      "stamina": 40,
+      "accuracy": 0.65
+    }
+  },
+  {
+    "name": "Treebreaker",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 20
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of Renewal",
+        "amount": 1
+      },
+      {
+        "name": "Eternal Blossom",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 300,
+      "stamina": 60,
+      "accuracy": 0.80
+    }
+  },
+  {
+    "name": "Plaguebite",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of Decay",
+        "amount": 1
+      },
+      {
+        "name": "Brackish Sludge",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 100,
+      "stamina": 25,
+      "accuracy": 0.95
+    }
+  },
+  {
+    "name": "Mountainspire",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 20
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of Regret",
+        "amount": 1
+      },
+      {
+        "name": "Heart of the Mountain",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 400,
+      "stamina": 80,
+      "accuracy": 0.75
+    }
+  },
+  {
+    "name": "Galewind",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 20
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of the Wind",
+        "amount": 1
+      },
+      {
+        "name": "Endless Breeze",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 300,
+      "stamina": 60,
+      "accuracy": 0.75
+    }
+  },
+  {
+    "name": "Sharptongue",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Ornate Wood",
+        "amount": 20
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of the Primordial",
+        "amount": 1
+      },
+      {
+        "name": "Ancient Fragment",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 225,
+      "stamina": 35,
+      "accuracy": 0.85
+    }
+  },
+  {
+    "name": "Flametongue",
+    "addOnRequirements": ["Artisan Table"],
+    "components": [
+      {
+        "name": "Hard Wood",
+        "amount": 8
+      },
+      {
+        "name": "Ornate Wood",
+        "amount": 8
+      },
+      {
+        "name": "Titanium Bar",
+        "amount": 10
+      },
+      {
+        "name": "Dwarven Core",
+        "amount": 25
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 500
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 10
+      },
+      {
+        "name": "Ikon of the Primordial",
+        "amount": 1
+      },
+      {
+        "name": "Endless Flame",
+        "amount": 1
+      }
+    ],
+    "combat": {
+      "damage": 200,
+      "stamina": 40,
+      "accuracy": 0.90
     }
   },
   {
@@ -487,11 +804,11 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Leather Hide",
+        "name": "Wolf Hide",
         "amount": 2
       },
       {
-        "name": "Iron Bar",
+        "name": "Steel Bar",
         "amount": 20
       }
     ],
@@ -505,11 +822,11 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Leather Hide",
+        "name": "Wolf Hide",
         "amount": 2
       },
       {
-        "name": "Iron Bar",
+        "name": "Steel Bar",
         "amount": 20
       }
     ],
@@ -523,11 +840,11 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Leather Hide",
+        "name": "Wolf Hide",
         "amount": 2
       },
       {
-        "name": "Iron Bar",
+        "name": "Steel Bar",
         "amount": 20
       }
     ],
@@ -541,7 +858,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -551,6 +868,10 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
       }
     ],
     "combat": null,
@@ -563,7 +884,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -573,6 +894,10 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
       }
     ],
     "combat": null,
@@ -585,7 +910,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -595,6 +920,10 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
       }
     ],
     "combat": null,
@@ -607,7 +936,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -617,6 +946,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "combat": null,
@@ -629,7 +966,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -639,6 +976,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "combat": null,
@@ -651,7 +996,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -661,6 +1006,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 10
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 1
       }
     ],
     "combat": null,
@@ -673,7 +1026,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -683,6 +1036,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 50
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 5
       }
     ],
     "combat": null,
@@ -695,7 +1056,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -705,6 +1066,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 50
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 5
       }
     ],
     "combat": null,
@@ -717,7 +1086,7 @@
     "bedRequirement": 2,
     "components": [
       {
-        "name": "Wolf Hide",
+        "name": "Tough Hide",
         "amount": 2
       },
       {
@@ -727,6 +1096,14 @@
       {
         "name": "Threads",
         "amount": 20
+      },
+      {
+        "name": "Ichor",
+        "amount": 50
+      },
+      {
+        "name": "Ichor Shard",
+        "amount": 5
       }
     ],
     "combat": null,

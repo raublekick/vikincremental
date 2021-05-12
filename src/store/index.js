@@ -69,6 +69,20 @@ export default new Vuex.Store({
       }
       state.vikings[payload.vikingIndex].health = health;
     },
+    incrementArtifact(state, payload) {
+      var boss = mixin.methods.findItem(state.bossList, payload.enemyName);
+      if (!boss.defeated) {
+        var index = mixin.methods.findIndex(state["inventory"], payload.key);
+        if (index >= 0) {
+          state[payload.objectKey][index].amount += payload.amount;
+        } else {
+          state[payload.objectKey].push({
+            name: payload.key,
+            amount: payload.amount,
+          });
+        }
+      }
+    },
     incrementObject(state, payload) {
       var index = mixin.methods.findIndex(
         state[payload.objectKey],
@@ -287,7 +301,7 @@ export default new Vuex.Store({
             // get items first if stamina is positive
             if (viking.stamina > 0) {
               _.forEach(task.items, (item) => {
-                if (!item.worldTier || item.worldTier === state.worldTier) {
+                if (!item.worldTier || item.worldTier <= state.worldTier) {
                   commit("incrementObject", {
                     objectKey: "inventory",
                     key: item.name,
@@ -297,7 +311,7 @@ export default new Vuex.Store({
               });
 
               _.forEach(task.food, (item) => {
-                if (!item.worldTier || item.worldTier === state.worldTier) {
+                if (!item.worldTier || item.worldTier <= state.worldTier) {
                   commit("incrementObject", {
                     objectKey: "food",
                     key: item.name,
@@ -380,6 +394,26 @@ export default new Vuex.Store({
                   drop.name +
                   "!</span><br/><br/>";
               });
+
+              _.forEach(state.enemies[targetIndex].artifacts, (drop) => {
+                // bonus drops based on # of vikings
+                var amount = drop.amount;
+                commit("incrementArtifact", {
+                  objectKey: "inventory",
+                  key: drop.name,
+                  amount: amount,
+                  enemyName: state.enemies[targetIndex].name,
+                });
+                state.battleLog +=
+                  "<span class='has-background-warning has-text-black'>" +
+                  state.enemies[targetIndex].name +
+                  " drops " +
+                  amount +
+                  " " +
+                  drop.name +
+                  "!</span><br/><br/>";
+              });
+
               if (state.bossCombat) {
                 // mark the boss as defeated
                 var boss = mixin.methods.findItem(
@@ -407,6 +441,7 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
+              state.ripVikings = [];
               state.battleLog +=
                 "<span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>";
               if (state.bossCombat) {
