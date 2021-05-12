@@ -30,6 +30,7 @@
       {
         "input": [
           { "name": "Coal", "amount": 2}, 
+          { "name": "Obsidian", "amount": 1},
           { "name": "Iron Ore", "amount": 1}
         ],
         "output": { "name": "Steel Bar", "amount": 1, "type": "inventory" }
@@ -611,7 +612,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 20
+        "amount": 15
       }
     ],
     "processing": []
@@ -632,7 +633,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 15
+        "amount": 25
       }
     ],
     "processing": []
@@ -656,8 +657,12 @@
         "amount": 10
       },
       {
+        "name": "Iron Bar",
+        "amount": 5
+      },
+      {
         "name": "Chains",
-        "amount": 2
+        "amount": 20
       }
     ],
     "processing": []
@@ -901,7 +906,7 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 150
       }
     ],
     "processing": []
@@ -919,7 +924,7 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 50
       }
     ],
     "processing": []
@@ -937,7 +942,7 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Iron Bar",
@@ -959,7 +964,7 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 100
+        "amount": 500
       },
       {
         "name": "Leather Hide",

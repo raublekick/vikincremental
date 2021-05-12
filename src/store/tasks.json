@@ -40,6 +40,11 @@
         "worldTier": 2
       },
       {
+        "name": "Obsidian",
+        "perSecond": 0.125,
+        "worldTier": 3
+      },
+      {
         "name": "Flax",
         "perSecond": 0.05,
         "worldTier": 4

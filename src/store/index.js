@@ -859,7 +859,7 @@ export default new Vuex.Store({
         console.log(e);
         //commit("init", { store, data: {} });
       }
-      commit("setField", { name: "isLoading", value: true });
+      commit("setField", { name: "isLoading", value: false });
     },
   },
   modules: {},
