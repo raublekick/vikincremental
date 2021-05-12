@@ -250,8 +250,8 @@
               </dt>
               <dd>
                 Death is not always a bad outcome of battle. If your entire
-                party falls in battle, your vikings will be rewarded based on
-                progression through the game.<br /><br />
+                party falls in battle, your vikings will be reborn and rewarded
+                based on progression through the game.<br /><br />
                 However, after a victory in battle, and vikings who did not
                 survive will be gone forever. These vikings can be replaced by
                 summoning new vikings. New vikings will not be bestowed with the
