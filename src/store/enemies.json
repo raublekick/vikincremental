@@ -207,7 +207,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Sword Swing", "damage": 35, "stamina": 10, "accuracy": 0.55 }
+      { "name": "Sword Swing", "damage": 50, "stamina": 10, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Bones", "amount": 1 }
@@ -228,8 +228,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Swing", "damage": 40, "stamina": 15, "accuracy": 0.65 },
-      { "name": "Bash", "damage": 25, "stamina": 15, "accuracy": 0.80 }
+      { "name": "Swing", "damage": 45, "stamina": 15, "accuracy": 0.65 },
+      { "name": "Bash", "damage": 35, "stamina": 15, "accuracy": 0.80 }
     ],
     "drops": [
       { "name": "Entrails", "amount": 4 }
@@ -240,7 +240,7 @@
     "worldTier": 2,
     "delve": true,
     "overworld": true,
-    "threshold": 0,
+    "threshold": 0.1,
     "stamina": 100,
     "health": 300,
     "maxStamina": 100,
@@ -250,8 +250,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Foul Stench", "damage": 25, "stamina": 5, "accuracy": 0.45 },
-      { "name": "Lunge", "damage": 35, "stamina": 10, "accuracy": 0.35 }
+      { "name": "Foul Stench", "damage": 50, "stamina": 5, "accuracy": 0.45 },
+      { "name": "Lunge", "damage": 75, "stamina": 10, "accuracy": 0.35 }
     ],
     "drops": [
       { "name": "Resin", "amount": 4 }

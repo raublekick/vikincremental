@@ -38,6 +38,7 @@
       {
         "input": [
           { "name": "Coal", "amount": 2}, 
+          { "name": "Obsidian", "amount": 1},
           { "name": "Silver Ore", "amount": 1}
         ],
         "output": { "name": "Silver Bar", "amount": 1, "type": "inventory" }
@@ -45,6 +46,7 @@
       {
         "input": [
           { "name": "Coal", "amount": 2}, 
+          { "name": "Obsidian", "amount": 2},
           { "name": "Gold Ore", "amount": 1}
         ],
         "output": { "name": "Gold Bar", "amount": 1, "type": "inventory" }
@@ -52,13 +54,7 @@
       {
         "input": [
           { "name": "Coal", "amount": 2}, 
-          { "name": "Gold", "amount": 1}
-        ],
-        "output": { "name": "Gold Bar", "amount": 1, "type": "inventory" }
-      },
-      {
-        "input": [
-          { "name": "Coal", "amount": 2}, 
+          { "name": "Obsidian", "amount": 3},
           { "name": "Titanium Ore", "amount": 1}
         ],
         "output": { "name": "Titanium Bar", "amount": 1, "type": "inventory" }
