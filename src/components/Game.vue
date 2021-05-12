@@ -131,6 +131,9 @@
           </b-tab-item>
 
           <b-tab-item label="Debug" value="debug">
+            <b-field label="Item Rate Modifier">
+              <b-input v-model="itemRate"> </b-input>
+            </b-field>
             <b-button type="is-primary" label="Copy" @click="copy(state)" />
             <b-field>
               <b-input
@@ -235,6 +238,14 @@ export default {
       set(value) {
         this.setField({ name: "isDead", value: value });
         this.setField({ name: "isPaused", value: value });
+      },
+    },
+    itemRate: {
+      get() {
+        return this.$store.state.itemRateModifier;
+      },
+      set(value) {
+        this.setField({ name: "itemRateModifier", value: value });
       },
     },
     tab: {

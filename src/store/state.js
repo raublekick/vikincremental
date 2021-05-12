@@ -9,6 +9,7 @@ import bossData from "./bosses.json";
 import biomeData from "./biomes.json";
 
 export default {
+  itemRateModifier: 1,
   isPaused: false,
   isLoading: false,
   newCraft: false,

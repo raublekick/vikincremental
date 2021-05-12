@@ -89,11 +89,12 @@ export default new Vuex.Store({
         payload.key
       );
       if (index >= 0) {
-        state[payload.objectKey][index].amount += payload.amount;
+        state[payload.objectKey][index].amount +=
+          payload.amount * state.itemRateModifier;
       } else {
         state[payload.objectKey].push({
           name: payload.key,
-          amount: payload.amount,
+          amount: payload.amount * state.itemRateModifier,
         });
       }
     },
