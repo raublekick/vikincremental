@@ -144,6 +144,121 @@
               </b-input>
             </b-field>
           </b-tab-item>
+
+          <b-tab-item label="Instruction Manual" value="howto">
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">
+                What is Vikincremental?
+              </dt>
+              <dd>
+                Vikincremental is part incremental/idle game, part text
+                adventure, and part resource management game. Manage a party of
+                vikings through treacherous lands by performing tasks, exploring
+                dungeons, and challenging bosses.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">The Day Cycle</dt>
+              <dd>
+                Vikincremental works on a day cycle of 24 hours. At the
+                beginning of each day your vikings will rest, if able, restoring
+                and improving their health and stamina for the day. Each viking
+                will eat independently so make sure you have enough food for
+                all. Resting is only possible with beds and a fire, so be sure
+                to prioritize those items!<br /><br />
+
+                Also at the start of each day is the chance for a random enemy
+                encounter. The encounter chance is based on the number of
+                vikings in your party, as well as your comfort level and
+                fortification level.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">Housing</dt>
+              <dd>
+                Housing determines the maximum number of vikings available in
+                your party. New houses will become available as your progress
+                through the world. As you improve your housing, enemies will
+                find you a more attractive target.
+              </dd>
+
+              <dt class="has-text-weight-bold">Fortifications</dt>
+              <dd>
+                Fortifications mitigate the effects of a prosperous homestead.
+                Although optional, it may be in your best interest to make your
+                homestead as safe as possible.
+              </dd>
+
+              <dt class="has-text-weight-bold">Decorations</dt>
+              <dd>
+                Decorations affect the comfort level and attractiveness of your
+                homestead. Comfort determines the daily health and stamina
+                bonuses provided to your vikings.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">Workshop</dt>
+              <dd>
+                The workshop is where all of the tools to prosper can be found.
+              </dd>
+
+              <dt class="has-text-weight-bold">Workbench</dt>
+              <dd>Pertains mostly to woodworking and other simple crafts.</dd>
+
+              <dt class="has-text-weight-bold">Forge</dt>
+              <dd>The tools for smithing and crafting with metals.</dd>
+
+              <dt class="has-text-weight-bold">Processing</dt>
+              <dd>
+                Tools that, if enabled, will automatically process resources
+                based on pre-determined recipes.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">Tasks</dt>
+              <dd>
+                Tasks are generally controlled by equipment, but in some cases
+                certain workshop items must be built before a task can be used.
+                Tasks use up stamina so balancing the work of each viking is
+                vital to sucecss. <br /><br />Don't forget to check in on your
+                vikings to see if new tasks have become available.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">
+                Proving Grounds
+              </dt>
+              <dd>
+                The Proving Grounds are where vikings go to test their mettle.
+                In Delves, vikings will explore randomly generated dungeons
+                filled with treasure, enemies, and key items for facing each
+                boss.<br /><br />
+                Each biome tier has a unique boss that must be defeated before
+                your party can move to the next area. Find the keys in Delves to
+                be able to challenge each boss.
+              </dd>
+            </dl>
+
+            <dl>
+              <dt class="has-text-weight-bold subtitle mt-4">
+                The Cycle of Death and Rebirth
+              </dt>
+              <dd>
+                Death is not always a bad outcome of battle. If your entire
+                party falls in battle, your vikings will be rewarded based on
+                progression through the game.<br /><br />
+                However, after a victory in battle, and vikings who did not
+                survive will be gone forever. These vikings can be replaced by
+                summoning new vikings. New vikings will not be bestowed with the
+                powers gifted to other vikings.
+              </dd>
+            </dl>
+          </b-tab-item>
         </b-tabs>
       </div>
     </div>
