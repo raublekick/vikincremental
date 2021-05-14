@@ -33,6 +33,29 @@
         </div>
       </template>
     </panel>
+
+    <panel heading="Corpse Pile" v-if="ripVikings.length">
+      <template slot="content">
+        <div class="item" v-for="(viking, index) in ripVikings" :key="index">
+          <div class="columns">
+            <div class="column">
+              <div>{{ viking.name }}</div>
+            </div>
+            <div class="column">
+              <b-tooltip
+                class="is-pulled-right"
+                label="Retain this viking's gear but send them off to Valhalla. You will be able to summon a new viking in their place. However, the new viking will not have the bonuses earned by this viking."
+                type="is-primary is-light"
+              >
+                <b-button type="is-danger" @click="burnViking(viking)"
+                  >Honor in Pyre</b-button
+                >
+              </b-tooltip>
+            </div>
+          </div>
+        </div>
+      </template>
+    </panel>
   </section>
 </template>
 <script>
@@ -57,13 +80,16 @@ export default {
   },
 
   computed: {
-    ...mapState(["vikings", "maxVikings", "house"]),
+    ...mapState(["vikings", "ripVikings", "maxVikings", "house"]),
     canCreateViking() {
-      if (this.vikings.length >= this.maxVikings) {
+      if (this.vikings.length + this.ripVikings.length >= this.maxVikings) {
         return false;
       }
 
-      if (this.vikings.length >= this.house.beds && this.vikings.length >= 1) {
+      if (
+        this.vikings.length + this.ripVikings.length >= this.house.beds &&
+        this.vikings.length >= 1
+      ) {
         return false;
       }
 
@@ -72,7 +98,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["createViking"]),
+    ...mapActions(["createViking", "burnViking"]),
   },
 
   created() {

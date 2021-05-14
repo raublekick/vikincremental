@@ -269,7 +269,7 @@
           <button type="button" class="delete" @click="dead = false" />
         </header>
         <section class="modal-card-body">
-          {{ deathMessage }}
+          <div v-html="deathMessage"></div>
         </section>
         <footer class="modal-card-foot">
           <b-button label="Close" @click="dead = false" />

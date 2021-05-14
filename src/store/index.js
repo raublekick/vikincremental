@@ -189,7 +189,7 @@ export default new Vuex.Store({
       // get how many enemies to add
       var numberOfEnemies = mixin.methods.randomIntFromInterval(
         1,
-        state.vikings.length
+        state.vikings.length + state.ripVikings.length
       );
       var threshold = Math.random();
 
@@ -422,6 +422,9 @@ export default new Vuex.Store({
                   state.enemies[targetIndex].name
                 );
                 boss.defeated = true;
+                _.forEach(state.vikings, (viking) => {
+                  viking.bossesDefeated += 1;
+                });
                 boss.health = boss.maxHealth;
                 boss.stamina = boss.maxStamina;
                 if (boss.worldTier === state.worldTier) {
@@ -442,7 +445,7 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
-              state.ripVikings = [];
+              //state.ripVikings = [];
               state.battleLog +=
                 "<span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>";
               if (state.bossCombat) {
@@ -579,11 +582,6 @@ export default new Vuex.Store({
             state.deathHeader = msg;
 
             // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
-            var bossesDefeated = _.filter(state.bossList, (boss) => {
-              return boss.defeated === true;
-            }).length;
-            var bonus = bossesDefeated;
-
             if (state.bossCombat) {
               state.bossList[state.worldTier].health =
                 state.bossList[state.worldTier].maxHealth;
@@ -591,25 +589,32 @@ export default new Vuex.Store({
                 state.bossList[state.worldTier].maxStamina;
             }
             msg =
-              "For your bravery, you are reborn with a bonus " +
-              bossesDefeated +
-              " point each to maximum health, health regen, maximum stamina, and stamina regen.";
+              "For your bravery, you are reborn with the following bonuses:";
             state.battleLog += msg + "<br/>";
-            state.deathMessage = msg;
+            state.deathMessage = msg + "<br/>";
             state.isDead = true;
             state.isPaused = true;
             _.forEach(state.ripVikings, (viking) => {
+              var vMsg =
+                viking.name +
+                " gets " +
+                viking.bossesDefeated +
+                " point to maximum health, health regen, maximum stamina, and stamina regen.";
+              state.battleLog += vMsg + "<br/>";
+              state.deathMessage += vMsg + "<br/>";
               viking.tasks = [];
-              viking.baseHealthRegen += bonus;
-              viking.baseStaminaRegen += bonus;
-              viking.baseHealth += bonus;
-              viking.baseStamina += bonus;
+              viking.gear = [];
+              viking.baseHealthRegen += viking.bossesDefeated;
+              viking.baseStaminaRegen += viking.bossesDefeated;
+              viking.baseHealth += viking.bossesDefeated;
+              viking.baseStamina += viking.bossesDefeated;
               viking.maxHealth = viking.baseHealth;
               viking.maxStamina = viking.baseStamina;
               viking.health = viking.baseHealth;
               viking.stamina = viking.baseStamina;
               viking.staminaRegen = viking.baseStaminaRegen;
               viking.healthRegen = viking.baseHealthRegen;
+              viking.bossesDefeated = 0;
             });
             state.vikings = _.clone(state.ripVikings);
             state.ripVikings = [];
@@ -704,7 +709,7 @@ export default new Vuex.Store({
 
         state.encounterChance =
           state.baseEncounterChance +
-          state.vikings.length / 100 +
+          (state.vikings.length + state.ripVikings.length) / 100 +
           (state.comfort * 3) / 100 -
           (state.fortification * 2.5) / 100;
       }
@@ -723,7 +728,7 @@ export default new Vuex.Store({
       await dispatch("processingTick");
     },
     async createViking({ state, commit }, name) {
-      if (state.vikings.length < state.maxVikings) {
+      if (state.vikings.length + state.ripVikings.length < state.maxVikings) {
         let newViking = JSON.parse(JSON.stringify(defaultViking));
         newViking.birthday = state.day.totalDays;
         if (name) {
@@ -734,6 +739,18 @@ export default new Vuex.Store({
 
         commit("addViking", newViking);
       }
+    },
+    async burnViking({ state, commit }, viking) {
+      var index = mixin.methods.findIndex(state["ripVikings"], viking.name);
+      var newViking = _.clone(state.ripVikings[index]);
+      commit("removeObject", {
+        objectKey: "ripVikings",
+        index: index,
+      });
+
+      _.forEach(newViking.gear, (gear) => {
+        state.gear.push(gear);
+      });
     },
     async unequipGear({ state, commit }, payload) {
       commit("removeGear", payload);

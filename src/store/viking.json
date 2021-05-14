@@ -14,5 +14,6 @@
   "tasks": [],
   "foodPreference": "best",
   "birthday": 0,
-  "deathday": 0
+  "deathday": 0,
+  "bossesDefeated": 0
 }
