@@ -185,8 +185,8 @@
     "healthRegen": 1,
     "baseHealthRegen": 1,
     "attacks": [
-      { "name": "Possess", "damage": 30, "stamina": 15, "accuracy": 0.80 },
-      { "name": "Frighten", "damage": 50, "stamina": 15, "accuracy": 0.55 }
+      { "name": "Possess", "damage": 40, "stamina": 15, "accuracy": 0.80 },
+      { "name": "Frighten", "damage": 70, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Chains", "amount": 1 }
@@ -207,7 +207,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Sword Swing", "damage": 40, "stamina": 10, "accuracy": 0.5 }
+      { "name": "Sword Swing", "damage": 50, "stamina": 10, "accuracy": 0.5 }
     ],
     "drops": [
       { "name": "Bones", "amount": 1 }
@@ -228,8 +228,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Swing", "damage": 45, "stamina": 15, "accuracy": 0.65 },
-      { "name": "Bash", "damage": 35, "stamina": 15, "accuracy": 0.80 }
+      { "name": "Swing", "damage": 55, "stamina": 15, "accuracy": 0.65 },
+      { "name": "Bash", "damage": 40, "stamina": 15, "accuracy": 0.80 }
     ],
     "drops": [
       { "name": "Entrails", "amount": 4 }
@@ -250,8 +250,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Foul Stench", "damage": 50, "stamina": 5, "accuracy": 0.3 },
-      { "name": "Lunge", "damage": 60, "stamina": 10, "accuracy": 0.2 }
+      { "name": "Foul Stench", "damage": 60, "stamina": 5, "accuracy": 0.3 },
+      { "name": "Lunge", "damage": 80, "stamina": 10, "accuracy": 0.2 }
     ],
     "drops": [
       { "name": "Resin", "amount": 4 }
