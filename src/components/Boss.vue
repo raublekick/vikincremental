@@ -5,7 +5,7 @@
     </div>
     <div class="column">
       <div v-for="component in item.components" :key="component.name">
-        {{ component.name }}: {{ component.amount }}
+        <crafting-component :component="component" />
       </div>
     </div>
     <div class="column has-text-right">
@@ -20,6 +20,7 @@
   </div>
 </template>
 <script>
+import CraftingComponent from "@/components/CraftingComponent";
 import { mapState, mapActions } from "vuex";
 import mixin from "@/store/mixin";
 export default {
@@ -29,6 +30,10 @@ export default {
   },
 
   mixins: [mixin],
+
+  components: {
+    CraftingComponent,
+  },
 
   props: {
     item: {

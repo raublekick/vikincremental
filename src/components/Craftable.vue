@@ -21,12 +21,12 @@
           </b-tooltip>
         </div>
       </div>
-      <div class="column">
+      <div class="column is-6">
         <div v-for="component in item.components" :key="component.name">
-          {{ component.name }}: {{ component.amount }}
+          <crafting-component :component="component" />
         </div>
       </div>
-      <div class="column has-text-right">
+      <div class="column has-text-right is-2">
         <b-button
           size="is-small"
           :disabled="!canCraft"
@@ -41,6 +41,7 @@
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
 import mixin from "@/store/mixin";
+import CraftingComponent from "./CraftingComponent.vue";
 export default {
   name: "Craftable",
   data() {
@@ -48,6 +49,10 @@ export default {
   },
 
   mixins: [mixin],
+
+  components: {
+    CraftingComponent,
+  },
 
   props: {
     item: {

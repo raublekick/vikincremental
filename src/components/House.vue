@@ -3,9 +3,6 @@
     <div class="columns">
       <div class="column">
         <div class="is-size-5">{{ item.name }}</div>
-        <div v-for="component in item.components" :key="component.name">
-          {{ component.name }}: {{ component.amount }}
-        </div>
       </div>
       <div class="column has-text-right">
         Beds: {{ item.beds }}
@@ -18,10 +15,14 @@
         >
       </div>
     </div>
+    <div v-for="component in item.components" :key="component.name">
+      <crafting-component :component="component" />
+    </div>
   </div>
 </template>
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
+import CraftingComponent from "@/components/CraftingComponent";
 import mixin from "@/store/mixin";
 export default {
   name: "House",
@@ -30,6 +31,10 @@ export default {
   },
 
   mixins: [mixin],
+
+  components: {
+    CraftingComponent,
+  },
 
   props: {
     item: {

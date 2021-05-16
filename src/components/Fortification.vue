@@ -17,7 +17,7 @@
       <div class="column house-input">
         <div v-if="!item.built">
           <div v-for="component in item.components" :key="component.name">
-            {{ component.name }}: {{ component.amount }}
+            <crafting-component :component="component" />
           </div>
         </div>
         <div v-else-if="item.built && item.enabled">
@@ -30,6 +30,7 @@
   </div>
 </template>
 <script>
+import CraftingComponent from "@/components/CraftingComponent";
 import { mapState, mapActions, mapMutations } from "vuex";
 import mixin from "@/store/mixin";
 export default {
@@ -39,6 +40,10 @@ export default {
   },
 
   mixins: [mixin],
+
+  components: {
+    CraftingComponent,
+  },
 
   props: {
     item: {
