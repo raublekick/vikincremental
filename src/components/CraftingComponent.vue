@@ -34,7 +34,7 @@ export default {
       return 0;
     },
     availableClass() {
-      return this.available > this.component.amount
+      return this.available >= this.component.amount
         ? "has-text-success"
         : "has-text-danger";
     },
