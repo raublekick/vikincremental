@@ -36,11 +36,11 @@ export default new Vuex.Store({
   mutations: {
     init(state, payload) {
       Object.assign(state, payload);
-      state.enemyList = defaultState.enemyList;
-      state.biomes = defaultState.biomes;
-      state.bossList = defaultState.bossList;
-      state.tasks = defaultState.tasks;
-      state.craftables = defaultState.craftables;
+      // state.enemyList = defaultState.enemyList;
+      // state.biomes = defaultState.biomes;
+      // state.bossList = defaultState.bossList;
+      // state.tasks = defaultState.tasks;
+      // state.craftables = defaultState.craftables;
     },
     setField(state, payload) {
       state[payload.name] = payload.value;
