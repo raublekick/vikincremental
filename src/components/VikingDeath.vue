@@ -22,8 +22,8 @@
           @click.prevent="
             destroyGear({ gearIndex: gIndex, vikingIndex: index })
           "
-          >Destroy</a
-        >
+          >Destroy ( -{{ gear.cost }} )
+        </a>
         )
       </b-field>
     </div>
