@@ -59,7 +59,8 @@
       { "name": "Sword Swing", "damage": 15, "stamina": 10, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Bones", "amount": 1 }
+      { "name": "Bones", "amount": 1 },
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -80,7 +81,8 @@
       { "name": "Sword Swing", "damage": 20, "stamina": 10, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Bones", "amount": 1 }
+      { "name": "Bones", "amount": 1 },
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -144,7 +146,7 @@
       { "name": "Club Swipe", "damage": 20, "stamina": 20, "accuracy": 0.45 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 },
+      { "name": "Ichor", "amount": 5 },
       { "name": "Troll Hide", "amount": 5}
     ]
   },
@@ -167,7 +169,8 @@
       { "name": "Rock Throw", "damage": 30, "stamina": 20, "accuracy": 0.35 }
     ],
     "drops": [
-      { "name": "Troll Hide", "amount": 5 }
+      { "name": "Troll Hide", "amount": 5 },
+      { "name": "Ichor", "amount": 5 }
     ]
   },
   {
@@ -189,7 +192,8 @@
       { "name": "Frighten", "damage": 70, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Chains", "amount": 1 }
+      { "name": "Chains", "amount": 1 },
+      { "name": "Ichor", "amount": 2 }
     ]
   },
   {
@@ -210,7 +214,8 @@
       { "name": "Sword Swing", "damage": 50, "stamina": 10, "accuracy": 0.5 }
     ],
     "drops": [
-      { "name": "Bones", "amount": 1 }
+      { "name": "Bones", "amount": 1 },
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -232,7 +237,8 @@
       { "name": "Bash", "damage": 40, "stamina": 15, "accuracy": 0.80 }
     ],
     "drops": [
-      { "name": "Entrails", "amount": 4 }
+      { "name": "Entrails", "amount": 4 },
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -254,7 +260,8 @@
       { "name": "Lunge", "damage": 80, "stamina": 10, "accuracy": 0.2 }
     ],
     "drops": [
-      { "name": "Resin", "amount": 4 }
+      { "name": "Resin", "amount": 4 },
+      { "name": "Ichor", "amount": 2 }
     ]
   },
   {
@@ -300,7 +307,7 @@
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 5 },
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 2 }
     ]
   },
   {
@@ -344,7 +351,8 @@
       { "name": "Sword Swing", "damage": 45, "stamina": 10, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Bones", "amount": 1 }
+      { "name": "Bones", "amount": 1 },
+      { "name": "Ichor", "amount": 1 }
     ]
   },
   {
@@ -408,7 +416,7 @@
       { "name": "Slash", "damage": 50, "stamina": 25, "accuracy": 0.65 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 2 }
     ]
   },
   {
@@ -430,7 +438,7 @@
       { "name": "Pound", "damage": 60, "stamina": 25, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 3 }
     ]
   },
   
@@ -453,7 +461,7 @@
       { "name": "Stab", "damage": 90, "stamina": 30, "accuracy": 0.55 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 4 }
     ]
   },
   {
@@ -498,7 +506,7 @@
     ],
     "drops": [
       { "name": "Chains", "amount": 1 },
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 2 }
     ]
   },
   {
@@ -521,7 +529,7 @@
     ],
     "drops": [
       { "name": "Chains", "amount": 1 },
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 2 }
     ]
   },
 
@@ -544,7 +552,7 @@
       { "name": "Engulf", "damage": 80, "stamina": 15, "accuracy": 0.45 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 1 }
+      { "name": "Ichor", "amount": 5 }
     ]
   }
 ]

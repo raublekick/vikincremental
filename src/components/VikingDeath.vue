@@ -31,6 +31,7 @@
 </template>
 <script>
 import { mapActions } from "vuex";
+import * as _ from "lodash";
 export default {
   name: "VikingDeath",
   data() {
@@ -56,7 +57,12 @@ export default {
 
   computed: {
     cost() {
-      return 1;
+      return (
+        this.item.healthRegen +
+        _.sumBy(this.item.gear, (gear) => {
+          return gear.cost ? gear.cost : 0;
+        })
+      );
     },
   },
 
