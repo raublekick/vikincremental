@@ -1,0 +1,65 @@
+<template>
+  <div>
+    <div>
+      <span>{{ item.name }}</span>
+      <b-tooltip
+        class="is-pulled-right"
+        label="Bring this viking back to the realm of the living, at a cost."
+        type="is-primary is-light"
+      >
+        <b-button
+          type="is-danger"
+          @click="reviveViking({ viking: item, cost: cost })"
+          >{{ cost }} Ichor</b-button
+        >
+      </b-tooltip>
+    </div>
+
+    <div v-for="(gear, gIndex) in item.gear" :key="gIndex">
+      <b-field>
+        {{ gear.name }} (
+        <a
+          @click.prevent="
+            destroyGear({ gearIndex: gIndex, vikingIndex: index })
+          "
+          >Destroy</a
+        >
+        )
+      </b-field>
+    </div>
+  </div>
+</template>
+<script>
+import { mapActions } from "vuex";
+export default {
+  name: "VikingDeath",
+  data() {
+    return {};
+  },
+
+  props: {
+    item: {
+      type: Object,
+      required: true,
+      default() {
+        return {};
+      },
+    },
+    index: {
+      type: Number,
+      required: true,
+      default() {
+        return 0;
+      },
+    },
+  },
+
+  computed: {
+    cost() {
+      return 1;
+    },
+  },
+
+  methods: { ...mapActions(["destroyGear", "reviveViking"]) },
+};
+</script>

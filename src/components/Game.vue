@@ -266,13 +266,15 @@
       <div class="modal-card" style="width: auto">
         <header class="modal-card-head">
           <p class="modal-card-title">{{ deathHeader }}</p>
-          <button type="button" class="delete" @click="dead = false" />
+          <button type="button" class="delete" @click="clearDead()" />
         </header>
         <section class="modal-card-body">
-          <div v-html="deathMessage"></div>
+          <div class="item" v-for="(viking, index) in ripVikings" :key="index">
+            <viking-death :item="viking" :index="index" />
+          </div>
         </section>
         <footer class="modal-card-foot">
-          <b-button label="Close" @click="dead = false" />
+          <b-button label="Close" @click="clearDead()" />
         </footer>
       </div>
     </b-modal>
@@ -282,6 +284,7 @@
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
 import Vikings from "@/components/Vikings";
+import VikingDeath from "@/components/VikingDeath";
 import Inventory from "@/components/Inventory";
 import Craftables from "@/components/Craftables";
 import Houses from "@/components/Houses";
@@ -302,6 +305,7 @@ export default {
 
   components: {
     Vikings,
+    VikingDeath,
     Inventory,
     Craftables,
     Gear,
@@ -337,6 +341,7 @@ export default {
       "isDead",
       "deathHeader",
       "deathMessage",
+      "ripVikings",
     ]),
     state: {
       get() {
@@ -376,7 +381,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["tick", "saveToDb", "reset"]),
+    ...mapActions(["tick", "saveToDb", "reset", "clearDead"]),
     ...mapMutations(["setField", "setField", "init"]),
     clearNewItem(event) {
       console.log(event);

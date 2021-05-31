@@ -129,6 +129,11 @@ export default new Vuex.Store({
       state.vikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
       state.gear.push(gear);
     },
+    convertGear(state, payload) {
+      //var gear = state.ripVikings[payload.vikingIndex].gear[payload.gearIndex];
+      state.ripVikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
+      //state.gear.push(gear);
+    },
     removeTask(state, payload) {
       var taskIndex = _.findIndex(
         state.vikings[payload.vikingIndex].tasks,
@@ -450,7 +455,6 @@ export default new Vuex.Store({
             // reset combat if all enemies are defeated
             if (!state.enemies.length) {
               state.combat = false;
-              //state.ripVikings = [];
               state.battleLog +=
                 "<span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>";
               if (state.bossCombat) {
@@ -586,56 +590,60 @@ export default new Vuex.Store({
               "</span><br/><br/>";
             state.deathHeader = msg;
 
-            // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
-            if (state.bossCombat) {
-              state.bossList[state.worldTier].health =
-                state.bossList[state.worldTier].maxHealth;
-              state.bossList[state.worldTier].stamina =
-                state.bossList[state.worldTier].maxStamina;
-            }
-            msg =
-              "For your bravery, you are reborn with the following bonuses:";
-            state.battleLog += msg + "<br/>";
-            state.deathMessage = msg + "<br/>";
+            // msg =
+            //   "For your bravery, you are reborn with the following bonuses:";
+            // state.battleLog += msg + "<br/>";
+            // state.deathMessage = msg + "<br/>";
             state.isDead = true;
             state.isPaused = true;
-            _.forEach(state.ripVikings, (viking) => {
-              var vMsg =
-                viking.name +
-                " gets " +
-                viking.bossesDefeated +
-                " point to maximum health, health regen, maximum stamina, and stamina regen.";
-              state.battleLog += vMsg + "<br/>";
-              state.deathMessage += vMsg + "<br/>";
-              viking.tasks = [];
-              viking.gear = [];
-              viking.baseHealthRegen += viking.bossesDefeated;
-              viking.baseStaminaRegen += viking.bossesDefeated;
-              viking.baseHealth += viking.bossesDefeated;
-              viking.baseStamina += viking.bossesDefeated;
-              viking.maxHealth = viking.baseHealth;
-              viking.maxStamina = viking.baseStamina;
-              viking.health = viking.baseHealth;
-              viking.stamina = viking.baseStamina;
-              viking.staminaRegen = viking.baseStaminaRegen;
-              viking.healthRegen = viking.baseHealthRegen;
-              viking.bossesDefeated = 0;
-            });
-            state.vikings = _.clone(state.ripVikings);
-            state.ripVikings = [];
-
-            // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
-            state.enemies = [];
-            state.combat = false;
-            state.delve = false;
-            state.bossCombat = false;
-            state.worldTier = 0;
-            state.ripVikings = [];
-            state.bossList = _.clone(defaultState.bossList);
-            state.biomes = _.clone(defaultState.biomes);
+            // _.forEach(state.ripVikings, (viking) => {
+            //   var vMsg =
+            //     viking.name +
+            //     " gets " +
+            //     viking.bossesDefeated +
+            //     " point to maximum health, health regen, maximum stamina, and stamina regen.";
+            //   state.battleLog += vMsg + "<br/>";
+            //   state.deathMessage += vMsg + "<br/>";
+            //   viking.tasks = [];
+            //   // viking.gear = [];
+            //   viking.baseHealthRegen += viking.bossesDefeated;
+            //   viking.baseStaminaRegen += viking.bossesDefeated;
+            //   viking.baseHealth += viking.bossesDefeated;
+            //   viking.baseStamina += viking.bossesDefeated;
+            //   viking.maxHealth = viking.baseHealth;
+            //   viking.maxStamina = viking.baseStamina;
+            //   viking.health = viking.baseHealth;
+            //   viking.stamina = viking.baseStamina;
+            //   viking.staminaRegen = viking.baseStaminaRegen;
+            //   viking.healthRegen = viking.baseHealthRegen;
+            //   viking.bossesDefeated = 0;
+            // });
+            // state.vikings = _.clone(state.ripVikings);
+            // state.ripVikings = [];
           }
         });
       }
+    },
+    async clearDead({ state }) {
+      // reset viking tasks, give bonus to base max health, stamina, health regen, and stamina regen, reset health and stamina
+      if (state.bossCombat) {
+        state.bossList[state.worldTier].health =
+          state.bossList[state.worldTier].maxHealth;
+        state.bossList[state.worldTier].stamina =
+          state.bossList[state.worldTier].maxStamina;
+      }
+
+      // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
+      state.enemies = [];
+      state.combat = false;
+      state.delve = false;
+      state.bossCombat = false;
+      state.worldTier = 0;
+      state.ripVikings = [];
+      state.bossList = _.clone(defaultState.bossList);
+      state.biomes = _.clone(defaultState.biomes);
+      state.isPaused = false;
+      state.isDead = false;
     },
     async processItems({ state, commit }, processing) {
       // if enough input exists in inventory, remove it and add output to inventory
@@ -755,6 +763,73 @@ export default new Vuex.Store({
 
       _.forEach(newViking.gear, (gear) => {
         state.gear.push(gear);
+      });
+    },
+    async reviveViking({ state, commit }, payload) {
+      var viking = payload.viking;
+      var cost = payload.cost;
+      var vMsg =
+        viking.name +
+        " gets " +
+        viking.bossesDefeated +
+        " point to maximum health, health regen, maximum stamina, and stamina regen.";
+      state.battleLog += vMsg + "<br/>";
+      state.deathMessage += vMsg + "<br/>";
+      viking.tasks = [];
+      viking.baseHealthRegen += viking.bossesDefeated;
+      viking.baseStaminaRegen += viking.bossesDefeated;
+      viking.baseHealth += viking.bossesDefeated;
+      viking.baseStamina += viking.bossesDefeated;
+      viking.maxHealth = viking.baseHealth;
+      viking.maxStamina = viking.baseStamina;
+      viking.health = viking.baseHealth;
+      viking.stamina = viking.baseStamina;
+      viking.staminaRegen = viking.baseStaminaRegen;
+      viking.healthRegen = viking.baseHealthRegen;
+      viking.bossesDefeated = 0;
+      state.vikings.push(_.clone(viking));
+
+      commit("decrementObject", {
+        objectKey: "inventory",
+        key: "Ichor",
+        amount: cost,
+      });
+
+      var index = mixin.methods.findIndex(state["ripVikings"], viking.name);
+      commit("removeObject", {
+        objectKey: "ripVikings",
+        index: index,
+      });
+    },
+    async destroyGear({ state, commit }, payload) {
+      commit("convertGear", payload);
+
+      // remove tasks that are no longer allowed
+      var tasks = _.filter(
+        state.ripVikings[payload.vikingIndex].tasks,
+        (task) => {
+          if (!task.requirements || !task.requirements.length) {
+            return false;
+          }
+
+          var requirementsMet = _.filter(task.requirements, (requirement) => {
+            return _.filter(
+              state.ripVikings[payload.vikingIndex].gear,
+              (gear) => {
+                return gear.name === requirement;
+              }
+            ).length;
+          }).length;
+
+          return requirementsMet <= 0;
+        }
+      );
+
+      _.forEach(tasks, (task) => {
+        commit("removeTask", {
+          vikingIndex: payload.vikingIndex,
+          task: task,
+        });
       });
     },
     async unequipGear({ state, commit }, payload) {

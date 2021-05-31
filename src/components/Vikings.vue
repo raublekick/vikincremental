@@ -41,7 +41,7 @@
             <div class="column">
               <div>{{ viking.name }}</div>
             </div>
-            <div class="column">
+            <!-- <div class="column">
               <b-tooltip
                 class="is-pulled-right"
                 label="Retain this viking's gear but send them off to Valhalla. You will be able to summon a new viking in their place. However, the new viking will not have the bonuses earned by this viking."
@@ -51,7 +51,7 @@
                   >Honor in Pyre</b-button
                 >
               </b-tooltip>
-            </div>
+            </div> -->
           </div>
         </div>
       </template>
