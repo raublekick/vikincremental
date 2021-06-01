@@ -72,12 +72,7 @@ export default {
 
   computed: {
     cost() {
-      return Math.floor(
-        this.item.healthRegen +
-          _.sumBy(this.item.gear, (gear) => {
-            return gear.cost ? gear.cost : 0;
-          })
-      );
+      return Math.floor(this.item.baseHealth + this.item.bossesDefeated);
     },
   },
 
