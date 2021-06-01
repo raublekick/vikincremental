@@ -46,7 +46,7 @@
 </template>
 <script>
 import { mapActions } from "vuex";
-import * as _ from "lodash";
+
 export default {
   name: "VikingDeath",
   data() {
