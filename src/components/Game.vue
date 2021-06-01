@@ -269,9 +269,39 @@
           <button type="button" class="delete" @click="clearDead()" />
         </header>
         <section class="modal-card-body">
-          <div class="item" v-for="(viking, index) in ripVikings" :key="index">
-            <viking-death :item="viking" :index="index" />
+          <div>
+            Your bravery is not forgotten. You may choose to revive your vikings
+            at a cost. Shed the burden of material possessions to ease the cost.
           </div>
+
+          <div>Ichor: {{ ichor }}</div>
+          <b-tabs @input="clearNewItem">
+            <b-tab-item label="Vikings">
+              <div
+                class="item"
+                v-for="(viking, index) in ripVikings"
+                :key="index"
+              >
+                <viking-death :item="viking" :index="index" />
+              </div>
+            </b-tab-item>
+
+            <b-tab-item label="Gear">
+              <div v-for="(item, index) in gear" :key="index" class="item">
+                <div class="columns">
+                  <div class="column">{{ item.name }}</div>
+                  <div class="column">Value: {{ item.cost }} Ichor</div>
+                  <div class="column">
+                    <a
+                      class="button is-small is-primary is-pulled-right"
+                      @click.prevent="convertGear({ item: item, index: index })"
+                      >Convert</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </b-tab-item>
+          </b-tabs>
         </section>
         <footer class="modal-card-foot">
           <b-button label="Close" @click="clearDead()" />
@@ -293,6 +323,7 @@ import Fortifications from "@/components/Fortifications";
 import Gear from "@/components/Gear";
 import Combat from "@/components/Combat";
 import ProvingGrounds from "@/components/ProvingGrounds";
+import mixin from "@/store/mixin";
 
 export default {
   name: "Game",
@@ -302,6 +333,8 @@ export default {
       search: "",
     };
   },
+
+  mixins: [mixin],
 
   components: {
     Vikings,
@@ -342,6 +375,7 @@ export default {
       "deathHeader",
       "deathMessage",
       "ripVikings",
+      "gear",
     ]),
     state: {
       get() {
@@ -359,6 +393,9 @@ export default {
         this.setField({ name: "isDead", value: value });
         this.setField({ name: "isPaused", value: value });
       },
+    },
+    ichor() {
+      return this.findItem(this.inventory, "Ichor").amount;
     },
     itemRate: {
       get() {
@@ -381,7 +418,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["tick", "saveToDb", "reset", "clearDead"]),
+    ...mapActions(["tick", "saveToDb", "reset", "clearDead", "convertGear"]),
     ...mapMutations(["setField", "setField", "init"]),
     clearNewItem(event) {
       console.log(event);

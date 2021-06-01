@@ -129,10 +129,11 @@ export default new Vuex.Store({
       state.vikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
       state.gear.push(gear);
     },
-    convertGear(state, payload) {
-      //var gear = state.ripVikings[payload.vikingIndex].gear[payload.gearIndex];
+    destroyVikingGear(state, payload) {
       state.ripVikings[payload.vikingIndex].gear.splice(payload.gearIndex, 1);
-      //state.gear.push(gear);
+    },
+    destroyGear(state, payload) {
+      state.gear.splice(payload.index, 1);
     },
     removeTask(state, payload) {
       var taskIndex = _.findIndex(
@@ -801,8 +802,17 @@ export default new Vuex.Store({
         index: index,
       });
     },
-    async destroyGear({ state, commit }, payload) {
-      commit("convertGear", payload);
+    async convertVikingGear({ state, commit }, payload) {
+      var ichor = payload.item.cost;
+      commit("incrementObject", {
+        objectKey: "inventory",
+        key: "Ichor",
+        amount: ichor,
+      });
+      commit("destroyVikingGear", {
+        gearIndex: payload.gearIndex,
+        vikingIndex: payload.vikingIndex,
+      });
 
       // remove tasks that are no longer allowed
       var tasks = _.filter(
@@ -831,6 +841,17 @@ export default new Vuex.Store({
           task: task,
         });
       });
+    },
+    async convertGear({ commit }, payload) {
+      var ichor = payload.item.cost;
+
+      commit("incrementObject", {
+        objectKey: "inventory",
+        key: "Ichor",
+        amount: ichor,
+      });
+
+      commit("destroyGear", payload);
     },
     async unequipGear({ state, commit }, payload) {
       commit("removeGear", payload);
