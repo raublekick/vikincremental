@@ -12,7 +12,7 @@
     "baseHealthRegen": 0,
     "defeated": false,
     "components": [
-      { "name": "Ikon of the Bounty", "amount": 3 }
+      { "name": "Ikon of the Bounty", "amount": 1 }
     ],
     "attacks": [
       { "name": "Attack 1", "damage": 50, "stamina": 30, "accuracy": 0.15 },
@@ -21,7 +21,7 @@
     ],
     "artifacts": [{ "name": "Mother's Memory", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 2 },
+      { "name": "Ichor", "amount": 10 },
       { "name": "Large Bone", "amount": 1 }
     ]
   },
@@ -47,7 +47,7 @@
     ],
     "artifacts": [{ "name": "Eternal Blossom", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 3 }
+      { "name": "Ichor", "amount": 15 }
     ]
   },
   {
@@ -72,7 +72,8 @@
     ],
     "artifacts": [{ "name": "Brackish Sludge", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }
+      { "name": "Ichor", "amount": 20 },
+      { "name": "Sharpening Stone", "amount": 1 }
     ]
   },
   {
@@ -97,7 +98,7 @@
     ],
     "artifacts": [{ "name": "Heart of the Mountain", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }, 
+      { "name": "Ichor", "amount": 25 }, 
       { "name": "Ichor Shard", "amount": 1 }
     ]
   },
@@ -123,7 +124,7 @@
     ],
     "artifacts": [{ "name": "Endless Breeze", "amount": 1 }],
     "drops": [
-      { "name": "Ichor", "amount": 10 }, 
+      { "name": "Ichor", "amount": 30 }, 
       { "name": "Ichor Shard", "amount": 2 }
     ]
   },
@@ -199,7 +200,7 @@
     ],
     "artifacts": [],
     "drops": [
-      { "name": "Ichor", "amount": 100 }, 
+      { "name": "Ichor", "amount": 200 }, 
       { "name": "Ichor Shard", "amount": 10 }
     ]
   }

@@ -201,7 +201,8 @@
       {
         "name": "Ichor Shard",
         "amount": 5
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 8,
     "combat": {
@@ -321,7 +322,8 @@
       {
         "name": "Mother's Memory",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -365,7 +367,8 @@
       {
         "name": "Eternal Blossom",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -405,7 +408,8 @@
       {
         "name": "Brackish Sludge",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -449,7 +453,8 @@
       {
         "name": "Heart of the Mountain",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -493,7 +498,8 @@
       {
         "name": "Endless Breeze",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -533,7 +539,8 @@
       {
         "name": "Ancient Fragment",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
@@ -581,7 +588,8 @@
       {
         "name": "Endless Flame",
         "amount": 1
-      }
+      },
+      { "name": "Sharpening Stone", "amount": 1 }
     ],
     "cost": 20,
     "combat": {
