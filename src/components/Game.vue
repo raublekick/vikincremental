@@ -395,7 +395,8 @@ export default {
       },
     },
     ichor() {
-      return this.findItem(this.inventory, "Ichor").amount;
+      var item = this.findItem(this.inventory, "Ichor");
+      return item ? item.amount : 0;
     },
     itemRate: {
       get() {

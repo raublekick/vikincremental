@@ -25,9 +25,14 @@ export default {
     },
   },
   computed: {
-    ...mapState(["inventory"]),
+    ...mapState(["inventory", "food"]),
     available() {
-      var item = this.findItem(this.inventory, this.component.name);
+      var item = {};
+      if (this.component.type && this.component.type === "food") {
+        item = this.findItem(this.food, this.component.name);
+      } else {
+        item = this.findItem(this.inventory, this.component.name);
+      }
       if (item) {
         return Math.floor(item.amount);
       }

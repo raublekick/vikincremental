@@ -12,6 +12,7 @@
         >
           <b-button
             type="is-danger"
+            :disabled="ichor < cost"
             @click="reviveViking({ viking: item, cost: cost })"
             >{{ cost }} Ichor</b-button
           >
@@ -45,13 +46,16 @@
   </div>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
+import mixin from "@/store/mixin";
 
 export default {
   name: "VikingDeath",
   data() {
     return {};
   },
+
+  mixins: [mixin],
 
   props: {
     item: {
@@ -71,8 +75,12 @@ export default {
   },
 
   computed: {
+    ...mapState(["inventory"]),
     cost() {
       return Math.floor(this.item.baseHealth + this.item.bossesDefeated);
+    },
+    ichor() {
+      return this.findItem(this.inventory, "Ichor").amount;
     },
   },
 
