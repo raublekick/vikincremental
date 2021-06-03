@@ -262,7 +262,7 @@
         </b-tabs>
       </div>
     </div>
-    <b-modal v-model="dead">
+    <b-modal v-model="dead" :can-cancel="false">
       <div class="modal-card" style="width: auto">
         <header class="modal-card-head">
           <p class="modal-card-title">{{ deathHeader }}</p>

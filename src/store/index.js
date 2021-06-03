@@ -503,12 +503,16 @@ export default new Vuex.Store({
             });
             foodEaten++;
           });
-
-          viking.staminaRegen = viking.baseStaminaRegen + state.comfort;
-          viking.healthRegen = (viking.baseHealthRegen + state.comfort) / 2;
           viking.maxStamina += stamina;
           viking.stamina += stamina;
           viking.maxHealth += health;
+          viking.staminaRegen =
+            Math.round((state.comfort + 0.2 * viking.baseStamina - 4) * 10) /
+            10;
+          //J2/2+K2-12.5
+          viking.healthRegen =
+            Math.round((viking.baseHealth / 2 + state.comfort - 12.5) * 10) /
+            10;
           commit("addHealth", { vikingIndex: i, value: health / 2 });
         }
       });
