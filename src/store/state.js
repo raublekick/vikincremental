@@ -54,6 +54,7 @@ export default {
   baseFortification: 0,
   vikings: [],
   ripVikings: [],
+  memorial: [],
   inventory: [],
   gear: [],
   house: { name: "None", beds: 0 },

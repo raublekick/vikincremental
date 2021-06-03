@@ -643,6 +643,11 @@ export default new Vuex.Store({
           state.bossList[state.worldTier].maxStamina;
       }
 
+      _.forEach(state.ripVikings, (viking) => {
+        viking.deathday = state.day.totalDays;
+        state.memorial.push(_.clone(viking));
+      });
+
       // reset world tier, reset ripVikings, remove artifacts, reset bosses, bosssesdefeated
       state.enemies = [];
       state.combat = false;
