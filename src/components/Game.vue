@@ -154,7 +154,10 @@
                 Vikincremental is part incremental/idle game, part text
                 adventure, and part resource management game. Manage a party of
                 vikings through treacherous lands by performing tasks, exploring
-                dungeons, and challenging bosses.
+                dungeons, and challenging bosses.<br /><br />
+
+                The original goal was to translate as much of Valheim as I could
+                into a text-based incremental game.
               </dd>
             </dl>
 
@@ -194,7 +197,7 @@
               <dt class="has-text-weight-bold">Decorations</dt>
               <dd>
                 Decorations affect the comfort level and attractiveness of your
-                homestead. Comfort determines the daily health and stamina
+                homestead. Comfort affects the daily health and stamina regen
                 bonuses provided to your vikings.
               </dd>
             </dl>
@@ -249,13 +252,17 @@
                 The Cycle of Death and Rebirth
               </dt>
               <dd>
-                Death is not always a bad outcome of battle. If your entire
-                party falls in battle, your vikings will be reborn and rewarded
-                based on progression through the game.<br /><br />
-                However, after a victory in battle, and vikings who did not
-                survive will be gone forever. These vikings can be replaced by
-                summoning new vikings. New vikings will not be bestowed with the
-                powers gifted to other vikings.
+                Death is not always a bad outcome of battle. As vikings perish,
+                they will be placed on the corpse pile and remain unusable. Once
+                all of your vikings perish, you have a chance to revive them
+                with bonuses to health and stamina based on the number of bosses
+                you have defeated this cycle.<br /><br />
+                Reviving costs Ichor and increases with the power of your
+                vikings. You are able to sell off gear you have accumulated in
+                exchange for Ichor.<br /><br />
+                After reviving your vikings, the world is reset back to the
+                first biome, but your invintory and anything you have built
+                remains.
               </dd>
             </dl>
           </b-tab-item>
