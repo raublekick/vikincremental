@@ -20,8 +20,8 @@
       </div>
     </div>
     <div>
-      If revived, gets {{ item.bossesDefeated }} points to maximum health,
-      maximum stamina, and base values of health regen and stamina regen.
+      If revived, gets {{ item.bossesDefeated }} points to maximum health and
+      maximum stamina.
     </div>
 
     <div v-for="(gear, gIndex) in item.gear" :key="gIndex" class="item">

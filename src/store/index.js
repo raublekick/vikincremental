@@ -509,7 +509,6 @@ export default new Vuex.Store({
           viking.staminaRegen =
             Math.round((state.comfort + 0.2 * viking.baseStamina - 4) * 10) /
             10;
-          //J2/2+K2-12.5
           viking.healthRegen =
             Math.round((viking.baseHealth / 2 + state.comfort - 12.5) * 10) /
             10;
@@ -777,7 +776,7 @@ export default new Vuex.Store({
         viking.name +
         " gets " +
         viking.bossesDefeated +
-        " point to maximum health, health regen, maximum stamina, and stamina regen.";
+        " point to maximum health and stamina.";
       state.battleLog += vMsg + "<br/>";
       state.deathMessage += vMsg + "<br/>";
       viking.tasks = [];
