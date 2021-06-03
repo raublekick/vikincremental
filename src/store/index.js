@@ -49,8 +49,11 @@ export default new Vuex.Store({
       state.vikings.push(payload);
     },
     addStamina(state, payload) {
-      var stamina = (state.vikings[payload.vikingIndex].stamina +=
-        payload.staminaCost);
+      var stamina =
+        Math.round(
+          (state.vikings[payload.vikingIndex].stamina += payload.staminaCost) *
+            10
+        ) / 10;
       var maxStamina = state.vikings[payload.vikingIndex].maxStamina;
       if (stamina > maxStamina) {
         stamina = maxStamina;
@@ -67,7 +70,10 @@ export default new Vuex.Store({
       state.enemies[payload.enemyIndex].stamina = stamina;
     },
     addHealth(state, payload) {
-      var health = (state.vikings[payload.vikingIndex].health += payload.value);
+      var health =
+        Math.round(
+          (state.vikings[payload.vikingIndex].health += payload.value) * 10
+        ) / 10;
       var maxHealth = state.vikings[payload.vikingIndex].maxHealth;
       if (health > maxHealth) {
         health = maxHealth;

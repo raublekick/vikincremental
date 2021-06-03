@@ -279,8 +279,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Bite", "damage": 50, "stamina": 20, "accuracy": 0.55 },
-      { "name": "Claw", "damage": 40, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Bite", "damage": 60, "stamina": 20, "accuracy": 0.55 },
+      { "name": "Claw", "damage": 50, "stamina": 15, "accuracy": 0.75 }
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 3 },
@@ -302,8 +302,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Bite", "damage": 70, "stamina": 15, "accuracy": 0.45 },
-      { "name": "Claw", "damage": 50, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Bite", "damage": 90, "stamina": 15, "accuracy": 0.45 },
+      { "name": "Claw", "damage": 60, "stamina": 15, "accuracy": 0.75 }
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 5 },
@@ -325,9 +325,9 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Smash", "damage": 100, "stamina": 15, "accuracy": 0.10 },
-      { "name": "Smash", "damage": 75, "stamina": 15, "accuracy": 0.10 },
-      { "name": "Smash", "damage": 60, "stamina": 15, "accuracy": 0.10 }
+      { "name": "Smash", "damage": 120, "stamina": 15, "accuracy": 0.10 },
+      { "name": "Smash", "damage": 85, "stamina": 15, "accuracy": 0.10 },
+      { "name": "Smash", "damage": 75, "stamina": 15, "accuracy": 0.10 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 50 }
@@ -348,7 +348,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Sword Swing", "damage": 45, "stamina": 10, "accuracy": 0.55 }
+      { "name": "Sword Swing", "damage": 70, "stamina": 10, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Bones", "amount": 1 },
@@ -370,8 +370,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Stab", "damage": 45, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Slash", "damage": 35, "stamina": 10, "accuracy": 0.85 }
+      { "name": "Stab", "damage": 65, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Slash", "damage": 50, "stamina": 10, "accuracy": 0.85 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }

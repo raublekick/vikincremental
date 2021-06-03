@@ -52,7 +52,7 @@
       "totem": "Ikon of Decay",
       "totemDropChance": 0.50,
       "treasures": { 
-        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 } ],
+        "items": [ { "name": "Chains", "max": 3 }, { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
       }
     }
