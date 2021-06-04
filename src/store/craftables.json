@@ -56,7 +56,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 20
+        "amount": 15
       },
       {
         "name": "Leather Scraps",
@@ -789,7 +789,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 15
+        "amount": 12
       }
     ],
     "cost": 4,
@@ -808,7 +808,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 15
+        "amount": 12
       }
     ],
     "cost": 4,
@@ -827,7 +827,7 @@
       },
       {
         "name": "Iron Bar",
-        "amount": 15
+        "amount": 12
       }
     ],
     "cost": 4,
