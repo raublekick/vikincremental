@@ -279,7 +279,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Bite", "damage": 60, "stamina": 20, "accuracy": 0.55 },
+      { "name": "Bite", "damage": 70, "stamina": 20, "accuracy": 0.55 },
       { "name": "Claw", "damage": 50, "stamina": 15, "accuracy": 0.75 }
     ],
     "drops": [
@@ -370,7 +370,7 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Stab", "damage": 65, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Stab", "damage": 70, "stamina": 20, "accuracy": 0.75 },
       { "name": "Slash", "damage": 50, "stamina": 10, "accuracy": 0.85 }
     ],
     "drops": [

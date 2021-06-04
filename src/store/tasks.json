@@ -20,7 +20,7 @@
       },
       {
         "name": "Mushrooms",
-        "perSecond": 0.1
+        "perSecond": 0.2
       }
     ],
     "items": [
@@ -46,12 +46,12 @@
       },
       {
         "name": "Flax",
-        "perSecond": 0.05,
+        "perSecond": 0.1,
         "worldTier": 4
       },
       {
         "name": "Wheat",
-        "perSecond": 0.05,
+        "perSecond": 0.2,
         "worldTier": 4
       },
       {

@@ -172,7 +172,7 @@
       {
         "input": [
           { "name": "Honey", "amount": 1, "type": "food" }, 
-          { "name": "Winterberries", "amount": 4, "type": "food" },
+          { "name": "Winterberries", "amount": 3, "type": "food" },
           { "name": "Wheat", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Mead", "amount": 1, "type": "food" }
@@ -200,7 +200,7 @@
         "input": [
           { "name": "Wood", "amount": 1 }, 
           { "name": "Carrots", "amount": 3, "type": "food" },
-          { "name": "Mushrooms", "amount": 2, "type": "food" }
+          { "name": "Mushrooms", "amount": 1, "type": "food" }
         ],
         "output": { "name": "Carrot Soup", "amount": 1, "type": "food" }
       },
