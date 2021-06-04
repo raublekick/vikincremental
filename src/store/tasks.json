@@ -15,7 +15,7 @@
       },
       {
         "name": "Winterberries",
-        "perSecond": 0.2,
+        "perSecond": 0.25,
         "worldTier": 3
       },
       {
@@ -36,7 +36,7 @@
       },
       {
         "name": "Turnip Seeds",
-        "perSecond": 0.2,
+        "perSecond": 0.25,
         "worldTier": 2
       },
       {
