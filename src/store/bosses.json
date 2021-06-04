@@ -41,9 +41,9 @@
       { "name": "Ikon of Renewal", "amount": 4 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 90, "stamina": 60, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 50, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 35, "stamina": 15, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 100, "stamina": 60, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 60, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 45, "stamina": 15, "accuracy": 0.75 }
     ],
     "artifacts": [{ "name": "Eternal Blossom", "amount": 1 }],
     "drops": [
@@ -66,9 +66,9 @@
       { "name": "Ikon of Decay", "amount": 6 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 120, "stamina": 80, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 50, "stamina": 30, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 40, "stamina": 20, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 140, "stamina": 80, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 75, "stamina": 30, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 60, "stamina": 20, "accuracy": 0.75 }
     ],
     "artifacts": [{ "name": "Brackish Sludge", "amount": 1 }],
     "drops": [

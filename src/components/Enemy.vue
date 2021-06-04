@@ -18,9 +18,10 @@
     <div class="column">
       <div v-for="(attack, index) in item.attacks" :key="index">
         <div>{{ attack.name }}</div>
-        <div>{{ attack.damage }} dmg</div>
-        <div>{{ attack.stamina }} stm</div>
-        <div>{{ attack.accuracy }} acc</div>
+        <div>
+          {{ attack.damage }} dmg / {{ attack.stamina }} stm /
+          {{ attack.accuracy }} acc
+        </div>
       </div>
     </div>
   </div>

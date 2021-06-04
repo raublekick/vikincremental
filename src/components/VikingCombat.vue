@@ -26,9 +26,10 @@
     </div>
     <div class="column">
       <div>{{ weapon.name }}</div>
-      <div>{{ weapon.combat.damage }} dmg</div>
-      <div>{{ weapon.combat.stamina }} stm</div>
-      <div>{{ weapon.combat.accuracy }} acc</div>
+      <div>
+        {{ weapon.combat.damage }} dmg / {{ weapon.combat.stamina }} stm /
+        {{ weapon.combat.accuracy }} acc
+      </div>
     </div>
   </div>
 </template>

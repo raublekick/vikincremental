@@ -147,21 +147,21 @@
   {
     "name": "Silver Mining",
     "staminaCost": 15,
-    "worldTier": 3,
+    "worldTier": 4,
     "gearRequirements": ["Iron Pickaxe"],
     "items": [{"name": "Silver Ore", "perSecond": 0.15} ]
   },
   {
     "name": "Gold Mining",
     "staminaCost": 18,
-    "worldTier": 4,
+    "worldTier": 5,
     "gearRequirements": ["Iron Pickaxe"],
     "items": [{"name": "Gold Ore", "perSecond": 0.15} ]
   },
   {
     "name": "Titanium Mining",
     "staminaCost": 20,
-    "worldTier": 5,
+    "worldTier": 6,
     "gearRequirements": ["Iron Pickaxe"],
     "items": [{"name": "Titanium Ore", "perSecond": 0.125} ]
   },
