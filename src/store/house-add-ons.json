@@ -11,11 +11,11 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Dwarven Core",
-        "amount": 20
+        "amount": 60
       },
       {
         "name": "Iron Bar",
@@ -24,6 +24,10 @@
       {
         "name": "Stone",
         "amount": 20
+      },
+      {
+        "name": "Sharpening Stone",
+        "amount": 1
       }
     ],
     "processing": [

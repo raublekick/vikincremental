@@ -842,7 +842,7 @@
     "components": [
       {
         "name": "Wolf Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Steel Bar",
@@ -861,7 +861,7 @@
     "components": [
       {
         "name": "Wolf Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Steel Bar",
@@ -880,7 +880,7 @@
     "components": [
       {
         "name": "Wolf Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Steel Bar",
@@ -899,7 +899,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Silver Bar",
@@ -926,7 +926,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Silver Bar",
@@ -953,7 +953,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 5
       },
       {
         "name": "Silver Bar",
@@ -980,7 +980,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 10
       },
       {
         "name": "Gold Bar",
@@ -1011,7 +1011,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 10
       },
       {
         "name": "Gold Bar",
@@ -1042,7 +1042,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 10
       },
       {
         "name": "Gold Bar",
@@ -1073,7 +1073,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 20
       },
       {
         "name": "Titanium Bar",
@@ -1104,7 +1104,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 20
       },
       {
         "name": "Titanium Bar",
@@ -1135,7 +1135,7 @@
     "components": [
       {
         "name": "Tough Hide",
-        "amount": 2
+        "amount": 20
       },
       {
         "name": "Titanium Bar",
