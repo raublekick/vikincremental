@@ -607,6 +607,10 @@
         "amount": 4
       },
       {
+        "name": "Leather Scraps",
+        "amount": 2
+      },
+      {
         "name": "Bones",
         "amount": 1
       }
@@ -625,6 +629,10 @@
         "amount": 2
       },
       {
+        "name": "Leather Scraps",
+        "amount": 2
+      },
+      {
         "name": "Bones",
         "amount": 1
       }
@@ -640,6 +648,10 @@
     "components": [
       {
         "name": "Leather Hide",
+        "amount": 2
+      },
+      {
+        "name": "Leather Scraps",
         "amount": 2
       },
       {
@@ -662,6 +674,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Bones",
         "amount": 2
       }
@@ -679,6 +695,10 @@
       {
         "name": "Troll Hide",
         "amount": 4
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 5
       },
       {
         "name": "Bones",
@@ -700,6 +720,10 @@
         "amount": 2
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Bones",
         "amount": 2
       }
@@ -717,6 +741,10 @@
       {
         "name": "Leather Hide",
         "amount": 2
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 5
       },
       {
         "name": "Copper Bar",
@@ -742,6 +770,10 @@
         "amount": 2
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Copper Bar",
         "amount": 6
       },
@@ -765,6 +797,10 @@
         "amount": 2
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Copper Bar",
         "amount": 4
       },
@@ -785,11 +821,15 @@
     "components": [
       {
         "name": "Leather Hide",
-        "amount": 2
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Iron Bar",
-        "amount": 12
+        "amount": 10
       }
     ],
     "cost": 4,
@@ -804,11 +844,15 @@
     "components": [
       {
         "name": "Leather Hide",
-        "amount": 2
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Iron Bar",
-        "amount": 12
+        "amount": 10
       }
     ],
     "cost": 4,
@@ -823,11 +867,15 @@
     "components": [
       {
         "name": "Leather Hide",
-        "amount": 2
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Iron Bar",
-        "amount": 12
+        "amount": 10
       }
     ],
     "cost": 4,
@@ -843,6 +891,10 @@
       {
         "name": "Wolf Hide",
         "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Steel Bar",
@@ -864,6 +916,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Steel Bar",
         "amount": 20
       }
@@ -883,6 +939,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Steel Bar",
         "amount": 20
       }
@@ -900,6 +960,10 @@
       {
         "name": "Tough Hide",
         "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Silver Bar",
@@ -929,6 +993,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Silver Bar",
         "amount": 20
       },
@@ -956,6 +1024,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Silver Bar",
         "amount": 20
       },
@@ -981,6 +1053,10 @@
       {
         "name": "Tough Hide",
         "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Gold Bar",
@@ -1014,6 +1090,10 @@
         "amount": 10
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Gold Bar",
         "amount": 20
       },
@@ -1043,6 +1123,10 @@
       {
         "name": "Tough Hide",
         "amount": 10
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Gold Bar",
@@ -1076,6 +1160,10 @@
         "amount": 20
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Titanium Bar",
         "amount": 20
       },
@@ -1105,6 +1193,10 @@
       {
         "name": "Tough Hide",
         "amount": 20
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 25
       },
       {
         "name": "Titanium Bar",
@@ -1138,6 +1230,10 @@
         "amount": 20
       },
       {
+        "name": "Leather Scraps",
+        "amount": 25
+      },
+      {
         "name": "Titanium Bar",
         "amount": 20
       },
@@ -1168,6 +1264,10 @@
         "amount": 1
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Wood",
         "amount": 8
       }
@@ -1181,6 +1281,10 @@
     "components": [
       {
         "name": "Hard Wood",
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
         "amount": 5
       },
       {
@@ -1204,6 +1308,10 @@
         "amount": 5
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Iron Bar",
         "amount": 20
       }
@@ -1217,6 +1325,10 @@
     "components": [
       {
         "name": "Hard Wood",
+        "amount": 5
+      },
+      {
+        "name": "Leather Scraps",
         "amount": 5
       },
       {
@@ -1240,6 +1352,10 @@
         "amount": 8
       },
       {
+        "name": "Leather Scraps",
+        "amount": 5
+      },
+      {
         "name": "Threads",
         "amount": 25
       }
@@ -1254,6 +1370,10 @@
       {
         "name": "Large Bone",
         "amount": 1
+      },
+      {
+        "name": "Leather Scraps",
+        "amount": 5
       },
       {
         "name": "Hard Wood",
