@@ -92,9 +92,9 @@
       { "name": "Ikon of Regret", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 130, "stamina": 100, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 60, "stamina": 50, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 160, "stamina": 100, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 120, "stamina": 50, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 100, "stamina": 40, "accuracy": 0.75 }
     ],
     "artifacts": [{ "name": "Heart of the Mountain", "amount": 1 }],
     "drops": [

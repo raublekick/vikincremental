@@ -34,8 +34,8 @@
     "components": [
       { "name": "Wood", "amount": 5000 },
       { "name": "Stone", "amount": 3000 },
-      { "name": "Iron bar", "amount": 100 },
-      { "name": "Steel bar", "amount": 100 }
+      { "name": "Iron Bar", "amount": 100 },
+      { "name": "Steel Bar", "amount": 100 }
     ],
     "addOnRequirements": ["Blast Furnace"]
   }

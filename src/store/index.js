@@ -872,11 +872,11 @@ export default new Vuex.Store({
 
       // remove tasks that are no longer allowed
       var tasks = _.filter(state.vikings[payload.vikingIndex].tasks, (task) => {
-        if (!task.requirements || !task.requirements.length) {
+        if (!task.gearRequirements || !task.gearRequirements.length) {
           return false;
         }
 
-        var requirementsMet = _.filter(task.requirements, (requirement) => {
+        var requirementsMet = _.filter(task.gearRequirements, (requirement) => {
           return _.filter(state.vikings[payload.vikingIndex].gear, (gear) => {
             return gear.name === requirement;
           }).length;

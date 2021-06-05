@@ -662,7 +662,7 @@
       },
       {
         "name": "Chains",
-        "amount": 35
+        "amount": 20
       }
     ],
     "processing": []
@@ -811,7 +811,7 @@
       },
       {
         "name": "Chains",
-        "amount": 20
+        "amount": 10
       }
     ],
     "processing": []
