@@ -105,9 +105,9 @@
   {
     "name": "The Gale",
     "worldTier": 4,
-    "stamina": 1000,
+    "stamina": 2000,
     "health": 7000,
-    "maxStamina": 1000,
+    "maxStamina": 2000,
     "maxHealth": 7000,
     "staminaRegen": 20,
     "baseStaminaRegen": 20,
@@ -118,9 +118,8 @@
       { "name": "Ikon of the Wind", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 100, "stamina": 150, "accuracy": 0.25 },
-      { "name": "Attack 2", "damage": 70, "stamina": 75, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 40, "stamina": 40, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 220, "stamina": 150, "accuracy": 0.25 },
+      { "name": "Attack 2", "damage": 190, "stamina": 75, "accuracy": 0.75 }
     ],
     "artifacts": [{ "name": "Endless Breeze", "amount": 1 }],
     "drops": [
