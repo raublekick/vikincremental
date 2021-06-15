@@ -384,16 +384,16 @@
     "overworld": true,
     "threshold": 0,
     "stamina": 100,
-    "health": 150,
+    "health": 175,
     "maxStamina": 100,
-    "maxHealth": 150,
+    "maxHealth": 175,
     "staminaRegen": 1,
     "baseStaminaRegen": 1,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Slash", "damage": 80, "stamina": 25, "accuracy": 0.35 },
-      { "name": "Swoop", "damage": 70, "stamina": 25, "accuracy": 0.45 }
+      { "name": "Slash", "damage": 80, "stamina": 20, "accuracy": 0.35 },
+      { "name": "Swoop", "damage": 70, "stamina": 20, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 }
@@ -406,15 +406,15 @@
     "overworld": true,
     "threshold": 0,
     "stamina": 100,
-    "health": 150,
+    "health": 180,
     "maxStamina": 100,
-    "maxHealth": 150,
+    "maxHealth": 180,
     "staminaRegen": 1,
     "baseStaminaRegen": 1,
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Slash", "damage": 75, "stamina": 25, "accuracy": 0.55 }
+      { "name": "Slash", "damage": 75, "stamina": 15, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 2 }
@@ -435,8 +435,8 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Smash", "damage": 80, "stamina": 25, "accuracy": 0.55 },
-      { "name": "Pound", "damage": 90, "stamina": 25, "accuracy": 0.40 }
+      { "name": "Smash", "damage": 80, "stamina": 15, "accuracy": 0.55 },
+      { "name": "Pound", "damage": 90, "stamina": 20, "accuracy": 0.40 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 3 }

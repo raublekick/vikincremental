@@ -867,16 +867,16 @@
       "overworld": true,
       "threshold": 0,
       "stamina": 100,
-      "health": 150,
+      "health": 175,
       "maxStamina": 100,
-      "maxHealth": 150,
+      "maxHealth": 175,
       "staminaRegen": 1,
       "baseStaminaRegen": 1,
       "healthRegen": 0,
       "baseHealthRegen": 0,
       "attacks": [
-        { "name": "Slash", "damage": 80, "stamina": 25, "accuracy": 0.35 },
-        { "name": "Swoop", "damage": 70, "stamina": 25, "accuracy": 0.45 }
+        { "name": "Slash", "damage": 80, "stamina": 20, "accuracy": 0.35 },
+        { "name": "Swoop", "damage": 70, "stamina": 20, "accuracy": 0.45 }
       ],
       "drops": [
         { "name": "Ichor", "amount": 1 }
@@ -889,15 +889,15 @@
       "overworld": true,
       "threshold": 0,
       "stamina": 100,
-      "health": 150,
+      "health": 180,
       "maxStamina": 100,
-      "maxHealth": 150,
+      "maxHealth": 180,
       "staminaRegen": 1,
       "baseStaminaRegen": 1,
       "healthRegen": 0,
       "baseHealthRegen": 0,
       "attacks": [
-        { "name": "Slash", "damage": 75, "stamina": 25, "accuracy": 0.55 }
+        { "name": "Slash", "damage": 75, "stamina": 15, "accuracy": 0.55 }
       ],
       "drops": [
         { "name": "Ichor", "amount": 2 }
@@ -918,8 +918,8 @@
       "healthRegen": 0,
       "baseHealthRegen": 0,
       "attacks": [
-        { "name": "Smash", "damage": 80, "stamina": 25, "accuracy": 0.55 },
-        { "name": "Pound", "damage": 90, "stamina": 25, "accuracy": 0.40 }
+        { "name": "Smash", "damage": 80, "stamina": 15, "accuracy": 0.55 },
+        { "name": "Pound", "damage": 90, "stamina": 20, "accuracy": 0.40 }
       ],
       "drops": [
         { "name": "Ichor", "amount": 3 }
@@ -1589,7 +1589,7 @@
            },
            {
               "name":"Flax",
-              "perSecond":0.1,
+              "perSecond": 0.05,
               "worldTier":4
            },
            {
@@ -2599,49 +2599,38 @@
         ]
      },
      {
-        "name":"Spinning Wheel",
-        "type":"processing",
-        "tooltip":"A tool for creating fine threads and rope.",
-        "built":true,
-        "enabled":true,
-        "gearRequirements":[
-           
-        ],
-        "bedRequirement":1,
-        "addOnRequirements":[
-           "Artisan Table"
-        ],
-        "comfort":0,
-        "components":[
-           {
-              "name":"Ornate Wood",
-              "amount":30
-           },
-           {
-              "name":"Leather Scraps",
-              "amount":20
-           },
-           {
-              "name":"Iron Bar",
-              "amount":10
-           }
-        ],
-        "processing":[
-           {
-              "input":[
-                 {
-                    "name":"Flax",
-                    "amount":1
-                 }
-              ],
-              "output":{
-                 "name":"Threads",
-                 "amount":1,
-                 "type":"inventory"
-              }
-           }
-        ]
-     },
+      "name": "Spinning Wheel",
+      "type": "processing",
+      "tooltip": "A tool for creating fine threads and rope.",
+      "built": false,
+      "enabled": false,
+      "gearRequirements": [],
+      "bedRequirement": 1,
+      "addOnRequirements": ["Artisan Table"],
+      "comfort": 0,
+      "components": [
+        {
+          "name": "Ornate Wood",
+          "amount": 30
+        },
+        {
+          "name": "Leather Scraps",
+          "amount": 20
+        },
+        {
+          "name": "Iron Bar",
+          "amount": 10
+        }
+      ],
+      "processing": [
+        {
+          "input": [
+            { "name": "Flax", "amount": 1}
+          ],
+          "output": { "name": "Threads", "amount": 1, "type": "inventory" }
+        }
+      ]
+    },
      {
         "name":"Bee Hive",
         "type":"processing",
@@ -4094,43 +4083,41 @@
         }
      },
      {
-        "name":"Compound Bow",
-        "addOnRequirements":[
-           "Artisan Table"
-        ],
-        "components":[
-           {
-              "name":"Ornate Wood",
-              "amount":8
-           },
-           {
-              "name":"Leather Hide",
-              "amount":8
-           },
-           {
-              "name":"Leather Scraps",
-              "amount":10
-           },
-           {
-              "name":"Silver Bar",
-              "amount":10
-           },
-           {
-              "name":"Ichor",
-              "amount":50
-           },
-           {
-              "name":"Ichor Shard",
-              "amount":5
-           }
-        ],
-        "cost":5,
-        "combat":{
-           "damage":20,
-           "stamina":15,
-           "accuracy":0.65
+      "name": "Compound Bow",
+      "addOnRequirements": ["Artisan Table"],
+      "components": [
+        {
+          "name": "Ornate Wood",
+          "amount": 8
+        },
+        {
+          "name": "Leather Hide",
+          "amount": 8
+        },
+        {
+          "name": "Leather Scraps",
+          "amount": 10
+        },
+        {
+          "name": "Silver Bar",
+          "amount": 10
+        },
+        {
+          "name": "Ichor",
+          "amount": 50
+        },
+        {
+          "name": "Ichor Shard",
+          "amount": 5
         }
-     },
+      ],
+      "cost": 5,
+      "combat": {
+        "damage": 35,
+        "stamina": 15,
+        "accuracy": 0.65
+      }
+    },
      {
         "name":"Queen's Sting",
         "addOnRequirements":[
@@ -5567,7 +5554,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -5879,7 +5866,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -6161,7 +6148,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -6511,7 +6498,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -6763,7 +6750,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -7015,7 +7002,7 @@
                  },
                  {
                     "name":"Flax",
-                    "perSecond":0.1,
+                    "perSecond": 0.05,
                     "worldTier":4
                  },
                  {
@@ -7053,1120 +7040,1119 @@
         "birthday":272,
         "deathday":0,
         "bossesDefeated":4
-     }
+     },
+     {
+      "name":"Kåre The Blind",
+      "stamina":151.8,
+      "health":-20.5,
+      "baseStamina":34,
+      "baseHealth":34,
+      "maxStamina":164,
+      "maxHealth":134,
+      "staminaRegen":12.8,
+      "baseStaminaRegen":10,
+      "healthRegen":14.5,
+      "baseHealthRegen":9,
+      "gear":[
+         {
+            "name":"Ornate Bow",
+            "addOnRequirements":[
+               "Adze"
+            ],
+            "components":[
+               {
+                  "name":"Ornate Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Leather Hide",
+                  "amount":4
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               }
+            ],
+            "cost":2,
+            "combat":{
+               "damage":25,
+               "stamina":35,
+               "accuracy":0.65
+            }
+         },
+         {
+            "name":"Iron Armor",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Leather Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":10
+               }
+            ],
+            "cost":4,
+            "combat":null,
+            "armorType":"Body",
+            "armor":14
+         },
+         {
+            "name":"Iron Helmet",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Leather Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":10
+               }
+            ],
+            "cost":4,
+            "combat":null,
+            "armorType":"Head",
+            "armor":7
+         },
+         {
+            "name":"Iron Greaves",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Leather Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":10
+               }
+            ],
+            "cost":4,
+            "combat":null,
+            "armorType":"Legs",
+            "armor":7
+         },
+         {
+            "name":"Bronze Pickaxe",
+            "addOnRequirements":[
+               "Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Hard Wood",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Copper Bar",
+                  "amount":16
+               },
+               {
+                  "name":"Tin Bar",
+                  "amount":8
+               }
+            ],
+            "cost":5,
+            "combat":null
+         },
+         {
+            "name":"Iron Mace",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":15
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":20
+               }
+            ],
+            "cost":4,
+            "combat":{
+               "damage":30,
+               "stamina":25,
+               "accuracy":0.85
+            }
+         },
+         {
+            "name":"Bronze Axe",
+            "addOnRequirements":[
+               "Forge Cooler"
+            ],
+            "components":[
+               {
+                  "name":"Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Tin Bar",
+                  "amount":8
+               },
+               {
+                  "name":"Copper Bar",
+                  "amount":8
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":20
+               }
+            ],
+            "cost":3,
+            "combat":{
+               "damage":20,
+               "stamina":35,
+               "accuracy":0.8
+            }
+         }
+      ],
+      "tasks":[
+         {
+            "name":"Gather",
+            "staminaCost":2,
+            "gearRequirements":[
+               
+            ],
+            "food":[
+               {
+                  "name":"Berries",
+                  "perSecond":0.25
+               },
+               {
+                  "name":"Blueberries",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Winterberries",
+                  "perSecond":0.25,
+                  "worldTier":3
+               },
+               {
+                  "name":"Mushrooms",
+                  "perSecond":0.2
+               }
+            ],
+            "items":[
+               {
+                  "name":"Stone",
+                  "perSecond":0.1,
+                  "worldTier":0
+               },
+               {
+                  "name":"Carrot Seeds",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Turnip Seeds",
+                  "perSecond":0.25,
+                  "worldTier":2
+               },
+               {
+                  "name":"Obsidian",
+                  "perSecond":0.125,
+                  "worldTier":3
+               },
+               {
+                  "name":"Flax",
+                  "perSecond": 0.05,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wheat",
+                  "perSecond":0.2,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wood",
+                  "perSecond":0.5
+               },
+               {
+                  "name":"Queen Bee",
+                  "perSecond":0.0005
+               }
+            ]
+         },
+         {
+            "name":"Iron Mining",
+            "staminaCost":12,
+            "worldTier":2,
+            "gearRequirements":[
+               "Bronze Pickaxe",
+               "Iron Pickaxe"
+            ],
+            "items":[
+               {
+                  "name":"Iron Ore",
+                  "perSecond":0.15
+               }
+            ]
+         },
+         {
+            "name":"Forestry",
+            "worldTier":1,
+            "staminaCost":7,
+            "gearRequirements":[
+               "Bronze Axe"
+            ],
+            "items":[
+               {
+                  "name":"Wood",
+                  "perSecond":3
+               },
+               {
+                  "name":"Resin",
+                  "perSecond":0.1
+               },
+               {
+                  "name":"Hard Wood",
+                  "perSecond":1
+               },
+               {
+                  "name":"Ornate Wood",
+                  "perSecond":1
+               }
+            ]
+         }
+      ],
+      "foodPreference":"best",
+      "birthday":84,
+      "deathday":0,
+      "bossesDefeated":3
+   },
+   {
+      "name":"Roar The Wide",
+      "stamina":144.6,
+      "health":-39,
+      "baseStamina":28,
+      "baseHealth":28,
+      "maxStamina":158,
+      "maxHealth":128,
+      "staminaRegen":11.6,
+      "baseStaminaRegen":4,
+      "healthRegen":11.5,
+      "baseHealthRegen":3,
+      "gear":[
+         {
+            "name":"Steel Armor",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Body",
+            "armor":18
+         },
+         {
+            "name":"Steel Helmet",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Head",
+            "armor":9
+         },
+         {
+            "name":"Steel Greaves",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Legs",
+            "armor":9
+         },
+         {
+            "name":"Iron Mace",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":15
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":20
+               }
+            ],
+            "cost":4,
+            "combat":{
+               "damage":30,
+               "stamina":25,
+               "accuracy":0.85
+            }
+         },
+         {
+            "name":"Iron Pickaxe",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Hard Wood",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":20
+               }
+            ],
+            "cost":7,
+            "combat":null
+         }
+      ],
+      "tasks":[
+         {
+            "name":"Gather",
+            "staminaCost":2,
+            "gearRequirements":[
+               
+            ],
+            "food":[
+               {
+                  "name":"Berries",
+                  "perSecond":0.25
+               },
+               {
+                  "name":"Blueberries",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Winterberries",
+                  "perSecond":0.25,
+                  "worldTier":3
+               },
+               {
+                  "name":"Mushrooms",
+                  "perSecond":0.2
+               }
+            ],
+            "items":[
+               {
+                  "name":"Stone",
+                  "perSecond":0.1,
+                  "worldTier":0
+               },
+               {
+                  "name":"Carrot Seeds",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Turnip Seeds",
+                  "perSecond":0.25,
+                  "worldTier":2
+               },
+               {
+                  "name":"Obsidian",
+                  "perSecond":0.125,
+                  "worldTier":3
+               },
+               {
+                  "name":"Flax",
+                  "perSecond": 0.05,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wheat",
+                  "perSecond":0.2,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wood",
+                  "perSecond":0.5
+               },
+               {
+                  "name":"Queen Bee",
+                  "perSecond":0.0005
+               }
+            ]
+         },
+         {
+            "name":"Iron Mining",
+            "staminaCost":12,
+            "worldTier":2,
+            "gearRequirements":[
+               "Bronze Pickaxe",
+               "Iron Pickaxe"
+            ],
+            "items":[
+               {
+                  "name":"Iron Ore",
+                  "perSecond":0.15
+               }
+            ]
+         }
+      ],
+      "foodPreference":"best",
+      "birthday":272,
+      "deathday":0,
+      "bossesDefeated":3
+   },
+   {
+      "name":"Åge The Poor",
+      "stamina":144.6,
+      "health":-8.5,
+      "baseStamina":28,
+      "baseHealth":28,
+      "maxStamina":158,
+      "maxHealth":128,
+      "staminaRegen":11.6,
+      "baseStaminaRegen":4,
+      "healthRegen":11.5,
+      "baseHealthRegen":3,
+      "gear":[
+         {
+            "name":"Steel Armor",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Body",
+            "armor":18
+         },
+         {
+            "name":"Steel Helmet",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Head",
+            "armor":9
+         },
+         {
+            "name":"Steel Greaves",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Legs",
+            "armor":9
+         },
+         {
+            "name":"Iron Mace",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":15
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":20
+               }
+            ],
+            "cost":4,
+            "combat":{
+               "damage":30,
+               "stamina":25,
+               "accuracy":0.85
+            }
+         },
+         {
+            "name":"Iron Pickaxe",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Hard Wood",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":20
+               }
+            ],
+            "cost":7,
+            "combat":null
+         }
+      ],
+      "tasks":[
+         {
+            "name":"Gather",
+            "staminaCost":2,
+            "gearRequirements":[
+               
+            ],
+            "food":[
+               {
+                  "name":"Berries",
+                  "perSecond":0.25
+               },
+               {
+                  "name":"Blueberries",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Winterberries",
+                  "perSecond":0.25,
+                  "worldTier":3
+               },
+               {
+                  "name":"Mushrooms",
+                  "perSecond":0.2
+               }
+            ],
+            "items":[
+               {
+                  "name":"Stone",
+                  "perSecond":0.1,
+                  "worldTier":0
+               },
+               {
+                  "name":"Carrot Seeds",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Turnip Seeds",
+                  "perSecond":0.25,
+                  "worldTier":2
+               },
+               {
+                  "name":"Obsidian",
+                  "perSecond":0.125,
+                  "worldTier":3
+               },
+               {
+                  "name":"Flax",
+                  "perSecond": 0.05,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wheat",
+                  "perSecond":0.2,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wood",
+                  "perSecond":0.5
+               },
+               {
+                  "name":"Queen Bee",
+                  "perSecond":0.0005
+               }
+            ]
+         },
+         {
+            "name":"Iron Mining",
+            "staminaCost":12,
+            "worldTier":2,
+            "gearRequirements":[
+               "Bronze Pickaxe",
+               "Iron Pickaxe"
+            ],
+            "items":[
+               {
+                  "name":"Iron Ore",
+                  "perSecond":0.15
+               }
+            ]
+         }
+      ],
+      "foodPreference":"best",
+      "birthday":272,
+      "deathday":0,
+      "bossesDefeated":3
+   },
+   {
+      "name":"Njal The Wide",
+      "stamina":144.4,
+      "health":-24,
+      "baseStamina":32,
+      "baseHealth":32,
+      "maxStamina":162,
+      "maxHealth":132,
+      "staminaRegen":12.4,
+      "baseStaminaRegen":8,
+      "healthRegen":13.5,
+      "baseHealthRegen":7,
+      "gear":[
+         {
+            "name":"Ornate Bow",
+            "addOnRequirements":[
+               "Adze"
+            ],
+            "components":[
+               {
+                  "name":"Ornate Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Leather Hide",
+                  "amount":4
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               }
+            ],
+            "cost":2,
+            "combat":{
+               "damage":25,
+               "stamina":35,
+               "accuracy":0.65
+            }
+         },
+         {
+            "name":"Iron Pickaxe",
+            "addOnRequirements":[
+               "Smith's Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Hard Wood",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Iron Bar",
+                  "amount":20
+               }
+            ],
+            "cost":7,
+            "combat":null
+         },
+         {
+            "name":"Cultivator",
+            "addOnRequirements":[
+               "Anvil"
+            ],
+            "components":[
+               {
+                  "name":"Hard Wood",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":5
+               },
+               {
+                  "name":"Copper Bar",
+                  "amount":8
+               },
+               {
+                  "name":"Tin Bar",
+                  "amount":4
+               }
+            ],
+            "cost":5,
+            "combat":null
+         },
+         {
+            "name":"Steel Armor",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Body",
+            "armor":18
+         },
+         {
+            "name":"Steel Helmet",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Head",
+            "armor":9
+         },
+         {
+            "name":"Steel Greaves",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "bedRequirement":2,
+            "components":[
+               {
+                  "name":"Wolf Hide",
+                  "amount":5
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":10
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":null,
+            "armorType":"Legs",
+            "armor":9
+         },
+         {
+            "name":"Steel Mace",
+            "addOnRequirements":[
+               "Blast Furnace"
+            ],
+            "components":[
+               {
+                  "name":"Wood",
+                  "amount":8
+               },
+               {
+                  "name":"Steel Bar",
+                  "amount":20
+               },
+               {
+                  "name":"Leather Scraps",
+                  "amount":20
+               }
+            ],
+            "cost":5,
+            "combat":{
+               "damage":35,
+               "stamina":30,
+               "accuracy":0.85
+            }
+         }
+      ],
+      "tasks":[
+         {
+            "name":"Gather",
+            "staminaCost":2,
+            "gearRequirements":[
+               
+            ],
+            "food":[
+               {
+                  "name":"Berries",
+                  "perSecond":0.25
+               },
+               {
+                  "name":"Blueberries",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Winterberries",
+                  "perSecond":0.25,
+                  "worldTier":3
+               },
+               {
+                  "name":"Mushrooms",
+                  "perSecond":0.2
+               }
+            ],
+            "items":[
+               {
+                  "name":"Stone",
+                  "perSecond":0.1,
+                  "worldTier":0
+               },
+               {
+                  "name":"Carrot Seeds",
+                  "perSecond":0.25,
+                  "worldTier":1
+               },
+               {
+                  "name":"Turnip Seeds",
+                  "perSecond":0.25,
+                  "worldTier":2
+               },
+               {
+                  "name":"Obsidian",
+                  "perSecond":0.125,
+                  "worldTier":3
+               },
+               {
+                  "name":"Flax",
+                  "perSecond": 0.05,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wheat",
+                  "perSecond":0.2,
+                  "worldTier":4
+               },
+               {
+                  "name":"Wood",
+                  "perSecond":0.5
+               },
+               {
+                  "name":"Queen Bee",
+                  "perSecond":0.0005
+               }
+            ]
+         },
+         {
+            "name":"Iron Mining",
+            "staminaCost":12,
+            "worldTier":2,
+            "gearRequirements":[
+               "Bronze Pickaxe",
+               "Iron Pickaxe"
+            ],
+            "items":[
+               {
+                  "name":"Iron Ore",
+                  "perSecond":0.15
+               }
+            ]
+         },
+         {
+            "name":"Farming",
+            "staminaCost":5,
+            "gearRequirements":[
+               "Cultivator"
+            ],
+            "processing":[
+               {
+                  "input":[
+                     {
+                        "name":"Carrot Seeds",
+                        "amount":1
+                     }
+                  ],
+                  "output":{
+                     "name":"Carrots",
+                     "amount":1,
+                     "type":"food"
+                  }
+               },
+               {
+                  "input":[
+                     {
+                        "name":"Turnip Seeds",
+                        "amount":1
+                     }
+                  ],
+                  "output":{
+                     "name":"Turnips",
+                     "amount":1,
+                     "type":"food"
+                  }
+               }
+            ],
+            "food":[
+               {
+                  "name":"Mushrooms",
+                  "perSecond":0.1
+               }
+            ],
+            "items":[
+               
+            ]
+         },
+         {
+            "name":"Small Game Hunting",
+            "staminaCost":5,
+            "worldTier":null,
+            "gearRequirements":[
+               "Crude Bow",
+               "Ornate Bow",
+               "Compound Bow"
+            ],
+            "items":[
+               {
+                  "name":"Leather Hide",
+                  "perSecond":0.1
+               },
+               {
+                  "name":"Leather Scraps",
+                  "perSecond":0.2
+               },
+               {
+                  "name":"Raw Meat",
+                  "perSecond":0.2
+               }
+            ]
+         }
+      ],
+      "foodPreference":"best",
+      "birthday":151,
+      "deathday":0,
+      "bossesDefeated":4
+   }
   ],
-  "ripVikings":[
-     {
-        "name":"Kåre The Blind",
-        "stamina":151.8,
-        "health":-20.5,
-        "baseStamina":34,
-        "baseHealth":34,
-        "maxStamina":164,
-        "maxHealth":134,
-        "staminaRegen":12.8,
-        "baseStaminaRegen":10,
-        "healthRegen":14.5,
-        "baseHealthRegen":9,
-        "gear":[
-           {
-              "name":"Ornate Bow",
-              "addOnRequirements":[
-                 "Adze"
-              ],
-              "components":[
-                 {
-                    "name":"Ornate Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Leather Hide",
-                    "amount":4
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 }
-              ],
-              "cost":2,
-              "combat":{
-                 "damage":25,
-                 "stamina":35,
-                 "accuracy":0.65
-              }
-           },
-           {
-              "name":"Iron Armor",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Leather Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":10
-                 }
-              ],
-              "cost":4,
-              "combat":null,
-              "armorType":"Body",
-              "armor":14
-           },
-           {
-              "name":"Iron Helmet",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Leather Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":10
-                 }
-              ],
-              "cost":4,
-              "combat":null,
-              "armorType":"Head",
-              "armor":7
-           },
-           {
-              "name":"Iron Greaves",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Leather Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":10
-                 }
-              ],
-              "cost":4,
-              "combat":null,
-              "armorType":"Legs",
-              "armor":7
-           },
-           {
-              "name":"Bronze Pickaxe",
-              "addOnRequirements":[
-                 "Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Copper Bar",
-                    "amount":16
-                 },
-                 {
-                    "name":"Tin Bar",
-                    "amount":8
-                 }
-              ],
-              "cost":5,
-              "combat":null
-           },
-           {
-              "name":"Iron Mace",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":15
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":20
-                 }
-              ],
-              "cost":4,
-              "combat":{
-                 "damage":30,
-                 "stamina":25,
-                 "accuracy":0.85
-              }
-           },
-           {
-              "name":"Bronze Axe",
-              "addOnRequirements":[
-                 "Forge Cooler"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Tin Bar",
-                    "amount":8
-                 },
-                 {
-                    "name":"Copper Bar",
-                    "amount":8
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":20
-                 }
-              ],
-              "cost":3,
-              "combat":{
-                 "damage":20,
-                 "stamina":35,
-                 "accuracy":0.8
-              }
-           }
-        ],
-        "tasks":[
-           {
-              "name":"Gather",
-              "staminaCost":2,
-              "gearRequirements":[
-                 
-              ],
-              "food":[
-                 {
-                    "name":"Berries",
-                    "perSecond":0.25
-                 },
-                 {
-                    "name":"Blueberries",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Winterberries",
-                    "perSecond":0.25,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Mushrooms",
-                    "perSecond":0.2
-                 }
-              ],
-              "items":[
-                 {
-                    "name":"Stone",
-                    "perSecond":0.1,
-                    "worldTier":0
-                 },
-                 {
-                    "name":"Carrot Seeds",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Turnip Seeds",
-                    "perSecond":0.25,
-                    "worldTier":2
-                 },
-                 {
-                    "name":"Obsidian",
-                    "perSecond":0.125,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Flax",
-                    "perSecond":0.1,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wheat",
-                    "perSecond":0.2,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wood",
-                    "perSecond":0.5
-                 },
-                 {
-                    "name":"Queen Bee",
-                    "perSecond":0.0005
-                 }
-              ]
-           },
-           {
-              "name":"Iron Mining",
-              "staminaCost":12,
-              "worldTier":2,
-              "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
-              ],
-              "items":[
-                 {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
-                 }
-              ]
-           },
-           {
-              "name":"Forestry",
-              "worldTier":1,
-              "staminaCost":7,
-              "gearRequirements":[
-                 "Bronze Axe"
-              ],
-              "items":[
-                 {
-                    "name":"Wood",
-                    "perSecond":3
-                 },
-                 {
-                    "name":"Resin",
-                    "perSecond":0.1
-                 },
-                 {
-                    "name":"Hard Wood",
-                    "perSecond":1
-                 },
-                 {
-                    "name":"Ornate Wood",
-                    "perSecond":1
-                 }
-              ]
-           }
-        ],
-        "foodPreference":"best",
-        "birthday":84,
-        "deathday":0,
-        "bossesDefeated":3
-     },
-     {
-        "name":"Roar The Wide",
-        "stamina":144.6,
-        "health":-39,
-        "baseStamina":28,
-        "baseHealth":28,
-        "maxStamina":158,
-        "maxHealth":128,
-        "staminaRegen":11.6,
-        "baseStaminaRegen":4,
-        "healthRegen":11.5,
-        "baseHealthRegen":3,
-        "gear":[
-           {
-              "name":"Steel Armor",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Body",
-              "armor":18
-           },
-           {
-              "name":"Steel Helmet",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Head",
-              "armor":9
-           },
-           {
-              "name":"Steel Greaves",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Legs",
-              "armor":9
-           },
-           {
-              "name":"Iron Mace",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":15
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":20
-                 }
-              ],
-              "cost":4,
-              "combat":{
-                 "damage":30,
-                 "stamina":25,
-                 "accuracy":0.85
-              }
-           },
-           {
-              "name":"Iron Pickaxe",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":7,
-              "combat":null
-           }
-        ],
-        "tasks":[
-           {
-              "name":"Gather",
-              "staminaCost":2,
-              "gearRequirements":[
-                 
-              ],
-              "food":[
-                 {
-                    "name":"Berries",
-                    "perSecond":0.25
-                 },
-                 {
-                    "name":"Blueberries",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Winterberries",
-                    "perSecond":0.25,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Mushrooms",
-                    "perSecond":0.2
-                 }
-              ],
-              "items":[
-                 {
-                    "name":"Stone",
-                    "perSecond":0.1,
-                    "worldTier":0
-                 },
-                 {
-                    "name":"Carrot Seeds",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Turnip Seeds",
-                    "perSecond":0.25,
-                    "worldTier":2
-                 },
-                 {
-                    "name":"Obsidian",
-                    "perSecond":0.125,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Flax",
-                    "perSecond":0.1,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wheat",
-                    "perSecond":0.2,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wood",
-                    "perSecond":0.5
-                 },
-                 {
-                    "name":"Queen Bee",
-                    "perSecond":0.0005
-                 }
-              ]
-           },
-           {
-              "name":"Iron Mining",
-              "staminaCost":12,
-              "worldTier":2,
-              "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
-              ],
-              "items":[
-                 {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
-                 }
-              ]
-           }
-        ],
-        "foodPreference":"best",
-        "birthday":272,
-        "deathday":0,
-        "bossesDefeated":3
-     },
-     {
-        "name":"Åge The Poor",
-        "stamina":144.6,
-        "health":-8.5,
-        "baseStamina":28,
-        "baseHealth":28,
-        "maxStamina":158,
-        "maxHealth":128,
-        "staminaRegen":11.6,
-        "baseStaminaRegen":4,
-        "healthRegen":11.5,
-        "baseHealthRegen":3,
-        "gear":[
-           {
-              "name":"Steel Armor",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Body",
-              "armor":18
-           },
-           {
-              "name":"Steel Helmet",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Head",
-              "armor":9
-           },
-           {
-              "name":"Steel Greaves",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Legs",
-              "armor":9
-           },
-           {
-              "name":"Iron Mace",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":15
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":20
-                 }
-              ],
-              "cost":4,
-              "combat":{
-                 "damage":30,
-                 "stamina":25,
-                 "accuracy":0.85
-              }
-           },
-           {
-              "name":"Iron Pickaxe",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":7,
-              "combat":null
-           }
-        ],
-        "tasks":[
-           {
-              "name":"Gather",
-              "staminaCost":2,
-              "gearRequirements":[
-                 
-              ],
-              "food":[
-                 {
-                    "name":"Berries",
-                    "perSecond":0.25
-                 },
-                 {
-                    "name":"Blueberries",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Winterberries",
-                    "perSecond":0.25,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Mushrooms",
-                    "perSecond":0.2
-                 }
-              ],
-              "items":[
-                 {
-                    "name":"Stone",
-                    "perSecond":0.1,
-                    "worldTier":0
-                 },
-                 {
-                    "name":"Carrot Seeds",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Turnip Seeds",
-                    "perSecond":0.25,
-                    "worldTier":2
-                 },
-                 {
-                    "name":"Obsidian",
-                    "perSecond":0.125,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Flax",
-                    "perSecond":0.1,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wheat",
-                    "perSecond":0.2,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wood",
-                    "perSecond":0.5
-                 },
-                 {
-                    "name":"Queen Bee",
-                    "perSecond":0.0005
-                 }
-              ]
-           },
-           {
-              "name":"Iron Mining",
-              "staminaCost":12,
-              "worldTier":2,
-              "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
-              ],
-              "items":[
-                 {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
-                 }
-              ]
-           }
-        ],
-        "foodPreference":"best",
-        "birthday":272,
-        "deathday":0,
-        "bossesDefeated":3
-     },
-     {
-        "name":"Njal The Wide",
-        "stamina":144.4,
-        "health":-24,
-        "baseStamina":32,
-        "baseHealth":32,
-        "maxStamina":162,
-        "maxHealth":132,
-        "staminaRegen":12.4,
-        "baseStaminaRegen":8,
-        "healthRegen":13.5,
-        "baseHealthRegen":7,
-        "gear":[
-           {
-              "name":"Ornate Bow",
-              "addOnRequirements":[
-                 "Adze"
-              ],
-              "components":[
-                 {
-                    "name":"Ornate Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Leather Hide",
-                    "amount":4
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 }
-              ],
-              "cost":2,
-              "combat":{
-                 "damage":25,
-                 "stamina":35,
-                 "accuracy":0.65
-              }
-           },
-           {
-              "name":"Iron Pickaxe",
-              "addOnRequirements":[
-                 "Smith's Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Iron Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":7,
-              "combat":null
-           },
-           {
-              "name":"Cultivator",
-              "addOnRequirements":[
-                 "Anvil"
-              ],
-              "components":[
-                 {
-                    "name":"Hard Wood",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":5
-                 },
-                 {
-                    "name":"Copper Bar",
-                    "amount":8
-                 },
-                 {
-                    "name":"Tin Bar",
-                    "amount":4
-                 }
-              ],
-              "cost":5,
-              "combat":null
-           },
-           {
-              "name":"Steel Armor",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Body",
-              "armor":18
-           },
-           {
-              "name":"Steel Helmet",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Head",
-              "armor":9
-           },
-           {
-              "name":"Steel Greaves",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "bedRequirement":2,
-              "components":[
-                 {
-                    "name":"Wolf Hide",
-                    "amount":5
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":10
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":null,
-              "armorType":"Legs",
-              "armor":9
-           },
-           {
-              "name":"Steel Mace",
-              "addOnRequirements":[
-                 "Blast Furnace"
-              ],
-              "components":[
-                 {
-                    "name":"Wood",
-                    "amount":8
-                 },
-                 {
-                    "name":"Steel Bar",
-                    "amount":20
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "amount":20
-                 }
-              ],
-              "cost":5,
-              "combat":{
-                 "damage":35,
-                 "stamina":30,
-                 "accuracy":0.85
-              }
-           }
-        ],
-        "tasks":[
-           {
-              "name":"Gather",
-              "staminaCost":2,
-              "gearRequirements":[
-                 
-              ],
-              "food":[
-                 {
-                    "name":"Berries",
-                    "perSecond":0.25
-                 },
-                 {
-                    "name":"Blueberries",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Winterberries",
-                    "perSecond":0.25,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Mushrooms",
-                    "perSecond":0.2
-                 }
-              ],
-              "items":[
-                 {
-                    "name":"Stone",
-                    "perSecond":0.1,
-                    "worldTier":0
-                 },
-                 {
-                    "name":"Carrot Seeds",
-                    "perSecond":0.25,
-                    "worldTier":1
-                 },
-                 {
-                    "name":"Turnip Seeds",
-                    "perSecond":0.25,
-                    "worldTier":2
-                 },
-                 {
-                    "name":"Obsidian",
-                    "perSecond":0.125,
-                    "worldTier":3
-                 },
-                 {
-                    "name":"Flax",
-                    "perSecond":0.1,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wheat",
-                    "perSecond":0.2,
-                    "worldTier":4
-                 },
-                 {
-                    "name":"Wood",
-                    "perSecond":0.5
-                 },
-                 {
-                    "name":"Queen Bee",
-                    "perSecond":0.0005
-                 }
-              ]
-           },
-           {
-              "name":"Iron Mining",
-              "staminaCost":12,
-              "worldTier":2,
-              "gearRequirements":[
-                 "Bronze Pickaxe",
-                 "Iron Pickaxe"
-              ],
-              "items":[
-                 {
-                    "name":"Iron Ore",
-                    "perSecond":0.15
-                 }
-              ]
-           },
-           {
-              "name":"Farming",
-              "staminaCost":5,
-              "gearRequirements":[
-                 "Cultivator"
-              ],
-              "processing":[
-                 {
-                    "input":[
-                       {
-                          "name":"Carrot Seeds",
-                          "amount":1
-                       }
-                    ],
-                    "output":{
-                       "name":"Carrots",
-                       "amount":1,
-                       "type":"food"
-                    }
-                 },
-                 {
-                    "input":[
-                       {
-                          "name":"Turnip Seeds",
-                          "amount":1
-                       }
-                    ],
-                    "output":{
-                       "name":"Turnips",
-                       "amount":1,
-                       "type":"food"
-                    }
-                 }
-              ],
-              "food":[
-                 {
-                    "name":"Mushrooms",
-                    "perSecond":0.1
-                 }
-              ],
-              "items":[
-                 
-              ]
-           },
-           {
-              "name":"Small Game Hunting",
-              "staminaCost":5,
-              "worldTier":null,
-              "gearRequirements":[
-                 "Crude Bow",
-                 "Ornate Bow",
-                 "Compound Bow"
-              ],
-              "items":[
-                 {
-                    "name":"Leather Hide",
-                    "perSecond":0.1
-                 },
-                 {
-                    "name":"Leather Scraps",
-                    "perSecond":0.2
-                 },
-                 {
-                    "name":"Raw Meat",
-                    "perSecond":0.2
-                 }
-              ]
-           }
-        ],
-        "foodPreference":"best",
-        "birthday":151,
-        "deathday":0,
-        "bossesDefeated":4
-     }
-  ],
+  "ripVikings":[],
   "memorial":[
      
   ],

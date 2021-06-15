@@ -46,7 +46,7 @@
       },
       {
         "name": "Flax",
-        "perSecond": 0.1,
+        "perSecond": 0.05,
         "worldTier": 4
       },
       {
