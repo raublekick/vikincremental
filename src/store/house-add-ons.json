@@ -173,7 +173,7 @@
         "input": [
           { "name": "Honey", "amount": 1, "type": "food" }, 
           { "name": "Winterberries", "amount": 3, "type": "food" },
-          { "name": "Wheat", "amount": 1, "type": "food" }
+          { "name": "Wheat", "amount": 1 }
         ],
         "output": { "name": "Mead", "amount": 1, "type": "food" }
       }

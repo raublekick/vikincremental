@@ -446,7 +446,7 @@
   {
     "name": "Draugr Warrior",
     "worldTier": 5,
-    "delve": true,
+    "delve": false,
     "overworld": true,
     "threshold": 0,
     "stamina": 150,
@@ -458,8 +458,30 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Sword Swing", "damage": 70, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Stab", "damage": 90, "stamina": 30, "accuracy": 0.55 }
+      { "name": "Sword Swing", "damage": 100, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Stab", "damage": 150, "stamina": 30, "accuracy": 0.55 }
+    ],
+    "drops": [
+      { "name": "Ichor", "amount": 4 }
+    ]
+  },
+  {
+    "name": "Draugr Warrior",
+    "worldTier": 5,
+    "delve": true,
+    "overworld": false,
+    "threshold": 0.3,
+    "stamina": 150,
+    "health": 200,
+    "maxStamina": 150,
+    "maxHealth": 200,
+    "staminaRegen": 1,
+    "baseStaminaRegen": 1,
+    "healthRegen": 0,
+    "baseHealthRegen": 0,
+    "attacks": [
+      { "name": "Sword Swing", "damage": 100, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Stab", "damage": 150, "stamina": 30, "accuracy": 0.55 }
     ],
     "drops": [
       { "name": "Ichor", "amount": 4 }
@@ -469,8 +491,8 @@
     "name": "Draugr Noble",
     "worldTier": 5,
     "delve": true,
-    "overworld": true,
-    "threshold": 0.1,
+    "overworld": false,
+    "threshold": 0,
     "stamina": 100,
     "health": 100,
     "maxStamina": 100,
@@ -484,7 +506,7 @@
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 },
-    { "name": "Gold", "amount": 3 }
+    { "name": "Gold", "amount": 10 }
     ]
   },
   {
@@ -492,7 +514,7 @@
     "worldTier": 5,
     "delve": true,
     "overworld": true,
-    "threshold": 0.2,
+    "threshold": 0.7,
     "stamina": 150,
     "health": 300,
     "maxStamina": 150,
@@ -502,12 +524,13 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Spook", "damage": 80, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Spook", "damage": 100, "stamina": 20, "accuracy": 0.75 },
       { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Chains", "amount": 1 },
-      { "name": "Ichor", "amount": 2 }
+      { "name": "Ichor", "amount": 20 },
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
   {
@@ -515,7 +538,7 @@
     "worldTier": 5,
     "delve": true,
     "overworld": true,
-    "threshold": 0.3,
+    "threshold": 0.5,
     "stamina": 150,
     "health": 500,
     "maxStamina": 150,
@@ -525,12 +548,13 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Spook", "damage": 80, "stamina": 20, "accuracy": 0.75 },
-      { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
+      { "name": "Spook", "damage": 90, "stamina": 20, "accuracy": 0.75 },
+      { "name": "Terror", "damage": 130, "stamina": 30, "accuracy": 0.45 }
     ],
     "drops": [
       { "name": "Chains", "amount": 1 },
-      { "name": "Ichor", "amount": 2 }
+      { "name": "Ichor", "amount": 10 },
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
 

@@ -160,7 +160,7 @@
  },
  {
     "name":"Gold Mining",
-    "staminaCost":18,
+    "staminaCost":30,
     "worldTier":5,
     "gearRequirements":[
        "Iron Pickaxe"
@@ -168,7 +168,7 @@
     "items":[
        {
           "name":"Gold Ore",
-          "perSecond":0.1
+          "perSecond": 0.025
        }
     ]
  },
