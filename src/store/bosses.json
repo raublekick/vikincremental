@@ -130,9 +130,9 @@
   {
     "name": "The Trickster",
     "worldTier": 5,
-    "stamina": 1000,
+    "stamina": 2500,
     "health": 9000,
-    "maxStamina": 1000,
+    "maxStamina": 2500,
     "maxHealth": 9000,
     "staminaRegen": 30,
     "baseStaminaRegen": 30,
@@ -143,9 +143,9 @@
       { "name": "Ikon of Pride", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 200, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 230, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 150, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 125, "stamina": 50, "accuracy": 0.75 }
     ],
     "artifacts": [{ "name": "Ancient Fragment", "amount": 1 }],
     "drops": [
@@ -156,9 +156,9 @@
   {
     "name": "The Doomed God",
     "worldTier": 6,
-    "stamina": 1000,
+    "stamina": 4000,
     "health": 20000,
-    "maxStamina": 1000,
+    "maxStamina": 4000,
     "maxHealth": 20000,
     "staminaRegen": 30,
     "baseStaminaRegen": 30,
@@ -169,9 +169,9 @@
       { "name": "Ikon of the Primordial", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 200, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 90, "stamina": 150, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 50, "stamina": 50, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 250, "stamina": 200, "accuracy": 0.15 },
+      { "name": "Attack 2", "damage": 200, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 150, "stamina": 50, "accuracy": 0.75 }
     ],
     "artifacts": [{"name": "Endless Flame", "amount": 1 }],
     "drops": [
@@ -194,8 +194,8 @@
     "components": [],
     "attacks": [
       { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 145, "stamina": 150, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 75, "stamina": 50, "accuracy": 0.75 }
+      { "name": "Attack 2", "damage": 225, "stamina": 150, "accuracy": 0.75 },
+      { "name": "Attack 2", "damage": 175, "stamina": 50, "accuracy": 0.75 }
     ],
     "artifacts": [],
     "drops": [

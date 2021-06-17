@@ -71,7 +71,7 @@
       "totem": "Ikon of Regret",
       "totemDropChance": 0.50,
       "treasures": { 
-        "items": [ { "name": "Dwarven Core", "max": 3 }, { "name": "Ichor", "max": 10 } ],
+        "items": [ { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
       }
     }
@@ -90,7 +90,7 @@
       "totem": "Ikon of the Wind",
       "totemDropChance": 0.5,
       "treasures": { 
-        "items": [ { "name": "Dwarven Core", "max": 3 }, { "name": "Ichor Shard", "max": 1 }, { "name": "Ichor", "max": 10 } ],
+        "items": [ { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
       }
     }
@@ -110,7 +110,7 @@
       "totem": "Ikon of Pride",
       "totemDropChance": 0.50,
       "treasures": { 
-        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 }, { "name": "Gold", "max": 20 }, { "name": "Ichor Shard", "max": 1 }, { "name": "Ichor", "max": 10 } ],
+        "items": [ { "name": "Chains", "max": 1 }, { "name": "Dwarven Core", "max": 3 }, { "name": "Gold Ore", "max": 20 }],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
       }
     }
@@ -130,7 +130,7 @@
       "totem": "Ikon of the Primordial",
       "totemDropChance": 0.50,
       "treasures": { 
-        "items": [ { "name": "Dwarven Core", "max": 3 }, { "name": "Ichor Shard", "max": 1 }, { "name": "Ichor", "max": 20 } ],
+        "items": [ { "name": "Dwarven Core", "max": 3 } ],
         "food": [ { "name": "Yellow Mushrooms", "max": 4 } ]
       }
     }

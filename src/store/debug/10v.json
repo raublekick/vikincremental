@@ -1,14 +1,14 @@
 {
    "itemRateModifier":1,
-   "isPaused":true,
+   "isPaused":false,
    "isLoading":true,
    "newCraft":false,
    "newAddOn":false,
    "newHouse":false,
    "day":{
       "dayLength":24,
-      "dayTicks":5,
-      "totalDays":459
+      "dayTicks":17,
+      "totalDays":478
    },
    "flags":{
       "gameStart":true,
@@ -122,10 +122,6 @@
                   {
                      "name":"Dwarven Core",
                      "max":3
-                  },
-                  {
-                     "name":"Ichor",
-                     "max":10
                   }
                ],
                "food":[
@@ -155,14 +151,6 @@
                   {
                      "name":"Dwarven Core",
                      "max":3
-                  },
-                  {
-                     "name":"Ichor Shard",
-                     "max":1
-                  },
-                  {
-                     "name":"Ichor",
-                     "max":10
                   }
                ],
                "food":[
@@ -198,16 +186,8 @@
                      "max":3
                   },
                   {
-                     "name":"Gold",
+                     "name":"Gold Ore",
                      "max":20
-                  },
-                  {
-                     "name":"Ichor Shard",
-                     "max":1
-                  },
-                  {
-                     "name":"Ichor",
-                     "max":10
                   }
                ],
                "food":[
@@ -237,14 +217,6 @@
                   {
                      "name":"Dwarven Core",
                      "max":3
-                  },
-                  {
-                     "name":"Ichor Shard",
-                     "max":1
-                  },
-                  {
-                     "name":"Ichor",
-                     "max":20
                   }
                ],
                "food":[
@@ -748,6 +720,10 @@
             {
                "name":"Ichor",
                "amount":2
+            },
+            {
+               "name":"Ichor Shard",
+               "amount":1
             }
          ]
       },
@@ -789,6 +765,10 @@
             {
                "name":"Ichor",
                "amount":50
+            },
+            {
+               "name":"Ichor Shard",
+               "amount":2
             }
          ]
       },
@@ -956,123 +936,202 @@
             {
                "name":"Ichor",
                "amount":3
+            },
+            {
+               "name":"Ichor Shard",
+               "amount":3
             }
          ]
       },
       {
-         "name": "Draugr Warrior",
-         "worldTier": 5,
-         "delve": false,
-         "overworld": true,
-         "threshold": 0,
-         "stamina": 150,
-         "health": 200,
-         "maxStamina": 150,
-         "maxHealth": 200,
-         "staminaRegen": 1,
-         "baseStaminaRegen": 1,
-         "healthRegen": 0,
-         "baseHealthRegen": 0,
-         "attacks": [
-           { "name": "Sword Swing", "damage": 100, "stamina": 20, "accuracy": 0.75 },
-           { "name": "Stab", "damage": 150, "stamina": 30, "accuracy": 0.55 }
+         "name":"Draugr Warrior",
+         "worldTier":5,
+         "delve":false,
+         "overworld":true,
+         "threshold":0,
+         "stamina":150,
+         "health":200,
+         "maxStamina":150,
+         "maxHealth":200,
+         "staminaRegen":1,
+         "baseStaminaRegen":1,
+         "healthRegen":0,
+         "baseHealthRegen":0,
+         "attacks":[
+            {
+               "name":"Sword Swing",
+               "damage":100,
+               "stamina":20,
+               "accuracy":0.75
+            },
+            {
+               "name":"Stab",
+               "damage":150,
+               "stamina":30,
+               "accuracy":0.55
+            }
          ],
-         "drops": [
-           { "name": "Ichor", "amount": 4 }
+         "drops":[
+            {
+               "name":"Ichor",
+               "amount":4
+            }
          ]
-       },
-       {
-         "name": "Draugr Warrior",
-         "worldTier": 5,
-         "delve": true,
-         "overworld": false,
-         "threshold": 0.4,
-         "stamina": 150,
-         "health": 200,
-         "maxStamina": 150,
-         "maxHealth": 200,
-         "staminaRegen": 1,
-         "baseStaminaRegen": 1,
-         "healthRegen": 0,
-         "baseHealthRegen": 0,
-         "attacks": [
-           { "name": "Sword Swing", "damage": 100, "stamina": 20, "accuracy": 0.75 },
-           { "name": "Stab", "damage": 150, "stamina": 30, "accuracy": 0.55 }
+      },
+      {
+         "name":"Draugr Warrior",
+         "worldTier":5,
+         "delve":true,
+         "overworld":false,
+         "threshold":0.3,
+         "stamina":150,
+         "health":200,
+         "maxStamina":150,
+         "maxHealth":200,
+         "staminaRegen":1,
+         "baseStaminaRegen":1,
+         "healthRegen":0,
+         "baseHealthRegen":0,
+         "attacks":[
+            {
+               "name":"Sword Swing",
+               "damage":100,
+               "stamina":20,
+               "accuracy":0.75
+            },
+            {
+               "name":"Stab",
+               "damage":150,
+               "stamina":30,
+               "accuracy":0.55
+            }
          ],
-         "drops": [
-           { "name": "Ichor", "amount": 4 }
+         "drops":[
+            {
+               "name":"Ichor",
+               "amount":4
+            }
          ]
-       },
-       {
-         "name": "Draugr Noble",
-         "worldTier": 5,
-         "delve": true,
-         "overworld": false,
-         "threshold": 0,
-         "stamina": 100,
-         "health": 100,
-         "maxStamina": 100,
-         "maxHealth": 100,
-         "staminaRegen": 1,
-         "baseStaminaRegen": 1,
-         "healthRegen": 0,
-         "baseHealthRegen": 0,
-         "attacks": [
-           { "name": "Slash", "damage": 10, "stamina": 20, "accuracy": 0.75 }
+      },
+      {
+         "name":"Draugr Noble",
+         "worldTier":5,
+         "delve":true,
+         "overworld":false,
+         "threshold":0,
+         "stamina":100,
+         "health":100,
+         "maxStamina":100,
+         "maxHealth":100,
+         "staminaRegen":1,
+         "baseStaminaRegen":1,
+         "healthRegen":0,
+         "baseHealthRegen":0,
+         "attacks":[
+            {
+               "name":"Slash",
+               "damage":10,
+               "stamina":20,
+               "accuracy":0.75
+            }
          ],
-         "drops": [
-           { "name": "Ichor", "amount": 1 },
-         { "name": "Gold", "amount": 10 }
+         "drops":[
+            {
+               "name":"Ichor",
+               "amount":1
+            },
+            {
+               "name":"Gold Ore",
+               "amount":10
+            }
          ]
-       },
-       {
-         "name": "Shadow",
-         "worldTier": 5,
-         "delve": true,
-         "overworld": true,
-         "threshold": 0.7,
-         "stamina": 150,
-         "health": 300,
-         "maxStamina": 150,
-         "maxHealth": 300,
-         "staminaRegen": 1,
-         "baseStaminaRegen": 1,
-         "healthRegen": 0,
-         "baseHealthRegen": 0,
-         "attacks": [
-           { "name": "Spook", "damage": 100, "stamina": 20, "accuracy": 0.75 },
-           { "name": "Terror", "damage": 120, "stamina": 30, "accuracy": 0.45 }
+      },
+      {
+         "name":"Shadow",
+         "worldTier":5,
+         "delve":true,
+         "overworld":true,
+         "threshold":0.7,
+         "stamina":150,
+         "health":300,
+         "maxStamina":150,
+         "maxHealth":300,
+         "staminaRegen":1,
+         "baseStaminaRegen":1,
+         "healthRegen":0,
+         "baseHealthRegen":0,
+         "attacks":[
+            {
+               "name":"Spook",
+               "damage":100,
+               "stamina":20,
+               "accuracy":0.75
+            },
+            {
+               "name":"Terror",
+               "damage":120,
+               "stamina":30,
+               "accuracy":0.45
+            }
          ],
-         "drops": [
-           { "name": "Chains", "amount": 1 },
-           { "name": "Ichor", "amount": 20 },
-           { "name": "Ichor Shard", "amount": 1 }
+         "drops":[
+            {
+               "name":"Chains",
+               "amount":1
+            },
+            {
+               "name":"Ichor",
+               "amount":20
+            },
+            {
+               "name":"Ichor Shard",
+               "amount":1
+            }
          ]
-       },
-       {
-         "name": "Spectre",
-         "worldTier": 5,
-         "delve": true,
-         "overworld": true,
-         "threshold": 0.5,
-         "stamina": 150,
-         "health": 500,
-         "maxStamina": 150,
-         "maxHealth": 500,
-         "staminaRegen": 1,
-         "baseStaminaRegen": 1,
-         "healthRegen": 0,
-         "baseHealthRegen": 0,
-         "attacks": [
-           { "name": "Spook", "damage": 90, "stamina": 20, "accuracy": 0.75 },
-           { "name": "Terror", "damage": 130, "stamina": 30, "accuracy": 0.45 }
+      },
+      {
+         "name":"Spectre",
+         "worldTier":5,
+         "delve":true,
+         "overworld":true,
+         "threshold":0.5,
+         "stamina":150,
+         "health":500,
+         "maxStamina":150,
+         "maxHealth":500,
+         "staminaRegen":1,
+         "baseStaminaRegen":1,
+         "healthRegen":0,
+         "baseHealthRegen":0,
+         "attacks":[
+            {
+               "name":"Spook",
+               "damage":90,
+               "stamina":20,
+               "accuracy":0.75
+            },
+            {
+               "name":"Terror",
+               "damage":130,
+               "stamina":30,
+               "accuracy":0.45
+            }
          ],
-         "drops": [
-           { "name": "Chains", "amount": 1 },
-           { "name": "Ichor", "amount": 10 },
-           { "name": "Ichor Shard", "amount": 1 }
+         "drops":[
+            {
+               "name":"Chains",
+               "amount":1
+            },
+            {
+               "name":"Ichor",
+               "amount":10
+            },
+            {
+               "name":"Ichor Shard",
+               "amount":1
+            }
          ]
-       },
+      },
       {
          "name":"Surtling",
          "worldTier":6,
@@ -1090,13 +1149,13 @@
          "attacks":[
             {
                "name":"Fireball",
-               "damage":50,
+               "damage":100,
                "stamina":15,
                "accuracy":0.85
             },
             {
-               "name":"Engulf",
-               "damage":80,
+               "name":"Immolate",
+               "damage":175,
                "stamina":15,
                "accuracy":0.45
             }
@@ -1104,6 +1163,10 @@
          "drops":[
             {
                "name":"Ichor",
+               "amount":20
+            },
+            {
+               "name":"Ichor Shard",
                "amount":5
             }
          ]
@@ -1378,9 +1441,9 @@
       {
          "name":"The Trickster",
          "worldTier":5,
-         "stamina":1000,
+         "stamina":2500,
          "health":9000,
-         "maxStamina":1000,
+         "maxStamina":2500,
          "maxHealth":9000,
          "staminaRegen":30,
          "baseStaminaRegen":30,
@@ -1396,19 +1459,19 @@
          "attacks":[
             {
                "name":"Attack 1",
-               "damage":200,
+               "damage":230,
                "stamina":200,
-               "accuracy":0.15
+               "accuracy":0.4
             },
             {
                "name":"Attack 2",
-               "damage":90,
+               "damage":150,
                "stamina":150,
                "accuracy":0.75
             },
             {
                "name":"Attack 2",
-               "damage":50,
+               "damage":125,
                "stamina":50,
                "accuracy":0.75
             }
@@ -1433,9 +1496,9 @@
       {
          "name":"The Doomed God",
          "worldTier":6,
-         "stamina":1000,
+         "stamina":4000,
          "health":20000,
-         "maxStamina":1000,
+         "maxStamina":4000,
          "maxHealth":20000,
          "staminaRegen":30,
          "baseStaminaRegen":30,
@@ -1451,19 +1514,19 @@
          "attacks":[
             {
                "name":"Attack 1",
-               "damage":200,
+               "damage":250,
                "stamina":200,
                "accuracy":0.15
             },
             {
                "name":"Attack 2",
-               "damage":90,
+               "damage":200,
                "stamina":150,
                "accuracy":0.75
             },
             {
                "name":"Attack 2",
-               "damage":50,
+               "damage":150,
                "stamina":50,
                "accuracy":0.75
             }
@@ -1509,13 +1572,13 @@
             },
             {
                "name":"Attack 2",
-               "damage":145,
+               "damage":225,
                "stamina":150,
                "accuracy":0.75
             },
             {
                "name":"Attack 2",
-               "damage":75,
+               "damage":175,
                "stamina":50,
                "accuracy":0.75
             }
@@ -1819,7 +1882,7 @@
          "items":[
             {
                "name":"Gold Ore",
-               "perSecond": 0.025
+               "perSecond":0.025
             }
          ]
       },
@@ -2422,7 +2485,7 @@
                   },
                   {
                      "name":"Flour",
-                     "amount":4
+                     "amount":1
                   }
                ],
                "output":{
@@ -2443,7 +2506,7 @@
                   },
                   {
                      "name":"Flour",
-                     "amount":4
+                     "amount":1
                   }
                ],
                "output":{
@@ -2534,7 +2597,7 @@
                   },
                   {
                      "name":"Flour",
-                     "amount":4
+                     "amount":2
                   }
                ],
                "output":{
@@ -3619,7 +3682,7 @@
       },
       {
          "name":"Keep",
-         "built":false,
+         "built":true,
          "enabled":true,
          "gearRequirements":[
             
@@ -3693,73 +3756,73 @@
          "name":"Berries",
          "stamina":5,
          "health":5,
-         "amount":843.75
+         "amount":843.5
       },
       {
          "name":"Blueberries",
          "stamina":10,
          "health":10,
-         "amount":1.5
+         "amount":1.25
       },
       {
          "name":"Winterberries",
          "stamina":20,
          "health":10,
-         "amount":4135.75
+         "amount":3853.5
       },
       {
          "name":"Mushrooms",
          "stamina":10,
          "health":5,
-         "amount":4321.099999995994
+         "amount":4274.099999996064
       },
       {
          "name":"Yellow Mushrooms",
          "stamina":15,
          "health":15,
-         "amount":185
+         "amount":205
       },
       {
          "name":"Carrots",
          "stamina":15,
          "health":15,
-         "amount":2
+         "amount":608
       },
       {
          "name":"Carrot Soup",
          "stamina":50,
          "health":30,
-         "amount":49
+         "amount":445
       },
       {
          "name":"Turnips",
          "stamina":15,
          "health":15,
-         "amount":1235
+         "amount":2618
       },
       {
          "name":"Turnip Stew",
          "stamina":50,
          "health":50,
-         "amount":1
+         "amount":161
       },
       {
          "name":"Honey",
          "stamina":15,
          "health":15,
-         "amount":984
+         "amount":566
       },
       {
          "name":"Sweet Jam",
          "stamina":30,
          "health":20,
-         "amount":1376
+         "amount":1652
       },
       {
          "name":"Mead",
-         "stamina":50,
+         "stamina":60,
          "health":50,
-         "amount":216
+         "amount":418
       },
       {
          "name":"Cooked Meat",
@@ -3783,7 +3846,7 @@
          "name":"Fish Wraps",
          "stamina":60,
          "health":60,
-         "amount":0
+         "amount":77
       },
       {
          "name":"Large Game Meat",
@@ -3793,9 +3856,9 @@
       },
       {
          "name":"Meat Pie",
-         "stamina":50,
+         "stamina":60,
          "health":70,
-         "amount":13
+         "amount":14
       },
       {
          "name":"Serpent Meat",
@@ -3993,7 +4056,7 @@
          ],
          "cost":7,
          "combat":{
-            "damage":50,
+            "damage":60,
             "stamina":40,
             "accuracy":0.85
          }
@@ -5327,28 +5390,28 @@
    "delve":false,
    "bossCombat":false,
    "newDay":false,
-   "battleLog":"You have challenged the mighty The Gale! Do not fear, for even in death you may be rewarded for such bravery.<br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Kåre The Blind misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Tove The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Tove The Small for 176 damage and uses 150 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Tove The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åse The Rich misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Tove The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Njal The Wide misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åge The Poor misses and uses 30 stamina...<br/><br/><span class='has-background-danger has-text-light'>The Gale hits Tove The Small for 176 damage and uses 150 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>Tove The Small has been defeated by The Gale...</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Njal The Wide misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Kåre The Blind misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åse The Rich misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Åse The Rich for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 75 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Kåre The Blind misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Njal The Wide for 176 damage and uses 150 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Njal The Wide misses and uses 30 stamina...<br/><br/>Åse The Rich misses and uses 30 stamina...<br/><br/>Thyra The Axe misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åge The Poor misses and uses 30 stamina...<br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Åge The Poor for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Roar The Wide for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>The Gale misses and uses 150 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Gertrud The Eagle for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åse The Rich misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åge The Poor misses and uses 30 stamina...<br/><br/>The Gale misses and uses 75 stamina...<br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Njal The Wide misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åge The Poor misses and uses 30 stamina...<br/><br/><span class='has-background-danger has-text-light'>The Gale hits Åge The Poor for 176 damage and uses 150 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Kåre The Blind for 146 damage and uses 75 stamina!</span><br/><br/>Gertrud The Eagle misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Thyra The Axe for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Knud The Wise misses and uses 30 stamina...<br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/>Kåre The Blind misses and uses 30 stamina...<br/><br/>Njal The Wide misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Åge The Poor misses and uses 30 stamina...<br/><br/><span class='has-background-danger has-text-light'>The Gale hits Sif The Small for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/>Thyra The Axe misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>The Gale hits Knud The Wise for 146 damage and uses 75 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Sif The Small hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits The Gale for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich has defeated The Gale!</span></br><span class='has-background-warning has-text-black'>The Gale drops 270 Ichor!</span><br/><br/><span class='has-background-warning has-text-black'>The Gale drops 18 Ichor Shard!</span><br/><br/><span class='has-background-warning has-text-black'>The Gale drops 1 Endless Breeze!</span><br/><br/><span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>",
+   "battleLog":"Starting day 478 on the battlefield...<br/>A Spectre has entered the battlefield!<br/>Gertrud The Eagle misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Kåre The Blind hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Roar The Wide hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åge The Poor hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-danger has-text-light'>Spectre hits Åse The Rich for 46 damage and uses 20 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Gertrud The Eagle hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Knud The Wise hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/>Sif The Small misses and uses 30 stamina...<br/><br/>Kåre The Blind misses and uses 30 stamina...<br/><br/><span class='has-background-success has-text-light'>Njal The Wide hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Åse The Rich hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe hits Spectre for 45 damage and uses 30 stamina!</span><br/><br/><span class='has-background-success has-text-light'>Thyra The Axe has defeated Spectre!</span></br><span class='has-background-warning has-text-black'>Spectre drops 1 Chains!</span><br/><br/><span class='has-background-warning has-text-black'>Spectre drops 10 Ichor!</span><br/><br/><span class='has-background-warning has-text-black'>Spectre drops 1 Ichor Shard!</span><br/><br/><span class='has-background-success has-text-light'>You are victorious on this day!</span><br/>",
    "deathMessage":"Knud The Wise gets 1 point to maximum health and stamina.<br/>Gertrud The Eagle gets 1 point to maximum health and stamina.<br/>Kåre The Blind gets 0 point to maximum health and stamina.<br/>Gertrud The Eagle gets 4 point to maximum health and stamina.<br/>Knud The Wise gets 3 point to maximum health and stamina.<br/>Kåre The Blind gets 3 point to maximum health and stamina.<br/>Sif The Small gets 3 point to maximum health and stamina.<br/>Tove The Small gets 1 point to maximum health and stamina.<br/>Njal The Wide gets 1 point to maximum health and stamina.<br/>Gertrud The Eagle gets 3 point to maximum health and stamina.<br/>Knud The Wise gets 3 point to maximum health and stamina.<br/>Sif The Small gets 3 point to maximum health and stamina.<br/>Kåre The Blind gets 3 point to maximum health and stamina.<br/>Tove The Small gets 3 point to maximum health and stamina.<br/>Njal The Wide gets 3 point to maximum health and stamina.<br/>Knud The Wise gets 3 point to maximum health and stamina.<br/>Gertrud The Eagle gets 3 point to maximum health and stamina.<br/>Kåre The Blind gets 3 point to maximum health and stamina.<br/>Sif The Small gets 3 point to maximum health and stamina.<br/>Njal The Wide gets 3 point to maximum health and stamina.<br/>Tove The Small gets 3 point to maximum health and stamina.<br/>Roar The Wide gets 3 point to maximum health and stamina.<br/>Thyra The Axe gets 3 point to maximum health and stamina.<br/>Åge The Poor gets 3 point to maximum health and stamina.<br/>Åse The Rich gets 3 point to maximum health and stamina.<br/>Gertrud The Eagle gets 4 point to maximum health and stamina.<br/>Knud The Wise gets 4 point to maximum health and stamina.<br/>Kåre The Blind gets 3 point to maximum health and stamina.<br/>Åse The Rich gets 4 point to maximum health and stamina.<br/>Njal The Wide gets 4 point to maximum health and stamina.<br/>Åge The Poor gets 3 point to maximum health and stamina.<br/>Thyra The Axe gets 4 point to maximum health and stamina.<br/>Tove The Small gets 4 point to maximum health and stamina.<br/>Roar The Wide gets 3 point to maximum health and stamina.<br/>Sif The Small gets 4 point to maximum health and stamina.<br/>Gertrud The Eagle gets 4 point to maximum health and stamina.<br/>Knud The Wise gets 4 point to maximum health and stamina.<br/>Sif The Small gets 4 point to maximum health and stamina.<br/>Kåre The Blind gets 4 point to maximum health and stamina.<br/>Tove The Small gets 4 point to maximum health and stamina.<br/>Njal The Wide gets 4 point to maximum health and stamina.<br/>Åse The Rich gets 4 point to maximum health and stamina.<br/>Thyra The Axe gets 4 point to maximum health and stamina.<br/>Roar The Wide gets 4 point to maximum health and stamina.<br/>Åge The Poor gets 4 point to maximum health and stamina.<br/>",
    "deathHeader":"Your party has been eliminated...",
    "isDead":false,
    "attackTicks":8,
-   "encounterChance":0.45499999999999996,
+   "encounterChance":0.42999999999999994,
    "baseEncounterChance":0.25,
    "maxVikings":10,
    "maxFood":3,
    "comfort":11,
    "baseComfort":0,
-   "fortification":9,
+   "fortification":10,
    "baseFortification":0,
    "vikings":[
       {
          "name":"Gertrud The Eagle",
-         "stamina":177.4,
-         "health":194,
+         "stamina":224,
+         "health":224,
          "baseStamina":44,
          "baseHealth":44,
-         "maxStamina":194,
-         "maxHealth":194,
+         "maxStamina":224,
+         "maxHealth":224,
          "staminaRegen":15.8,
          "baseStaminaRegen":20,
          "healthRegen":20.5,
@@ -5538,6 +5601,28 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Fishing Rod",
+               "addOnRequirements":[
+                  "Spinning Wheel"
+               ],
+               "components":[
+                  {
+                     "name":"Ornate Wood",
+                     "amount":8
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Threads",
+                     "amount":25
+                  }
+               ],
+               "cost":7,
+               "combat":null
             }
          ],
          "tasks":[
@@ -5609,16 +5694,19 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Fishing",
+               "staminaCost":10,
+               "worldTier":0,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Fishing Rod"
+               ],
+               "addOnRequirements":[
+                  "Spinning Wheel"
                ],
                "items":[
                   {
-                     "name":"Silver Ore",
-                     "perSecond":0.1
+                     "name":"Raw Fish",
+                     "perSecond":0.5
                   }
                ]
             }
@@ -5630,12 +5718,12 @@
       },
       {
          "name":"Knud The Wise",
-         "stamina":175.8,
-         "health":193,
+         "stamina":223,
+         "health":223,
          "baseStamina":43,
          "baseHealth":43,
-         "maxStamina":193,
-         "maxHealth":193,
+         "maxStamina":223,
+         "maxHealth":223,
          "staminaRegen":15.6,
          "baseStaminaRegen":19,
          "healthRegen":20,
@@ -5825,6 +5913,28 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Fishing Rod",
+               "addOnRequirements":[
+                  "Spinning Wheel"
+               ],
+               "components":[
+                  {
+                     "name":"Ornate Wood",
+                     "amount":8
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Threads",
+                     "amount":25
+                  }
+               ],
+               "cost":7,
+               "combat":null
             }
          ],
          "tasks":[
@@ -5896,16 +6006,19 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Fishing",
+               "staminaCost":10,
+               "worldTier":0,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Fishing Rod"
+               ],
+               "addOnRequirements":[
+                  "Spinning Wheel"
                ],
                "items":[
                   {
-                     "name":"Silver Ore",
-                     "perSecond":0.1
+                     "name":"Raw Fish",
+                     "perSecond":0.5
                   }
                ]
             }
@@ -5917,12 +6030,12 @@
       },
       {
          "name":"Sif The Small",
-         "stamina":164.2,
-         "health":192,
+         "stamina":134.8,
+         "health":222,
          "baseStamina":42,
          "baseHealth":42,
-         "maxStamina":192,
-         "maxHealth":192,
+         "maxStamina":222,
+         "maxHealth":222,
          "staminaRegen":15.4,
          "baseStaminaRegen":18,
          "healthRegen":19.5,
@@ -6318,12 +6431,12 @@
       },
       {
          "name":"Kåre The Blind",
-         "stamina":172.6,
-         "health":191,
+         "stamina":221,
+         "health":221,
          "baseStamina":41,
          "baseHealth":41,
-         "maxStamina":191,
-         "maxHealth":191,
+         "maxStamina":221,
+         "maxHealth":221,
          "staminaRegen":15.2,
          "baseStaminaRegen":17,
          "healthRegen":19,
@@ -6513,6 +6626,28 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Fishing Rod",
+               "addOnRequirements":[
+                  "Spinning Wheel"
+               ],
+               "components":[
+                  {
+                     "name":"Ornate Wood",
+                     "amount":8
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Threads",
+                     "amount":25
+                  }
+               ],
+               "cost":7,
+               "combat":null
             }
          ],
          "tasks":[
@@ -6584,16 +6719,19 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Fishing",
+               "staminaCost":10,
+               "worldTier":0,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Fishing Rod"
+               ],
+               "addOnRequirements":[
+                  "Spinning Wheel"
                ],
                "items":[
                   {
-                     "name":"Silver Ore",
-                     "perSecond":0.1
+                     "name":"Raw Fish",
+                     "perSecond":0.5
                   }
                ]
             }
@@ -6605,12 +6743,12 @@
       },
       {
          "name":"Njal The Wide",
-         "stamina":161,
-         "health":190,
+         "stamina":128,
+         "health":220,
          "baseStamina":40,
          "baseHealth":40,
-         "maxStamina":190,
-         "maxHealth":190,
+         "maxStamina":220,
+         "maxHealth":220,
          "staminaRegen":15,
          "baseStaminaRegen":16,
          "healthRegen":18.5,
@@ -7006,12 +7144,12 @@
       },
       {
          "name":"Åse The Rich",
-         "stamina":164.6,
-         "health":186,
+         "stamina":169.4,
+         "health":216,
          "baseStamina":36,
          "baseHealth":36,
-         "maxStamina":186,
-         "maxHealth":186,
+         "maxStamina":216,
+         "maxHealth":216,
          "staminaRegen":14.2,
          "baseStaminaRegen":12,
          "healthRegen":16.5,
@@ -7201,6 +7339,44 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Compound Bow",
+               "addOnRequirements":[
+                  "Artisan Table"
+               ],
+               "components":[
+                  {
+                     "name":"Ornate Wood",
+                     "amount":8
+                  },
+                  {
+                     "name":"Leather Hide",
+                     "amount":8
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":10
+                  },
+                  {
+                     "name":"Silver Bar",
+                     "amount":10
+                  },
+                  {
+                     "name":"Ichor",
+                     "amount":50
+                  },
+                  {
+                     "name":"Ichor Shard",
+                     "amount":5
+                  }
+               ],
+               "cost":5,
+               "combat":{
+                  "damage":35,
+                  "stamina":15,
+                  "accuracy":0.65
+               }
             }
          ],
          "tasks":[
@@ -7272,16 +7448,44 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Small Game Hunting",
+               "staminaCost":5,
+               "worldTier":null,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Crude Bow",
+                  "Ornate Bow",
+                  "Compound Bow"
                ],
                "items":[
                   {
-                     "name":"Silver Ore",
+                     "name":"Leather Hide",
                      "perSecond":0.1
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "perSecond":0.2
+                  },
+                  {
+                     "name":"Raw Meat",
+                     "perSecond":0.2
+                  }
+               ]
+            },
+            {
+               "name":"Large Game Hunting",
+               "staminaCost":10,
+               "worldTier":null,
+               "gearRequirements":[
+                  "Compound Bow"
+               ],
+               "items":[
+                  {
+                     "name":"Tough Hide",
+                     "perSecond":0.1
+                  },
+                  {
+                     "name":"Raw Large Game Meat",
+                     "perSecond":0.2
                   }
                ]
             }
@@ -7293,12 +7497,12 @@
       },
       {
          "name":"Thyra The Axe",
-         "stamina":177.6,
-         "health":186,
+         "stamina":216,
+         "health":216,
          "baseStamina":36,
          "baseHealth":36,
-         "maxStamina":186,
-         "maxHealth":186,
+         "maxStamina":216,
+         "maxHealth":216,
          "staminaRegen":14.2,
          "baseStaminaRegen":12,
          "healthRegen":16.5,
@@ -7488,6 +7692,32 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Cultivator",
+               "addOnRequirements":[
+                  "Anvil"
+               ],
+               "components":[
+                  {
+                     "name":"Hard Wood",
+                     "amount":5
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Copper Bar",
+                     "amount":8
+                  },
+                  {
+                     "name":"Tin Bar",
+                     "amount":4
+                  }
+               ],
+               "cost":5,
+               "combat":null
             }
          ],
          "tasks":[
@@ -7559,17 +7789,47 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Farming",
+               "staminaCost":5,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Cultivator"
                ],
-               "items":[
+               "processing":[
                   {
-                     "name":"Silver Ore",
+                     "input":[
+                        {
+                           "name":"Carrot Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Carrots",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  },
+                  {
+                     "input":[
+                        {
+                           "name":"Turnip Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Turnips",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  }
+               ],
+               "food":[
+                  {
+                     "name":"Mushrooms",
                      "perSecond":0.1
                   }
+               ],
+               "items":[
+                  
                ]
             }
          ],
@@ -7580,12 +7840,12 @@
       },
       {
          "name":"Roar The Wide",
-         "stamina":176,
-         "health":185,
+         "stamina":215,
+         "health":215,
          "baseStamina":35,
          "baseHealth":35,
-         "maxStamina":185,
-         "maxHealth":185,
+         "maxStamina":215,
+         "maxHealth":215,
          "staminaRegen":14,
          "baseStaminaRegen":11,
          "healthRegen":16,
@@ -7775,6 +8035,32 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Cultivator",
+               "addOnRequirements":[
+                  "Anvil"
+               ],
+               "components":[
+                  {
+                     "name":"Hard Wood",
+                     "amount":5
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Copper Bar",
+                     "amount":8
+                  },
+                  {
+                     "name":"Tin Bar",
+                     "amount":4
+                  }
+               ],
+               "cost":5,
+               "combat":null
             }
          ],
          "tasks":[
@@ -7846,17 +8132,47 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Farming",
+               "staminaCost":5,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Cultivator"
                ],
-               "items":[
+               "processing":[
                   {
-                     "name":"Silver Ore",
+                     "input":[
+                        {
+                           "name":"Carrot Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Carrots",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  },
+                  {
+                     "input":[
+                        {
+                           "name":"Turnip Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Turnips",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  }
+               ],
+               "food":[
+                  {
+                     "name":"Mushrooms",
                      "perSecond":0.1
                   }
+               ],
+               "items":[
+                  
                ]
             }
          ],
@@ -7867,12 +8183,12 @@
       },
       {
          "name":"Åge The Poor",
-         "stamina":176,
-         "health":185,
+         "stamina":215,
+         "health":215,
          "baseStamina":35,
          "baseHealth":35,
-         "maxStamina":185,
-         "maxHealth":185,
+         "maxStamina":215,
+         "maxHealth":215,
          "staminaRegen":14,
          "baseStaminaRegen":11,
          "healthRegen":16,
@@ -8062,6 +8378,32 @@
                   "stamina":30,
                   "accuracy":0.85
                }
+            },
+            {
+               "name":"Cultivator",
+               "addOnRequirements":[
+                  "Anvil"
+               ],
+               "components":[
+                  {
+                     "name":"Hard Wood",
+                     "amount":5
+                  },
+                  {
+                     "name":"Leather Scraps",
+                     "amount":5
+                  },
+                  {
+                     "name":"Copper Bar",
+                     "amount":8
+                  },
+                  {
+                     "name":"Tin Bar",
+                     "amount":4
+                  }
+               ],
+               "cost":5,
+               "combat":null
             }
          ],
          "tasks":[
@@ -8133,17 +8475,47 @@
                ]
             },
             {
-               "name":"Silver Mining",
-               "staminaCost":15,
-               "worldTier":4,
+               "name":"Farming",
+               "staminaCost":5,
                "gearRequirements":[
-                  "Iron Pickaxe"
+                  "Cultivator"
                ],
-               "items":[
+               "processing":[
                   {
-                     "name":"Silver Ore",
+                     "input":[
+                        {
+                           "name":"Carrot Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Carrots",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  },
+                  {
+                     "input":[
+                        {
+                           "name":"Turnip Seeds",
+                           "amount":1
+                        }
+                     ],
+                     "output":{
+                        "name":"Turnips",
+                        "amount":1,
+                        "type":"food"
+                     }
+                  }
+               ],
+               "food":[
+                  {
+                     "name":"Mushrooms",
                      "perSecond":0.1
                   }
+               ],
+               "items":[
+                  
                ]
             }
          ],
@@ -8523,19 +8895,19 @@
    "inventory":[
       {
          "name":"Stone",
-         "amount":3058.9499999970662
+         "amount":2893.649999996762
       },
       {
          "name":"Wood",
-         "amount":8464.5
+         "amount":8697
       },
       {
          "name":"Queen Bee",
-         "amount":18.783500000001514
+         "amount":20.456999999997613
       },
       {
          "name":"Ichor",
-         "amount":2781
+         "amount":2827
       },
       {
          "name":"Resin",
@@ -8543,15 +8915,15 @@
       },
       {
          "name":"Leather Hide",
-         "amount":958.6000000001443
+         "amount":1031.4000000001543
       },
       {
          "name":"Leather Scraps",
-         "amount":236.2000000002604
+         "amount":357.8000000002512
       },
       {
          "name":"Raw Meat",
-         "amount":0.19999999999237317
+         "amount":0.7999999999923539
       },
       {
          "name":"Ikon of the Bounty",
@@ -8571,7 +8943,7 @@
       },
       {
          "name":"Carrot Seeds",
-         "amount":1740.5
+         "amount":711.25
       },
       {
          "name":"Copper Ore",
@@ -8587,27 +8959,27 @@
       },
       {
          "name":"Dwarven Core",
-         "amount":21
+         "amount":27
       },
       {
          "name":"Coal",
-         "amount":3672
+         "amount":3970
       },
       {
          "name":"Tin Bar",
-         "amount":121
+         "amount":109
       },
       {
          "name":"Copper Bar",
-         "amount":45
+         "amount":21
       },
       {
          "name":"Hard Wood",
-         "amount":1098
+         "amount":883
       },
       {
          "name":"Ornate Wood",
-         "amount":1492
+         "amount":1460
       },
       {
          "name":"Troll Hide",
@@ -8619,7 +8991,7 @@
       },
       {
          "name":"Turnip Seeds",
-         "amount":1320.25
+         "amount":291
       },
       {
          "name":"Iron Ore",
@@ -8627,7 +8999,7 @@
       },
       {
          "name":"Iron Bar",
-         "amount":34
+         "amount":4
       },
       {
          "name":"Entrails",
@@ -8635,7 +9007,7 @@
       },
       {
          "name":"Chains",
-         "amount":22
+         "amount":30
       },
       {
          "name":"Ikon of Decay",
@@ -8651,7 +9023,7 @@
       },
       {
          "name":"Obsidian",
-         "amount":704.875
+         "amount":953.25
       },
       {
          "name":"Wolf Hide",
@@ -8663,11 +9035,11 @@
       },
       {
          "name":"Steel Bar",
-         "amount":114
+         "amount":84
       },
       {
          "name":"Ichor Shard",
-         "amount":34
+         "amount":32
       },
       {
          "name":"Heart of the Mountain",
@@ -8675,19 +9047,19 @@
       },
       {
          "name":"Flax",
-         "amount":0.2500000000003324
+         "amount":0.6000000000004234
       },
       {
          "name":"Wheat",
-         "amount":0.9999999999142908
+         "amount":0.3999999999142907
       },
       {
          "name":"Flour",
-         "amount":96
+         "amount":1
       },
       {
          "name":"Threads",
-         "amount":110
+         "amount":202
       },
       {
          "name":"Silver Ore",
@@ -8695,15 +9067,15 @@
       },
       {
          "name":"Silver Bar",
-         "amount":61
+         "amount":41
       },
       {
          "name":"Tough Hide",
-         "amount":138.29999999998836
+         "amount":218.99999999998377
       },
       {
          "name":"Raw Large Game Meat",
-         "amount":0.6
+         "amount":0.9999999999999878
       },
       {
          "name":"Ikon of the Wind",
@@ -8711,6 +9083,22 @@
       },
       {
          "name":"Endless Breeze",
+         "amount":1
+      },
+      {
+         "name":"Raw Fish",
+         "amount":323
+      },
+      {
+         "name":"Gold Ore",
+         "amount":0
+      },
+      {
+         "name":"Gold Bar",
+         "amount":75
+      },
+      {
+         "name":"Ikon of Pride",
          "amount":1
       }
    ],

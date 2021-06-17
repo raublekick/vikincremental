@@ -165,7 +165,7 @@
     ],
     "cost": 7,
     "combat": {
-      "damage": 50,
+      "damage": 60,
       "stamina": 40,
       "accuracy": 0.85
     }

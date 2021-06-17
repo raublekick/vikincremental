@@ -307,7 +307,8 @@
     ],
     "drops": [
       { "name": "Wolf Hide", "amount": 5 },
-      { "name": "Ichor", "amount": 2 }
+      { "name": "Ichor", "amount": 2 },
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
   {
@@ -330,7 +331,8 @@
       { "name": "Smash", "damage": 100, "stamina": 15, "accuracy": 0.10 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 50 }
+      { "name": "Ichor", "amount": 50 },
+      { "name": "Ichor Shard", "amount": 2 }
     ]
   },
   {
@@ -439,7 +441,8 @@
       { "name": "Pound", "damage": 100, "stamina": 20, "accuracy": 0.40 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 3 }
+      { "name": "Ichor", "amount": 3 },
+      { "name": "Ichor Shard", "amount": 3 }
     ]
   },
   
@@ -506,7 +509,7 @@
     ],
     "drops": [
       { "name": "Ichor", "amount": 1 },
-    { "name": "Gold", "amount": 10 }
+      { "name": "Gold Ore", "amount": 10 }
     ]
   },
   {
@@ -573,11 +576,12 @@
     "healthRegen": 0,
     "baseHealthRegen": 0,
     "attacks": [
-      { "name": "Fireball", "damage": 50, "stamina": 15, "accuracy": 0.85 },
-      { "name": "Engulf", "damage": 80, "stamina": 15, "accuracy": 0.45 }
+      { "name": "Fireball", "damage": 100, "stamina": 15, "accuracy": 0.85 },
+      { "name": "Immolate", "damage": 175, "stamina": 15, "accuracy": 0.45 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 5 }
+      { "name": "Ichor", "amount": 20 },
+      { "name": "Ichor Shard", "amount": 5 }
     ]
   }
 ]

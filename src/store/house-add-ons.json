@@ -233,7 +233,7 @@
           { "name": "Wood", "amount": 1}, 
           { "name": "Raw Large Game Meat", "amount": 1 },
           { "name": "Mushrooms", "amount": 3, "type": "food" },
-          { "name": "Flour", "amount": 4 }
+          { "name": "Flour", "amount": 1 }
         ],
         "output": { "name": "Meat Pie", "amount": 1, "type": "food" }
       },
@@ -241,7 +241,7 @@
         "input": [
           { "name": "Wood", "amount": 1}, 
           { "name": "Raw Fish", "amount": 1 },
-          { "name": "Flour", "amount": 4 }
+          { "name": "Flour", "amount": 1 }
         ],
         "output": { "name": "Fish Wraps", "amount": 1, "type": "food" }
       }
@@ -288,7 +288,7 @@
       {
         "input": [
           { "name": "Wood", "amount": 1}, 
-          { "name": "Flour", "amount": 4 }
+          { "name": "Flour", "amount": 2 }
         ],
         "output": { "name": "Bread", "amount": 1, "type": "food" }
       }

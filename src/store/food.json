@@ -67,7 +67,7 @@
   },
   {
     "name": "Mead",
-    "stamina": 50,
+    "stamina": 60,
     "health": 50,
     "amount": 0
   },
@@ -103,7 +103,7 @@
   },
   {
     "name": "Meat Pie",
-    "stamina": 50,
+    "stamina": 60,
     "health": 70,
     "amount": 0
   },
