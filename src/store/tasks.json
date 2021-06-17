@@ -110,11 +110,11 @@
   },
   {
     "name": "Deep Sea Fishing",
-    "staminaCost": 10,
+    "staminaCost": 20,
     "worldTier": 0,
     "gearRequirements": ["Harpoon"],
     "addOnRequirements": ["Spinning Wheel"],
-    "items": [{ "name": "Raw Fish", "perSecond": 0.5 }]
+    "items": [{ "name": "Raw Serpent Meat", "perSecond": 0.5 }]
   },
   {
     "name": "Stone Mining",

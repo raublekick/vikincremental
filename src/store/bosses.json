@@ -157,9 +157,9 @@
     "name": "The Doomed God",
     "worldTier": 6,
     "stamina": 4000,
-    "health": 20000,
+    "health": 30000,
     "maxStamina": 4000,
-    "maxHealth": 20000,
+    "maxHealth": 30000,
     "staminaRegen": 30,
     "baseStaminaRegen": 30,
     "healthRegen": 0,
@@ -169,9 +169,9 @@
       { "name": "Ikon of the Primordial", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 250, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 200, "stamina": 150, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 150, "stamina": 50, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.5 },
+      { "name": "Attack 2", "damage": 220, "stamina": 150, "accuracy": 0.8 },
+      { "name": "Attack 2", "damage": 150, "stamina": 50, "accuracy": 0.9 }
     ],
     "artifacts": [{"name": "Endless Flame", "amount": 1 }],
     "drops": [

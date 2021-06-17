@@ -166,7 +166,7 @@
     "cost": 7,
     "combat": {
       "damage": 60,
-      "stamina": 40,
+      "stamina": 50,
       "accuracy": 0.85
     }
   },
@@ -184,7 +184,7 @@
       },
       {
         "name": "Titanium Bar",
-        "amount": 40
+        "amount": 20
       },
       {
         "name": "Iron Bar",
@@ -207,7 +207,7 @@
     "cost": 8,
     "combat": {
       "damage": 100,
-      "stamina": 40,
+      "stamina": 60,
       "accuracy": 0.85
     }
   },
@@ -297,15 +297,15 @@
       },
       {
         "name": "Ornate Wood",
-        "amount": 8
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -313,11 +313,11 @@
       },
       {
         "name": "Ichor Shard",
-        "amount": 10
+        "amount": 20
       },
       {
         "name": "Ikon of the Bounty",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Mother's Memory",
@@ -338,19 +338,19 @@
     "components": [
       {
         "name": "Hard Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -362,7 +362,7 @@
       },
       {
         "name": "Ikon of Renewal",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Eternal Blossom",
@@ -383,15 +383,15 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -403,7 +403,7 @@
       },
       {
         "name": "Ikon of Decay",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Brackish Sludge",
@@ -424,19 +424,19 @@
     "components": [
       {
         "name": "Hard Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -448,7 +448,7 @@
       },
       {
         "name": "Ikon of Regret",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Heart of the Mountain",
@@ -469,19 +469,19 @@
     "components": [
       {
         "name": "Hard Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -493,7 +493,7 @@
       },
       {
         "name": "Ikon of the Wind",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Endless Breeze",
@@ -514,15 +514,15 @@
     "components": [
       {
         "name": "Ornate Wood",
-        "amount": 20
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -534,7 +534,7 @@
       },
       {
         "name": "Ikon of the Primordial",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Ancient Fragment",
@@ -555,23 +555,23 @@
     "components": [
       {
         "name": "Hard Wood",
-        "amount": 8
+        "amount": 500
       },
       {
         "name": "Ornate Wood",
-        "amount": 8
+        "amount": 500
       },
       {
         "name": "Titanium Bar",
-        "amount": 10
+        "amount": 50
       },
       {
         "name": "Dwarven Core",
-        "amount": 25
+        "amount": 150
       },
       {
         "name": "Leather Scraps",
-        "amount": 20
+        "amount": 100
       },
       {
         "name": "Ichor",
@@ -583,7 +583,7 @@
       },
       {
         "name": "Ikon of the Primordial",
-        "amount": 1
+        "amount": 10
       },
       {
         "name": "Endless Flame",
