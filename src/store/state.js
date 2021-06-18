@@ -10,6 +10,7 @@ import biomeData from "./biomes.json";
 
 export default {
   itemRateModifier: 1,
+  win: false,
   isPaused: false,
   isLoading: false,
   newCraft: false,

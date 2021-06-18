@@ -140,5 +140,11 @@
     "name": "Valhalla",
     "unlocked": false,
     "flavor": "Peace. Merriment. Food and drink. Prove yourself to earn your place."
+  },
+
+  {
+    "name": "The End",
+    "unlocked": false,
+    "flavor": "Feast in the great halls of Valhalla, brave vikings!"
   }
 ]

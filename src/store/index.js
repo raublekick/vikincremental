@@ -446,7 +446,10 @@ export default new Vuex.Store({
                 boss.stamina = boss.maxStamina;
                 if (boss.worldTier === state.worldTier) {
                   state.worldTier++;
-                  if (state.biomes[state.worldTier]) {
+                  if (state.worldTier >= state.biomes.length - 1) {
+                    state.isPaused = true;
+                    state.win = true;
+                  } else if (state.biomes[state.worldTier]) {
                     state.biomes[state.worldTier].unlocked = true;
                   }
                 }
@@ -706,6 +709,10 @@ export default new Vuex.Store({
     },
     async tick({ state, dispatch }) {
       // check the day cycle
+      if (state.worldTier > state.biomes.length) {
+        state.isPaused = true;
+        state.win = true;
+      }
       state.newDay = false;
       if (state.day.dayTicks === state.day.dayLength) {
         state.day.dayTicks = 0;

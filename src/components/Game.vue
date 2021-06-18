@@ -315,6 +315,38 @@
         </footer>
       </div>
     </b-modal>
+    <b-modal v-model="win" :can-cancel="false">
+      <div class="modal-card" style="width: auto">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Congratulations!</p>
+        </header>
+        <section class="modal-card-body has-text-centered">
+          <div>
+            You have earned your seat in the great meadhalls of Valhalla.
+          </div>
+          <div>
+            We honor those who gave their all in the final battle:
+            <div v-for="(viking, index) in ripVikings" :key="index">
+              <div class="is-size-4">{{ viking.name }}</div>
+              <div>Born: Day {{ viking.birthday }}</div>
+              <div>Died: Day {{ day.totalDays }}</div>
+            </div>
+          </div>
+          <div v-if="memorial.length">
+            We remember those who came along for the journey but were lost along
+            the way:
+            <div v-for="(viking, index) in memorial" :key="index">
+              <div class="subtitle">{{ viking.name }}</div>
+              <div>Born: Day {{ viking.birthday }}</div>
+              <div>Died: Day {{ day.totalDays }}</div>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <b-button @click="reset()" type="is-danger">Reset</b-button>
+        </footer>
+      </div>
+    </b-modal>
   </div>
 </template>
 
@@ -382,7 +414,9 @@ export default {
       "deathHeader",
       "deathMessage",
       "ripVikings",
+      "memorial",
       "gear",
+      "win",
     ]),
     state: {
       get() {

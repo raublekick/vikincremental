@@ -169,9 +169,9 @@
       { "name": "Ikon of the Primordial", "amount": 2 }
     ],
     "attacks": [
-      { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.5 },
-      { "name": "Attack 2", "damage": 220, "stamina": 150, "accuracy": 0.8 },
-      { "name": "Attack 2", "damage": 150, "stamina": 50, "accuracy": 0.9 }
+      { "name": "Attack 1", "damage": 320, "stamina": 200, "accuracy": 0.5 },
+      { "name": "Attack 2", "damage": 250, "stamina": 150, "accuracy": 0.8 },
+      { "name": "Attack 2", "damage": 200, "stamina": 50, "accuracy": 0.9 }
     ],
     "artifacts": [{"name": "Endless Flame", "amount": 1 }],
     "drops": [
@@ -182,9 +182,9 @@
   {
     "name": "The Allfather",
     "worldTier": 7,
-    "stamina": 1000,
+    "stamina": 5000,
     "health": 40000,
-    "maxStamina": 1000,
+    "maxStamina": 5000,
     "maxHealth": 40000,
     "staminaRegen": 40,
     "baseStaminaRegen": 40,
@@ -193,9 +193,9 @@
     "defeated": false,
     "components": [],
     "attacks": [
-      { "name": "Attack 1", "damage": 300, "stamina": 200, "accuracy": 0.15 },
-      { "name": "Attack 2", "damage": 225, "stamina": 150, "accuracy": 0.75 },
-      { "name": "Attack 2", "damage": 175, "stamina": 50, "accuracy": 0.75 }
+      { "name": "Attack 1", "damage": 350, "stamina": 200, "accuracy": 0.25 },
+      { "name": "Attack 2", "damage": 300, "stamina": 150, "accuracy": 0.65 },
+      { "name": "Attack 2", "damage": 250, "stamina": 50, "accuracy": 0.9 }
     ],
     "artifacts": [],
     "drops": [

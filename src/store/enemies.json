@@ -332,7 +332,7 @@
     ],
     "drops": [
       { "name": "Ichor", "amount": 50 },
-      { "name": "Ichor Shard", "amount": 2 }
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
   {
@@ -442,7 +442,7 @@
     ],
     "drops": [
       { "name": "Ichor", "amount": 3 },
-      { "name": "Ichor Shard", "amount": 3 }
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   },
   
@@ -532,7 +532,7 @@
     ],
     "drops": [
       { "name": "Chains", "amount": 1 },
-      { "name": "Ichor", "amount": 20 },
+      { "name": "Ichor", "amount": 10 },
       { "name": "Ichor Shard", "amount": 1 }
     ]
   },
@@ -580,8 +580,8 @@
       { "name": "Immolate", "damage": 175, "stamina": 15, "accuracy": 0.45 }
     ],
     "drops": [
-      { "name": "Ichor", "amount": 20 },
-      { "name": "Ichor Shard", "amount": 5 }
+      { "name": "Ichor", "amount": 10 },
+      { "name": "Ichor Shard", "amount": 1 }
     ]
   }
 ]
