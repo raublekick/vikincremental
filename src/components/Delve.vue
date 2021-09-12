@@ -4,6 +4,10 @@
 
     <div class="box">
       <delve-map :config="biome.delve" />
+      <b-message type="is-info">
+        Use the arrow keys to move around. Press space to exit when you are on
+        the starting tile. Click on the map if your arrow keys aren't working.
+      </b-message>
     </div>
   </div>
 </template>
