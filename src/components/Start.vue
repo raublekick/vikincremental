@@ -7,6 +7,7 @@
         <b-button @click="step = 1" type="is-success">New Game</b-button>
       </div>
       <div v-if="step === 1">
+        <label class="bold">Enter a name</label>
         <b-field class="has-addons">
           <div class="control">
             <b-input placeholder="State your name" v-model="name"> </b-input>
