@@ -57,8 +57,9 @@ export default {
         "<span class='marker has-background-danger' style='color:white;'>S</span>",
       player:
         "<span class='marker has-background-primary' style='color:white'>@</span>",
-      enemy:
+      placeholder:
         "<span class='marker' style='background-color:grey;color:white;'>!</span>",
+      enemy: "",
       totem:
         "<span class='marker' style='background-color:Fuchsia;color:white;'>T</span>",
       treasure:
@@ -219,19 +220,19 @@ export default {
             Math.random() < this.chanceForSpawn &&
             this.map.spawns.length < this.config.spawns
           ) {
-            array[yNew][xNew] = this.enemy;
+            array[yNew][xNew] = this.placeholder;
             this.map.spawns.push({ x: xNew, y: yNew });
           } else if (
             Math.random() < this.chanceForTotem &&
             this.map.totems.length < this.config.totems
           ) {
-            array[yNew][xNew] = this.totem;
+            array[yNew][xNew] = this.placeholder;
             this.map.totems.push({ x: xNew, y: yNew });
           } else if (
             Math.random() < this.chanceForTreasure &&
             this.map.treasure.length < this.config.treasure
           ) {
-            array[yNew][xNew] = this.treasure;
+            array[yNew][xNew] = this.placeholder;
             this.map.treasure.push({ x: xNew, y: yNew });
           } else {
             array[yNew][xNew] = "."; // this.spaces[item];
