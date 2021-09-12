@@ -1,5 +1,6 @@
 [
   {
+    "worldTier": 0,
     "name": "Grasslands",
     "unlocked": true,
     "flavor": "A verdant paradise of sprawling hillsides dotted with trees and shrubbery.",
@@ -19,6 +20,7 @@
     }
   },
   {
+    "worldTier": 1,
     "name": "Forest",
     "unlocked": false,
     "flavor": "Light filtered though the lush canopy provides a heavenly atmosphere, until night falls.",
@@ -38,6 +40,7 @@
     }
   },
   {
+    "worldTier": 2,
     "name": "Swamps",
     "unlocked": false,
     "flavor": "On the fringe it appears to be a thriving wetland. Deeper in, the air is thick with noxious haze, unknown sounds permeate the stagnant atmosphere, and the dense foliage blocks the sunlight.",
@@ -57,6 +60,7 @@
     }
   },
   {
+    "worldTier": 3,
     "name": "Mountains",
     "unlocked": false,
     "flavor": "Appearing serene and peaceful from a distnace, the mountains are a craggy and harsh enviornment. Its peaks stretch above the clouds, hiding what exists beyond the earth below.",
@@ -76,6 +80,7 @@
     }
   },
   {
+    "worldTier": 4,
     "name": "Plains",
     "unlocked": false,
     "flavor": "A wind-swept valley hidden by the surrounding mountains. These fertile lands are home to many grazing beasts and other natural resources.",
@@ -96,6 +101,7 @@
   },
   
   {
+    "worldTier": 5,
     "name": "Ruined City",
     "unlocked": false,
     "flavor": "Crumbling spires that once touched the sky now lie broken. Grand structures now give way to the elements. The sprawling ruins hint at a once vibrant civilation. No evidence remains of their fate.",
@@ -116,6 +122,7 @@
   },
 
   {
+    "worldTier": 6,
     "name": "Caldera",
     "unlocked": false,
     "flavor": "Swirling formations of old rock that once flowed like rivers have shaped the landscape into a treacherous domain. While not a welcoming sight, those brave enough may be rewarded.",
@@ -136,12 +143,14 @@
   }, 
 
   {
+    "worldTier": 7,
     "name": "Valhalla",
     "unlocked": false,
     "flavor": "Peace. Merriment. Food and drink. Prove yourself to earn your place."
   },
 
   {
+    "worldTier": 8,
     "name": "The End",
     "unlocked": false,
     "flavor": "Feast in the great halls of Valhalla, brave vikings!"

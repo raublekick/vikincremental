@@ -10,8 +10,12 @@
           {{ biome.name
           }}<b-button
             v-if="biome.delve"
-            :disabled="worldTier != i || vikings.length === 0"
-            :type="worldTier === i && vikings.length > 0 ? 'is-success' : ''"
+            :disabled="worldTier != biome.worldTier || vikings.length === 0"
+            :type="
+              worldTier === biome.worldTier && vikings.length > 0
+                ? 'is-success'
+                : ''
+            "
             @click="initializeDelve()"
             class="is-small is-pulled-right"
             >Delve</b-button
@@ -19,14 +23,14 @@
         </h3>
         <pre>{{ biome.flavor }}</pre>
 
-        <boss class="pt-4" :item="bossList[i]" />
+        <boss class="pt-4" :item="bossList[biome.worldTier]" />
       </div>
     </div>
     <div v-else>Cannot delve or challenge a boss while in combat.</div>
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 import Boss from "@/components/Boss";
 import Combat from "@/components/Combat";
 import Delve from "@/components/Delve";
@@ -42,6 +46,7 @@ export default {
     Delve,
   },
   computed: {
+    ...mapGetters(["currentBiome"]),
     ...mapState([
       "bossCombat",
       "combat",
@@ -53,9 +58,11 @@ export default {
       "worldTier",
     ]),
     unlockedBiomes() {
-      return _.filter(this.biomes, (biome) => {
-        return biome.unlocked;
-      });
+      return _.reverse(
+        _.filter(this.biomes, (biome) => {
+          return biome.unlocked;
+        })
+      );
     },
   },
   methods: {

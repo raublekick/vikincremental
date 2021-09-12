@@ -32,6 +32,11 @@ export default new Vuex.Store({
       });
       return _.orderBy(edibleFood, ["stamina"], ["asc"]);
     },
+    currentBiome: (state) => {
+      return _.find(state.biomes, (biome) => {
+        return biome.worldTier === state.worldTier;
+      });
+    },
   },
   mutations: {
     init(state, payload) {
