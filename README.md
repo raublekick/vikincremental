@@ -1,5 +1,8 @@
 # vikincremental
 
+## Play
+[https://raublekick.github.io/vikincremental/](https://raublekick.github.io/vikincremental/)
+
 ## Project setup
 ```
 npm install
